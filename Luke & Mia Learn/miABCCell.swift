@@ -10,4 +10,6 @@ import UIKit
 class miABCCell: UICollectionViewCell {
     static let reusidentifier = String(describing: miABCCell.self)
     
+    @IBOutlet var miABCCellLabel: UILabel!
+    @IBOutlet var miABCCellImage: UIImageView!
 }

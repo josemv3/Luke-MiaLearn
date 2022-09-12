@@ -22,8 +22,9 @@ private var lowercaseLetters = [
     "a", "b", "c", "d", "e", "f", "g", "h", "i"]
 
 private var mainImageBackgrounds = ["mainBackImage1", "mainBackImage2"]
-
 private var mainWordButtonTitle = ""
+private let smallBorderSize: CGFloat = 2
+private let mediumBorderSize: CGFloat = 4
 
 //MARK: - Class
 
@@ -31,6 +32,8 @@ class miABC: UIViewController, UICollectionViewDelegate {
     @IBOutlet var mainImageBack: UIImageView!
     @IBOutlet var mainImagebutton: UIButton!
     @IBOutlet var mainWordButton: UIButton!
+    
+    var currentAnimation = 0
     
     ///When adding CV to VC control drag CV to VC and make delegate, then add UICVDelegate to class
     @IBOutlet var collectionView: UICollectionView!
@@ -48,23 +51,23 @@ class miABC: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.collectionViewLayout = configureLayout()
-        collectionView.layer.borderWidth = 2 //Magic number
+        collectionView.layer.borderWidth = smallBorderSize //2
         collectionView.layer.borderColor = UIColor(named: "mainBlue")?.cgColor
         
-        mainImageBack.layer.borderWidth = 4 //magic number
+        mainImageBack.layer.borderWidth = mediumBorderSize //4
         mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
         
         configureDataSource()
         navigationItem.title = "miABC"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
-        mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 21)
+        mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 21)//doesnt work
         
     }
     
     //MARK: - Compositional CV LAYOUT
     func configureLayout() -> UICollectionViewCompositionalLayout {
         let spacing: CGFloat = 5
-        
+        let grouItemCount = 3
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.4),
             heightDimension: .fractionalHeight(1.0))
@@ -76,7 +79,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalWidth(0.4))
         let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize, subitem: item, count: 3)
+            layoutSize: groupSize, subitem: item, count: grouItemCount)
         
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(
@@ -119,6 +122,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
         mainWordButton.setTitle(mainImages[item.description], for: .normal)
         mainImagebutton.setImage(UIImage(named: mainImages[item] ?? "greeting"), for: .normal)
         mainImageBack.image = UIImage(named: mainImageBackgrounds.randomElement() ?? "mainBackImage1")
+        self.mainImagebutton.transform = .identity //read bellow:
+        currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
+        
         //trying to change background image each time:
 //        if mainImageBack.image?.description == "mainBackImage1" {
 //
@@ -126,9 +132,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
 //        } else {
 //            mainImageBack.image = UIImage(named: "mainBackImage1")
 //        }
+        
         playSound(soundName: item)
     }
-    
     
     //MARK: - Sound Player
     
@@ -154,7 +160,6 @@ class miABC: UIViewController, UICollectionViewDelegate {
                 audioPlayer.play()
 
             } catch {
-                //error handling
                 print("error")
             }
         }
@@ -162,6 +167,27 @@ class miABC: UIViewController, UICollectionViewDelegate {
     //MARK: - Main Image Button (top)
     @IBAction func mainImageButtonPressed(_ sender: UIButton) {
         
+        UIView.animate(withDuration: 0.20, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 25, options: [], animations: {
+            
+            switch self.currentAnimation {
+            case 0:self.mainImagebutton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                break
+            case 1:
+                self.mainImagebutton.transform = .identity
+            case 2:
+                self.mainImagebutton.transform = CGAffineTransform(rotationAngle: .pi)
+            case 3:
+                self.mainImagebutton.transform = .identity
+           
+            default:
+                break
+            }
+            self.currentAnimation += 1
+            
+            if self.currentAnimation > 3 {
+                self.currentAnimation = 0
+            }
+        })
     }
     
     @IBAction func mainWordButton(_ sender: UIButton) {

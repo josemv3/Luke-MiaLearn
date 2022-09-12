@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E03A68AD28CE5B1300520C51 /* miABCQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A68AC28CE5B1300520C51 /* miABCQuizController.swift */; };
+		E0594C6028CEFAE200EC2BE9 /* hedgehog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */; };
+		E0594C6128CEFAE200EC2BE9 /* dog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5928CEFAE200EC2BE9 /* dog.mp4 */; };
+		E0594C6228CEFAE200EC2BE9 /* cat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5A28CEFAE200EC2BE9 /* cat.mp4 */; };
+		E0594C6328CEFAE200EC2BE9 /* apple.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5B28CEFAE200EC2BE9 /* apple.mp4 */; };
+		E0594C6428CEFAE200EC2BE9 /* frog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5C28CEFAE200EC2BE9 /* frog.mp4 */; };
+		E0594C6528CEFAE200EC2BE9 /* egg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5D28CEFAE200EC2BE9 /* egg.mp4 */; };
+		E0594C6628CEFAE200EC2BE9 /* giraffe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5E28CEFAE200EC2BE9 /* giraffe.mp4 */; };
+		E0594C6728CEFAE200EC2BE9 /* bat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */; };
 		E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */; };
 		E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */; };
 		E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5928CCD322000E59A0 /* MenuController.swift */; };
@@ -30,6 +39,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E03A68AC28CE5B1300520C51 /* miABCQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miABCQuizController.swift; sourceTree = "<group>"; };
+		E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hedgehog.mp4; sourceTree = "<group>"; };
+		E0594C5928CEFAE200EC2BE9 /* dog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dog.mp4; path = ../../../../../Downloads/dog.mp4; sourceTree = "<group>"; };
+		E0594C5A28CEFAE200EC2BE9 /* cat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = cat.mp4; path = ../../../../../Downloads/cat.mp4; sourceTree = "<group>"; };
+		E0594C5B28CEFAE200EC2BE9 /* apple.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = apple.mp4; path = ../../../../../Downloads/apple.mp4; sourceTree = "<group>"; };
+		E0594C5C28CEFAE200EC2BE9 /* frog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = frog.mp4; sourceTree = "<group>"; };
+		E0594C5D28CEFAE200EC2BE9 /* egg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = egg.mp4; path = ../../../../../Downloads/egg.mp4; sourceTree = "<group>"; };
+		E0594C5E28CEFAE200EC2BE9 /* giraffe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = giraffe.mp4; path = ../../../../../Downloads/giraffe.mp4; sourceTree = "<group>"; };
+		E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bat.mp4; path = ../../../../../Downloads/bat.mp4; sourceTree = "<group>"; };
 		E0CF3C5228CCD322000E59A0 /* Luke & Mia Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Luke & Mia Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +83,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E03A68AE28CE719200520C51 /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				E0594C5B28CEFAE200EC2BE9 /* apple.mp4 */,
+				E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */,
+				E0594C5A28CEFAE200EC2BE9 /* cat.mp4 */,
+				E0594C5928CEFAE200EC2BE9 /* dog.mp4 */,
+				E0594C5D28CEFAE200EC2BE9 /* egg.mp4 */,
+				E0594C5C28CEFAE200EC2BE9 /* frog.mp4 */,
+				E0594C5E28CEFAE200EC2BE9 /* giraffe.mp4 */,
+				E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */,
+			);
+			path = videos;
+			sourceTree = "<group>";
+		};
 		E0CF3C4928CCD322000E59A0 = {
 			isa = PBXGroup;
 			children = (
@@ -90,11 +123,13 @@
 				E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */,
 				E0CF3C6E28CCE1CA000E59A0 /* miABC.swift */,
 				E0CF3C7028CCE86B000E59A0 /* miABCCell.swift */,
+				E03A68AC28CE5B1300520C51 /* miABCQuizController.swift */,
 				E0CF3C5B28CCD322000E59A0 /* Main.storyboard */,
-				E0CF3C6128CCD324000E59A0 /* Assets.xcassets */,
 				E0CF3C6328CCD324000E59A0 /* LaunchScreen.storyboard */,
 				E0CF3C6628CCD324000E59A0 /* Info.plist */,
+				E0CF3C6128CCD324000E59A0 /* Assets.xcassets */,
 				E0CF3C5E28CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld */,
+				E03A68AE28CE719200520C51 /* videos */,
 				E0CF3C7228CCF856000E59A0 /* Audio */,
 			);
 			path = "Luke & Mia Learn";
@@ -175,19 +210,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0594C6128CEFAE200EC2BE9 /* dog.mp4 in Resources */,
 				E0CF3C8428CCF87C000E59A0 /* alligator.mp3 in Resources */,
 				E0CF3C7F28CCF87C000E59A0 /* bat.mp3 in Resources */,
 				E0CF3C7D28CCF87C000E59A0 /* e.mp3 in Resources */,
 				E0CF3C8028CCF87C000E59A0 /* b.mp3 in Resources */,
+				E0594C6528CEFAE200EC2BE9 /* egg.mp4 in Resources */,
 				E0CF3C8228CCF87C000E59A0 /* dog.mp3 in Resources */,
 				E0CF3C7E28CCF87C000E59A0 /* elephant.mp3 in Resources */,
+				E0594C6428CEFAE200EC2BE9 /* frog.mp4 in Resources */,
+				E0594C6028CEFAE200EC2BE9 /* hedgehog.mp4 in Resources */,
 				E0CF3C8528CCF87C000E59A0 /* c.mp3 in Resources */,
 				E0CF3C8628CCF87C000E59A0 /* cat.mp3 in Resources */,
 				E0CF3C6528CCD324000E59A0 /* LaunchScreen.storyboard in Resources */,
 				E0CF3C6228CCD324000E59A0 /* Assets.xcassets in Resources */,
+				E0594C6628CEFAE200EC2BE9 /* giraffe.mp4 in Resources */,
 				E0CF3C5D28CCD322000E59A0 /* Main.storyboard in Resources */,
 				E0CF3C8328CCF87C000E59A0 /* a.mp3 in Resources */,
+				E0594C6228CEFAE200EC2BE9 /* cat.mp4 in Resources */,
+				E0594C6728CEFAE200EC2BE9 /* bat.mp4 in Resources */,
 				E0CF3C8128CCF87C000E59A0 /* d.mp3 in Resources */,
+				E0594C6328CEFAE200EC2BE9 /* apple.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +246,7 @@
 				E0CF3C6F28CCE1CA000E59A0 /* miABC.swift in Sources */,
 				E0CF3C7128CCE86B000E59A0 /* miABCCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,
+				E03A68AD28CE5B1300520C51 /* miABCQuizController.swift in Sources */,
 				E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */,
 				E0CF3C6028CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld in Sources */,
 			);

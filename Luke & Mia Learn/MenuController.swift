@@ -10,11 +10,13 @@ import UIKit
 
 private let reuseIdentifier = "cell"
 
+private let mediumBorderSize: CGFloat = 4
+
 class MenuController: UICollectionViewController {
 
-    let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWithLukeLogo", "findMeLogo"]
-    let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWithLukeLogo": "Learn with Luke", "findMeLogo": "Find me"]
-    let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWithLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+"]
+    let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWithLukeLogo", "findMeLogo2"]
+    let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWithLukeLogo": "Learn with Luke", "findMeLogo2": "Find me"]
+    let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWithLukeLogo": "Age: 4+", "findMeLogo2": "Age: 5+"]
     
     enum Section {
         case main
@@ -29,9 +31,11 @@ class MenuController: UICollectionViewController {
         
         navigationItem.title = "Learning with us!"
     }
+    
 
     private func generateLayout() -> UICollectionViewLayout {
         let spacing: CGFloat = 10
+        let groupItemCount = 1
         
         // Item definition
         let itemSize = NSCollectionLayoutSize(
@@ -49,7 +53,7 @@ class MenuController: UICollectionViewController {
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitem: item,
-            count: 1
+            count: groupItemCount
         )
         group.contentInsets = NSDirectionalEdgeInsets(
             top: spacing,
@@ -81,7 +85,7 @@ class MenuController: UICollectionViewController {
             cell.menuLessonLabel.text = self.lessonLabelName[item.description]
             cell.menuAgeLabel.text = self.lessonLabelAge[item.description]
 
-            cell.menuImageview.layer.borderWidth = 4
+            cell.menuImageview.layer.borderWidth = mediumBorderSize
             cell.menuImageview.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
             
             return cell
@@ -101,8 +105,13 @@ class MenuController: UICollectionViewController {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         print(item.description)
         //if item.desc == "miABCLogo"
-        //performSegue "goToMiABC"
-        self.performSegue(withIdentifier: "goToMiABC", sender: self)
+        //performSegue "goToMiABC" goTomiabcQuiz
+        if item == "miABCLogo" {
+            self.performSegue(withIdentifier: "goToMiABC", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "goTomiabcQuiz", sender: self)
+        }
+        
     }
 
 }

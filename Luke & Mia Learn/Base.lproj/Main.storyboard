@@ -80,6 +80,7 @@
                     <navigationItem key="navigationItem" id="Wc8-3t-dcu"/>
                     <connections>
                         <segue destination="GMY-Wi-i2S" kind="show" identifier="goToMiABC" id="wa9-o0-Hog"/>
+                        <segue destination="rSV-uA-wfO" kind="show" identifier="goTomiabcQuiz" id="myA-fL-Y2y"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sc-ks-AdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -199,6 +200,50 @@
             </objects>
             <point key="canvasLocation" x="1647.6923076923076" y="18.48341232227488"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="sWD-mg-8sE">
+            <objects>
+                <viewController id="x7J-02-dUQ" customClass="miABCQuizController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WAs-mp-O1e">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bWC-ht-p7u">
+                                <rect key="frame" x="78" y="107" width="230" height="225"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqs-7S-cQV">
+                                <rect key="frame" x="78" y="107" width="230" height="225"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="mainViewButtonTap:" destination="x7J-02-dUQ" eventType="touchUpInside" id="5YB-Se-yAe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="em4-J3-iEm"/>
+                        <color key="backgroundColor" name="quizLightBlue"/>
+                        <constraints>
+                            <constraint firstItem="fqs-7S-cQV" firstAttribute="bottom" secondItem="bWC-ht-p7u" secondAttribute="bottom" id="4l0-Eq-CiE"/>
+                            <constraint firstItem="fqs-7S-cQV" firstAttribute="leading" secondItem="bWC-ht-p7u" secondAttribute="leading" id="EE8-Hb-JLa"/>
+                            <constraint firstItem="fqs-7S-cQV" firstAttribute="top" secondItem="bWC-ht-p7u" secondAttribute="top" id="Qtv-eX-Hk9"/>
+                            <constraint firstItem="bWC-ht-p7u" firstAttribute="top" secondItem="em4-J3-iEm" secondAttribute="top" constant="19" id="dvk-hN-d60"/>
+                            <constraint firstItem="em4-J3-iEm" firstAttribute="bottom" secondItem="bWC-ht-p7u" secondAttribute="bottom" constant="429" id="e6j-nN-5q0"/>
+                            <constraint firstItem="bWC-ht-p7u" firstAttribute="leading" secondItem="em4-J3-iEm" secondAttribute="leading" constant="78" id="hLt-2P-R02"/>
+                            <constraint firstItem="bWC-ht-p7u" firstAttribute="centerX" secondItem="WAs-mp-O1e" secondAttribute="centerX" constant="-2" id="iiQ-PT-qWI"/>
+                            <constraint firstItem="fqs-7S-cQV" firstAttribute="trailing" secondItem="bWC-ht-p7u" secondAttribute="trailing" id="z6M-vY-bh3"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ctF-5Z-HsZ"/>
+                    <navigationItem key="navigationItem" id="bF4-TH-ghq"/>
+                    <connections>
+                        <outlet property="mainView" destination="bWC-ht-p7u" id="aeu-g4-WOC"/>
+                        <outlet property="mainViewButton" destination="fqs-7S-cQV" id="5a6-ej-h1c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gc6-Nq-FQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2576.9230769230767" y="777.7251184834123"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ax6-Kq-kfT">
             <objects>
@@ -226,6 +271,26 @@
             </objects>
             <point key="canvasLocation" x="-136.23188405797103" y="18.75"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cDk-DQ-vh9">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rSV-uA-wfO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="puQ-sL-Yur"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="50o-ha-ENm">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="quizDarke Brown"/>
+                        <color key="selectedImageTintColor" name="quizBrownLight"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="x7J-02-dUQ" kind="relationship" relationship="viewControllers" id="6Qo-Jt-die"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="seT-2R-QJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1647.6923076923076" y="777.7251184834123"/>
+        </scene>
     </scenes>
     <resources>
         <image name="greeting" width="200" height="150"/>
@@ -235,6 +300,15 @@
         </namedColor>
         <namedColor name="mainOrange">
             <color red="0.9570000171661377" green="0.82700002193450928" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="quizBrownLight">
+            <color red="0.9179999828338623" green="0.88999998569488525" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="quizDarke Brown">
+            <color red="0.76099997758865356" green="0.68999999761581421" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="quizLightBlue">
+            <color red="0.63099998235702515" green="0.79199999570846558" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

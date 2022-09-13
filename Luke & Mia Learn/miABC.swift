@@ -32,12 +32,10 @@ class miABC: UIViewController, UICollectionViewDelegate {
     @IBOutlet var mainImageBack: UIImageView!
     @IBOutlet var mainImagebutton: UIButton!
     @IBOutlet var mainWordButton: UIButton!
-    
-    var currentAnimation = 0
-    
     ///When adding CV to VC control drag CV to VC and make delegate, then add UICVDelegate to class
     @IBOutlet var collectionView: UICollectionView!
     
+    var currentAnimation = 0
     var audioPlayer: AVAudioPlayer?
     
     enum Section {
@@ -124,6 +122,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
         mainImageBack.image = UIImage(named: mainImageBackgrounds.randomElement() ?? "mainBackImage1")
         self.mainImagebutton.transform = .identity //read bellow:
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
+        //mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 16) //not working
         
         //trying to change background image each time:
 //        if mainImageBack.image?.description == "mainBackImage1" {

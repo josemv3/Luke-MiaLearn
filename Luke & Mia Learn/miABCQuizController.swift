@@ -23,15 +23,18 @@ class miABCQuizController: UIViewController {
     var player: AVPlayer!
     var playerLayer: AVPlayerLayer!
     
+    //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Mia ABC Quiz"
         
         mainView.layer.borderColor = UIColor(named: "quizBrownLight")?.cgColor
         mainView.layer.borderWidth = largeBorderSize
         //viewDidAppear(true)
-        navigationItem.title = "miABC Quiz"
+        
     }
     
+    //MARK: - ViewDidApear Video Player
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: videoNames[videoCount], ofType: "mp4") ?? "apple.mp4"))
@@ -46,6 +49,7 @@ class miABCQuizController: UIViewController {
         playerLayer.removeFromSuperlayer()
     }
     
+    //MARK: - MainButton and Image
     @IBAction func mainViewButtonTap(_ sender: UIButton) {
         videoCount += 1
         if videoCount >= videoNames.count {

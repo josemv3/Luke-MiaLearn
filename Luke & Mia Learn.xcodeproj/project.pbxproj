@@ -16,6 +16,11 @@
 		E0594C6528CEFAE200EC2BE9 /* egg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5D28CEFAE200EC2BE9 /* egg.mp4 */; };
 		E0594C6628CEFAE200EC2BE9 /* giraffe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5E28CEFAE200EC2BE9 /* giraffe.mp4 */; };
 		E0594C6728CEFAE200EC2BE9 /* bat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */; };
+		E091A4D728CFA45700E7284C /* MiaTalksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4D628CFA45700E7284C /* MiaTalksController.swift */; };
+		E091A4D928CFAFE800E7284C /* LearnWithLukeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4D828CFAFE800E7284C /* LearnWithLukeController.swift */; };
+		E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */; };
+		E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */; };
+		E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */; };
 		E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */; };
 		E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */; };
 		E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5928CCD322000E59A0 /* MenuController.swift */; };
@@ -48,6 +53,11 @@
 		E0594C5D28CEFAE200EC2BE9 /* egg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = egg.mp4; path = ../../../../../Downloads/egg.mp4; sourceTree = "<group>"; };
 		E0594C5E28CEFAE200EC2BE9 /* giraffe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = giraffe.mp4; path = ../../../../../Downloads/giraffe.mp4; sourceTree = "<group>"; };
 		E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bat.mp4; path = ../../../../../Downloads/bat.mp4; sourceTree = "<group>"; };
+		E091A4D628CFA45700E7284C /* MiaTalksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksController.swift; sourceTree = "<group>"; };
+		E091A4D828CFAFE800E7284C /* LearnWithLukeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeController.swift; sourceTree = "<group>"; };
+		E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksCell.swift; sourceTree = "<group>"; };
+		E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeCell.swift; sourceTree = "<group>"; };
+		E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeHeader.swift; sourceTree = "<group>"; };
 		E0CF3C5228CCD322000E59A0 /* Luke & Mia Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Luke & Mia Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +134,11 @@
 				E0CF3C6E28CCE1CA000E59A0 /* miABC.swift */,
 				E0CF3C7028CCE86B000E59A0 /* miABCCell.swift */,
 				E03A68AC28CE5B1300520C51 /* miABCQuizController.swift */,
+				E091A4D628CFA45700E7284C /* MiaTalksController.swift */,
+				E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */,
+				E091A4D828CFAFE800E7284C /* LearnWithLukeController.swift */,
+				E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */,
+				E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */,
 				E0CF3C5B28CCD322000E59A0 /* Main.storyboard */,
 				E0CF3C6328CCD324000E59A0 /* LaunchScreen.storyboard */,
 				E0CF3C6628CCD324000E59A0 /* Info.plist */,
@@ -245,10 +260,15 @@
 				E0CF3C6D28CCD3E3000E59A0 /* MenuCell.swift in Sources */,
 				E0CF3C6F28CCE1CA000E59A0 /* miABC.swift in Sources */,
 				E0CF3C7128CCE86B000E59A0 /* miABCCell.swift in Sources */,
+				E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */,
+				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,
+				E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */,
 				E03A68AD28CE5B1300520C51 /* miABCQuizController.swift in Sources */,
 				E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */,
+				E091A4D928CFAFE800E7284C /* LearnWithLukeController.swift in Sources */,
 				E0CF3C6028CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld in Sources */,
+				E091A4D728CFA45700E7284C /* MiaTalksController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,11 +28,10 @@ class MenuController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         createDataSource()
-        
-        navigationItem.title = "Learning with us!"
+        navigationItem.title = "Menu"
     }
     
-
+    //MARK: - Layout
     private func generateLayout() -> UICollectionViewLayout {
         let spacing: CGFloat = 10
         let groupItemCount = 1
@@ -61,7 +60,6 @@ class MenuController: UICollectionViewController {
             bottom: 5,
             trailing: 5
         )
-        
         // Section and layout definition
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(
@@ -75,11 +73,11 @@ class MenuController: UICollectionViewController {
         return layout
     }
     
+    //MARK: - DataSOurce
     private func createDataSource() {
         ///CELL
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MenuCell
-            
             
             cell.menuImageview.image = UIImage(named: item.description)
             cell.menuLessonLabel.text = self.lessonLabelName[item.description]
@@ -91,7 +89,6 @@ class MenuController: UICollectionViewController {
             return cell
         })
         
-    
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
         //var initialSnapshot = NSDiffableDataSourceSnapshot<Int, String>()//SOURCE3
         
@@ -101,6 +98,7 @@ class MenuController: UICollectionViewController {
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     
+    //MARK: - DidSelectItemAt
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         print(item.description)
@@ -108,11 +106,13 @@ class MenuController: UICollectionViewController {
         //performSegue "goToMiABC" goTomiabcQuiz
         if item == "miABCLogo" {
             self.performSegue(withIdentifier: "goToMiABC", sender: self)
-        } else {
+        } else if item == "miABCQuizLogo" {
             self.performSegue(withIdentifier: "goTomiabcQuiz", sender: self)
+        } else if item == "learnWithLukeLogo" {
+            self.performSegue(withIdentifier: "goToLWLuke", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "goToMiaTalks", sender: self)
         }
-        
     }
-
 }
 

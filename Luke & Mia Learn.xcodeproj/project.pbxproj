@@ -41,6 +41,13 @@
 		E0CF3C8428CCF87C000E59A0 /* alligator.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7A28CCF87C000E59A0 /* alligator.mp3 */; };
 		E0CF3C8528CCF87C000E59A0 /* c.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7B28CCF87C000E59A0 /* c.mp3 */; };
 		E0CF3C8628CCF87C000E59A0 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7C28CCF87C000E59A0 /* cat.mp3 */; };
+		E0DF0F4C28D0FFAF00252498 /* miABCQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F4B28D0FFAF00252498 /* miABCQuizCell.swift */; };
+		E0DF0F5328D1542500252498 /* bvQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F4D28D1542500252498 /* bvQuiz.mp4 */; };
+		E0DF0F5428D1542500252498 /* dvQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F4E28D1542500252498 /* dvQuiz.mp4 */; };
+		E0DF0F5528D1542500252498 /* avQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F4F28D1542500252498 /* avQuiz.mp4 */; };
+		E0DF0F5628D1542500252498 /* fvQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F5028D1542500252498 /* fvQuiz.mp4 */; };
+		E0DF0F5728D1542500252498 /* evQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F5128D1542500252498 /* evQuiz.mp4 */; };
+		E0DF0F5828D1542500252498 /* cvQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F5228D1542500252498 /* cvQuiz.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +87,13 @@
 		E0CF3C7A28CCF87C000E59A0 /* alligator.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alligator.mp3; sourceTree = "<group>"; };
 		E0CF3C7B28CCF87C000E59A0 /* c.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c.mp3; sourceTree = "<group>"; };
 		E0CF3C7C28CCF87C000E59A0 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
+		E0DF0F4B28D0FFAF00252498 /* miABCQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miABCQuizCell.swift; sourceTree = "<group>"; };
+		E0DF0F4D28D1542500252498 /* bvQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bvQuiz.mp4; sourceTree = "<group>"; };
+		E0DF0F4E28D1542500252498 /* dvQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dvQuiz.mp4; sourceTree = "<group>"; };
+		E0DF0F4F28D1542500252498 /* avQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = avQuiz.mp4; sourceTree = "<group>"; };
+		E0DF0F5028D1542500252498 /* fvQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fvQuiz.mp4; sourceTree = "<group>"; };
+		E0DF0F5128D1542500252498 /* evQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evQuiz.mp4; sourceTree = "<group>"; };
+		E0DF0F5228D1542500252498 /* cvQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cvQuiz.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +110,12 @@
 		E03A68AE28CE719200520C51 /* videos */ = {
 			isa = PBXGroup;
 			children = (
+				E0DF0F4F28D1542500252498 /* avQuiz.mp4 */,
+				E0DF0F4D28D1542500252498 /* bvQuiz.mp4 */,
+				E0DF0F5228D1542500252498 /* cvQuiz.mp4 */,
+				E0DF0F4E28D1542500252498 /* dvQuiz.mp4 */,
+				E0DF0F5128D1542500252498 /* evQuiz.mp4 */,
+				E0DF0F5028D1542500252498 /* fvQuiz.mp4 */,
 				E0594C5B28CEFAE200EC2BE9 /* apple.mp4 */,
 				E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */,
 				E0594C5A28CEFAE200EC2BE9 /* cat.mp4 */,
@@ -134,6 +154,7 @@
 				E0CF3C6E28CCE1CA000E59A0 /* miABC.swift */,
 				E0CF3C7028CCE86B000E59A0 /* miABCCell.swift */,
 				E03A68AC28CE5B1300520C51 /* miABCQuizController.swift */,
+				E0DF0F4B28D0FFAF00252498 /* miABCQuizCell.swift */,
 				E091A4D628CFA45700E7284C /* MiaTalksController.swift */,
 				E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */,
 				E091A4D828CFAFE800E7284C /* LearnWithLukeController.swift */,
@@ -227,23 +248,29 @@
 			files = (
 				E0594C6128CEFAE200EC2BE9 /* dog.mp4 in Resources */,
 				E0CF3C8428CCF87C000E59A0 /* alligator.mp3 in Resources */,
+				E0DF0F5828D1542500252498 /* cvQuiz.mp4 in Resources */,
 				E0CF3C7F28CCF87C000E59A0 /* bat.mp3 in Resources */,
 				E0CF3C7D28CCF87C000E59A0 /* e.mp3 in Resources */,
+				E0DF0F5328D1542500252498 /* bvQuiz.mp4 in Resources */,
 				E0CF3C8028CCF87C000E59A0 /* b.mp3 in Resources */,
 				E0594C6528CEFAE200EC2BE9 /* egg.mp4 in Resources */,
 				E0CF3C8228CCF87C000E59A0 /* dog.mp3 in Resources */,
 				E0CF3C7E28CCF87C000E59A0 /* elephant.mp3 in Resources */,
+				E0DF0F5528D1542500252498 /* avQuiz.mp4 in Resources */,
 				E0594C6428CEFAE200EC2BE9 /* frog.mp4 in Resources */,
+				E0DF0F5628D1542500252498 /* fvQuiz.mp4 in Resources */,
 				E0594C6028CEFAE200EC2BE9 /* hedgehog.mp4 in Resources */,
 				E0CF3C8528CCF87C000E59A0 /* c.mp3 in Resources */,
 				E0CF3C8628CCF87C000E59A0 /* cat.mp3 in Resources */,
 				E0CF3C6528CCD324000E59A0 /* LaunchScreen.storyboard in Resources */,
 				E0CF3C6228CCD324000E59A0 /* Assets.xcassets in Resources */,
 				E0594C6628CEFAE200EC2BE9 /* giraffe.mp4 in Resources */,
+				E0DF0F5428D1542500252498 /* dvQuiz.mp4 in Resources */,
 				E0CF3C5D28CCD322000E59A0 /* Main.storyboard in Resources */,
 				E0CF3C8328CCF87C000E59A0 /* a.mp3 in Resources */,
 				E0594C6228CEFAE200EC2BE9 /* cat.mp4 in Resources */,
 				E0594C6728CEFAE200EC2BE9 /* bat.mp4 in Resources */,
+				E0DF0F5728D1542500252498 /* evQuiz.mp4 in Resources */,
 				E0CF3C8128CCF87C000E59A0 /* d.mp3 in Resources */,
 				E0594C6328CEFAE200EC2BE9 /* apple.mp4 in Resources */,
 			);
@@ -261,6 +288,7 @@
 				E0CF3C6F28CCE1CA000E59A0 /* miABC.swift in Sources */,
 				E0CF3C7128CCE86B000E59A0 /* miABCCell.swift in Sources */,
 				E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */,
+				E0DF0F4C28D0FFAF00252498 /* miABCQuizCell.swift in Sources */,
 				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,
 				E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */,

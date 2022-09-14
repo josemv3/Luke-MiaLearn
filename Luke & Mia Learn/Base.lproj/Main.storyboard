@@ -221,17 +221,63 @@
                                     <action selector="mainViewButtonTap:" destination="x7J-02-dUQ" eventType="touchUpInside" id="5YB-Se-yAe"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="77m-KC-t9a">
+                                <rect key="frame" x="0.0" y="356" width="390" height="405"/>
+                                <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="Ln9-IT-qdY"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="miABCQuizCell" id="6TQ-fu-lid" customClass="miABCQuizCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iQf-Pm-MP9">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SyG-NE-hRs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSa-lk-hme">
+                                                    <rect key="frame" x="4" y="15" width="42" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SyG-NE-hRs" firstAttribute="centerX" secondItem="iQf-Pm-MP9" secondAttribute="centerX" id="IO1-fh-rhe"/>
+                                                <constraint firstItem="SyG-NE-hRs" firstAttribute="top" secondItem="iQf-Pm-MP9" secondAttribute="top" id="IZq-wZ-ML3"/>
+                                                <constraint firstItem="SyG-NE-hRs" firstAttribute="centerY" secondItem="iQf-Pm-MP9" secondAttribute="centerY" id="Q38-Ux-aZ9"/>
+                                                <constraint firstItem="RSa-lk-hme" firstAttribute="centerY" secondItem="SyG-NE-hRs" secondAttribute="centerY" id="TuQ-3f-Z3x"/>
+                                                <constraint firstItem="SyG-NE-hRs" firstAttribute="leading" secondItem="iQf-Pm-MP9" secondAttribute="leading" id="Wgn-Xc-dyz"/>
+                                                <constraint firstItem="RSa-lk-hme" firstAttribute="top" secondItem="iQf-Pm-MP9" secondAttribute="top" constant="15" id="Xyv-4a-7oJ"/>
+                                                <constraint firstItem="RSa-lk-hme" firstAttribute="centerX" secondItem="SyG-NE-hRs" secondAttribute="centerX" id="gkV-Fa-wg3"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="miABCQuizCellImage" destination="SyG-NE-hRs" id="BE1-nm-vGk"/>
+                                            <outlet property="miABCQuizCellLabel" destination="RSa-lk-hme" id="0pO-ja-VNy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="x7J-02-dUQ" id="5bC-uz-stg"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="em4-J3-iEm"/>
                         <color key="backgroundColor" name="quizLightBlue"/>
                         <constraints>
+                            <constraint firstItem="77m-KC-t9a" firstAttribute="bottom" secondItem="em4-J3-iEm" secondAttribute="bottom" id="0UF-wv-MEF"/>
                             <constraint firstItem="fqs-7S-cQV" firstAttribute="bottom" secondItem="bWC-ht-p7u" secondAttribute="bottom" id="4l0-Eq-CiE"/>
+                            <constraint firstItem="77m-KC-t9a" firstAttribute="leading" secondItem="em4-J3-iEm" secondAttribute="leading" id="6eE-jd-Nhk"/>
                             <constraint firstItem="fqs-7S-cQV" firstAttribute="leading" secondItem="bWC-ht-p7u" secondAttribute="leading" id="EE8-Hb-JLa"/>
                             <constraint firstItem="fqs-7S-cQV" firstAttribute="top" secondItem="bWC-ht-p7u" secondAttribute="top" id="Qtv-eX-Hk9"/>
+                            <constraint firstItem="77m-KC-t9a" firstAttribute="top" secondItem="bWC-ht-p7u" secondAttribute="bottom" constant="24" id="b5z-Bj-Y2l"/>
                             <constraint firstItem="bWC-ht-p7u" firstAttribute="top" secondItem="em4-J3-iEm" secondAttribute="top" constant="19" id="dvk-hN-d60"/>
                             <constraint firstItem="em4-J3-iEm" firstAttribute="bottom" secondItem="bWC-ht-p7u" secondAttribute="bottom" constant="429" id="e6j-nN-5q0"/>
                             <constraint firstItem="bWC-ht-p7u" firstAttribute="leading" secondItem="em4-J3-iEm" secondAttribute="leading" constant="78" id="hLt-2P-R02"/>
                             <constraint firstItem="bWC-ht-p7u" firstAttribute="centerX" secondItem="WAs-mp-O1e" secondAttribute="centerX" constant="-2" id="iiQ-PT-qWI"/>
+                            <constraint firstItem="77m-KC-t9a" firstAttribute="centerX" secondItem="WAs-mp-O1e" secondAttribute="centerX" id="owv-KE-FSa"/>
                             <constraint firstItem="fqs-7S-cQV" firstAttribute="trailing" secondItem="bWC-ht-p7u" secondAttribute="trailing" id="z6M-vY-bh3"/>
                         </constraints>
                     </view>
@@ -240,11 +286,12 @@
                     <connections>
                         <outlet property="mainView" destination="bWC-ht-p7u" id="aeu-g4-WOC"/>
                         <outlet property="mainViewButton" destination="fqs-7S-cQV" id="5a6-ej-h1c"/>
+                        <outlet property="miaABCQuizCollectionView" destination="77m-KC-t9a" id="1kU-tm-7q7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc6-Nq-FQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2374" y="18"/>
+            <point key="canvasLocation" x="2373.8461538461538" y="17.772511848341232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ax6-Kq-kfT">
@@ -410,6 +457,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="1pc-27-NqA"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3lo-Ke-LHK">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                     </tabBar>

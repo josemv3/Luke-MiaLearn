@@ -12,4 +12,6 @@ class miABCCell: UICollectionViewCell {
     
     @IBOutlet var miABCCellLabel: UILabel!
     @IBOutlet var miABCCellImage: UIImageView!
+    
+    
 }

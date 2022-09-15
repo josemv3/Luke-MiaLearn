@@ -48,6 +48,9 @@
 		E0DF0F5628D1542500252498 /* fvQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F5028D1542500252498 /* fvQuiz.mp4 */; };
 		E0DF0F5728D1542500252498 /* evQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F5128D1542500252498 /* evQuiz.mp4 */; };
 		E0DF0F5828D1542500252498 /* cvQuiz.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0DF0F5228D1542500252498 /* cvQuiz.mp4 */; };
+		E0DF0F5C28D23E1300252498 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F5B28D23E1300252498 /* Question.swift */; };
+		E0DF0F5E28D2589D00252498 /* miABCQuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F5D28D2589D00252498 /* miABCQuizBrain.swift */; };
+		E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +97,9 @@
 		E0DF0F5028D1542500252498 /* fvQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fvQuiz.mp4; sourceTree = "<group>"; };
 		E0DF0F5128D1542500252498 /* evQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = evQuiz.mp4; sourceTree = "<group>"; };
 		E0DF0F5228D1542500252498 /* cvQuiz.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cvQuiz.mp4; sourceTree = "<group>"; };
+		E0DF0F5B28D23E1300252498 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		E0DF0F5D28D2589D00252498 /* miABCQuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miABCQuizBrain.swift; sourceTree = "<group>"; };
+		E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +160,9 @@
 				E0CF3C6E28CCE1CA000E59A0 /* miABC.swift */,
 				E0CF3C7028CCE86B000E59A0 /* miABCCell.swift */,
 				E03A68AC28CE5B1300520C51 /* miABCQuizController.swift */,
+				E0DF0F5B28D23E1300252498 /* Question.swift */,
+				E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */,
+				E0DF0F5D28D2589D00252498 /* miABCQuizBrain.swift */,
 				E0DF0F4B28D0FFAF00252498 /* miABCQuizCell.swift */,
 				E091A4D628CFA45700E7284C /* MiaTalksController.swift */,
 				E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */,
@@ -283,11 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0DF0F5E28D2589D00252498 /* miABCQuizBrain.swift in Sources */,
+				E0DF0F5C28D23E1300252498 /* Question.swift in Sources */,
 				E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */,
 				E0CF3C6D28CCD3E3000E59A0 /* MenuCell.swift in Sources */,
 				E0CF3C6F28CCE1CA000E59A0 /* miABC.swift in Sources */,
 				E0CF3C7128CCE86B000E59A0 /* miABCCell.swift in Sources */,
 				E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */,
+				E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */,
 				E0DF0F4C28D0FFAF00252498 /* miABCQuizCell.swift in Sources */,
 				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,

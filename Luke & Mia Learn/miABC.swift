@@ -196,15 +196,37 @@ class miABC: UIViewController, UICollectionViewDelegate {
     //MARK: - Alert Choices
     @objc func choseLesson() {
         let alert = UIAlertController(title: "More Lessons", message: "Chose A Lesson Bellow!", preferredStyle: .alert)
+        
+        //let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let imgTitle = UIImage(named:"gQuiz.svg")
+        let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 87, width: 30, height: 30))
+        imgViewTitle.image = imgTitle
+
+        alert.view.addSubview(imgViewTitle)
+        //alert.addAction(action)
+        
         alert.addAction(UIAlertAction(title: "ABC Objects", style: .destructive, handler: { (action) in
             print("ABC Objects")
+        
         }))
+        let imageView = UIImageView(frame: CGRect(x: 220, y: 92, width: 30, height: 30))
+        imageView.image = UIImage(named: "aQuiz.svg")
+        alert.view.addSubview(imageView)
+    
         alert.addAction(UIAlertAction(title: "Colors", style: .default, handler: { (action) in
             print("Colors")
         }))
+        let imageView2 = UIImageView(frame: CGRect(x: 220, y: 136, width: 30, height: 30))
+        imageView2.image = UIImage(named: "bQuiz.svg")
+        alert.view.addSubview(imageView2)
+        
         alert.addAction(UIAlertAction(title: "Shapes", style: .default, handler: { (action) in
             print("Shapes")
         }))
+        let imageView3 = UIImageView(frame: CGRect(x: 220, y: 180, width: 30, height: 30))
+        imageView3.image = UIImage(named: "cQuiz.svg")
+        alert.view.addSubview(imageView3)
+        
         alert.addAction(UIAlertAction(title: "Numbers", style: .destructive, handler: { (action) in
             print("Numbers")
         }))
@@ -214,7 +236,6 @@ class miABC: UIViewController, UICollectionViewDelegate {
         alert.addAction(UIAlertAction(title: "Toys", style: .destructive, handler: { (action) in
             print("Toys")
         }))
-        
         self.present(alert, animated: true)
     }
     

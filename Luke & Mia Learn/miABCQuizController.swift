@@ -9,14 +9,18 @@ import AVFoundation
 import AVKit
 
 private let videoNames: [String] =
-["apple", "bat", "cat", "dog", "egg", "frog", "giraffe", "hedgehog"]
+["apple", "bat", "cat", "dog", "egg", "frog", "giraffe", "hedgehog", "iceCream", "jump", "kite", "love", "moon", "numbers", "owl", "phone"]
 private let quizLowercaseLettersSet1 =
 ["a", "b", "c", "d", "e", "f"]
 private let quizLowercaseLettersSet2 =
-["g", "h", "a", "b", "c", "d"]
+["f", "g", "h", "i", "j", "k",]
+private let quizLowercaseLettersSet3 =
+["k", "l", "m", "n", "o", "p",]
+private let quizLowercaseLettersSet4 =
+["p", "q", "r", "s", "t", "u",]
 private let quizLetterImages =
-["a": "aQuiz", "b": "bQuiz", "c": "cQuiz", "d": "dQuiz", "e": "eQuiz", "f": "fQuiz", "g": "gQuiz", "h": "hQuiz"]
-let quizAlphabetLetters = ["a", "b", "c", "d", "e", "f", "g", "h"]
+["a": "aQuiz", "b": "bQuiz", "c": "cQuiz", "d": "dQuiz", "e": "eQuiz", "f": "fQuiz", "g": "gQuiz", "h": "hQuiz", "i": "iQuiz", "j": "jQuiz", "k": "kQuiz", "l": "lQuiz", "m": "mQuiz", "n": "nQuiz", "o": "oQuiz", "p": "pQuiz", "q": "qQuiz", "r": "rQuiz", "s": "sQuiz", "t": "tQuiz", "u": "uQuiz", "v": "vQuiz", "w": "wQuiz", "x": "xQuiz", "y": "yQuiz", "z": "zQuiz"]
+var quizAlphabetLetters = quizLowercaseLettersSet1
 //["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l" ,"m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 //private let quizLetterVideos = ["a": "avQuiz", "b": "bvQuiz", "c": "cvQuiz", "d": "dvQuiz", "e": "evQuiz", "f": "fvQuiz"]
@@ -36,6 +40,8 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     private var correctAnswer: String = "a"
    
     var currentLetterSet = ["a", "b", "c", "d", "e", "f"]
+    var score = 0
+    var userAnswer = false
     
     enum Section {
         case main
@@ -49,7 +55,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         
         snapshot.appendSections([.main])
-            snapshot.appendItems(currentLetterSet)
+        snapshot.appendItems(currentLetterSet)
         
         return snapshot
     }
@@ -85,10 +91,10 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     
     //MARK: - MainButton and Image
     @IBAction func mainViewButtonTap(_ sender: UIButton) {
-        videoCount += 1
-        if videoCount >= videoNames.count {
-            videoCount = 0
-        }
+        //videoCount += 1
+//        if videoCount >= videoNames.count {
+//            videoCount = 0
+//        }
         if correctAnswer == "f" {
             currentLetterSet.removeAll()
             currentLetterSet = getLetterSet(answer: correctAnswer)
@@ -98,7 +104,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         }
         viewDidDisappear(true)
         viewDidAppear(true)
-        correctAnswer = String(videoNames[videoCount].first ?? "a")
+        //getCorrectAnswer()
     }
     
     //MARK: - Compositional CV LAYOUT
@@ -143,20 +149,8 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
         //var initialSnapshot = NSDiffableDataSourceSnapshot<Int, String>()//SOURCE3
         
-        //trying to change letters with relaodData in mainButtonTap. Not working
-//        if self.correctAnswer == "a" {
-//            initialSnapshot.appendSections([.main])
-            //lazy var quizLetterRandom: [String] = quizLowercaseLettersSet1.shuffled()
-            //use quizLetterRandom to randomize how potential letter answers are displayed
-//            initialSnapshot.appendItems(quizLowercaseLettersSet1) //replace with quizLEtterRandom here
-//        } else if self.correctAnswer == "f" {
-//            initialSnapshot.appendSections([.main])
-//            initialSnapshot.appendItems(quizLowercaseLettersSet2)
-//        }
-        
         initialSnapshot.appendSections([.main])
         initialSnapshot.appendItems(currentLetterSet)
-        
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     
@@ -164,24 +158,78 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         print(item.description)
-        print("Correct answer", correctAnswer)
-        print("VideoCount", videoCount)
         //let charCorrectAnswer = Character(item)
+        //print("letterSet", currentLetterSet)
+        getCorrectAnswer()
+        if correctAnswer == "f" {
+            quizAlphabetLetters = quizLowercaseLettersSet2
+        } else if correctAnswer == "k" {
+            quizAlphabetLetters = quizLowercaseLettersSet3
+        } else if correctAnswer == "p" {
+            quizAlphabetLetters = quizLowercaseLettersSet4
+        }
+    
+        userAnswer = checkAnswer(itemPressed: item)
+        //checkAnswer checks item vs correctAnswer giving userAnswer T or F
         
-        print("letterSet", currentLetterSet)
-        if item == correctAnswer {
-            print("Correct!")
+        if userAnswer == true {
+            print("Change Image")
+            userGotItRight()
             
+            currentLetterSet.removeAll()
+            currentLetterSet = getLetterSet(answer: correctAnswer)
+            dataSource.apply(filteredItemsSnapshot)
+            
+            let systemSoundID: SystemSoundID = 1002
+            AudioServicesPlaySystemSound (systemSoundID)
         } else {
-            print("Incorrect, Try again!")
+            let systemSoundID: SystemSoundID = 1006
+            AudioServicesPlaySystemSound (systemSoundID)
         }
     }
     
-    func getLetterSet(answer: String) -> [String]{
+    func getCorrectAnswer() {
+        correctAnswer = String(videoNames[videoCount].first ?? "a")
+        //correctAnswer first letter of vid name
+    }
+    
+    func checkAnswer(itemPressed: String) -> Bool {
+        if itemPressed == correctAnswer {
+            score += 1
+            print("Correct")
+            
+            return true
+        }
+        print("Incorrect, Try again!")
+        return false
+    }
+    
+    func userGotItRight() {
+        videoCount += 1
+        getCorrectAnswer()
+        if videoCount >= videoNames.count {
+            videoCount = 0
+        }
+        viewDidDisappear(true)
+        viewDidAppear(true)
+        
+        
+        //play sounds for correct
+        //change background collor
+    }
+    
+    func gameOver() {
+        
+    }
+    
+    //This goes in quizBrain
+    func getLetterSet(answer: String) -> [String] {
         var selectedLetters: [String] = []
         selectedLetters.append(answer)
         var count = 1
-        for letter in quizAlphabetLetters.shuffled() {
+        for letter in quizAlphabetLetters {
+            //move .shuffled() to return array for all of them to be shuffled
+            //or append it at for specific loacation each time (or leave at #1 as is)
             if letter == answer {
                 continue
             }
@@ -191,6 +239,8 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
             selectedLetters.append(letter)
             count += 1
         }
-        return selectedLetters
+        return selectedLetters.shuffled()
     }
+    
+    
 }

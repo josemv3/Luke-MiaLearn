@@ -29,6 +29,16 @@
 		E0A6F94128D41BC900DC98FF /* kite.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F93928D41BC900DC98FF /* kite.mp4 */; };
 		E0A6F94228D41BC900DC98FF /* owl.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F93A28D41BC900DC98FF /* owl.mp4 */; };
 		E0A6F94328D41BC900DC98FF /* phone.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F93B28D41BC900DC98FF /* phone.mp4 */; };
+		E0A6F94E28D4345600DC98FF /* umbrella.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94428D4345600DC98FF /* umbrella.mp4 */; };
+		E0A6F94F28D4345600DC98FF /* xray.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94528D4345600DC98FF /* xray.mp4 */; };
+		E0A6F95028D4345600DC98FF /* volcano.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94628D4345600DC98FF /* volcano.mp4 */; };
+		E0A6F95128D4345600DC98FF /* wolf.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94728D4345600DC98FF /* wolf.mp4 */; };
+		E0A6F95228D4345600DC98FF /* yoga.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94828D4345600DC98FF /* yoga.mp4 */; };
+		E0A6F95328D4345600DC98FF /* question.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94928D4345600DC98FF /* question.mp4 */; };
+		E0A6F95428D4345600DC98FF /* zoo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94A28D4345600DC98FF /* zoo.mp4 */; };
+		E0A6F95528D4345600DC98FF /* rocket.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94B28D4345600DC98FF /* rocket.mp4 */; };
+		E0A6F95628D4345600DC98FF /* snake.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94C28D4345600DC98FF /* snake.mp4 */; };
+		E0A6F95728D4345600DC98FF /* tree.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94D28D4345600DC98FF /* tree.mp4 */; };
 		E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */; };
 		E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */; };
 		E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5928CCD322000E59A0 /* MenuController.swift */; };
@@ -84,6 +94,16 @@
 		E0A6F93928D41BC900DC98FF /* kite.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = kite.mp4; sourceTree = "<group>"; };
 		E0A6F93A28D41BC900DC98FF /* owl.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = owl.mp4; sourceTree = "<group>"; };
 		E0A6F93B28D41BC900DC98FF /* phone.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = phone.mp4; sourceTree = "<group>"; };
+		E0A6F94428D4345600DC98FF /* umbrella.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = umbrella.mp4; sourceTree = "<group>"; };
+		E0A6F94528D4345600DC98FF /* xray.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = xray.mp4; sourceTree = "<group>"; };
+		E0A6F94628D4345600DC98FF /* volcano.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = volcano.mp4; sourceTree = "<group>"; };
+		E0A6F94728D4345600DC98FF /* wolf.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = wolf.mp4; sourceTree = "<group>"; };
+		E0A6F94828D4345600DC98FF /* yoga.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoga.mp4; sourceTree = "<group>"; };
+		E0A6F94928D4345600DC98FF /* question.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = question.mp4; sourceTree = "<group>"; };
+		E0A6F94A28D4345600DC98FF /* zoo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = zoo.mp4; sourceTree = "<group>"; };
+		E0A6F94B28D4345600DC98FF /* rocket.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rocket.mp4; sourceTree = "<group>"; };
+		E0A6F94C28D4345600DC98FF /* snake.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = snake.mp4; sourceTree = "<group>"; };
+		E0A6F94D28D4345600DC98FF /* tree.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tree.mp4; sourceTree = "<group>"; };
 		E0CF3C5228CCD322000E59A0 /* Luke & Mia Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Luke & Mia Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +174,16 @@
 				E0A6F93728D41BC900DC98FF /* numbers.mp4 */,
 				E0A6F93A28D41BC900DC98FF /* owl.mp4 */,
 				E0A6F93B28D41BC900DC98FF /* phone.mp4 */,
+				E0A6F94928D4345600DC98FF /* question.mp4 */,
+				E0A6F94B28D4345600DC98FF /* rocket.mp4 */,
+				E0A6F94C28D4345600DC98FF /* snake.mp4 */,
+				E0A6F94D28D4345600DC98FF /* tree.mp4 */,
+				E0A6F94428D4345600DC98FF /* umbrella.mp4 */,
+				E0A6F94628D4345600DC98FF /* volcano.mp4 */,
+				E0A6F94728D4345600DC98FF /* wolf.mp4 */,
+				E0A6F94528D4345600DC98FF /* xray.mp4 */,
+				E0A6F94828D4345600DC98FF /* yoga.mp4 */,
+				E0A6F94A28D4345600DC98FF /* zoo.mp4 */,
 			);
 			path = videos;
 			sourceTree = "<group>";
@@ -289,30 +319,40 @@
 				E0CF3C8028CCF87C000E59A0 /* b.mp3 in Resources */,
 				E0594C6528CEFAE200EC2BE9 /* egg.mp4 in Resources */,
 				E0CF3C8228CCF87C000E59A0 /* dog.mp3 in Resources */,
+				E0A6F95628D4345600DC98FF /* snake.mp4 in Resources */,
 				E0CF3C7E28CCF87C000E59A0 /* elephant.mp3 in Resources */,
+				E0A6F94E28D4345600DC98FF /* umbrella.mp4 in Resources */,
 				E0A6F93D28D41BC900DC98FF /* moon.mp4 in Resources */,
 				E0A6F94228D41BC900DC98FF /* owl.mp4 in Resources */,
+				E0A6F95328D4345600DC98FF /* question.mp4 in Resources */,
 				E0DF0F5528D1542500252498 /* avQuiz.mp4 in Resources */,
 				E0594C6428CEFAE200EC2BE9 /* frog.mp4 in Resources */,
 				E0A6F93E28D41BC900DC98FF /* love.mp4 in Resources */,
+				E0A6F95428D4345600DC98FF /* zoo.mp4 in Resources */,
 				E0DF0F5628D1542500252498 /* fvQuiz.mp4 in Resources */,
 				E0594C6028CEFAE200EC2BE9 /* hedgehog.mp4 in Resources */,
 				E0CF3C8528CCF87C000E59A0 /* c.mp3 in Resources */,
 				E0CF3C8628CCF87C000E59A0 /* cat.mp3 in Resources */,
 				E0CF3C6528CCD324000E59A0 /* LaunchScreen.storyboard in Resources */,
 				E0CF3C6228CCD324000E59A0 /* Assets.xcassets in Resources */,
+				E0A6F95228D4345600DC98FF /* yoga.mp4 in Resources */,
 				E0594C6628CEFAE200EC2BE9 /* giraffe.mp4 in Resources */,
+				E0A6F94F28D4345600DC98FF /* xray.mp4 in Resources */,
+				E0A6F95528D4345600DC98FF /* rocket.mp4 in Resources */,
+				E0A6F95128D4345600DC98FF /* wolf.mp4 in Resources */,
 				E0A6F94128D41BC900DC98FF /* kite.mp4 in Resources */,
 				E0DF0F5428D1542500252498 /* dvQuiz.mp4 in Resources */,
 				E0CF3C5D28CCD322000E59A0 /* Main.storyboard in Resources */,
 				E0CF3C8328CCF87C000E59A0 /* a.mp3 in Resources */,
 				E0594C6228CEFAE200EC2BE9 /* cat.mp4 in Resources */,
+				E0A6F95028D4345600DC98FF /* volcano.mp4 in Resources */,
 				E0A6F93C28D41BC900DC98FF /* jump.mp4 in Resources */,
 				E0A6F93F28D41BC900DC98FF /* numbers.mp4 in Resources */,
 				E0A6F94328D41BC900DC98FF /* phone.mp4 in Resources */,
 				E0594C6728CEFAE200EC2BE9 /* bat.mp4 in Resources */,
 				E0DF0F5728D1542500252498 /* evQuiz.mp4 in Resources */,
 				E0CF3C8128CCF87C000E59A0 /* d.mp3 in Resources */,
+				E0A6F95728D4345600DC98FF /* tree.mp4 in Resources */,
 				E0594C6328CEFAE200EC2BE9 /* apple.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

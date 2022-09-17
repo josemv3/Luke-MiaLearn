@@ -10,6 +10,7 @@ import AVKit
 
 private let videoNames: [String] =
 ["apple", "bat", "cat", "dog", "egg", "frog", "giraffe", "hedgehog", "iceCream", "jump", "kite", "love", "moon", "numbers", "owl", "phone", "question", "rocket", "snake", "tree", "umbrella", "volcano", "wolf", "xray", "yoga", "zoo", "zoo"]
+//consplidate into 1 array or find another way of getting data.
 private let quizLowercaseLettersSet1 =
 ["a", "b", "c", "d", "e", "f"]
 private let quizLowercaseLettersSet2 =
@@ -24,11 +25,9 @@ private let quizLetterImages =
 ["a": "aQuiz", "b": "bQuiz", "c": "cQuiz", "d": "dQuiz", "e": "eQuiz", "f": "fQuiz", "g": "gQuiz", "h": "hQuiz", "i": "iQuiz", "j": "jQuiz", "k": "kQuiz", "l": "lQuiz", "m": "mQuiz", "n": "nQuiz", "o": "oQuiz", "p": "pQuiz", "q": "qQuiz", "r": "rQuiz", "s": "sQuiz", "t": "tQuiz", "u": "uQuiz", "v": "vQuiz", "w": "wQuiz", "x": "xQuiz", "y": "yQuiz", "z": "zQuiz"]
 var quizAlphabetLetters = quizLowercaseLettersSet1
 //["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l" ,"m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
 //private let quizLetterVideos = ["a": "avQuiz", "b": "bvQuiz", "c": "cvQuiz", "d": "dvQuiz", "e": "evQuiz", "f": "fvQuiz"]
 private var videoCount = 0
 private let largeBorderSize: CGFloat = 10
-
 
 class miABCQuizController: UIViewController, UICollectionViewDelegate {
 
@@ -50,6 +49,8 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         case main
     }
     
+   
+    
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     //var dataSource: UICollectionViewDiffableDataSource<Int, String>!//SOURCE1
     
@@ -63,8 +64,6 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         return snapshot
     }
     
-    
-    
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +74,11 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         mainView.layer.borderWidth = largeBorderSize
         configureDataSource()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        restartGame()
+    }
+    
     
     //MARK: - ViewDidApear Video Player
     override func viewDidAppear(_ animated: Bool) {
@@ -186,7 +190,6 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     }
     
     func getCorrectAnswer() {
-
         correctAnswer = String(videoNames[videoCount].first ?? "a")
         //correctAnswer first letter of vid name
     }
@@ -270,6 +273,4 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         }
         return selectedLetters.shuffled()
     }
-    
-    
 }

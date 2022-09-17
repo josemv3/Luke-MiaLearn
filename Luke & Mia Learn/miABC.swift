@@ -12,14 +12,21 @@
 import UIKit
 import AVFoundation
 
-
 private var mainImages: [String: String] = [
     "a": "alligator", "b": "bat", "c": "cat",
     "d": "dinosaur", "e": "elephant", "f": "frog",
-    "g": "giraffe", "h": "horse", "i": "iguana"]
+    "g": "giraffe", "h": "horse", "i": "iguana",
+    "j": "jellyfish", "k": "kangaroo", "l": "lion",
+    "m": "monkey", "n": "narwal", "o": "octopus",
+    "p": "penguin", "q": "queenAngelfish", "r": "raccoon",
+    "s": "snake", "t": "turtle", "u": "umbrellaBird",
+    "v": "volture", "w": "walrus", "x": "xraytetra",
+    "y": "yak", "z": "zebra"]
 
-private var lowercaseLetters = [
-    "a", "b", "c", "d", "e", "f", "g", "h", "i"]
+private var lowercaseLetters =
+//["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
 
 private var mainImageBackgrounds = ["mainBackImage1", "mainBackImage2"]
 private var mainWordButtonTitle = ""

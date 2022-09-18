@@ -12,13 +12,14 @@
 import UIKit
 import AVFoundation
 
+//Main ABC lesson
 private var mainImages: [String: String] = [
     "a": "alligator", "b": "bat", "c": "cat",
     "d": "dinosaur", "e": "elephant", "f": "frog",
     "g": "giraffe", "h": "horse", "i": "iguana",
     "j": "jellyfish", "k": "kangaroo", "l": "lion",
     "m": "monkey", "n": "narwal", "o": "octopus",
-    "p": "penguin", "q": "queenAngelfish", "r": "raccoon",
+    "p": "penguin", "q": "queen angelfish", "r": "raccoon",
     "s": "snake", "t": "turtle", "u": "umbrellaBird",
     "v": "volture", "w": "walrus", "x": "xraytetra",
     "y": "yak", "z": "zebra"]
@@ -27,8 +28,22 @@ private var lowercaseLetters =
 //["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
+//First alt lesson colors
+private let colors =
+["black", "blue", "brown", "cyan", "green",
+ "magenta", "maroon", "orange", "pink", "purple",
+ "red", "teal", "yellow", "grey", "white"]
+
+private let colorMainImages: [String: String] =
+["black": "black butterfly", "blue": "blue bunny", "brown": "brown bear",
+ "cyan": "cyan circle", "green": "green gecko", "grey": "ghost", "magenta": "magenta makeup",
+ "maroon": "maroon milk", "orange": "orange octopus", "pink": "pink piggy",
+ "purple": "purple pizza", "red": "red robot", "teal": "teal tank",
+ "yellow": "yellow yak", "white": "white web"]
+
 
 private var mainImageBackgrounds = ["mainBackImage1", "mainBackImage2"]
+//background off-circle
 private var mainWordButtonTitle = ""
 private let smallBorderSize: CGFloat = 2
 private let mediumBorderSize: CGFloat = 4
@@ -44,6 +59,10 @@ class miABC: UIViewController, UICollectionViewDelegate {
     
     var currentAnimation = 0
     var audioPlayer: AVAudioPlayer?
+    var currentABCSet = lowercaseLetters
+    var currentMainImage = mainImages
+    var currentItemBackgroundColor =  "mainOrange"
+    var cellItemBorderColor = "mainOrange"
     
     enum Section {
         case main
@@ -61,6 +80,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
         
         mainImageBack.layer.borderWidth = mediumBorderSize //4
         mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
+        
+        //I like this better that off circle. Remove background image
+        mainImageBack.backgroundColor = UIColor(named: "mainBlue")
         
         configureDataSource()
         navigationItem.title = "miABC"
@@ -104,7 +126,10 @@ class miABC: UIViewController, UICollectionViewDelegate {
             
             cell.miABCCellLabel.text = item.description
             cell.miABCCellImage.image = UIImage(named: item.description)
-            
+            cell.miABCCellImage.backgroundColor = UIColor(named: self.currentItemBackgroundColor)
+            cell.miABCCellImage.layer.borderColor = UIColor(named: self.cellItemBorderColor)?.cgColor
+            cell.miABCCellImage.layer.borderWidth = 4
+                
             return cell
         }
         
@@ -112,7 +137,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
         //var initialSnapshot = NSDiffableDataSourceSnapshot<Int, String>()//SOURCE3
         
         initialSnapshot.appendSections([.main])
-        initialSnapshot.appendItems(lowercaseLetters)
+        initialSnapshot.appendItems(currentABCSet)
         
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
@@ -124,9 +149,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
     
         //mainLabel.text = mainImages[item]
         mainWordButtonTitle = mainImages[item] ?? "greeting"
-        mainWordButton.setTitle(mainImages[item.description], for: .normal)
-        mainImagebutton.setImage(UIImage(named: mainImages[item] ?? "greeting"), for: .normal)
-        mainImageBack.image = UIImage(named: mainImageBackgrounds.randomElement() ?? "mainBackImage1")
+        mainWordButton.setTitle(currentMainImage[item.description], for: .normal)
+        mainImagebutton.setImage(UIImage(named: currentMainImage[item] ?? "greeting"), for: .normal)
+        //mainImageBack.image = UIImage(named: mainImageBackgrounds.randomElement() ?? "mainBackImage1")
         self.mainImagebutton.transform = .identity //read bellow:
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
         //mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 16) //not working
@@ -147,8 +172,8 @@ class miABC: UIViewController, UICollectionViewDelegate {
     func playSound(soundName: String) {
 
             let urlString = Bundle.main.path(forResource: soundName, ofType: "mp3")
-            //let pathToSound = Bundle.main.path(forResource: soundName, ofType: ".mp3") ?? "a.mp3"
-            //let url = URL(fileURLWithPath: pathToSound)
+            let pathToSound = Bundle.main.path(forResource: soundName, ofType: ".mp3") ?? "a.mp3"
+            let url = URL(fileURLWithPath: pathToSound)
             do {
                 try AVAudioSession.sharedInstance().setMode(.default)
                 try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
@@ -157,9 +182,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
                     return
                 }
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-                //audioPlayer = try AVAudioPlayer(contentsOf: url)
-                //audioPlayer?.volume = 0.50
-                //audioPlayer?.play()
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.volume = 0.50
+                audioPlayer?.play()
                 guard let audioPlayer = audioPlayer else {
                     return
                 }
@@ -205,28 +230,47 @@ class miABC: UIViewController, UICollectionViewDelegate {
         let alert = UIAlertController(title: "More Lessons", message: "Chose A Lesson Bellow!", preferredStyle: .alert)
         
         //let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-        let imgTitle = UIImage(named:"gQuiz.svg")
-        let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 87, width: 30, height: 30))
-        imgViewTitle.image = imgTitle
-
-        alert.view.addSubview(imgViewTitle)
-        //alert.addAction(action)
+        ///left image
+        //let imgTitle = UIImage(named:"red.png")
+        //let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 87, width: 30, height: 30))
+        //imgViewTitle.image = imgTitle
+        //alert.view.addSubview(imgViewTitle)
+        //alert.addAction(action) not needed
         
-        alert.addAction(UIAlertAction(title: "ABC Objects", style: .destructive, handler: { (action) in
-            print("ABC Objects")
-        
-        }))
-        let imageView = UIImageView(frame: CGRect(x: 220, y: 92, width: 30, height: 30))
-        imageView.image = UIImage(named: "aQuiz.svg")
-        alert.view.addSubview(imageView)
-    
+        ///First Alt lesson:
         alert.addAction(UIAlertAction(title: "Colors", style: .default, handler: { (action) in
             print("Colors")
+            //put changes in function and get colors right. Button orange
+            self.currentABCSet = colors
+            self.currentMainImage = colorMainImages
+            self.mainImagebutton.setImage(UIImage(named: self.currentMainImage["red"] ?? "greeting"), for: .normal)
+            
+            self.view.backgroundColor = UIColor(named: "mainBlue")
+            self.collectionView.backgroundColor = UIColor(named: "mainOrange")
+            self.cellItemBorderColor = "mainBlue"
+            self.currentItemBackgroundColor = "mainWhite"
+            self.mainWordButton.backgroundColor = UIColor(named: "mainOrange")
+            self.mainWordButton.layer.borderWidth = 6
+            self.mainWordButton.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
+            self.mainImageBack.backgroundColor = .white
+            self.mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
+            self.mainImageBack.layer.borderWidth = 6
+            self.configureDataSource()
+        }))
+        ///right image
+        let imageView = UIImageView(frame: CGRect(x: 220, y: 82, width: 40, height: 40))
+        imageView.image = UIImage(named: "red.png")
+        alert.view.addSubview(imageView)
+        
+        ///Second Alt lesson:
+        alert.addAction(UIAlertAction(title: "ABC Objects", style: .default, handler: { (action) in
+            print("ABC Objects")
         }))
         let imageView2 = UIImageView(frame: CGRect(x: 220, y: 136, width: 30, height: 30))
         imageView2.image = UIImage(named: "bQuiz.svg")
         alert.view.addSubview(imageView2)
         
+        ///Third Alt lesson:
         alert.addAction(UIAlertAction(title: "Shapes", style: .default, handler: { (action) in
             print("Shapes")
         }))
@@ -234,9 +278,12 @@ class miABC: UIViewController, UICollectionViewDelegate {
         imageView3.image = UIImage(named: "cQuiz.svg")
         alert.view.addSubview(imageView3)
         
-        alert.addAction(UIAlertAction(title: "Numbers", style: .destructive, handler: { (action) in
+        ///Fourth Alt lesson:
+        alert.addAction(UIAlertAction(title: "Numbers", style: .default, handler: { (action) in
             print("Numbers")
         }))
+        
+        ///Fifth Alt lesson:
         alert.addAction(UIAlertAction(title: "Instruments to Play", style: .destructive, handler: { (action) in
             print("Instruments to Play")
         }))

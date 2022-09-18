@@ -14,9 +14,9 @@ private let mediumBorderSize: CGFloat = 4
 
 class MenuController: UICollectionViewController {
 
-    let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWithLukeLogo", "findMeLogo2"]
-    let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWithLukeLogo": "Learn with Luke", "findMeLogo2": "Find me"]
-    let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWithLukeLogo": "Age: 4+", "findMeLogo2": "Age: 5+"]
+    let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo"]
+    let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me"]
+    let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+"]
     
     enum Section {
         case main

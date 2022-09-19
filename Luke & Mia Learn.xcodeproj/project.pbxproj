@@ -188,6 +188,13 @@
 			path = videos;
 			sourceTree = "<group>";
 		};
+		E0B546FE28D8C57100D13189 /* Mia Talks Audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Mia Talks Audio";
+			sourceTree = "<group>";
+		};
 		E0CF3C4928CCD322000E59A0 = {
 			isa = PBXGroup;
 			children = (
@@ -228,13 +235,14 @@
 				E0CF3C6628CCD324000E59A0 /* Info.plist */,
 				E0CF3C6128CCD324000E59A0 /* Assets.xcassets */,
 				E0CF3C5E28CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld */,
+				E0B546FE28D8C57100D13189 /* Mia Talks Audio */,
 				E03A68AE28CE719200520C51 /* videos */,
-				E0CF3C7228CCF856000E59A0 /* Audio */,
+				E0CF3C7228CCF856000E59A0 /* miABC Audio */,
 			);
 			path = "Luke & Mia Learn";
 			sourceTree = "<group>";
 		};
-		E0CF3C7228CCF856000E59A0 /* Audio */ = {
+		E0CF3C7228CCF856000E59A0 /* miABC Audio */ = {
 			isa = PBXGroup;
 			children = (
 				E0CF3C7928CCF87C000E59A0 /* a.mp3 */,
@@ -248,7 +256,7 @@
 				E0CF3C7328CCF87C000E59A0 /* e.mp3 */,
 				E0CF3C7428CCF87C000E59A0 /* elephant.mp3 */,
 			);
-			path = Audio;
+			path = "miABC Audio";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

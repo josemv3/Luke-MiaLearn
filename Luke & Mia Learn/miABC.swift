@@ -151,19 +151,11 @@ class miABC: UIViewController, UICollectionViewDelegate {
         mainWordButtonTitle = mainImages[item] ?? "greeting"
         mainWordButton.setTitle(currentMainImage[item.description], for: .normal)
         mainImagebutton.setImage(UIImage(named: currentMainImage[item] ?? "greeting"), for: .normal)
-        //mainImageBack.image = UIImage(named: mainImageBackgrounds.randomElement() ?? "mainBackImage1")
+        //mainImageBack.image = UIImage(named: mainImageBackgrounds.randomElement() ?? "mainBackImage1") stopped using this image for solid mainBlue background
         self.mainImagebutton.transform = .identity //read bellow:
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
         //mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 16) //not working
-        
-        //trying to change background image each time:
-//        if mainImageBack.image?.description == "mainBackImage1" {
-//
-//            mainImageBack.image = UIImage(named: "mainBackImage2")
-//        } else {
-//            mainImageBack.image = UIImage(named: "mainBackImage1")
-//        }
-        
+                
         playSound(soundName: item)
     }
     
@@ -249,10 +241,11 @@ class miABC: UIViewController, UICollectionViewDelegate {
             self.collectionView.backgroundColor = UIColor(named: "mainOrange")
             self.cellItemBorderColor = "mainBlue"
             self.currentItemBackgroundColor = "mainWhite"
-            self.mainWordButton.backgroundColor = UIColor(named: "mainOrange")
+            self.mainWordButton.backgroundColor = UIColor.systemGray6
             self.mainWordButton.layer.borderWidth = 6
             self.mainWordButton.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
-            self.mainImageBack.backgroundColor = .white
+            self.mainWordButton.titleLabel?.textColor = UIColor(named: "mainBlue")
+            self.mainImageBack.backgroundColor = .systemGray6
             self.mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
             self.mainImageBack.layer.borderWidth = 6
             self.configureDataSource()

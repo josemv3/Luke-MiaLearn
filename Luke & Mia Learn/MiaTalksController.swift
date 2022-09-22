@@ -63,7 +63,7 @@ class MiaTalksController: UICollectionViewController {
             count: groupItemCount
         )
         group.contentInsets = NSDirectionalEdgeInsets(
-            top: 5,
+            top: 1,
             leading: 5,
             bottom: 0,
             trailing: 0
@@ -114,7 +114,7 @@ class MiaTalksController: UICollectionViewController {
             if kind == "section-footer-element-kind" {
                 
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath) as! MiaTalksFooterView
-                footer.backgroundColor = .systemGray5
+                footer.backgroundColor = UIColor(named: "miaTalksOrange")
                 
                 return footer
             }
@@ -133,6 +133,7 @@ class MiaTalksController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         print(item.description)
+        
         
     }
 }

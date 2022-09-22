@@ -110,7 +110,7 @@ class MenuController: UICollectionViewController {
             self.performSegue(withIdentifier: "goTomiabcQuiz", sender: self)
         } else if item == "learnWLukeLogo" {
             self.performSegue(withIdentifier: "goToLWLuke", sender: self)
-        } else {
+        } else if item == "miaTalksLogo"{
             self.performSegue(withIdentifier: "goToMiaTalks", sender: self)
         }
     }

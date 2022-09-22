@@ -9,5 +9,15 @@ import UIKit
 
 class MiaTalksCell: UICollectionViewCell {
     @IBOutlet var miaTalkCellLabel: UILabel!
+    @IBOutlet weak var miaTalksButton: UIButton!
+    
+    
+    @IBAction func miaTalksButtonTap(_ sender: UIButton) {
+        sender.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        sender.alpha = 1.0
+            print(self.miaTalkCellLabel.text ?? "error")
+        }
+    }
     
 }

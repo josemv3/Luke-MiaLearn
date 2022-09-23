@@ -41,8 +41,8 @@ class MiaTalksFooterView: UICollectionReusableView {
             leftImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             leftImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
         ])
-        leftImage.backgroundColor = UIColor(named: "miaTalksAltBG")
-        leftImage.image = UIImage(named: "humanFace")
+        //leftImage.backgroundColor = UIColor(named: "miaTalksAltBG")
+        leftImage.image = UIImage(named: "alienFace")
         
         //Middle Label
         let labelFooter = UILabel()
@@ -71,7 +71,7 @@ class MiaTalksFooterView: UICollectionReusableView {
             middleImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
         ])
         middleImage.backgroundColor = UIColor(named: "miaTalksAltBG")
-        middleImage.image = UIImage(named: "alienFace")
+        middleImage.image = UIImage(named: "humanFace")
         
         //right ImageView
         let rightImage = UIImageView()
@@ -90,5 +90,6 @@ class MiaTalksFooterView: UICollectionReusableView {
     }
     @objc func didTapButton() {
         print("yes")
+        //leftFooterBtn.backgroundColor = .red
     }
 }

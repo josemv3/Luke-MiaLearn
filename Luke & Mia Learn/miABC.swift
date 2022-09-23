@@ -259,30 +259,34 @@ class miABC: UIViewController, UICollectionViewDelegate {
         alert.addAction(UIAlertAction(title: "ABC Objects", style: .default, handler: { (action) in
             print("ABC Objects")
         }))
-        let imageView2 = UIImageView(frame: CGRect(x: 220, y: 136, width: 30, height: 30))
-        imageView2.image = UIImage(named: "bQuiz.svg")
+        let imageView2 = UIImageView(frame: CGRect(x: 220, y: 127, width: 40, height: 40))
+        imageView2.image = UIImage(named: "miABCLogo.svg")
         alert.view.addSubview(imageView2)
         
         ///Third Alt lesson:
         alert.addAction(UIAlertAction(title: "Shapes", style: .default, handler: { (action) in
             print("Shapes")
         }))
-        let imageView3 = UIImageView(frame: CGRect(x: 220, y: 180, width: 30, height: 30))
-        imageView3.image = UIImage(named: "cQuiz.svg")
+        let imageView3 = UIImageView(frame: CGRect(x: 220, y: 172, width: 40, height: 40))
+        imageView3.image = UIImage(named: "heart.png")
         alert.view.addSubview(imageView3)
         
         ///Fourth Alt lesson:
-        alert.addAction(UIAlertAction(title: "Numbers", style: .default, handler: { (action) in
-            print("Numbers")
-        }))
-        
-        ///Fifth Alt lesson:
-        alert.addAction(UIAlertAction(title: "Instruments to Play", style: .destructive, handler: { (action) in
-            print("Instruments to Play")
-        }))
-        alert.addAction(UIAlertAction(title: "Toys", style: .destructive, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Toys", style: .default, handler: { (action) in
             print("Toys")
         }))
+        let imageView4 = UIImageView(frame: CGRect(x: 220, y: 217, width: 40, height: 40))
+        imageView4.image = UIImage(named: "toys.png")
+        alert.view.addSubview(imageView4)
+        
+        ///Fifth Alt lesson:
+        alert.addAction(UIAlertAction(title: "Instruments to Play", style: .default, handler: { (action) in
+            print("Instruments to Play")
+        }))
+        let imageView5 = UIImageView(frame: CGRect(x: 220, y: 262, width: 40, height: 40))
+        imageView5.image = UIImage(named: "instruments.png")
+        alert.view.addSubview(imageView5)
+        
         self.present(alert, animated: true)
     }
     

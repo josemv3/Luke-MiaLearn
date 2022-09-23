@@ -105,7 +105,7 @@ class MiaTalksController: UICollectionViewController {
             //cell.miaTalksButton.setTitle(miaTAlksButtonText[item], for: .normal)
             //cell.miaTalksButton.imageView?.contentMode = UIView.ContentMode.
             cell.miaTalksButton.setImage(UIImage(named: miaTAlksButtonText[item]!), for: .normal)
-
+            
             return cell
         })
         
@@ -132,7 +132,9 @@ class MiaTalksController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        print(item.description)
+        print("yes", item.description)
+        
+        
         
         
     }

@@ -15,14 +15,18 @@ class LearnWithLukeController: UICollectionViewController {
     private var itemsByInitialLetter = [Character: [String]]()
     private var initialLetters = [Character]()
     private let states: [String] = [
-        "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
-        "Florida","Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
-        "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
-        "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
-        "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
-        "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
-        "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
-    ]
+//        "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+//        "Florida","Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+//        "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+//        "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
+//        "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+//        "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
+//        "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+//    ]
+    
+    "Sun", "Venus", "Mercury", "Earth", "Earths moon", "Mars", "NASA", "Jupiter", "Saturn", "Uranus", "Neptune", "Asteroid belt", "Comets", "Astronaut", "Shuttle", "Satelite", "Rocket", "Solar System", "Pluto", "Black Hole"]
+    
+    //private let space: [String] =
     
     private lazy var filteredItems: [String] = states
     private var dataSource: UICollectionViewDiffableDataSource<Character, String>!
@@ -41,13 +45,16 @@ class LearnWithLukeController: UICollectionViewController {
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        collectionView.backgroundColor = UIColor(named: "learnWLukeBlue")
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         collectionView.register(
             LearnWithLukeHeader.self,
             forSupplementaryViewOfKind: LearnWithLukeController.sectionHeaderElementKind,
             withReuseIdentifier: "Header"
         )
-        navigationItem.title = "U.S. States"
+        navigationItem.title = "Learn with Luke"
         
         itemsByInitialLetter = states.reduce([:]) { existing, element in
             return existing.merging([element.first!:[element]]) { old, new in
@@ -120,15 +127,29 @@ class LearnWithLukeController: UICollectionViewController {
         dataSource = UICollectionViewDiffableDataSource<Character, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LearnWithLukeCell
             
+            //cell.layer.cornerRadius = 23
             cell.learnWithLukeCellLabel.text = item
+            cell.learnWithLukeCellLabel.font = UIFont(name: "Chalkduster", size: 22)
+            cell.learnWithLukeCellLabel.textColor = UIColor(named: "learnWLukeGreen")
+            cell.learnWithLukeCellLabel.backgroundColor = UIColor(named: "learnWLukePink")
+            cell.learnWithLukeCellLabel.layer.cornerRadius = 10
+            cell.learnWithLukeCellLabel.layer.masksToBounds = true
+            
+            cell.learnWithLukeImage.image = UIImage(named: item)
+            //cell.learnWithLukeImage.layer.cornerRadius = 10
+            
+            cell.learnWLukeBG.layer.cornerRadius = 10
             
             return cell
         })
         
         dataSource.supplementaryViewProvider = { collectionView, kind, indexPath -> UICollectionReusableView? in
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! LearnWithLukeHeader
+            let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! LearnWithLukeHeader
             header.label.text = String(self.initialLetters[indexPath.section])
             header.label.font = UIFont(name: "Chalkduster", size: 18)
+            header.label.textColor = UIColor(named: "learnWLukeGreen")
+            
             return header
         }
         

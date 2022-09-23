@@ -364,7 +364,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nl-E3-Ngz">
@@ -428,34 +428,42 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jog-cm-FjL">
-                                            <rect key="frame" x="0.0" y="0.0" width="202" height="51"/>
-                                            <color key="backgroundColor" red="0.4039215686" green="0.67450980390000004" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="8" y="15" width="207" height="21"/>
+                                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starBG" translatesAutoresizingMaskIntoConstraints="NO" id="Pgl-7S-tTj">
+                                            <rect key="frame" x="231" y="0.0" width="161" height="51"/>
+                                        </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="horse" translatesAutoresizingMaskIntoConstraints="NO" id="Emq-hS-T29">
-                                            <rect key="frame" x="202" y="0.0" width="190" height="51"/>
-                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <rect key="frame" x="231" y="0.0" width="161" height="51"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="190" id="zmM-nk-zGB"/>
+                                                <constraint firstAttribute="width" constant="161" id="zmM-nk-zGB"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Pgl-7S-tTj" firstAttribute="trailing" secondItem="Emq-hS-T29" secondAttribute="trailing" id="8nR-eB-lm2"/>
                                         <constraint firstAttribute="trailing" secondItem="Emq-hS-T29" secondAttribute="trailing" id="9ab-7g-QEf"/>
                                         <constraint firstItem="Jog-cm-FjL" firstAttribute="centerY" secondItem="R8T-1g-0VO" secondAttribute="centerY" id="ARN-Zc-dmV"/>
+                                        <constraint firstItem="Pgl-7S-tTj" firstAttribute="leading" secondItem="Emq-hS-T29" secondAttribute="leading" id="E2r-gi-gN4"/>
                                         <constraint firstItem="Jog-cm-FjL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="R8T-1g-0VO" secondAttribute="leading" id="LFj-OQ-mw4"/>
-                                        <constraint firstItem="Emq-hS-T29" firstAttribute="leading" secondItem="Jog-cm-FjL" secondAttribute="trailing" id="O0C-dc-PDo"/>
-                                        <constraint firstItem="Jog-cm-FjL" firstAttribute="top" secondItem="R8T-1g-0VO" secondAttribute="top" id="Qv9-tT-4sd"/>
-                                        <constraint firstItem="Emq-hS-T29" firstAttribute="bottom" secondItem="Jog-cm-FjL" secondAttribute="bottom" id="VvY-ue-BNT"/>
-                                        <constraint firstItem="Emq-hS-T29" firstAttribute="top" secondItem="Jog-cm-FjL" secondAttribute="top" id="k5v-lo-ZSS"/>
-                                        <constraint firstItem="Jog-cm-FjL" firstAttribute="centerX" secondItem="R8T-1g-0VO" secondAttribute="centerX" constant="-95" id="vDy-Rv-8Qv"/>
+                                        <constraint firstItem="Emq-hS-T29" firstAttribute="leading" secondItem="Jog-cm-FjL" secondAttribute="trailing" constant="16" id="O0C-dc-PDo"/>
+                                        <constraint firstItem="Jog-cm-FjL" firstAttribute="top" secondItem="R8T-1g-0VO" secondAttribute="top" constant="15" id="Qv9-tT-4sd"/>
+                                        <constraint firstItem="Emq-hS-T29" firstAttribute="bottom" secondItem="Jog-cm-FjL" secondAttribute="bottom" constant="15" id="VvY-ue-BNT"/>
+                                        <constraint firstItem="Pgl-7S-tTj" firstAttribute="bottom" secondItem="Emq-hS-T29" secondAttribute="bottom" id="aeP-ys-raV"/>
+                                        <constraint firstItem="Pgl-7S-tTj" firstAttribute="top" secondItem="Emq-hS-T29" secondAttribute="top" id="fPc-ah-hGm"/>
+                                        <constraint firstItem="Emq-hS-T29" firstAttribute="top" secondItem="Jog-cm-FjL" secondAttribute="top" constant="-15" id="k5v-lo-ZSS"/>
+                                        <constraint firstItem="Jog-cm-FjL" firstAttribute="centerX" secondItem="R8T-1g-0VO" secondAttribute="centerX" constant="-84.5" id="vDy-Rv-8Qv"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="392" height="51"/>
                                 <connections>
+                                    <outlet property="learnWLukeBG" destination="Pgl-7S-tTj" id="QY8-or-X3w"/>
                                     <outlet property="learnWithLukeCellLabel" destination="Jog-cm-FjL" id="yXD-GH-h9w"/>
+                                    <outlet property="learnWithLukeImage" destination="Emq-hS-T29" id="dl9-ZK-HzN"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -468,7 +476,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTL-fL-F9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="959"/>
+            <point key="canvasLocation" x="544.61538461538464" y="958.29383886255914"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e2a-zS-RmW">
@@ -496,6 +504,7 @@
         <image name="greeting" width="200" height="150"/>
         <image name="horse" width="200" height="150"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="starBG" width="150" height="150"/>
         <namedColor name="mainBlue">
             <color red="0.28200000524520874" green="0.42399999499320984" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -517,11 +526,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

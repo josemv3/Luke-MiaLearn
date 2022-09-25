@@ -30,7 +30,7 @@ private var videoCount = 0
 private let largeBorderSize: CGFloat = 10
 
 class miABCQuizController: UIViewController, UICollectionViewDelegate {
-
+    
     var quizBrain = QuizBrain()
     @IBOutlet weak var miaABCQuizCollectionView: UICollectionView!
     @IBOutlet var mainView: UIImageView!
@@ -39,7 +39,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     var player: AVPlayer!
     var playerLayer: AVPlayerLayer!
     private var correctAnswer: String = "a"
-   
+    
     var currentLetterSet = ["a", "b", "c", "d", "e", "f"]
     var score = 0
     var incorrectChoices = 0
@@ -49,7 +49,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         case main
     }
     
-   
+    
     
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     //var dataSource: UICollectionViewDiffableDataSource<Int, String>!//SOURCE1
@@ -68,8 +68,9 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         miaABCQuizCollectionView.collectionViewLayout = configureLayout()
-        navigationItem.title = "miABC Quiz"
+        title = "miABC Quiz"
         
+        //navigationController?.navigationBar.backgroundColor = UIColor.green
         mainView.layer.borderColor = UIColor(named: "quizBrownLight")?.cgColor
         mainView.layer.borderWidth = largeBorderSize
         configureDataSource()
@@ -166,7 +167,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         } else if correctAnswer == "u" {
             quizAlphabetLetters = quizLowercaseLettersSet5
         }
-    
+        
         userAnswer = checkAnswer(itemPressed: item)
         //checkAnswer checks item vs correctAnswer giving userAnswer T or F
         

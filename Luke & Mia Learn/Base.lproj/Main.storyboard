@@ -82,14 +82,14 @@
                     <navigationItem key="navigationItem" id="Wc8-3t-dcu"/>
                     <connections>
                         <segue destination="GMY-Wi-i2S" kind="show" identifier="goToMiABC" id="wa9-o0-Hog"/>
-                        <segue destination="rSV-uA-wfO" kind="show" identifier="goTomiabcQuiz" id="myA-fL-Y2y"/>
-                        <segue destination="32j-3l-d7r" kind="show" identifier="goToMiaTalks" id="nTF-I8-KMx"/>
                         <segue destination="CgC-cQ-X70" kind="show" identifier="goToLWLuke" id="TSi-sC-Nfa"/>
+                        <segue destination="x7J-02-dUQ" kind="show" identifier="goTomiabcQuiz" id="kxq-uV-8Xg"/>
+                        <segue destination="Oeu-rd-wdS" kind="show" identifier="goToMiaTalks" id="vDh-Pv-D9j"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sc-ks-AdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="18"/>
+            <point key="canvasLocation" x="342" y="-677"/>
         </scene>
         <!--MiABC-->
         <scene sceneID="I27-Ki-gGz">
@@ -213,10 +213,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bWC-ht-p7u">
-                                <rect key="frame" x="78" y="110" width="230" height="222"/>
+                                <rect key="frame" x="78" y="110" width="230" height="271"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqs-7S-cQV">
-                                <rect key="frame" x="78" y="110" width="230" height="222"/>
+                                <rect key="frame" x="78" y="110" width="230" height="271"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -224,7 +224,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="77m-KC-t9a">
-                                <rect key="frame" x="0.0" y="356" width="390" height="405"/>
+                                <rect key="frame" x="0.0" y="405" width="390" height="405"/>
                                 <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="Ln9-IT-qdY"/>
                                 <cells>
@@ -293,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc6-Nq-FQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2373.8461538461538" y="17.772511848341232"/>
+            <point key="canvasLocation" x="1562" y="66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ax6-Kq-kfT">
@@ -321,27 +321,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntz-yX-inT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-136.23188405797103" y="18.75"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="cDk-DQ-vh9">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rSV-uA-wfO" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="puQ-sL-Yur"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="50o-ha-ENm">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="quizDarke Brown"/>
-                        <color key="selectedImageTintColor" name="quizBrownLight"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="x7J-02-dUQ" kind="relationship" relationship="viewControllers" id="6Qo-Jt-die"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="seT-2R-QJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1562" y="18"/>
+            <point key="canvasLocation" x="-380" y="-677"/>
         </scene>
         <!--Mia Talks-->
         <scene sceneID="ZzS-eo-a7r">
@@ -408,7 +388,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pC-Zj-k7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2374" y="694"/>
+            <point key="canvasLocation" x="1562" y="749"/>
         </scene>
         <!--Learn With Luke Controller-->
         <scene sceneID="yBp-CE-bqo">
@@ -473,31 +453,113 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="red-bh-pWS"/>
+                    <connections>
+                        <segue destination="0xY-G4-6Yg" kind="show" identifier="goToLWLDetail" id="SPB-8d-VuY"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTL-fL-F9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="544.61538461538464" y="958.29383886255914"/>
+            <point key="canvasLocation" x="1562" y="1430"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="e2a-zS-RmW">
+        <!--LearnW Luke Detail Controller-->
+        <scene sceneID="aRR-il-3jZ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="32j-3l-d7r" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="1pc-27-NqA"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3lo-Ke-LHK">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="miaTalksOrange"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                <viewController id="0xY-G4-6Yg" customClass="LearnWLukeDetailController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bhX-re-lED">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-OE-Drs">
+                                <rect key="frame" x="0.0" y="91" width="390" height="334"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eyi-gY-9tj">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="151"/>
+                                    </imageView>
+                                    <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzK-cM-Ruy">
+                                        <rect key="frame" x="0.0" y="171" width="390" height="163"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                        <color key="textColor" name="learnWLukeGreen"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5jl-cx-pk8">
+                                <rect key="frame" x="0.0" y="424" width="390" height="219"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npf-TF-OVt">
+                                        <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="219"/>
+                                        <color key="backgroundColor" name="learnWLukeGreen"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button" buttonSize="large"/>
+                                        <connections>
+                                            <action selector="topLBtnTap:" destination="0xY-G4-6Yg" eventType="touchUpInside" id="mh5-Z8-NBh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtM-Xy-kJy">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="193.33333333333337" height="219"/>
+                                        <color key="backgroundColor" name="learnWLukeGreen"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="topLBtnTap:" destination="0xY-G4-6Yg" eventType="touchUpInside" id="30M-ri-cxe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCR-m8-Y7D">
+                                <rect key="frame" x="0.0" y="623" width="390" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sd-8c-4Ma">
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="200"/>
+                                        <color key="backgroundColor" name="learnWLukeGreen"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="bottomBtnTap:" destination="0xY-G4-6Yg" eventType="touchUpInside" id="Aq5-IB-6gh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leC-3I-7kg">
+                                        <rect key="frame" x="195" y="0.0" width="195" height="200"/>
+                                        <color key="backgroundColor" name="learnWLukeGreen"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="bottomBtnTap:" destination="0xY-G4-6Yg" eventType="touchUpInside" id="Vyl-Rx-5dF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UcB-aD-PCH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Daq-OE-Drs" firstAttribute="top" secondItem="UcB-aD-PCH" secondAttribute="top" id="12l-kk-278"/>
+                            <constraint firstItem="UcB-aD-PCH" firstAttribute="bottom" secondItem="5jl-cx-pk8" secondAttribute="bottom" constant="167" id="7Uu-Ov-Zyq"/>
+                            <constraint firstItem="5jl-cx-pk8" firstAttribute="trailing" secondItem="Daq-OE-Drs" secondAttribute="trailing" id="OMy-lc-Jka"/>
+                            <constraint firstItem="Daq-OE-Drs" firstAttribute="leading" secondItem="UcB-aD-PCH" secondAttribute="leading" id="Qjj-Mw-ibd"/>
+                            <constraint firstItem="UCR-m8-Y7D" firstAttribute="leading" secondItem="5jl-cx-pk8" secondAttribute="leading" id="VQz-EA-ssR"/>
+                            <constraint firstItem="UCR-m8-Y7D" firstAttribute="top" secondItem="bhX-re-lED" secondAttribute="top" constant="623" id="Zg5-8f-Rrw"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="UCR-m8-Y7D" secondAttribute="bottom" constant="-13" id="Zt5-0T-szS"/>
+                            <constraint firstItem="5jl-cx-pk8" firstAttribute="leading" secondItem="Daq-OE-Drs" secondAttribute="leading" id="cfl-zs-XAf"/>
+                            <constraint firstItem="UcB-aD-PCH" firstAttribute="bottom" secondItem="Daq-OE-Drs" secondAttribute="bottom" constant="385" id="fF7-YF-z7H"/>
+                            <constraint firstItem="5jl-cx-pk8" firstAttribute="top" secondItem="UcB-aD-PCH" secondAttribute="top" constant="333" id="l6x-0S-h0n"/>
+                            <constraint firstItem="UCR-m8-Y7D" firstAttribute="trailing" secondItem="5jl-cx-pk8" secondAttribute="trailing" id="puH-Eb-zcG"/>
+                            <constraint firstItem="Daq-OE-Drs" firstAttribute="centerX" secondItem="bhX-re-lED" secondAttribute="centerX" id="ro4-c1-dOJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iwi-c3-MyU"/>
                     <connections>
-                        <segue destination="Oeu-rd-wdS" kind="relationship" relationship="viewControllers" id="eXf-R7-cFJ"/>
+                        <outlet property="bottomButtonLeft" destination="2Sd-8c-4Ma" id="kLK-Hz-IK6"/>
+                        <outlet property="bottomButtonsRight" destination="leC-3I-7kg" id="O5J-hL-Nqe"/>
+                        <outlet property="mainImage" destination="Eyi-gY-9tj" id="3R7-Xg-IAS"/>
+                        <outlet property="mainLabel" destination="IzK-cM-Ruy" id="qYs-qY-zqu"/>
+                        <outlet property="topButtonLeft" destination="npf-TF-OVt" id="VUf-Ef-fMD"/>
+                        <outlet property="topButtonsRight" destination="xtM-Xy-kJy" id="dZj-GW-sJx"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mL9-X7-Uk0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDP-3V-EyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="738"/>
+            <point key="canvasLocation" x="2277" y="1430"/>
         </scene>
     </scenes>
     <resources>
@@ -505,6 +567,9 @@
         <image name="horse" width="200" height="150"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="starBG" width="150" height="150"/>
+        <namedColor name="learnWLukeGreen">
+            <color red="0.011764705882352941" green="0.7686274509803922" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="mainBlue">
             <color red="0.28200000524520874" green="0.42399999499320984" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -513,12 +578,6 @@
         </namedColor>
         <namedColor name="miaTalksOrange">
             <color red="1" green="0.79600000381469727" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="quizBrownLight">
-            <color red="0.9179999828338623" green="0.88999998569488525" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="quizDarke Brown">
-            <color red="0.76099997758865356" green="0.68999999761581421" blue="0.57300001382827759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="quizLightBlue">
             <color red="0.63099998235702515" green="0.79199999570846558" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

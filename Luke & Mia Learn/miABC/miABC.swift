@@ -63,32 +63,28 @@ class miABC: UIViewController, UICollectionViewDelegate {
     var currentMainImage = mainImages
     var currentItemBackgroundColor =  "mainOrange"
     var cellItemBorderColor = "mainOrange"
+    var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     
     enum Section {
         case main
     }
     
-    var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
-    //var dataSource: UICollectionViewDiffableDataSource<Int, String>!//SOURCE1
-    
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "miABC"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
+        
         collectionView.collectionViewLayout = configureLayout()
         collectionView.layer.borderWidth = smallBorderSize //2
         collectionView.layer.borderColor = UIColor(named: "mainBlue")?.cgColor
         
         mainImageBack.layer.borderWidth = mediumBorderSize //4
         mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
-        
-        //I like this better that off circle. Remove background image
         mainImageBack.backgroundColor = UIColor(named: "mainBlue")
-        
-        configureDataSource()
-        navigationItem.title = "miABC"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
         mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 21)//doesnt work
-        
+        configureDataSource()
     }
     
     //MARK: - Compositional CV LAYOUT
@@ -129,63 +125,60 @@ class miABC: UIViewController, UICollectionViewDelegate {
             cell.miABCCellImage.backgroundColor = UIColor(named: self.currentItemBackgroundColor)
             cell.miABCCellImage.layer.borderColor = UIColor(named: self.cellItemBorderColor)?.cgColor
             cell.miABCCellImage.layer.borderWidth = 4
-                
+            
             return cell
         }
         
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
-        //var initialSnapshot = NSDiffableDataSourceSnapshot<Int, String>()//SOURCE3
         
         initialSnapshot.appendSections([.main])
         initialSnapshot.appendItems(currentABCSet)
         
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
-   
+    
     //MARK: - Selected Item
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         print(item)
-    
+        
         //mainLabel.text = mainImages[item]
         mainWordButtonTitle = mainImages[item] ?? "greeting"
         mainWordButton.setTitle(currentMainImage[item.description], for: .normal)
         mainImagebutton.setImage(UIImage(named: currentMainImage[item] ?? "greeting"), for: .normal)
-        //mainImageBack.image = UIImage(named: mainImageBackgrounds.randomElement() ?? "mainBackImage1") stopped using this image for solid mainBlue background
-        self.mainImagebutton.transform = .identity //read bellow:
+       
+        self.mainImagebutton.transform = .identity //read bellow (reset animation):
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
-        //mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 16) //not working
-                
         playSound(soundName: item)
     }
     
     //MARK: - Sound Player
     
     func playSound(soundName: String) {
-
-            let urlString = Bundle.main.path(forResource: soundName, ofType: "mp3")
-            let pathToSound = Bundle.main.path(forResource: soundName, ofType: ".mp3") ?? "a.mp3"
-            let url = URL(fileURLWithPath: pathToSound)
-            do {
-                try AVAudioSession.sharedInstance().setMode(.default)
-                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                
-                guard let urlString = urlString else {
-                    return
-                }
-                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-                audioPlayer = try AVAudioPlayer(contentsOf: url)
-                audioPlayer?.volume = 0.50
-                audioPlayer?.play()
-                guard let audioPlayer = audioPlayer else {
-                    return
-                }
-                audioPlayer.play()
-
-            } catch {
-                print("error")
+        
+        let urlString = Bundle.main.path(forResource: soundName, ofType: "mp3")
+        let pathToSound = Bundle.main.path(forResource: soundName, ofType: ".mp3") ?? "a.mp3"
+        let url = URL(fileURLWithPath: pathToSound)
+        do {
+            try AVAudioSession.sharedInstance().setMode(.default)
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            
+            guard let urlString = urlString else {
+                return
             }
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.volume = 0.50
+            audioPlayer?.play()
+            guard let audioPlayer = audioPlayer else {
+                return
+            }
+            audioPlayer.play()
+            
+        } catch {
+            print("error")
         }
+    }
     
     //MARK: - Main Image Button (top)
     @IBAction func mainImageButtonPressed(_ sender: UIButton) {
@@ -201,7 +194,6 @@ class miABC: UIViewController, UICollectionViewDelegate {
                 self.mainImagebutton.transform = CGAffineTransform(rotationAngle: .pi)
             case 3:
                 self.mainImagebutton.transform = .identity
-           
             default:
                 break
             }
@@ -221,17 +213,20 @@ class miABC: UIViewController, UICollectionViewDelegate {
     @objc func choseLesson() {
         let alert = UIAlertController(title: "More Lessons", message: "Chose A Lesson Bellow!", preferredStyle: .alert)
         
-        //let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         ///left image
-        //let imgTitle = UIImage(named:"red.png")
-        //let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 87, width: 30, height: 30))
-        //imgViewTitle.image = imgTitle
-        //alert.view.addSubview(imgViewTitle)
-        //alert.addAction(action) not needed
+        let imgTitle = UIImage(named:"blue.png")
+        let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 82, width: 40, height: 40))
+        imgViewTitle.image = imgTitle
+        alert.view.addSubview(imgViewTitle)
+        
         
         ///First Alt lesson:
         alert.addAction(UIAlertAction(title: "Colors", style: .default, handler: { (action) in
+            
             print("Colors")
+            
+            //if let weakSelf = self { grab all the stuff below, self = weakSelf}
+            
             //put changes in function and get colors right. Button orange
             self.currentABCSet = colors
             self.currentMainImage = colorMainImages
@@ -244,12 +239,15 @@ class miABC: UIViewController, UICollectionViewDelegate {
             self.mainWordButton.backgroundColor = UIColor.systemGray6
             self.mainWordButton.layer.borderWidth = 6
             self.mainWordButton.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
-            self.mainWordButton.titleLabel?.textColor = UIColor(named: "mainBlue")
+            self.mainWordButton.setTitleColor(UIColor(named: "mainBlue"), for: .normal)
+            self.mainWordButton.titleLabel?.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
             self.mainImageBack.backgroundColor = .systemGray6
             self.mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
             self.mainImageBack.layer.borderWidth = 6
             self.configureDataSource()
         }))
+        
+        //Create func for creating imageViews - replace all this duplicated code.
         ///right image
         let imageView = UIImageView(frame: CGRect(x: 220, y: 82, width: 40, height: 40))
         imageView.image = UIImage(named: "red.png")

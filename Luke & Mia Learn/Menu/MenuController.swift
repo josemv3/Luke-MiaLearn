@@ -8,12 +8,12 @@
 
 import UIKit
 
-private let reuseIdentifier = "cell"
 
-private let mediumBorderSize: CGFloat = 4
 
 class MenuController: UICollectionViewController {
-
+    private let reuseIdentifier = "cell"
+    private let mediumBorderSize: CGFloat = 4
+    
     let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo"]
     let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me"]
     let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+"]
@@ -77,20 +77,19 @@ class MenuController: UICollectionViewController {
     private func createDataSource() {
         ///CELL
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MenuCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! MenuCell
             
             cell.menuImageview.image = UIImage(named: item.description)
             cell.menuLessonLabel.text = self.lessonLabelName[item.description]
             cell.menuAgeLabel.text = self.lessonLabelAge[item.description]
 
-            cell.menuImageview.layer.borderWidth = mediumBorderSize
+            cell.menuImageview.layer.borderWidth = self.mediumBorderSize
             cell.menuImageview.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
             
             return cell
         })
         
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
-        //var initialSnapshot = NSDiffableDataSourceSnapshot<Int, String>()//SOURCE3
         
         initialSnapshot.appendSections([.main])
         initialSnapshot.appendItems(lessonIconImage)
@@ -102,8 +101,7 @@ class MenuController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         print(item.description)
-        //if item.desc == "miABCLogo"
-        //performSegue "goToMiABC" goTomiabcQuiz
+       
         if item == "miABCLogo" {
             self.performSegue(withIdentifier: "goToMiABC", sender: self)
         } else if item == "miABCQuizLogo" {

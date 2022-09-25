@@ -41,6 +41,7 @@ class LearnWithLukeController: UICollectionViewController {
         
         return snapshot
     }
+    var itemChosen = ""
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -55,6 +56,7 @@ class LearnWithLukeController: UICollectionViewController {
             withReuseIdentifier: "Header"
         )
         navigationItem.title = "Learn with Luke"
+        
         
         itemsByInitialLetter = states.reduce([:]) { existing, element in
             return existing.merging([element.first!:[element]]) { old, new in
@@ -159,7 +161,21 @@ class LearnWithLukeController: UICollectionViewController {
     //MARK: - DidSelectItem
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        print(item.description)
+        print("hello", item.description)
+        itemChosen = item
+        
+        if item == "Asteroid belt" {
+            self.performSegue(withIdentifier: "goToLWLDetail", sender: self)
+        } else {
+            print("no Segue")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToLWLDetail" {
+            let destinationVC = segue.destination as! LearnWLukeDetailController
+            destinationVC.learnWLukeLessonChoice = itemChosen
+        }
     }
 }
 

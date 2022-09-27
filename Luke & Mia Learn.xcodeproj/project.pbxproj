@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */; };
 		E03A68AD28CE5B1300520C51 /* miABCQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A68AC28CE5B1300520C51 /* miABCQuizController.swift */; };
 		E0594C6028CEFAE200EC2BE9 /* hedgehog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */; };
 		E0594C6128CEFAE200EC2BE9 /* dog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5928CEFAE200EC2BE9 /* dog.mp4 */; };
@@ -76,6 +77,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksHeaderView.swift; sourceTree = "<group>"; };
 		E03A68AC28CE5B1300520C51 /* miABCQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miABCQuizController.swift; sourceTree = "<group>"; };
 		E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hedgehog.mp4; sourceTree = "<group>"; };
 		E0594C5928CEFAE200EC2BE9 /* dog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dog.mp4; path = ../../../../../Downloads/dog.mp4; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 			children = (
 				E091A4D628CFA45700E7284C /* MiaTalksController.swift */,
 				E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */,
+				E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */,
 				E08D165228DBA63D00447D69 /* MiaTalksFooterView.swift */,
 			);
 			path = "Mia Talks";
@@ -451,6 +454,7 @@
 				E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */,
 				E08D165328DBA63D00447D69 /* MiaTalksFooterView.swift in Sources */,
 				E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */,
+				E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */,
 				E0DF0F4C28D0FFAF00252498 /* miABCQuizCell.swift in Sources */,
 				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,

@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class MenuController: UICollectionViewController {
     private let reuseIdentifier = "cell"
     private let mediumBorderSize: CGFloat = 4
@@ -17,12 +15,11 @@ class MenuController: UICollectionViewController {
     let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo"]
     let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me"]
     let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+"]
-    
+    var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
+
     enum Section {
         case main
     }
-    
-    var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -287,6 +287,4 @@ class miABC: UIViewController, UICollectionViewDelegate {
         
         self.present(alert, animated: true)
     }
-    
-    
 }

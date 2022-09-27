@@ -31,28 +31,19 @@ private let largeBorderSize: CGFloat = 10
 
 class miABCQuizController: UIViewController, UICollectionViewDelegate {
     
-    var quizBrain = QuizBrain()
     @IBOutlet weak var miaABCQuizCollectionView: UICollectionView!
     @IBOutlet var mainView: UIImageView!
     @IBOutlet var mainViewButton: UIButton!
+    var quizBrain = QuizBrain()
     var audioPlayer: AVAudioPlayer!
     var player: AVPlayer!
     var playerLayer: AVPlayerLayer!
     private var correctAnswer: String = "a"
-    
     var currentLetterSet = ["a", "b", "c", "d", "e", "f"]
     var score = 0
     var incorrectChoices = 0
     var userAnswer = false
-    
-    enum Section {
-        case main
-    }
-    
-    
-    
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
-    //var dataSource: UICollectionViewDiffableDataSource<Int, String>!//SOURCE1
     
     //TO CHANGE ITEMS 1
     var filteredItemsSnapshot: NSDiffableDataSourceSnapshot<Section, String> {
@@ -64,13 +55,17 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         return snapshot
     }
     
+    enum Section {
+        case main
+    }
+    
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         miaABCQuizCollectionView.collectionViewLayout = configureLayout()
         title = "miABC Quiz"
         
-        //navigationController?.navigationBar.backgroundColor = UIColor.green
+        navigationController?.navigationBar.backgroundColor = UIColor.green
         mainView.layer.borderColor = UIColor(named: "quizBrownLight")?.cgColor
         mainView.layer.borderWidth = largeBorderSize
         configureDataSource()
@@ -79,7 +74,6 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         restartGame()
     }
-    
     
     //MARK: - ViewDidApear Video Player
     override func viewDidAppear(_ animated: Bool) {
@@ -235,7 +229,6 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
                 self.restartGame()
             }))
             self.present(alert2, animated: true)
-            
         }))
         alert.addAction(UIAlertAction(title: "Restart Game", style: .default, handler: { (action) in
             print("Restart Game")

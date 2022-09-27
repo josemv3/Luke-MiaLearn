@@ -28,7 +28,6 @@ class MiaTalksFooterView: UICollectionReusableView {
     }
     
     func setupViews() {
-        // Insert layout code here...
         
         //Left Button
         leftFooterBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +47,7 @@ class MiaTalksFooterView: UICollectionReusableView {
         leftFooterBtn.setTitleColor(UIColor(named: "miaTalksBlueGreen"), for: .normal)
         leftFooterBtn.setImage(UIImage(named: "alienFace"), for: .normal)
         
-        //middle BUtton
+        //middle Button
         middleFooterBtn.translatesAutoresizingMaskIntoConstraints = false
         addSubview(middleFooterBtn)
         middleFooterBtn.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)

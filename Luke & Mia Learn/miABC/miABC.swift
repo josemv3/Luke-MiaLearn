@@ -32,14 +32,14 @@ private var lowercaseLetters =
 private let colors =
 ["black", "blue", "brown", "cyan", "green",
  "magenta", "maroon", "orange", "pink", "purple",
- "red", "teal", "yellow", "grey", "white"]
+ "red", "teal", "yellow", "grey", "white", "violet"]
 
 private let colorMainImages: [String: String] =
 ["black": "black butterfly", "blue": "blue bunny", "brown": "brown bear",
  "cyan": "cyan circle", "green": "green gecko", "grey": "ghost", "magenta": "magenta makeup",
  "maroon": "maroon milk", "orange": "orange octopus", "pink": "pink piggy",
  "purple": "purple pizza", "red": "red robot", "teal": "teal tank",
- "yellow": "yellow yak", "white": "white web"]
+ "yellow": "yellow yak", "white": "white web", "violet": "black butterfly"]
 
 
 private var mainImageBackgrounds = ["mainBackImage1", "mainBackImage2"]
@@ -61,7 +61,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
     var audioPlayer: AVAudioPlayer?
     var currentABCSet = lowercaseLetters
     var currentMainImage = mainImages
-    var currentItemBackgroundColor =  "mainOrange"
+    var currentItemBackgroundColor: UIColor =  UIColor(named: "mainOrange" ) ?? .black
     var cellItemBorderColor = "mainOrange"
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     
@@ -79,11 +79,14 @@ class miABC: UIViewController, UICollectionViewDelegate {
         collectionView.collectionViewLayout = configureLayout()
         collectionView.layer.borderWidth = smallBorderSize //2
         collectionView.layer.borderColor = UIColor(named: "mainBlue")?.cgColor
+        view.backgroundColor = .systemGroupedBackground
         
         mainImageBack.layer.borderWidth = mediumBorderSize //4
         mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
         mainImageBack.backgroundColor = UIColor(named: "mainBlue")
         mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 21)//doesnt work
+        mainWordButton.layer.borderWidth = mediumBorderSize
+        mainWordButton.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
         configureDataSource()
     }
     
@@ -122,7 +125,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
             
             cell.miABCCellLabel.text = item.description
             cell.miABCCellImage.image = UIImage(named: item.description)
-            cell.miABCCellImage.backgroundColor = UIColor(named: self.currentItemBackgroundColor)
+            cell.miABCCellImage.backgroundColor = self.currentItemBackgroundColor
             cell.miABCCellImage.layer.borderColor = UIColor(named: self.cellItemBorderColor)?.cgColor
             cell.miABCCellImage.layer.borderWidth = 4
             
@@ -232,18 +235,18 @@ class miABC: UIViewController, UICollectionViewDelegate {
             self.currentMainImage = colorMainImages
             self.mainImagebutton.setImage(UIImage(named: self.currentMainImage["red"] ?? "greeting"), for: .normal)
             
-            self.view.backgroundColor = UIColor(named: "mainBlue")
-            self.collectionView.backgroundColor = UIColor(named: "mainOrange")
-            self.cellItemBorderColor = "mainBlue"
-            self.currentItemBackgroundColor = "mainWhite"
-            self.mainWordButton.backgroundColor = UIColor.systemGray6
-            self.mainWordButton.layer.borderWidth = 6
-            self.mainWordButton.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
-            self.mainWordButton.setTitleColor(UIColor(named: "mainBlue"), for: .normal)
+            //self.view.backgroundColor = UIColor(named: "mainBlue")
+            //self.collectionView.backgroundColor = UIColor(named: "mainOrange")
+            //self.cellItemBorderColor = "quizDarkBrown"
+            //self.currentItemBackgroundColor = UIColor(named: "mainCream") ?? .black
+            //self.mainWordButton.backgroundColor = UIColor.systemGroupedBackground
+            //self.mainWordButton.layer.borderWidth = 6
+            //self.mainWordButton.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
+            //self.mainWordButton.setTitleColor(UIColor(named: "quizDarkBrown"), for: .normal)
             self.mainWordButton.titleLabel?.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
-            self.mainImageBack.backgroundColor = .systemGray6
-            self.mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
-            self.mainImageBack.layer.borderWidth = 6
+            //self.mainImageBack.backgroundColor = .systemGroupedBackground
+            //self.mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
+            //self.mainImageBack.layer.borderWidth = 6
             self.configureDataSource()
         }))
         

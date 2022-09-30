@@ -99,14 +99,17 @@ class MenuController: UICollectionViewController {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         print(item.description)
        
-        if item == "miABCLogo" {
+        switch item {
+        case "miABCLogo":
             self.performSegue(withIdentifier: "goToMiABC", sender: self)
-        } else if item == "miABCQuizLogo" {
+        case "miABCQuizLogo":
             self.performSegue(withIdentifier: "goTomiabcQuiz", sender: self)
-        } else if item == "learnWLukeLogo" {
+        case "learnWLukeLogo":
             self.performSegue(withIdentifier: "goToLWLuke", sender: self)
-        } else if item == "miaTalksLogo"{
+        case "miaTalksLogo":
             self.performSegue(withIdentifier: "goToMiaTalks", sender: self)
+        default:
+            print("error") //replace with miABC
         }
     }
 }

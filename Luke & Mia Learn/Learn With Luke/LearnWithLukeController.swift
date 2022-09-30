@@ -148,6 +148,7 @@ class LearnWithLukeController: UICollectionViewController {
         dataSource.supplementaryViewProvider = { collectionView, kind, indexPath -> UICollectionReusableView? in
             let header = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! LearnWithLukeHeader
+            
             header.label.text = String(self.initialLetters[indexPath.section])
             header.label.font = UIFont(name: "Chalkduster", size: 18)
             header.label.textColor = UIColor(named: "learnWLukeGreen")
@@ -173,8 +174,8 @@ class LearnWithLukeController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToLWLDetail" {
-            let destinationVC = segue.destination as! LearnWLukeDetailController
-            destinationVC.learnWLukeLessonChoice = itemChosen
+            let destinationVC = segue.destination as! LearnWithLukeDetailCVController
+            //destinationVC.learnWLukeLessonChoice = itemChosen
         }
     }
 }

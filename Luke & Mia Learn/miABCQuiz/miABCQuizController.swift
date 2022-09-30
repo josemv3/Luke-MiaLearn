@@ -152,15 +152,18 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         //print("letterSet", currentLetterSet)
         
         getCorrectAnswer()
-        if correctAnswer == "f" {
+        
+        switch correctAnswer {
+        case "f":
             quizAlphabetLetters = quizLowercaseLettersSet2
-        } else if correctAnswer == "k" {
+        case "k":
             quizAlphabetLetters = quizLowercaseLettersSet3
-        } else if correctAnswer == "p" {
+        case "p":
             quizAlphabetLetters = quizLowercaseLettersSet4
-        } else if correctAnswer == "u" {
+        default: //"u"
             quizAlphabetLetters = quizLowercaseLettersSet5
         }
+        
         
         userAnswer = checkAnswer(itemPressed: item)
         //checkAnswer checks item vs correctAnswer giving userAnswer T or F

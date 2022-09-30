@@ -454,7 +454,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="red-bh-pWS"/>
                     <connections>
-                        <segue destination="0xY-G4-6Yg" kind="show" identifier="goToLWLDetail" id="SPB-8d-VuY"/>
+                        <segue destination="fUe-tz-8eU" kind="show" identifier="goToLWLDetail" id="ZF3-YD-5PK"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTL-fL-F9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -470,13 +470,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-OE-Drs">
-                                <rect key="frame" x="0.0" y="91" width="390" height="334"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="378"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eyi-gY-9tj">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="151"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="329.66666666666669"/>
                                     </imageView>
                                     <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzK-cM-Ruy">
-                                        <rect key="frame" x="0.0" y="171" width="390" height="163"/>
+                                        <rect key="frame" x="0.0" y="349.66666666666669" width="390" height="28.333333333333314"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                         <color key="textColor" name="learnWLukeGreen"/>
                                         <nil key="highlightedColor"/>
@@ -484,10 +484,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5jl-cx-pk8">
-                                <rect key="frame" x="0.0" y="424" width="390" height="219"/>
+                                <rect key="frame" x="0.0" y="380" width="390" height="263"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npf-TF-OVt">
-                                        <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="219"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="193.66666666666666" height="263"/>
                                         <color key="backgroundColor" name="learnWLukeGreen"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button" buttonSize="large"/>
@@ -496,7 +496,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtM-Xy-kJy">
-                                        <rect key="frame" x="196.66666666666663" y="0.0" width="193.33333333333337" height="219"/>
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="193.33333333333337" height="263"/>
                                         <color key="backgroundColor" name="learnWLukeGreen"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -559,7 +559,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wDP-3V-EyN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277" y="1430"/>
+            <point key="canvasLocation" x="3162" y="1441"/>
+        </scene>
+        <!--Learn With Luke DetailCV Controller-->
+        <scene sceneID="RhH-B0-Sz5">
+            <objects>
+                <collectionViewController id="fUe-tz-8eU" customClass="LearnWithLukeDetailCVController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="I5C-ui-qWD">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewLayout key="collectionViewLayout" id="eh8-sG-xc1"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lwlDCell" id="2bs-Yu-dXt" customClass="LWLDetailCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="J4Y-hU-05s">
+                                    <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkS-6B-LaC">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQ8-fA-IZa">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
+                                            <connections>
+                                                <action selector="lwlDCellButtonTap:" destination="2bs-Yu-dXt" eventType="touchUpInside" id="BdM-2O-2nt"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="aQ8-fA-IZa" secondAttribute="trailing" id="2Pd-bL-WDr"/>
+                                        <constraint firstItem="DkS-6B-LaC" firstAttribute="leading" secondItem="J4Y-hU-05s" secondAttribute="leading" id="DxI-3Z-ENe"/>
+                                        <constraint firstAttribute="bottom" secondItem="aQ8-fA-IZa" secondAttribute="bottom" id="P6f-w9-9UL"/>
+                                        <constraint firstItem="DkS-6B-LaC" firstAttribute="centerY" secondItem="J4Y-hU-05s" secondAttribute="centerY" id="SOk-Q5-qtK"/>
+                                        <constraint firstItem="aQ8-fA-IZa" firstAttribute="leading" secondItem="J4Y-hU-05s" secondAttribute="leading" id="X9W-5s-0P5"/>
+                                        <constraint firstItem="DkS-6B-LaC" firstAttribute="top" secondItem="J4Y-hU-05s" secondAttribute="top" id="cb2-C4-ZfX"/>
+                                        <constraint firstItem="DkS-6B-LaC" firstAttribute="centerX" secondItem="J4Y-hU-05s" secondAttribute="centerX" id="oH2-uP-xLi"/>
+                                        <constraint firstItem="aQ8-fA-IZa" firstAttribute="top" secondItem="J4Y-hU-05s" secondAttribute="top" id="xed-RM-nqS"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="75" height="80"/>
+                                <connections>
+                                    <outlet property="lwlDCellButton" destination="aQ8-fA-IZa" id="0qX-Jw-beI"/>
+                                    <outlet property="lwlDCellLabel" destination="DkS-6B-LaC" id="hUg-Vh-4wU"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="fUe-tz-8eU" id="95Y-Jc-8a7"/>
+                            <outlet property="delegate" destination="fUe-tz-8eU" id="Abg-Nq-LPE"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="nyI-M1-cAu"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Us6-QB-X3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2367.6923076923076" y="1429.6208530805686"/>
         </scene>
     </scenes>
     <resources>

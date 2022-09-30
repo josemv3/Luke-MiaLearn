@@ -175,7 +175,7 @@ class LearnWithLukeController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToLWLDetail" {
             let destinationVC = segue.destination as! LearnWithLukeDetailCVController
-            //destinationVC.learnWLukeLessonChoice = itemChosen
+            destinationVC.learnWLukeLessonChoice = itemChosen
         }
     }
 }

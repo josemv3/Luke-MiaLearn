@@ -13,11 +13,12 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
     
     private var lwlLowercaseLetters = [
         "a", "b", "c", "d"]
-    private var lwlButtonText: [String: String] = ["a": "apple", "b": "burger", "c": "carrot", "d": "celery"]
+    private var lwlButtonText: [String: String] = ["a": "1lwl", "b": "2lwl", "c": "3lwl", "d": "playlwl"]
     
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     static let sectionFooterElementKind = "section-footer-element-kind" //footerSetup1
     static let sectionHeaderElementKind = "section-header-element-kind"//headerSetup1
+    var learnWLukeLessonChoice = ""
     
     enum Section {
         case main
@@ -79,17 +80,19 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
             layoutSize: headerSize,
             elementKind: LearnWithLukeDetailCVController.sectionHeaderElementKind,
             alignment: .top)
+        sectionHeader.pinToVisibleBounds = true
         
         //FooterSetup3
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(34)
+            heightDimension: .absolute(64)
         )
         
         let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: footerSize,
             elementKind: LearnWithLukeDetailCVController.sectionFooterElementKind,
             alignment: .bottom)
+        //sectionFooter.pinToVisibleBounds = true
         
         //section.boundarySupplementaryItems = [sectionFooter] //before header
         section.boundarySupplementaryItems = [sectionHeader, sectionFooter]
@@ -110,7 +113,8 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
             
             cell.lwlDCellLabel.text = item
             cell.lwlDCellButton.setImage(UIImage(named: self.lwlButtonText[item]!), for: .normal)
-            cell.lwlDCellButton.backgroundColor = .orange
+            cell.lwlDCellButton.contentMode = .scaleAspectFit
+            cell.lwlDCellButton.backgroundColor = UIColor(named: "learnWLukeGreen")
             
             return cell
         })
@@ -121,7 +125,7 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
             if kind == "section-footer-element-kind" {
                 
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LWLFooter", for: indexPath) as! LWLDetailFooter
-                footer.backgroundColor = UIColor(named: "miaTalksOrange")
+                footer.backgroundColor = UIColor(named: "learnWLukePurple ")
                 
                 return footer
         
@@ -129,9 +133,18 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
                 
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LWLHeader", for: indexPath) as! LWLDetailHeader
                 
-                header.backgroundColor = .blue
+                header.backgroundColor = .white
                 header.lwlHeaderImage.backgroundColor = .cyan
-                header.lwlHeaderLabel.backgroundColor = .systemTeal
+                //header.lwlHeaderLabel.backgroundColor = .systemTeal
+                
+                header.lwlHeaderImage.image = UIImage(named: "asteroidBetween")
+                header.lwlHeaderImage.contentMode = .scaleAspectFill
+                
+                header.lwlHeaderLabel.contentMode = .scaleToFill
+                header.lwlHeaderLabel.font = UIFont(name: "Chalkduster", size: 14)
+                header.lwlHeaderLabel.textColor = UIColor(named: "learnWLukePink")
+                header.lwlHeaderLabel.numberOfLines = 4
+                header.lwlHeaderLabel.text = "The asteroid belt is located between Mars and Jupiter, the 4th and 5th planets in our solar system."
                 
                 return header
             }

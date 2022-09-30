@@ -473,10 +473,10 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="378"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eyi-gY-9tj">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="329.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="195"/>
                                     </imageView>
                                     <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzK-cM-Ruy">
-                                        <rect key="frame" x="0.0" y="349.66666666666669" width="390" height="28.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="215" width="390" height="163"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                         <color key="textColor" name="learnWLukeGreen"/>
                                         <nil key="highlightedColor"/>
@@ -584,10 +584,12 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQ8-fA-IZa">
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQ8-fA-IZa">
                                             <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="1lwl">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            </buttonConfiguration>
                                             <connections>
                                                 <action selector="lwlDCellButtonTap:" destination="2bs-Yu-dXt" eventType="touchUpInside" id="BdM-2O-2nt"/>
                                             </connections>
@@ -624,6 +626,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1lwl" width="300" height="300"/>
         <image name="greeting" width="200" height="150"/>
         <image name="horse" width="200" height="150"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>

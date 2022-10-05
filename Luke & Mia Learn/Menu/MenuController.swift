@@ -12,9 +12,9 @@ class MenuController: UICollectionViewController {
     private let reuseIdentifier = "cell"
     private let mediumBorderSize: CGFloat = 4
     
-    let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo"]
-    let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me"]
-    let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+"]
+    let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo", "storyTimeLogo"]
+    let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me", "storyTimeLogo": "Story Time"]
+    let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+", "storyTimeLogo": "Age 3+"]
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
 
     enum Section {
@@ -108,6 +108,8 @@ class MenuController: UICollectionViewController {
             self.performSegue(withIdentifier: "goToLWLuke", sender: self)
         case "miaTalksLogo":
             self.performSegue(withIdentifier: "goToMiaTalks", sender: self)
+        case "storyTimeLogo":
+            self.self.performSegue(withIdentifier: "goToStoryTime", sender: self)
         default:
             print("error") //replace with miABC
         }

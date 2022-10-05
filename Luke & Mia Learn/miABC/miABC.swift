@@ -25,7 +25,6 @@ private var mainImages: [String: String] = [
     "y": "yak", "z": "zebra"]
 
 private var lowercaseLetters =
-//["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 //First alt lesson colors
@@ -41,9 +40,17 @@ private let colorMainImages: [String: String] =
  "purple": "purple pizza", "red": "red robot", "teal": "teal tank",
  "yellow": "yellow yak", "white": "white web", "violet": "black butterfly"]
 
+//Second alt lesson (in 3rd spot)
+private let shapes: [String] =
+["circle","square","triangle","rectangle","oval","diamond","star","heart","hexagon",
+ "pentagon","cross","octogon","crescent"]
 
-private var mainImageBackgrounds = ["mainBackImage1", "mainBackImage2"]
-//background off-circle
+private let shapeMainImages: [String: String] =
+["circle": "wheel", "square": "box", "triangle": "pyramid",
+ "rectangle": "mattress", "star": "treestar", "diamond": "sign",
+ "oval": "mirror", "heart": "valentinesCandy", "hexagon": "bolts",
+ "pentagon": "birdHouse", "cross": "ambulance", "octogon": "stopSign", "crescent": "moon"]
+
 private var mainWordButtonTitle = ""
 private let smallBorderSize: CGFloat = 2
 private let mediumBorderSize: CGFloat = 4
@@ -264,13 +271,27 @@ class miABC: UIViewController, UICollectionViewDelegate {
         imageView2.image = UIImage(named: "miABCLogo.svg")
         alert.view.addSubview(imageView2)
         
+        
+        
         ///Third Alt lesson:
         alert.addAction(UIAlertAction(title: "Shapes", style: .default, handler: { (action) in
             print("Shapes")
+            
+            self.currentABCSet = shapes
+            self.currentMainImage = shapeMainImages
+            self.mainImagebutton.setImage(UIImage(named: self.currentMainImage["wheel"] ?? "greeting"), for: .normal)
+            self.configureDataSource()
+            
         }))
         let imageView3 = UIImageView(frame: CGRect(x: 220, y: 172, width: 40, height: 40))
         imageView3.image = UIImage(named: "heart.png")
         alert.view.addSubview(imageView3)
+        
+        ///LeftImage
+        let imgTitle3 = UIImage(named:"cross.png")
+        let imgViewTitle3 = UIImageView(frame: CGRect(x: 10, y: 172, width: 40, height: 40))
+        imgViewTitle3.image = imgTitle3
+        alert.view.addSubview(imgViewTitle3)
         
         ///Fourth Alt lesson:
         alert.addAction(UIAlertAction(title: "Toys", style: .default, handler: { (action) in

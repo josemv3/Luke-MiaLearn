@@ -9,15 +9,20 @@ import UIKit
 
 private let reuseIdentifier = "lwlDCell"
 
+//"Scattered in orbits around the sun are bits and pieces of rock left over from the beginning of the solar system. Most of these objects are asteroids.",
+//"The asteroid belt is located between Mars and Jupiter, the 4th and 5th planets in our solar system.",
+//"Unlike Earths moon, asteroids are not made of cheese but are different types of rocks. ",
+//"To be an asteroid you must be about 10 meters or over 32 feet! Thats bigger than a person, elephant, or Monster truck!"
+
 class LearnWithLukeDetailCVController: UICollectionViewController {
     
     private var lwlLowercaseLetters = [
         "a", "b", "c", "d"]
     private var lwlButtonText: [String: String] = ["a": "1lwl", "b": "2lwl", "c": "3lwl", "d": "playlwl"]
     
-    var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     static let sectionFooterElementKind = "section-footer-element-kind" //footerSetup1
     static let sectionHeaderElementKind = "section-header-element-kind"//headerSetup1
+    var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     var learnWLukeLessonChoice = ""
     
     enum Section {
@@ -41,11 +46,11 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
         
         // Item definition
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.50),
+            widthDimension: .fractionalWidth(0.45),
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 5, trailing: 5)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
         
         // Group definition
         let groupSize = NSCollectionLayoutSize(
@@ -59,9 +64,9 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
         )
         group.contentInsets = NSDirectionalEdgeInsets(
             top: 1,
-            leading: 5,
+            leading: 15,
             bottom: 0,
-            trailing: 0
+            trailing: 15
         )
         // Section and layout definition
         let section = NSCollectionLayoutSection(group: group)
@@ -103,7 +108,6 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
         return layout
     }
     
-    
     // MARK: DataSource
 
     func createDataSource() {
@@ -111,10 +115,13 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LWLDetailCell
             
+            cell.layer.cornerRadius = 5
             cell.lwlDCellLabel.text = item
             cell.lwlDCellButton.setImage(UIImage(named: self.lwlButtonText[item]!), for: .normal)
             cell.lwlDCellButton.contentMode = .scaleAspectFit
             cell.lwlDCellButton.backgroundColor = UIColor(named: "learnWLukeGreen")
+            cell.lwlDCellButton.layer.borderWidth = 4
+            cell.lwlDCellButton.layer.borderColor = UIColor(named: "learnWLukePink")?.cgColor
             
             return cell
         })
@@ -125,7 +132,7 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
             if kind == "section-footer-element-kind" {
                 
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LWLFooter", for: indexPath) as! LWLDetailFooter
-                footer.backgroundColor = UIColor(named: "learnWLukePurple ")
+                footer.backgroundColor = .clear //UIColor(named: "mainBlue")
                 
                 return footer
         
@@ -141,8 +148,8 @@ class LearnWithLukeDetailCVController: UICollectionViewController {
                 header.lwlHeaderImage.contentMode = .scaleAspectFill
                 
                 header.lwlHeaderLabel.contentMode = .scaleToFill
-                header.lwlHeaderLabel.font = UIFont(name: "Chalkduster", size: 14)
-                header.lwlHeaderLabel.textColor = UIColor(named: "learnWLukePink")
+                //header.lwlHeaderLabel.font = UIFont(name: "Chalkduster", size: 14)
+                header.lwlHeaderLabel.textColor = UIColor(named: "learnWLukePurple")
                 header.lwlHeaderLabel.numberOfLines = 4
                 header.lwlHeaderLabel.text = "The asteroid belt is located between Mars and Jupiter, the 4th and 5th planets in our solar system."
                 

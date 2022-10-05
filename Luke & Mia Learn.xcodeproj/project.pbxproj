@@ -29,6 +29,8 @@
 		E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */; };
 		E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */; };
 		E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */; };
+		E09B6ED528EA55EB004E5052 /* StoryMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED428EA55EB004E5052 /* StoryMenuController.swift */; };
+		E09B6ED828EB74FC004E5052 /* StoryTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */; };
 		E0A6F93C28D41BC900DC98FF /* jump.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F93428D41BC900DC98FF /* jump.mp4 */; };
 		E0A6F93D28D41BC900DC98FF /* moon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F93528D41BC900DC98FF /* moon.mp4 */; };
 		E0A6F93E28D41BC900DC98FF /* love.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F93628D41BC900DC98FF /* love.mp4 */; };
@@ -47,7 +49,6 @@
 		E0A6F95528D4345600DC98FF /* rocket.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94B28D4345600DC98FF /* rocket.mp4 */; };
 		E0A6F95628D4345600DC98FF /* snake.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94C28D4345600DC98FF /* snake.mp4 */; };
 		E0A6F95728D4345600DC98FF /* tree.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A6F94D28D4345600DC98FF /* tree.mp4 */; };
-		E0B2728E28DE0F73008C6E98 /* LearnWLukeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2728D28DE0F73008C6E98 /* LearnWLukeDetailController.swift */; };
 		E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */; };
 		E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */; };
 		E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5928CCD322000E59A0 /* MenuController.swift */; };
@@ -103,6 +104,8 @@
 		E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksCell.swift; sourceTree = "<group>"; };
 		E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeCell.swift; sourceTree = "<group>"; };
 		E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeHeader.swift; sourceTree = "<group>"; };
+		E09B6ED428EA55EB004E5052 /* StoryMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryMenuController.swift; sourceTree = "<group>"; };
+		E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeController.swift; sourceTree = "<group>"; };
 		E0A6F93428D41BC900DC98FF /* jump.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = jump.mp4; sourceTree = "<group>"; };
 		E0A6F93528D41BC900DC98FF /* moon.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = moon.mp4; sourceTree = "<group>"; };
 		E0A6F93628D41BC900DC98FF /* love.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = love.mp4; sourceTree = "<group>"; };
@@ -121,7 +124,6 @@
 		E0A6F94B28D4345600DC98FF /* rocket.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = rocket.mp4; sourceTree = "<group>"; };
 		E0A6F94C28D4345600DC98FF /* snake.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = snake.mp4; sourceTree = "<group>"; };
 		E0A6F94D28D4345600DC98FF /* tree.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tree.mp4; sourceTree = "<group>"; };
-		E0B2728D28DE0F73008C6E98 /* LearnWLukeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWLukeDetailController.swift; sourceTree = "<group>"; };
 		E0CF3C5228CCD322000E59A0 /* Luke & Mia Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Luke & Mia Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,7 +215,6 @@
 				E047DE5228E531EE00C38B1B /* LWLDetailCell.swift */,
 				E047DE4E28E5236C00C38B1B /* LWLDetailHeader.swift */,
 				E047DE5028E5238A00C38B1B /* LWLDetailFooter.swift */,
-				E0B2728D28DE0F73008C6E98 /* LearnWLukeDetailController.swift */,
 			);
 			path = LWLDetail;
 			sourceTree = "<group>";
@@ -225,6 +226,15 @@
 				E06195F028DE712000ECF46A /* asteroid2.mp4 */,
 			);
 			path = LearnWLukeVideos;
+			sourceTree = "<group>";
+		};
+		E09B6ED628EA560B004E5052 /* StoryTime */ = {
+			isa = PBXGroup;
+			children = (
+				E09B6ED428EA55EB004E5052 /* StoryMenuController.swift */,
+				E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */,
+			);
+			path = StoryTime;
 			sourceTree = "<group>";
 		};
 		E0B546FE28D8C57100D13189 /* Mia Talks Audio */ = {
@@ -259,6 +269,7 @@
 				E0E20D7D28E0144F00083DE6 /* miABCQuiz */,
 				E0E20D7E28E0146800083DE6 /* Mia Talks */,
 				E0E20D7F28E0147700083DE6 /* Learn With Luke */,
+				E09B6ED628EA560B004E5052 /* StoryTime */,
 				E0CF3C5B28CCD322000E59A0 /* Main.storyboard */,
 				E0CF3C6328CCD324000E59A0 /* LaunchScreen.storyboard */,
 				E0CF3C6628CCD324000E59A0 /* Info.plist */,
@@ -481,11 +492,12 @@
 				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,
 				E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */,
+				E09B6ED528EA55EB004E5052 /* StoryMenuController.swift in Sources */,
+				E09B6ED828EB74FC004E5052 /* StoryTimeController.swift in Sources */,
 				E047DE5328E531EE00C38B1B /* LWLDetailCell.swift in Sources */,
 				E03A68AD28CE5B1300520C51 /* miABCQuizController.swift in Sources */,
 				E047DE5128E5238A00C38B1B /* LWLDetailFooter.swift in Sources */,
 				E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */,
-				E0B2728E28DE0F73008C6E98 /* LearnWLukeDetailController.swift in Sources */,
 				E091A4D928CFAFE800E7284C /* LearnWithLukeController.swift in Sources */,
 				E0CF3C6028CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld in Sources */,
 				E091A4D728CFA45700E7284C /* MiaTalksController.swift in Sources */,

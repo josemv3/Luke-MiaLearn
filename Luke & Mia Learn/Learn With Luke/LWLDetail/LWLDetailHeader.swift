@@ -42,7 +42,7 @@ class LWLDetailHeader: UICollectionReusableView {
         addSubview(lwlHeaderLabel)
 
         NSLayoutConstraint.activate([
-            lwlHeaderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            lwlHeaderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             lwlHeaderLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             lwlHeaderLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 250),
             lwlHeaderLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)

@@ -78,20 +78,21 @@ class LearnWithLukeController: UICollectionViewController {
         
         // Item definition
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
+            widthDimension: .fractionalWidth(0.50),
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
         
         // Group definition
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(125.0)
+            heightDimension: .absolute(175.0)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitem: item,
-            count: 1
+            count: 2
         )
         group.contentInsets = NSDirectionalEdgeInsets(
             top: spacing,
@@ -129,18 +130,20 @@ class LearnWithLukeController: UICollectionViewController {
         dataSource = UICollectionViewDiffableDataSource<Character, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LearnWithLukeCell
             
-            //cell.layer.cornerRadius = 23
+            cell.layer.borderWidth = 4
+            cell.layer.borderColor = UIColor(named: "learnWLukePink")?.cgColor
+            cell.layer.cornerRadius = 5
             cell.learnWithLukeCellLabel.text = item
-            cell.learnWithLukeCellLabel.font = UIFont(name: "Chalkduster", size: 22)
+            cell.learnWithLukeCellLabel.font = UIFont(name: "Chalkduster", size: 14)
             cell.learnWithLukeCellLabel.textColor = UIColor(named: "learnWLukeGreen")
             cell.learnWithLukeCellLabel.backgroundColor = UIColor(named: "learnWLukePink")
-            cell.learnWithLukeCellLabel.layer.cornerRadius = 10
+            //cell.learnWithLukeCellLabel.layer.cornerRadius = 10
             cell.learnWithLukeCellLabel.layer.masksToBounds = true
             
             cell.learnWithLukeImage.image = UIImage(named: item)
             //cell.learnWithLukeImage.layer.cornerRadius = 10
             
-            cell.learnWLukeBG.layer.cornerRadius = 10
+            //cell.learnWLukeBG.layer.cornerRadius = 10
             
             return cell
         })

@@ -10,7 +10,7 @@ import AVKit
 
 private let videoNames: [String] =
 ["apple", "bat", "cat", "dog", "egg", "frog", "giraffe", "hedgehog", "iceCream", "jump", "kite", "love", "moon", "numbers", "owl", "phone", "question", "rocket", "snake", "tree", "umbrella", "volcano", "wolf", "xray", "yoga", "zoo", "zoo"]
-//consplidate into 1 array or find another way of getting data.
+//consolidate into 1 array or find another way of getting data.
 private let quizLowercaseLettersSet1 =
 ["a", "b", "c", "d", "e", "f"]
 private let quizLowercaseLettersSet2 =
@@ -34,6 +34,8 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var miaABCQuizCollectionView: UICollectionView!
     @IBOutlet var mainView: UIImageView!
     @IBOutlet var mainViewButton: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     var quizBrain = QuizBrain()
     var audioPlayer: AVAudioPlayer!
     var player: AVPlayer!
@@ -43,6 +45,8 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     var score = 0
     var incorrectChoices = 0
     var userAnswer = false
+    private var videoCount = 0
+    private let largeBorderSize: CGFloat = 10
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     
     //TO CHANGE ITEMS 1
@@ -160,8 +164,10 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
             quizAlphabetLetters = quizLowercaseLettersSet3
         case "p":
             quizAlphabetLetters = quizLowercaseLettersSet4
-        default: //"u"
+        case "u":
             quizAlphabetLetters = quizLowercaseLettersSet5
+        default: 
+            quizAlphabetLetters = quizLowercaseLettersSet1
         }
         
         
@@ -194,11 +200,13 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     
     func checkAnswer(itemPressed: String) -> Bool {
         if itemPressed == correctAnswer {
-            score += 1
-            
+            //score += 1
+            scoreLabel.text = String(score)
             return true
         }
         incorrectChoices += 1
+        score -= 1
+        scoreLabel.text = String(score)
         print("Incorrect, Try again!")
         return false
     }
@@ -208,7 +216,8 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
             gameOver()
         }
         //I added 2 "zoo" to the array to solve the out of index problem. Need a real fix.
-        score += 1
+        score += 5
+        scoreLabel.text = String(score)
         videoCount += 1
         getCorrectAnswer()
         viewDidDisappear(true)
@@ -219,7 +228,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         }
     }
     
-    //add correcet score and incorrect score - or need to be able to move on even if answer is wrong.
+    //add correct score and incorrect score - or need to be able to move on even if answer is wrong.
     //I dont think I want that. So just record how many worng and how  any right. Record best %
     func gameOver() {
         let alert = UIAlertController(title: "Game Over", message: "Correct: \(score)", preferredStyle: .alert)

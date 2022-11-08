@@ -86,6 +86,7 @@
                         <segue destination="x7J-02-dUQ" kind="show" identifier="goTomiabcQuiz" id="kxq-uV-8Xg"/>
                         <segue destination="Oeu-rd-wdS" kind="show" identifier="goToMiaTalks" id="vDh-Pv-D9j"/>
                         <segue destination="QSv-0H-iHW" kind="show" identifier="goToStoryTime" id="3BP-3H-mq9"/>
+                        <segue destination="0zd-Hj-SyY" kind="show" identifier="goToFindMe" id="EtR-Iw-Anv"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sc-ks-AdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -266,21 +267,39 @@
                                     <outlet property="delegate" destination="x7J-02-dUQ" id="5bC-uz-stg"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJL-pQ-POR">
+                                <rect key="frame" x="325" y="363.33333333333331" width="49" height="24.333333333333314"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amu-BW-d1c">
+                                <rect key="frame" x="325" y="331" width="49" height="24.333333333333314"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="em4-J3-iEm"/>
                         <color key="backgroundColor" name="quizLightBlue"/>
                         <constraints>
                             <constraint firstItem="77m-KC-t9a" firstAttribute="bottom" secondItem="em4-J3-iEm" secondAttribute="bottom" id="0UF-wv-MEF"/>
+                            <constraint firstItem="XJL-pQ-POR" firstAttribute="leading" secondItem="amu-BW-d1c" secondAttribute="leading" id="3WI-pr-XrR"/>
                             <constraint firstItem="fqs-7S-cQV" firstAttribute="bottom" secondItem="bWC-ht-p7u" secondAttribute="bottom" id="4l0-Eq-CiE"/>
+                            <constraint firstItem="amu-BW-d1c" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WAs-mp-O1e" secondAttribute="trailingMargin" id="5AU-tf-IUh"/>
                             <constraint firstItem="77m-KC-t9a" firstAttribute="leading" secondItem="em4-J3-iEm" secondAttribute="leading" id="6eE-jd-Nhk"/>
+                            <constraint firstItem="amu-BW-d1c" firstAttribute="top" secondItem="em4-J3-iEm" secondAttribute="top" constant="240" id="CHc-5f-Y6I"/>
                             <constraint firstItem="fqs-7S-cQV" firstAttribute="leading" secondItem="bWC-ht-p7u" secondAttribute="leading" id="EE8-Hb-JLa"/>
+                            <constraint firstItem="XJL-pQ-POR" firstAttribute="trailing" secondItem="amu-BW-d1c" secondAttribute="trailing" id="ODZ-oR-zv9"/>
                             <constraint firstItem="fqs-7S-cQV" firstAttribute="top" secondItem="bWC-ht-p7u" secondAttribute="top" id="Qtv-eX-Hk9"/>
                             <constraint firstItem="77m-KC-t9a" firstAttribute="top" secondItem="bWC-ht-p7u" secondAttribute="bottom" constant="24" id="b5z-Bj-Y2l"/>
                             <constraint firstItem="bWC-ht-p7u" firstAttribute="top" secondItem="em4-J3-iEm" secondAttribute="top" constant="19" id="dvk-hN-d60"/>
                             <constraint firstItem="em4-J3-iEm" firstAttribute="bottom" secondItem="bWC-ht-p7u" secondAttribute="bottom" constant="429" id="e6j-nN-5q0"/>
                             <constraint firstItem="bWC-ht-p7u" firstAttribute="leading" secondItem="em4-J3-iEm" secondAttribute="leading" constant="78" id="hLt-2P-R02"/>
                             <constraint firstItem="bWC-ht-p7u" firstAttribute="centerX" secondItem="WAs-mp-O1e" secondAttribute="centerX" constant="-2" id="iiQ-PT-qWI"/>
+                            <constraint firstItem="amu-BW-d1c" firstAttribute="leading" secondItem="bWC-ht-p7u" secondAttribute="trailing" constant="17" id="lkW-NX-xvQ"/>
                             <constraint firstItem="77m-KC-t9a" firstAttribute="centerX" secondItem="WAs-mp-O1e" secondAttribute="centerX" id="owv-KE-FSa"/>
+                            <constraint firstItem="XJL-pQ-POR" firstAttribute="top" secondItem="amu-BW-d1c" secondAttribute="bottom" constant="8" id="xDH-As-UtO"/>
                             <constraint firstItem="fqs-7S-cQV" firstAttribute="trailing" secondItem="bWC-ht-p7u" secondAttribute="trailing" id="z6M-vY-bh3"/>
                         </constraints>
                     </view>
@@ -290,11 +309,12 @@
                         <outlet property="mainView" destination="bWC-ht-p7u" id="aeu-g4-WOC"/>
                         <outlet property="mainViewButton" destination="fqs-7S-cQV" id="5a6-ej-h1c"/>
                         <outlet property="miaABCQuizCollectionView" destination="77m-KC-t9a" id="1kU-tm-7q7"/>
+                        <outlet property="scoreLabel" destination="XJL-pQ-POR" id="0BT-xt-QmC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc6-Nq-FQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2237" y="25"/>
+            <point key="canvasLocation" x="2236.9230769230767" y="24.881516587677723"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ax6-Kq-kfT">
@@ -324,6 +344,33 @@
             </objects>
             <point key="canvasLocation" x="-380" y="-677"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="BGb-Ay-OZa">
+            <objects>
+                <viewController id="0zd-Hj-SyY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2lT-b1-XrL">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uc" translatesAutoresizingMaskIntoConstraints="NO" id="lfd-dQ-FiT">
+                                <rect key="frame" x="0.0" y="91" width="390" height="753"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H8x-Tx-5jx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lfd-dQ-FiT" firstAttribute="leading" secondItem="H8x-Tx-5jx" secondAttribute="leading" id="XNZ-SZ-z1b"/>
+                            <constraint firstItem="lfd-dQ-FiT" firstAttribute="centerX" secondItem="2lT-b1-XrL" secondAttribute="centerX" id="dgh-3X-V2w"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="lfd-dQ-FiT" secondAttribute="bottom" constant="-34" id="lp8-76-vHm"/>
+                            <constraint firstItem="lfd-dQ-FiT" firstAttribute="top" secondItem="H8x-Tx-5jx" secondAttribute="top" id="wnl-A2-R0O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JR2-Sq-Rmu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XbO-pP-E4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2320" y="2864.9289099526063"/>
+        </scene>
         <!--Mia Talks-->
         <scene sceneID="ZzS-eo-a7r">
             <objects>
@@ -343,7 +390,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4S-fA-bSz">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -490,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fzy-cQ-udd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="2285"/>
+            <point key="canvasLocation" x="1592" y="2151"/>
         </scene>
         <!--Story Time Controller-->
         <scene sceneID="kiU-ky-9xO">
@@ -538,10 +585,10 @@
                                     <action selector="storyNextBtnTap:" destination="OgO-Br-Que" eventType="touchUpInside" id="W82-gO-JO1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-7c-yGO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-7c-yGO">
                                 <rect key="frame" x="16" y="599" width="356" height="143"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                <color key="textColor" name="mainBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -573,6 +620,7 @@
                     <navigationItem key="navigationItem" id="VmE-4k-k8T"/>
                     <connections>
                         <outlet property="storyBackBtn" destination="qcx-W2-IX3" id="GKq-RX-W01"/>
+                        <outlet property="storyLabel" destination="d1a-7c-yGO" id="bHC-c1-Ncm"/>
                         <outlet property="storyMainView" destination="GgB-Pk-PgJ" id="qWc-lf-xFF"/>
                         <outlet property="storyNextBtn" destination="fCw-Rx-hGy" id="9yp-uL-qEM"/>
                         <outlet property="storyPlayBtn" destination="fzL-2P-KBs" id="hvt-2W-sUn"/>
@@ -580,7 +628,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnn-9s-ewx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2373.8461538461538" y="2291.9431279620853"/>
+            <point key="canvasLocation" x="2320" y="2151"/>
         </scene>
         <!--Learn With Luke DetailCV Controller-->
         <scene sceneID="RhH-B0-Sz5">
@@ -648,11 +696,12 @@
     </scenes>
     <resources>
         <image name="1lwl" width="150" height="150"/>
-        <image name="dragon1" width="390" height="500"/>
+        <image name="dragon1" width="1170" height="1500"/>
         <image name="greeting" width="200" height="150"/>
         <image name="horse" width="200" height="150"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="starBG" width="150" height="150"/>
+        <image name="uc" width="1170" height="2532"/>
         <namedColor name="mainBlue">
             <color red="0.28200000524520874" green="0.42399999499320984" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -670,9 +719,6 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

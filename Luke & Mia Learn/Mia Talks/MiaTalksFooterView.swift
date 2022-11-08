@@ -12,6 +12,7 @@ class MiaTalksFooterView: UICollectionReusableView {
     let leftFooterBtn = UIButton()
     let middleFooterBtn = UIButton()
     let rightFooterButton = UIButton()
+    var soundType = ""
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,10 +43,10 @@ class MiaTalksFooterView: UICollectionReusableView {
             
         ])
         leftFooterBtn.backgroundColor = UIColor(named: "miaTalksAltBG")
-        leftFooterBtn.setTitle("Left", for: .normal) //wont go to view when this is not commented out?
+        leftFooterBtn.setTitle("alien", for: .normal) //wont go to view when this is not commented out?
         leftFooterBtn.contentHorizontalAlignment = .center
         leftFooterBtn.setTitleColor(UIColor(named: "miaTalksBlueGreen"), for: .normal)
-        leftFooterBtn.setImage(UIImage(named: "alienFace"), for: .normal)
+        leftFooterBtn.setImage(UIImage(named: "alien"), for: .normal)
         
         //middle Button
         middleFooterBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -60,10 +61,10 @@ class MiaTalksFooterView: UICollectionReusableView {
         ])
         
         middleFooterBtn.backgroundColor = UIColor(named: "miaTalksAltBG")
-        middleFooterBtn.setTitle("Middle", for: .normal) //wont go to view when this is not commented out?
+        middleFooterBtn.setTitle("human", for: .normal) //wont go to view when this is not commented out?
         middleFooterBtn.contentHorizontalAlignment = .center
         middleFooterBtn.setTitleColor(UIColor(named: "miaTalksBlueGreen"), for: .normal)
-        middleFooterBtn.setImage(UIImage(named: "humanFace"), for: .normal)
+        middleFooterBtn.setImage(UIImage(named: "human"), for: .normal)
         
         //Right button
         rightFooterButton.translatesAutoresizingMaskIntoConstraints = false
@@ -77,16 +78,16 @@ class MiaTalksFooterView: UICollectionReusableView {
             rightFooterButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
         ])
         rightFooterButton.backgroundColor = UIColor(named: "miaTalksAltBG")
-        rightFooterButton.setTitle("Right", for: .normal)
+        rightFooterButton.setTitle("droid", for: .normal)
         rightFooterButton.contentHorizontalAlignment = .center
-        rightFooterButton.setImage(UIImage(named: "robotFace"), for: .normal)
+        rightFooterButton.setImage(UIImage(named: "droid"), for: .normal)
     }
     
     @objc private func action(sender: UIButton) {
         clearUI()
-        sender.backgroundColor = .red
-        print("test")
-        print(sender.currentTitle!)
+        sender.backgroundColor = .systemGray
+        soundType = sender.currentTitle ?? "human"
+        //print(soundType)
     }
     
     func clearUI() {

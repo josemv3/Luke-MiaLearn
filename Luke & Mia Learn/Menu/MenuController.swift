@@ -97,7 +97,7 @@ class MenuController: UICollectionViewController {
     //MARK: - DidSelectItemAt
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        print(item.description)
+        print("menu", item.description)
        
         switch item {
         case "miABCLogo":
@@ -111,7 +111,8 @@ class MenuController: UICollectionViewController {
         case "storyTimeLogo":
             self.self.performSegue(withIdentifier: "goToStoryTime", sender: self)
         default:
-            print("error") //replace with miABC
+            self.self.performSegue(withIdentifier: "goToFindMe", sender: self)
+            //print("error") //replace with miABC
         }
     }
 }

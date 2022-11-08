@@ -31,6 +31,7 @@ class LearnWithLukeController: UICollectionViewController {
     private lazy var filteredItems: [String] = states
     private var dataSource: UICollectionViewDiffableDataSource<Character, String>!
     static let sectionHeaderElementKind = "section-header-element-kind"
+    var itemChosen = ""
     var filteredItemsSnapshot: NSDiffableDataSourceSnapshot<Character, String> {
         var snapshot = NSDiffableDataSourceSnapshot<Character, String>()
         
@@ -41,7 +42,7 @@ class LearnWithLukeController: UICollectionViewController {
         
         return snapshot
     }
-    var itemChosen = ""
+    
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {

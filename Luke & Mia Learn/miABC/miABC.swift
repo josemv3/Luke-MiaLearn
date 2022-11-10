@@ -20,33 +20,60 @@ private var mainImages: [String: String] = [
     "j": "jellyfish", "k": "kangaroo", "l": "lion",
     "m": "monkey", "n": "narwal", "o": "octopus",
     "p": "penguin", "q": "queen angelfish", "r": "raccoon",
-    "s": "snake", "t": "turtle", "u": "umbrellaBird",
-    "v": "volture", "w": "walrus", "x": "xraytetra",
+    "s": "snake", "t": "turtle", "u": "umbrella bird",
+    "v": "volture", "w": "walrus", "x": "xray tetra",
     "y": "yak", "z": "zebra"]
 
-private var lowercaseLetters =
-//["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
-["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+//ABC objects lesson (alt 1)
+private var objectsImages: [String: String] = [
+    "a2": "airplane", "b2": "ball", "c2": "car",
+    "d2": "drum", "e2": "earth", "f2": "flower",
+    "g2": "ghost", "h2": "home", "i2": "icecream",
+    "j2": "juice", "k2": "ketchup", "l2": "lightning",
+    "m2": "moon", "n2": "nuts", "o2": "oven",
+    "p2": "piano", "q2": "question", "r2": "rainbow",
+    "s2": "smile", "t2": "trees", "u2": "unicorn",
+    "v2": "violin", "w2": "wizard", "x2": "xylophone",
+    "y2": "yeti", "z2": "zombie"]
 
-//First alt lesson colors
+//Colors alt lesson (alt 2)
+private let colorMainImages: [String: String] =
+["black": "black butterfly", "blue": "blue bunny", "brown": "brown bear",
+ "cyan": "cyan circle", "green": "green gecko", "grey": "ghost",
+ "magenta": "magenta makeup", "maroon": "maroon milk", "orange": "orange octopus",
+ "pink": "pink piggy", "purple": "purple pizza", "red": "red robot",
+ "teal": "teal tank", "yellow": "yellow yak", "white": "white web",
+ "violet": "black butterfly"]
+
+//Shapes alt lesson (alt 3)
+private let shapeMainImages: [String: String] =
+["circle": "wheel", "square": "box", "triangle": "pyramid",
+ "rectangle": "mattress", "star": "tree star", "diamond": "sign",
+ "oval": "mirror", "heart": "valentines candy", "hexagon": "bolts",
+ "pentagon": "bird house", "cross": "ambulance", "octogon": "stop sign",
+ "crescent": "crescent moon"]
+
+//Main ABC
+private var lowercaseLetters =
+["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m",
+ "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+//First alt ABC Objects
+private var lowercaseLettersAlt =
+["a2", "b2", "c2", "d2", "e2", "f2", "g2", "h2", "i2", "j2", "k2", "l2" ,"m2",
+ "n2", "o2", "p2", "q2", "r2", "s2", "t2", "u2", "v2", "w2", "x2", "y2", "z2"]
+
+//Second alt lesson colors
 private let colors =
 ["black", "blue", "brown", "cyan", "green",
  "magenta", "maroon", "orange", "pink", "purple",
  "red", "teal", "yellow", "grey", "white", "violet"]
 
-private let colorMainImages: [String: String] =
-["black": "black butterfly", "blue": "blue bunny", "brown": "brown bear",
- "cyan": "cyan circle", "green": "green gecko", "grey": "ghost", "magenta": "magenta makeup",
- "maroon": "maroon milk", "orange": "orange octopus", "pink": "pink piggy",
- "purple": "purple pizza", "red": "red robot", "teal": "teal tank",
- "yellow": "yellow yak", "white": "white web", "violet": "black butterfly"]
-
-
-private var mainImageBackgrounds = ["mainBackImage1", "mainBackImage2"]
-//background off-circle
-private var mainWordButtonTitle = ""
-private let smallBorderSize: CGFloat = 2
-private let mediumBorderSize: CGFloat = 4
+//Third alt lesson (
+private let shapes: [String] =
+["circle", "square", "triangle", "rectangle", "oval",
+ "diamond", "star", "heart", "hexagon", "pentagon",
+ "cross", "octogon", "crescent"]
 
 //MARK: - Class
 
@@ -63,6 +90,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
     var currentMainImage = mainImages
     var currentItemBackgroundColor: UIColor =  UIColor(named: "mainOrange" ) ?? .black
     var cellItemBorderColor = "mainOrange"
+    private var mainWordButtonTitle = ""
+    private let smallBorderSize: CGFloat = 2
+    private let mediumBorderSize: CGFloat = 4
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     
     enum Section {
@@ -256,21 +286,47 @@ class miABC: UIViewController, UICollectionViewDelegate {
         imageView.image = UIImage(named: "red.png")
         alert.view.addSubview(imageView)
         
+        
         ///Second Alt lesson:
         alert.addAction(UIAlertAction(title: "ABC Objects", style: .default, handler: { (action) in
             print("ABC Objects")
+            
+            self.currentABCSet = lowercaseLettersAlt
+            self.currentMainImage = objectsImages
+            self.mainImagebutton.setImage(UIImage(named: self.currentMainImage["airplane"] ?? "greeting"), for: .normal)
+            self.configureDataSource()
         }))
         let imageView2 = UIImageView(frame: CGRect(x: 220, y: 127, width: 40, height: 40))
-        imageView2.image = UIImage(named: "miABCLogo.svg")
+        imageView2.image = UIImage(named: "airplane.svg")
         alert.view.addSubview(imageView2)
+        
+        ///left image
+        let imgTitle2 = UIImage(named:"drum.svg")
+        let imgViewTitle2 = UIImageView(frame: CGRect(x: 10, y: 127, width: 40, height: 40))
+        imgViewTitle2.image = imgTitle2
+        alert.view.addSubview(imgViewTitle2)
+        
+        
         
         ///Third Alt lesson:
         alert.addAction(UIAlertAction(title: "Shapes", style: .default, handler: { (action) in
             print("Shapes")
+            
+            self.currentABCSet = shapes
+            self.currentMainImage = shapeMainImages
+            self.mainImagebutton.setImage(UIImage(named: self.currentMainImage["wheel"] ?? "greeting"), for: .normal)
+            self.configureDataSource()
+            
         }))
         let imageView3 = UIImageView(frame: CGRect(x: 220, y: 172, width: 40, height: 40))
         imageView3.image = UIImage(named: "heart.png")
         alert.view.addSubview(imageView3)
+        
+        ///LeftImage
+        let imgTitle3 = UIImage(named:"cross.png")
+        let imgViewTitle3 = UIImageView(frame: CGRect(x: 10, y: 172, width: 40, height: 40))
+        imgViewTitle3.image = imgTitle3
+        alert.view.addSubview(imgViewTitle3)
         
         ///Fourth Alt lesson:
         alert.addAction(UIAlertAction(title: "Toys", style: .default, handler: { (action) in

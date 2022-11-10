@@ -32,7 +32,7 @@ class LWLDetailHeader: UICollectionReusableView {
         addSubview(lwlHeaderImage)
         
         NSLayoutConstraint.activate([
-            lwlHeaderImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            lwlHeaderImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             lwlHeaderImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             lwlHeaderImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             lwlHeaderImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100)
@@ -42,11 +42,10 @@ class LWLDetailHeader: UICollectionReusableView {
         addSubview(lwlHeaderLabel)
 
         NSLayoutConstraint.activate([
-            lwlHeaderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
-            lwlHeaderLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 5),
+            lwlHeaderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            lwlHeaderLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             lwlHeaderLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 250),
             lwlHeaderLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
-
         ])
         
       }

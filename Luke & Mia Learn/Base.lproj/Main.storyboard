@@ -591,6 +591,9 @@
                                 <color key="textColor" name="mainBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-DW-fQ9">
+                                <rect key="frame" x="125" y="599" width="140" height="140"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U8s-1m-dl1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -607,11 +610,15 @@
                             <constraint firstItem="GgB-Pk-PgJ" firstAttribute="centerX" secondItem="oUh-q7-AUm" secondAttribute="centerX" id="Key-gj-wci"/>
                             <constraint firstItem="fCw-Rx-hGy" firstAttribute="top" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="159" id="MnF-lu-4Jf"/>
                             <constraint firstItem="fzL-2P-KBs" firstAttribute="leading" secondItem="oUh-q7-AUm" secondAttribute="leadingMargin" id="QxC-bM-TVU"/>
+                            <constraint firstItem="aIG-DW-fQ9" firstAttribute="top" secondItem="d1a-7c-yGO" secondAttribute="top" id="Rct-yy-D12"/>
+                            <constraint firstItem="fzL-2P-KBs" firstAttribute="top" secondItem="aIG-DW-fQ9" secondAttribute="bottom" constant="11" id="Tv4-EZ-KRj"/>
                             <constraint firstItem="d1a-7c-yGO" firstAttribute="leading" secondItem="fzL-2P-KBs" secondAttribute="leading" id="ZPh-Ct-XgV"/>
+                            <constraint firstItem="aIG-DW-fQ9" firstAttribute="centerX" secondItem="GgB-Pk-PgJ" secondAttribute="centerX" id="ZtS-pW-dGo"/>
                             <constraint firstItem="GgB-Pk-PgJ" firstAttribute="top" secondItem="U8s-1m-dl1" secondAttribute="top" id="bc8-jU-ENL"/>
                             <constraint firstItem="U8s-1m-dl1" firstAttribute="trailing" secondItem="fCw-Rx-hGy" secondAttribute="trailing" constant="18" id="c2u-aG-LVt"/>
                             <constraint firstItem="U8s-1m-dl1" firstAttribute="bottom" secondItem="fzL-2P-KBs" secondAttribute="bottom" id="fdt-Fe-F3s"/>
                             <constraint firstItem="U8s-1m-dl1" firstAttribute="bottom" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="219" id="k8L-Vz-VWY"/>
+                            <constraint firstItem="aIG-DW-fQ9" firstAttribute="leading" secondItem="U8s-1m-dl1" secondAttribute="leading" constant="125" id="msr-n3-h7v"/>
                             <constraint firstItem="d1a-7c-yGO" firstAttribute="top" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="8" symbolic="YES" id="oVO-lU-yHE"/>
                             <constraint firstItem="U8s-1m-dl1" firstAttribute="bottom" secondItem="qcx-W2-IX3" secondAttribute="bottom" id="rHy-ER-IEo"/>
                             <constraint firstItem="fCw-Rx-hGy" firstAttribute="leading" secondItem="qcx-W2-IX3" secondAttribute="trailing" constant="8" id="yma-MX-gVG"/>
@@ -622,6 +629,7 @@
                         <outlet property="storyBackBtn" destination="qcx-W2-IX3" id="GKq-RX-W01"/>
                         <outlet property="storyLabel" destination="d1a-7c-yGO" id="bHC-c1-Ncm"/>
                         <outlet property="storyMainView" destination="GgB-Pk-PgJ" id="qWc-lf-xFF"/>
+                        <outlet property="storyNaratorView" destination="aIG-DW-fQ9" id="fUf-jJ-a4T"/>
                         <outlet property="storyNextBtn" destination="fCw-Rx-hGy" id="9yp-uL-qEM"/>
                         <outlet property="storyPlayBtn" destination="fzL-2P-KBs" id="hvt-2W-sUn"/>
                     </connections>
@@ -696,6 +704,7 @@
     </scenes>
     <resources>
         <image name="1lwl" width="150" height="150"/>
+        <image name="circle" width="256" height="256"/>
         <image name="dragon1" width="1170" height="1500"/>
         <image name="greeting" width="200" height="150"/>
         <image name="horse" width="200" height="150"/>

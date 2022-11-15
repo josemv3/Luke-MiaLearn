@@ -15,10 +15,13 @@ class StoryTimeController: UIViewController {
     @IBOutlet weak var storyBackBtn: UIButton!
     @IBOutlet weak var storyNextBtn: UIButton!
     @IBOutlet weak var storyLabel: UILabel!
+    @IBOutlet weak var storyNaratorView: UIImageView!
     
     var imageCount = 0
     var audioPlayer: AVAudioPlayer?
+    var playerLayer = AVPlayerLayer()
     let dragonImages = ["dragon1","dragon2","dragon3","dragon4","dragon5","dragon6","dragon7","dragon8","dragon9","dragon10", "dragon11"]
+    let dragonVideos = ["miaDragon1","miaDragon2","miaDragon3","miaDragon4","miaDragon5","miaDragon6","miaDragon7","miaDragon8","miaDragon9","miaDragon10", "miaDragon11"]
     let dragonDialog = [
     "I want a Dragon and I can fly in the clouds and have fun with the birds",
     "Then the Dragon can make a loud noise at my brother. My brother doesn't like it. RAAaaaaAHHR!",
@@ -37,30 +40,36 @@ class StoryTimeController: UIViewController {
         super.viewDidLoad()
         storyMainView.image = UIImage(named: dragonImages[imageCount])
         storyLabel.text = dragonDialog[imageCount]
+        storyLabel.textColor = .white
+        storyNaratorView.layer.borderWidth = 4
+        storyNaratorView.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
     }
     
 
     @IBAction func storyPlayBtnTap(_ sender: UIButton) {
         //play sound
-        playSound(soundName: dragonImages[imageCount])
+        //playSound(soundName: dragonImages[imageCount])
+        playVideo(video: dragonVideos[imageCount])
+        
     }
 
     @IBAction func storyBackBtnTap(_ sender: UIButton) {
-        audioPlayer?.stop()
+        //audioPlayer?.stop()
+        playerLayer.player?.pause()
         
         if imageCount == 0 {
             //noise?
-            //alert that you ar eat beginning?
+            //alert that you hear at beginning?
         } else {
             imageCount -= 1
             storyMainView.image = UIImage(named: dragonImages[imageCount])
             storyLabel.text = dragonDialog[imageCount]
         }
-        
     }
     
     @IBAction func storyNextBtnTap(_ sender: UIButton) {
-        audioPlayer?.stop()
+        //audioPlayer?.stop()
+        playerLayer.player?.pause()
         
         let dragonCount = dragonImages.count - 1
         if imageCount == dragonCount {
@@ -74,6 +83,20 @@ class StoryTimeController: UIViewController {
             storyLabel.text = dragonDialog[imageCount]
             //audioPlayer?.play()
         }
+    }
+    
+    //MARK: - Play Video
+    
+    func playVideo(video: String) {
+        playerLayer.player?.pause()
+        
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
+            forResource: video , ofType: "mp4") ?? "dog.mp4"))
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = storyNaratorView.bounds
+        playerLayer.videoGravity = .resizeAspect
+        storyNaratorView.layer.addSublayer(playerLayer)
+        player.play()
     }
     
     //MARK: - Sound Player
@@ -100,8 +123,7 @@ class StoryTimeController: UIViewController {
             audioPlayer.play()
             
         } catch {
-            print("error")
+            print("PlaySound StoryTimeController error")
         }
     }
-    
 }

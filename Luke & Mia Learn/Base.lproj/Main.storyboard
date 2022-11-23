@@ -152,14 +152,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axY-SH-jnw">
                                 <rect key="frame" x="107" y="575" width="176" height="150"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbg-Rd-TyF">
-                                <rect key="frame" x="107" y="575" width="176" height="150"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="greeting"/>
-                                <connections>
-                                    <action selector="mainImageButtonPressed:" destination="GMY-Wi-i2S" eventType="touchUpInside" id="avw-Mx-dpX"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33K-PI-mYL">
                                 <rect key="frame" x="107" y="741" width="176" height="65"/>
                                 <color key="backgroundColor" name="mainBlue"/>
@@ -170,6 +162,14 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="mainWordButton:" destination="GMY-Wi-i2S" eventType="touchUpInside" id="buV-lV-03C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbg-Rd-TyF">
+                                <rect key="frame" x="107" y="575" width="176" height="150"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="mainImageButtonPressed:" destination="GMY-Wi-i2S" eventType="touchUpInside" id="avw-Mx-dpX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -706,7 +706,6 @@
         <image name="1lwl" width="150" height="150"/>
         <image name="circle" width="256" height="256"/>
         <image name="dragon1" width="1170" height="1500"/>
-        <image name="greeting" width="200" height="150"/>
         <image name="horse" width="200" height="150"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="starBG" width="150" height="150"/>

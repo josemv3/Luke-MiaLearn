@@ -196,7 +196,7 @@ class MiaTalksController: UICollectionViewController {
     @objc func choseLesson() {
         
         //Placeholder assets and text
-        let alert = UIAlertController(title: "More Lessons", message: "Chose A Lesson Bellow!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "More Lessons", message: "Chose a lesson bellow!", preferredStyle: .alert)
         
         ///left image
         let imgTitle = UIImage(named:"blue.png")

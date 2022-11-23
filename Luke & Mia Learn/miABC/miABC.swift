@@ -53,6 +53,11 @@ private let shapeMainImages: [String: String] =
  "pentagon": "bird house", "cross": "ambulance", "octogon": "stop sign",
  "crescent": "crescent moon"]
 
+private let instrumentsMainVideo: [String: String] =
+["instruments": "avQuiz"]
+
+private let instrumentsTest = ["instruments"]
+
 //Main ABC
 private var lowercaseLetters =
 ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m",
@@ -86,6 +91,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
     
     var currentAnimation = 0
     var audioPlayer: AVAudioPlayer?
+    var playerLayer = AVPlayerLayer()
     var currentABCSet = lowercaseLetters
     var currentMainImage = mainImages
     var currentItemBackgroundColor: UIColor =  UIColor(named: "mainOrange" ) ?? .black
@@ -105,6 +111,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
         
         navigationItem.title = "miABC"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
+        //mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
         
         collectionView.collectionViewLayout = configureLayout()
         collectionView.layer.borderWidth = smallBorderSize //2
@@ -121,6 +128,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
     }
     
     //MARK: - Compositional CV LAYOUT
+    
     func configureLayout() -> UICollectionViewCompositionalLayout {
         let spacing: CGFloat = 5
         let grouItemCount = 3
@@ -144,15 +152,14 @@ class miABC: UIViewController, UICollectionViewDelegate {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
-    
     //MARK: - Data Source (Cell)
+    
     func configureDataSource() {//SOURCE2
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: miABCCell.reusidentifier, for: indexPath) as? miABCCell else {
                 fatalError("Cannot create new cell")
             }
-            
             cell.miABCCellLabel.text = item.description
             cell.miABCCellImage.image = UIImage(named: item.description)
             cell.miABCCellImage.backgroundColor = self.currentItemBackgroundColor
@@ -171,18 +178,28 @@ class miABC: UIViewController, UICollectionViewDelegate {
     }
     
     //MARK: - Selected Item
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        print(item)
+            print(item)
         
-        //mainLabel.text = mainImages[item]
-        mainWordButtonTitle = mainImages[item] ?? "greeting"
-        mainWordButton.setTitle(currentMainImage[item.description], for: .normal)
-        mainImagebutton.setImage(UIImage(named: currentMainImage[item] ?? "greeting"), for: .normal)
-       
-        self.mainImagebutton.transform = .identity //read bellow (reset animation):
-        currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
-        playSound(soundName: item)
+        if currentABCSet == ["instruments"] {
+            playVideo(video: "avQuiz", newView: mainImagebutton)
+            mainImagebutton.imageView?.image = nil
+            
+        } else {
+            
+            //mainLabel.text = mainImages[item]
+            mainWordButtonTitle = mainImages[item] ?? "greeting"
+            mainWordButton.setTitle(currentMainImage[item.description], for: .normal)
+            mainImagebutton.setImage(UIImage(named: currentMainImage[item] ?? "greeting"), for: .normal)
+            
+            self.mainImagebutton.transform = .identity //read bellow (reset animation):
+            currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
+            
+            playSound(soundName: item)
+        }
+        
     }
     
     //MARK: - Sound Player
@@ -214,135 +231,177 @@ class miABC: UIViewController, UICollectionViewDelegate {
     }
     
     //MARK: - Main Image Button (top)
+    
     @IBAction func mainImageButtonPressed(_ sender: UIButton) {
         
-        UIView.animate(withDuration: 0.20, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 25, options: [], animations: {
+        if currentABCSet == ["instruments"] {
+            //not working. Maybe remove mainImageButton set from ViewDidLoad and put it in lesson assigned
+            //mainImagebutton.setImage(UIImage(named: "placholder"), for: .normal)
+            mainImagebutton.imageView?.image = nil
             
-            switch self.currentAnimation {
-            case 0:self.mainImagebutton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                break
-            case 1:
-                self.mainImagebutton.transform = .identity
-            case 2:
-                self.mainImagebutton.transform = CGAffineTransform(rotationAngle: .pi)
-            case 3:
-                self.mainImagebutton.transform = .identity
-            default:
-                break
-            }
-            self.currentAnimation += 1
+        } else {
             
-            if self.currentAnimation > 3 {
-                self.currentAnimation = 0
-            }
-        })
+            UIView.animate(withDuration: 0.20, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 25, options: [], animations: {
+                
+                switch self.currentAnimation {
+                case 0:
+                    self.mainImagebutton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                    break
+                case 1:
+                    self.mainImagebutton.transform = .identity
+                case 2:
+                    self.mainImagebutton.transform = CGAffineTransform(rotationAngle: .pi)
+                case 3:
+                    self.mainImagebutton.transform = .identity
+                default:
+                    break
+                }
+                self.currentAnimation += 1
+                
+                if self.currentAnimation > 3 {
+                    self.currentAnimation = 0
+                }
+            })
+        }
     }
     
     @IBAction func mainWordButton(_ sender: UIButton) {
         playSound(soundName: mainWordButtonTitle)
     }
     
+    //MARK: - Video Player
+    
+    func playVideo(video: String, newView: UIView) {
+        playerLayer.player?.pause() //if player exists pause playback and start new play
+       
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
+            forResource: video , ofType: "mp4") ?? "bvQuiz.mp4"))
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = newView.bounds
+        playerLayer.videoGravity = .resizeAspectFill
+        newView.layer.addSublayer(playerLayer)
+        player.play()
+        
+        
+    }
+    
+    //MARK: - Alert lesson change methods
+    
+    func addLeftAlertImage(yAxis: Int, imageName: String) -> UIImageView {
+        let leftImage = UIImageView(frame: CGRect(x: 10, y: yAxis, width: 40, height: 40))
+        leftImage.image = UIImage(named: imageName)
+        return leftImage
+    }
+    
+    func addRightAlertImage(yAxis: Int, imageName: String) -> UIImageView {
+        let rightImage = UIImageView(frame: CGRect(x: 220, y: yAxis, width: 40, height: 40))
+        rightImage.image = UIImage(named: imageName)
+        return rightImage
+    }
+    
+    func changeLesson(abcSet:[String], imageSet: [String:String], mainImage: String) {
+        self.currentABCSet = abcSet
+        self.currentMainImage = imageSet
+        self.mainImagebutton.setImage(UIImage(named: currentMainImage[mainImage] ?? "greeting"), for: .normal)
+        self.configureDataSource()
+    }
+    
+    func changeLessonVideo(abcSet: [String], videoSet: [String: String]) {
+        self.currentABCSet = abcSet
+        self.currentMainImage = videoSet
+        self.mainImagebutton.imageView?.image = nil
+        self.configureDataSource()
+    }
+    
     //MARK: - Alert Choices
+    
     @objc func choseLesson() {
         let alert = UIAlertController(title: "More Lessons", message: "Chose A Lesson Bellow!", preferredStyle: .alert)
         
-        ///left image
-        let imgTitle = UIImage(named:"blue.png")
-        let imgViewTitle = UIImageView(frame: CGRect(x: 10, y: 82, width: 40, height: 40))
-        imgViewTitle.image = imgTitle
-        alert.view.addSubview(imgViewTitle)
+        ///First ABC lesson:
+        alert.addAction(UIAlertAction(title: "ABC Animals", style: .default, handler: { (action) in
+            print("Colors")
+            //if let weakSelf = self { grab all the stuff below, self = weakSelf}
+            //put changes in function and get colors right. Button orange
+            self.changeLesson(abcSet: lowercaseLetters, imageSet: mainImages, mainImage: "greeting")
+        }))
+        alert.view.addSubview(addRightAlertImage(yAxis: 82, imageName: "bat.png"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 82, imageName: "alligator.png"))
         
+        ///Second ABC lesson:
+        alert.addAction(UIAlertAction(title: "ABC Objects", style: .default, handler: { (action) in
+            print("ABC Objects")
+            self.changeLesson(abcSet: lowercaseLettersAlt, imageSet: objectsImages, mainImage: "a2")
+        }))
+        alert.view.addSubview(addRightAlertImage(yAxis: 127, imageName: "airplane.svg"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 127, imageName: "drum.svg"))
+        
+        ///Third ABC lesson:
+        alert.addAction(UIAlertAction(title: "ABC Instruments", style: .default, handler: { (action) in
+            print("ABC Instruments")
+            self.changeLessonVideo(abcSet: instrumentsTest, videoSet: instrumentsMainVideo)
+            //self.changeLesson(abcSet: instrumentsTest, imageSet: instrumentsMainVideo, mainImage: "cat")
+        }))
+        alert.view.addSubview(addRightAlertImage(yAxis: 172, imageName: "instruments.png"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 172, imageName: "instruments.png"))
+        
+        ///Fourth ABC lesson:
+        alert.addAction(UIAlertAction(title: "ABC Fruits and Veggies", style: .default, handler: { (action) in
+            print("ABC Fruits and Veggies")
+        }))
+        alert.view.addSubview(addRightAlertImage(yAxis: 217, imageName: "zombie.png"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 217, imageName: "zombie.png"))
+        
+        //Spacer
+        alert.addAction(UIAlertAction(title: "", style: .default, handler: { (action) in
+            print("")
+        }))
+        //alert.view.addSubview(addRightAlertImage(yAxis: 262, imageName: ""))
+        //alert.view.addSubview(addLeftAlertImage(yAxis: 262, imageName: ""))
+        
+        //Alt lesson title
+        alert.addAction(UIAlertAction(title: "Learn more stuff!", style: .default, handler: { (action) in
+            print("Learn more stuff!")
+        }))
+        //alert.view.addSubview(addRightAlertImage(yAxis: 307, imageName: "instruments.png"))
+        //alert.view.addSubview(addLeftAlertImage(yAxis: 307, imageName: "instruments.png"))
         
         ///First Alt lesson:
         alert.addAction(UIAlertAction(title: "Colors", style: .default, handler: { (action) in
-            
             print("Colors")
-            
-            //if let weakSelf = self { grab all the stuff below, self = weakSelf}
-            
-            //put changes in function and get colors right. Button orange
-            self.currentABCSet = colors
-            self.currentMainImage = colorMainImages
-            self.mainImagebutton.setImage(UIImage(named: self.currentMainImage["red"] ?? "greeting"), for: .normal)
-            
-            //self.view.backgroundColor = UIColor(named: "mainBlue")
-            //self.collectionView.backgroundColor = UIColor(named: "mainOrange")
-            //self.cellItemBorderColor = "quizDarkBrown"
-            //self.currentItemBackgroundColor = UIColor(named: "mainCream") ?? .black
-            //self.mainWordButton.backgroundColor = UIColor.systemGroupedBackground
-            //self.mainWordButton.layer.borderWidth = 6
-            //self.mainWordButton.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
-            //self.mainWordButton.setTitleColor(UIColor(named: "quizDarkBrown"), for: .normal)
-            self.mainWordButton.titleLabel?.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
-            //self.mainImageBack.backgroundColor = .systemGroupedBackground
-            //self.mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
-            //self.mainImageBack.layer.borderWidth = 6
-            self.configureDataSource()
+            self.changeLesson(abcSet: colors, imageSet: colorMainImages, mainImage: "red")
         }))
-        
-        //Create func for creating imageViews - replace all this duplicated code.
-        ///right image
-        let imageView = UIImageView(frame: CGRect(x: 220, y: 82, width: 40, height: 40))
-        imageView.image = UIImage(named: "red.png")
-        alert.view.addSubview(imageView)
-        
+        alert.view.addSubview(addRightAlertImage(yAxis: 350, imageName: "blue.png"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 350, imageName: "red.png"))
         
         ///Second Alt lesson:
-        alert.addAction(UIAlertAction(title: "ABC Objects", style: .default, handler: { (action) in
-            print("ABC Objects")
-            
-            self.currentABCSet = lowercaseLettersAlt
-            self.currentMainImage = objectsImages
-            self.mainImagebutton.setImage(UIImage(named: self.currentMainImage["airplane"] ?? "greeting"), for: .normal)
-            self.configureDataSource()
-        }))
-        let imageView2 = UIImageView(frame: CGRect(x: 220, y: 127, width: 40, height: 40))
-        imageView2.image = UIImage(named: "airplane.svg")
-        alert.view.addSubview(imageView2)
-        
-        ///left image
-        let imgTitle2 = UIImage(named:"drum.svg")
-        let imgViewTitle2 = UIImageView(frame: CGRect(x: 10, y: 127, width: 40, height: 40))
-        imgViewTitle2.image = imgTitle2
-        alert.view.addSubview(imgViewTitle2)
-        
-        
-        
-        ///Third Alt lesson:
         alert.addAction(UIAlertAction(title: "Shapes", style: .default, handler: { (action) in
             print("Shapes")
-            
-            self.currentABCSet = shapes
-            self.currentMainImage = shapeMainImages
-            self.mainImagebutton.setImage(UIImage(named: self.currentMainImage["wheel"] ?? "greeting"), for: .normal)
-            self.configureDataSource()
-            
+            self.changeLesson(abcSet: shapes, imageSet: shapeMainImages, mainImage: "wheel")
         }))
-        let imageView3 = UIImageView(frame: CGRect(x: 220, y: 172, width: 40, height: 40))
-        imageView3.image = UIImage(named: "heart.png")
-        alert.view.addSubview(imageView3)
+        alert.view.addSubview(addRightAlertImage(yAxis: 395, imageName: "heart.png"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 395, imageName: "cross.png"))
         
-        ///LeftImage
-        let imgTitle3 = UIImage(named:"cross.png")
-        let imgViewTitle3 = UIImageView(frame: CGRect(x: 10, y: 172, width: 40, height: 40))
-        imgViewTitle3.image = imgTitle3
-        alert.view.addSubview(imgViewTitle3)
-        
-        ///Fourth Alt lesson:
+        ///Third Alt lesson:
         alert.addAction(UIAlertAction(title: "Toys", style: .default, handler: { (action) in
             print("Toys")
+            //self.changeLesson(abcSet: shapes, imageSet: shapeMainImages, mainImage: "wheel")
         }))
-        let imageView4 = UIImageView(frame: CGRect(x: 220, y: 217, width: 40, height: 40))
-        imageView4.image = UIImage(named: "toys.png")
-        alert.view.addSubview(imageView4)
+        alert.view.addSubview(addRightAlertImage(yAxis: 438, imageName: "toys.png"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 438, imageName: "toys.png"))
         
-        ///Fifth Alt lesson:
-        alert.addAction(UIAlertAction(title: "Instruments to Play", style: .default, handler: { (action) in
-            print("Instruments to Play")
+        ///Fourth Alt lesson:
+        alert.addAction(UIAlertAction(title: "Numbers", style: .default, handler: { (action) in
+            print("Numbers")
+            //self.changeLesson(abcSet: shapes, imageSet: shapeMainImages, mainImage: "wheel")
         }))
-        let imageView5 = UIImageView(frame: CGRect(x: 220, y: 262, width: 40, height: 40))
-        imageView5.image = UIImage(named: "instruments.png")
-        alert.view.addSubview(imageView5)
+        //alert.view.addSubview(addRightAlertImage(yAxis: 473, imageName: "heart.png"))
+        //alert.view.addSubview(addLeftAlertImage(yAxis: 473, imageName: "cross.png"))
+        
+        ///Cancel
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) in
+            print("Cancel")
+        }))
         
         self.present(alert, animated: true)
     }

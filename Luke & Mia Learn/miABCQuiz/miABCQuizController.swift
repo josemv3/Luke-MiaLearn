@@ -158,13 +158,13 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         getCorrectAnswer()
         
         switch correctAnswer {
-        case "f":
+        case "f"..."j":
             quizAlphabetLetters = quizLowercaseLettersSet2
-        case "k":
+        case "k"..."o":
             quizAlphabetLetters = quizLowercaseLettersSet3
-        case "p":
+        case "p"..."t":
             quizAlphabetLetters = quizLowercaseLettersSet4
-        case "u":
+        case "u"..."z":
             quizAlphabetLetters = quizLowercaseLettersSet5
         default: 
             quizAlphabetLetters = quizLowercaseLettersSet1
@@ -212,7 +212,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     }
     
     func userGotItRight() {
-        if correctAnswer == "z" {
+        if correctAnswer == "c" {
             gameOver()
         }
         //I added 2 "zoo" to the array to solve the out of index problem. Need a real fix.
@@ -237,7 +237,12 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
             //nested alert2
             //save high score and initials to core data
             let alert2 = UIAlertController(title: "Save Score", message: "Correct: \(self.score)", preferredStyle: .alert)
+            alert2.addTextField { (textField) in
+                textField.placeholder = "Enter name"
+            }
             alert2.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
+                let textField = alert2.textFields?[0]
+                print("Text field: \(textField?.text ?? "Blank" )" )
                 self.restartGame()
             }))
             self.present(alert2, animated: true)
@@ -246,12 +251,14 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
             print("Restart Game")
             self.restartGame()
         }))
+        
         self.present(alert, animated: true)
     }
     
     func restartGame() {
         videoCount = 0
         self.score = 0
+        self.scoreLabel.text = String(score) //need one source of truth
         quizAlphabetLetters = quizLowercaseLettersSet1
         self.currentLetterSet.removeAll()
         self.currentLetterSet = self.getLetterSet(answer: self.correctAnswer)

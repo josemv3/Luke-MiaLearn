@@ -12,11 +12,12 @@ class MiaTalksFooterView: UICollectionReusableView {
     let leftFooterBtn = UIButton()
     let middleFooterBtn = UIButton()
     let rightFooterButton = UIButton()
-    var soundType = ""
+    var soundType = "2"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+       
     }
     
     required init?(coder: NSCoder) {
@@ -83,11 +84,17 @@ class MiaTalksFooterView: UICollectionReusableView {
         rightFooterButton.setImage(UIImage(named: "droid"), for: .normal)
     }
     
+    
     @objc private func action(sender: UIButton) {
         clearUI()
+        
+        //let vc = MiaTalksController()
+        //vc.soundTypeSelected = sender.title(for: .selected)!
+        
         sender.backgroundColor = .systemGray
-        soundType = sender.currentTitle ?? "human"
-        //print(soundType)
+        soundType = sender.title(for: .selected)!
+        print("ST Cell", soundType)
+        //print(sender.title(for: .selected)!)
     }
     
     func clearUI() {

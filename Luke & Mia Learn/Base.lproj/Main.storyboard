@@ -395,28 +395,25 @@
                                             <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nl-E3-Ngz">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sf7-Mk-02u">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <color key="backgroundColor" name="miaTalksOrange"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain"/>
-                                        </button>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="5nl-E3-Ngz" firstAttribute="leading" secondItem="d4S-fA-bSz" secondAttribute="leading" id="Kze-Oo-dTq"/>
+                                        <constraint firstAttribute="trailing" secondItem="Sf7-Mk-02u" secondAttribute="trailing" id="DDn-GG-XGM"/>
                                         <constraint firstItem="d4S-fA-bSz" firstAttribute="top" secondItem="MPd-XI-WXO" secondAttribute="top" id="LT5-Qj-BY2"/>
                                         <constraint firstItem="d4S-fA-bSz" firstAttribute="centerX" secondItem="MPd-XI-WXO" secondAttribute="centerX" id="Xne-dG-H2i"/>
-                                        <constraint firstItem="5nl-E3-Ngz" firstAttribute="bottom" secondItem="d4S-fA-bSz" secondAttribute="bottom" id="cEx-6E-8RP"/>
-                                        <constraint firstItem="5nl-E3-Ngz" firstAttribute="top" secondItem="d4S-fA-bSz" secondAttribute="top" id="eLO-55-fjy"/>
+                                        <constraint firstItem="Sf7-Mk-02u" firstAttribute="leading" secondItem="MPd-XI-WXO" secondAttribute="leading" id="Zpc-ha-YFe"/>
+                                        <constraint firstItem="Sf7-Mk-02u" firstAttribute="top" secondItem="MPd-XI-WXO" secondAttribute="top" id="dE8-71-lqb"/>
                                         <constraint firstItem="d4S-fA-bSz" firstAttribute="leading" secondItem="MPd-XI-WXO" secondAttribute="leading" id="ha0-k0-eGN"/>
                                         <constraint firstItem="d4S-fA-bSz" firstAttribute="centerY" secondItem="MPd-XI-WXO" secondAttribute="centerY" id="tUF-27-iOQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="5nl-E3-Ngz" secondAttribute="trailing" id="y92-D5-tSD"/>
+                                        <constraint firstAttribute="bottom" secondItem="Sf7-Mk-02u" secondAttribute="bottom" id="xtS-b6-CtF"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="miaTalkCellLabel" destination="d4S-fA-bSz" id="Rec-Rp-ozZ"/>
-                                    <outlet property="miaTalksButton" destination="5nl-E3-Ngz" id="kmb-gp-Hfa"/>
+                                    <outlet property="miaTalksView" destination="Sf7-Mk-02u" id="HiB-B3-0mz"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -433,7 +430,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pC-Zj-k7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1562" y="749"/>
+            <point key="canvasLocation" x="1561.5384615384614" y="748.57819905213262"/>
         </scene>
         <!--Learn With Luke Controller-->
         <scene sceneID="yBp-CE-bqo">

@@ -10,7 +10,9 @@ import UIKit
 class MiaTalksCell: UICollectionViewCell {
     
     @IBOutlet var miaTalkCellLabel: UILabel!
-    @IBOutlet weak var miaTalksButton: UIButton!
+    //@IBOutlet weak var miaTalksButton: UIButton!
+    
+    @IBOutlet weak var miaTalksView: UIImageView!
     var buttonaNameTapped = ""
     
     

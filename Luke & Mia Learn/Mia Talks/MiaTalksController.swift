@@ -12,9 +12,10 @@ private let reuseIdentifier = "miaTalksCell"
 
 private var miatalksLowercaseLetters = [
     "a", "b", "c", "d", "e", "f"]
-private var miaTAlksButtonText: [String: String] = ["a": "apple", "b": "hamburger", "c": "carrot", "d": "broccoli", "e": "cereal", "f": "banana"]
+private var miaTalksViewText: [String: String] = ["a": "apple", "b": "hamburger", "c": "carrot", "d": "broccoli", "e": "cereal", "f": "banana"]
 
 class MiaTalksController: UICollectionViewController {
+    
     
     var audioPlayer: AVAudioPlayer?
     var soundTypeSelected = "human"
@@ -115,7 +116,8 @@ class MiaTalksController: UICollectionViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MiaTalksCell
             
             cell.miaTalkCellLabel.text = item
-            cell.miaTalksButton.setImage(UIImage(named: miaTAlksButtonText[item]!), for: .normal)
+            cell.miaTalksView.image = UIImage(named: miaTalksViewText[item]!)
+            //cell.miaTalksView.setImage(UIImage(named: miaTAlksButtonText[item]!), for: .normal)
             //cell.miaTalksButton.setTitle(miaTAlksButtonText[item], for: .normal)
             
             
@@ -129,7 +131,7 @@ class MiaTalksController: UICollectionViewController {
                 
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath) as! MiaTalksFooterView
                 footer.backgroundColor = UIColor(named: "miaTalksOrange")
-                self.soundTypeSelected = footer.soundType
+                //self.soundTypeSelected = footer.soundType ?? "2"
                 
                 return footer
             } else if kind == "section-header-element-kind" {
@@ -158,9 +160,27 @@ class MiaTalksController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        print("yes", item.description)
-        print(soundTypeSelected)
-        print(indexPath) //all 3 prints not working
+        
+        if collectionView.indexPathsForSelectedItems != nil {
+            collectionView.cellForItem(at: indexPath)?.alpha = 0.5
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                collectionView.cellForItem(at: indexPath)?.alpha = 1.0
+                
+            }
+        }
+    
+        let footer = MiaTalksFooterView()
+        soundTypeSelected =  footer.soundType
+        
+        print("item", item.description) // = letter
+        //print(indexPath)
+        
+        print("Sound Type", soundTypeSelected) //= robot
+        //then item is a
+        //playsound is soundSelected + miaTalksViewText[item] should be robot apple
+        
+        
         
         //Play sound here with combined names selected
         

@@ -401,9 +401,6 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain"/>
-                                            <connections>
-                                                <action selector="miaTalksButtonTap:" destination="wrG-Bv-9ua" eventType="touchUpInside" id="B5I-x3-vBo"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

@@ -37,48 +37,47 @@ private var objectsImages: [String: String] = [
     "y2": "yeti", "z2": "zombie"]
 
 //Colors alt lesson (alt 2)
-private let colorMainImages: [String: String] =
-["black": "black butterfly", "blue": "blue bunny", "brown": "brown bear",
- "cyan": "cyan circle", "green": "green gecko", "grey": "ghost",
- "magenta": "magenta makeup", "maroon": "maroon milk", "orange": "orange octopus",
- "pink": "pink piggy", "purple": "purple pizza", "red": "red robot",
- "teal": "teal tank", "yellow": "yellow yak", "white": "white web",
- "violet": "black butterfly"]
+private let colorMainImages: [String: String] = [
+    "black": "black butterfly", "blue": "blue bunny", "brown": "brown bear",
+    "cyan": "cyan circle", "green": "green gecko", "grey": "ghost",
+    "magenta": "magenta makeup", "maroon": "maroon milk", "orange": "orange octopus",
+    "pink": "pink piggy", "purple": "purple pizza", "red": "red robot",
+    "teal": "teal tank", "yellow": "yellow yak", "white": "white web",
+    "violet": "black butterfly"]
 
 //Shapes alt lesson (alt 3)
-private let shapeMainImages: [String: String] =
-["circle": "wheel", "square": "box", "triangle": "pyramid",
- "rectangle": "mattress", "star": "tree star", "diamond": "sign",
- "oval": "mirror", "heart": "valentines candy", "hexagon": "bolts",
- "pentagon": "bird house", "cross": "ambulance", "octogon": "stop sign",
- "crescent": "crescent moon"]
+private let shapeMainImages: [String: String] = [
+    "circle": "wheel", "square": "box", "triangle": "pyramid",
+    "rectangle": "mattress", "star": "tree star", "diamond": "sign",
+    "oval": "mirror", "heart": "valentines candy", "hexagon": "bolts",
+    "pentagon": "bird house", "cross": "ambulance", "octogon": "stop sign",
+    "crescent": "crescent moon"]
 
-private let instrumentsMainVideo: [String: String] =
-["instruments": "avQuiz"]
+private let instrumentsMainVideo: [String: String] = ["instruments": "avQuiz"]
 
 private let instrumentsTest = ["instruments"]
 
 //Main ABC
-private var lowercaseLetters =
-["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m",
- "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+private var lowercaseLetters = [
+    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m",
+    "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 //First alt ABC Objects
-private var lowercaseLettersAlt =
-["a2", "b2", "c2", "d2", "e2", "f2", "g2", "h2", "i2", "j2", "k2", "l2" ,"m2",
- "n2", "o2", "p2", "q2", "r2", "s2", "t2", "u2", "v2", "w2", "x2", "y2", "z2"]
+private var lowercaseLettersAlt = [
+    "a2", "b2", "c2", "d2", "e2", "f2", "g2", "h2", "i2", "j2", "k2", "l2" ,"m2",
+    "n2", "o2", "p2", "q2", "r2", "s2", "t2", "u2", "v2", "w2", "x2", "y2", "z2"]
 
 //Second alt lesson colors
-private let colors =
-["black", "blue", "brown", "cyan", "green",
- "magenta", "maroon", "orange", "pink", "purple",
- "red", "teal", "yellow", "grey", "white", "violet"]
+private let colors = [
+    "black", "blue", "brown", "cyan", "green",
+    "magenta", "maroon", "orange", "pink", "purple",
+    "red", "teal", "yellow", "grey", "white", "violet"]
 
 //Third alt lesson (
-private let shapes: [String] =
-["circle", "square", "triangle", "rectangle", "oval",
- "diamond", "star", "heart", "hexagon", "pentagon",
- "cross", "octogon", "crescent"]
+private let shapes: [String] = [
+    "circle", "square", "triangle", "rectangle", "oval",
+    "diamond", "star", "heart", "hexagon", "pentagon",
+    "cross", "octogon", "crescent"]
 
 //MARK: - Class
 

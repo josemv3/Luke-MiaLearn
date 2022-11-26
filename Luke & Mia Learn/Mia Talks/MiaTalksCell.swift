@@ -14,15 +14,15 @@ class MiaTalksCell: UICollectionViewCell {
     var buttonaNameTapped = ""
     
     
-    @IBAction func miaTalksButtonTap(_ sender: UIButton) {
-        sender.alpha = 0.5
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-        sender.alpha = 1.0
-        print(self.miaTalkCellLabel.text ?? "error")
-        }
-        print("button title", miaTalksButton.image(for: .normal)!)
+//    @IBAction func miaTalksButtonTap(_ sender: UIButton) {
+//        sender.alpha = 0.5
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+//        sender.alpha = 1.0
+//        print(self.miaTalkCellLabel.text ?? "error") //letter
+//        }
+//        print("button title", miaTalksButton.image(for: .normal)!)
         //buttonaNameTapped = sender.titleLabel?.text ?? "banana"
         //print(buttonaNameTapped)
-    }
-    
+    //}
 }
+//remove the button pushButton from the cell. Go back to didSelectItemAt.

@@ -42,6 +42,7 @@ class MiaTalksController: UICollectionViewController {
     }
     
     //MARK: - Layout
+    
     private func generateLayout() -> UICollectionViewLayout {
         //wlet spacing: CGFloat = 10
         let groupItemCount = 2
@@ -108,8 +109,8 @@ class MiaTalksController: UICollectionViewController {
         return layout
     }
     
-    
     //MARK: - DataSource
+    
     private func createDataSource() {
         ///CELL
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
@@ -119,7 +120,6 @@ class MiaTalksController: UICollectionViewController {
             cell.miaTalksView.image = UIImage(named: miaTalksViewText[item]!)
             //cell.miaTalksView.setImage(UIImage(named: miaTAlksButtonText[item]!), for: .normal)
             //cell.miaTalksButton.setTitle(miaTAlksButtonText[item], for: .normal)
-            
             
             return cell
         })
@@ -155,10 +155,8 @@ class MiaTalksController: UICollectionViewController {
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     
-    
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
+        
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         
         if collectionView.indexPathsForSelectedItems != nil {
@@ -166,10 +164,9 @@ class MiaTalksController: UICollectionViewController {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 collectionView.cellForItem(at: indexPath)?.alpha = 1.0
-                
             }
         }
-    
+        
         let footer = MiaTalksFooterView()
         soundTypeSelected =  footer.soundType
         
@@ -179,11 +176,7 @@ class MiaTalksController: UICollectionViewController {
         print("Sound Type", soundTypeSelected) //= robot
         //then item is a
         //playsound is soundSelected + miaTalksViewText[item] should be robot apple
-        
-        
-        
         //Play sound here with combined names selected
-        
     }
     
     private func playSound(soundName: String) {
@@ -213,6 +206,7 @@ class MiaTalksController: UICollectionViewController {
     }
     
     //MARK: - Alert Action
+    
     @objc func choseLesson() {
         
         //Placeholder assets and text

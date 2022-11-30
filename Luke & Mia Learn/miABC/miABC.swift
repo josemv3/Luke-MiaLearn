@@ -183,13 +183,13 @@ class miABC: UIViewController, UICollectionViewDelegate {
             print(item)
         
         if currentABCSet == ["instruments"] {
-            playVideo(video: "avQuiz", newView: mainImagebutton)
+            playVideo(video: "instrumentsV", newView: mainImagebutton)
             mainImagebutton.imageView?.image = nil
             
         } else {
             
             //mainLabel.text = mainImages[item]
-            mainWordButtonTitle = mainImages[item] ?? "greeting"
+            mainWordButtonTitle = currentMainImage[item] ?? "greeting"
             mainWordButton.setTitle(currentMainImage[item.description], for: .normal)
             mainImagebutton.setImage(UIImage(named: currentMainImage[item] ?? "greeting"), for: .normal)
             
@@ -266,6 +266,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
     
     @IBAction func mainWordButton(_ sender: UIButton) {
         playSound(soundName: mainWordButtonTitle)
+        print(mainWordButtonTitle)
     }
     
     //MARK: - Video Player

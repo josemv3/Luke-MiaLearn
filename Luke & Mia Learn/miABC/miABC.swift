@@ -43,15 +43,23 @@ private let colorMainImages: [String: String] = [
     "magenta": "magenta makeup", "maroon": "maroon milk", "orange": "orange octopus",
     "pink": "pink piggy", "purple": "purple pizza", "red": "red robot",
     "teal": "teal tank", "yellow": "yellow yak", "white": "white web",
-    "violet": "black butterfly"]
+    "violet": "violet flower"]
 
 //Shapes alt lesson (alt 3)
 private let shapeMainImages: [String: String] = [
     "circle": "wheel", "square": "box", "triangle": "pyramid",
-    "rectangle": "mattress", "star": "tree star", "diamond": "sign",
+    "rectangle": "mattress", "star": "tree star", "diamond": "street sign",
     "oval": "mirror", "heart": "valentines candy", "hexagon": "bolts",
     "pentagon": "bird house", "cross": "ambulance", "octogon": "stop sign",
     "crescent": "crescent moon"]
+
+private let numbersMainVideo: [String: String] = [
+    "1": "greeting", "2": "greeting", "3": "greeting", "4": "greeting", "5": "greeting",
+    "6": "greeting", "7": "greeting", "8": "greeting", "9": "greeting", "10": "greeting",
+    "11": "greeting", "12": "greeting", "13": "greeting", "14": "greeting", "15": "greeting",
+    "16": "greeting", "17": "greeting", "18": "greeting", "19": "greeting", "20": "greeting",
+    "21": "greeting", "22": "greeting", "23": "greeting", "24": "greeting", "25": "greeting",
+    "26": "greeting", "27": "greeting", "28": "greeting", "29": "greeting", "30": "greeting"]
 
 private let instrumentsMainVideo: [String: String] = ["instruments": "avQuiz"]
 
@@ -78,6 +86,11 @@ private let shapes: [String] = [
     "circle", "square", "triangle", "rectangle", "oval",
     "diamond", "star", "heart", "hexagon", "pentagon",
     "cross", "octogon", "crescent"]
+
+private let numbers: [String] = [
+    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+    "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+    "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]
 
 //MARK: - Class
 
@@ -393,10 +406,10 @@ class miABC: UIViewController, UICollectionViewDelegate {
         ///Fourth Alt lesson:
         alert.addAction(UIAlertAction(title: "Numbers", style: .default, handler: { (action) in
             print("Numbers")
-            //self.changeLesson(abcSet: shapes, imageSet: shapeMainImages, mainImage: "wheel")
+            self.changeLesson(abcSet: numbers, imageSet: numbersMainVideo, mainImage: "1")
         }))
-        //alert.view.addSubview(addRightAlertImage(yAxis: 473, imageName: "heart.png"))
-        //alert.view.addSubview(addLeftAlertImage(yAxis: 473, imageName: "cross.png"))
+        alert.view.addSubview(addRightAlertImage(yAxis: 481, imageName: "1.png"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 481, imageName: "3.png"))
         
         ///Cancel
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) in

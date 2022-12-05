@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 
 private let reuseIdentifier = "miaTalksCell"
+var recieverString = "human"
 
 private var miatalksLowercaseLetters = [
     "a", "b", "c", "d", "e", "f"]
@@ -37,7 +38,6 @@ class MiaTalksController: UICollectionViewController {
         navigationItem.title = "Mia Talks"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
-        
         createDataSource()
     }
     
@@ -132,6 +132,7 @@ class MiaTalksController: UICollectionViewController {
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath) as! MiaTalksFooterView
                 footer.backgroundColor = UIColor(named: "miaTalksOrange")
                 //self.soundTypeSelected = footer.soundType ?? "2"
+                footer.delegate = self
                 
                 return footer
             } else if kind == "section-header-element-kind" {
@@ -155,6 +156,8 @@ class MiaTalksController: UICollectionViewController {
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     
+    //MARK: - Did Select Item At
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
@@ -167,17 +170,14 @@ class MiaTalksController: UICollectionViewController {
             }
         }
         
-        let footer = MiaTalksFooterView()
-        soundTypeSelected =  footer.soundType
-        
         print("item", item.description) // = letter
-        //print(indexPath)
-        
-        print("Sound Type", soundTypeSelected) //= robot
+        print("recieverString", recieverString) //= robot
         //then item is a
         //playsound is soundSelected + miaTalksViewText[item] should be robot apple
         //Play sound here with combined names selected
     }
+    
+    //MARK: - Play Sound files
     
     private func playSound(soundName: String) {
         
@@ -245,5 +245,12 @@ class MiaTalksController: UICollectionViewController {
         alert.view.addSubview(imageView3)
         
         self.present(alert, animated: true)
+    }
+}
+
+extension MiaTalksController: MiaTalksFooterViewDelegate {
+    func didSelectSoundType(_ soundType: String) {
+        recieverString = soundType
+        print(recieverString)
     }
 }

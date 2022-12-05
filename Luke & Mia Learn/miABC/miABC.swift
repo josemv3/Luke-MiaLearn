@@ -133,9 +133,6 @@ class miABC: UIViewController, UICollectionViewDelegate {
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
         
         playSound(soundName: String(miaABCBrain.currentLesson[item.description]?.cellImageSound ?? "bat"))
-        print("cell sound", miaABCBrain.currentLesson[item]?.cellImageSound ?? "bat")
-        print("Main Image", miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "bat")
-        
     }
     
     //MARK: - Sound Player

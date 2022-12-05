@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol MiaTalksFooterViewDelegate {
+    func didSelectSoundType(_ soundType: String)
+}
+
 class MiaTalksFooterView: UICollectionReusableView {
+    
+    var delegate: MiaTalksFooterViewDelegate?
     
     let leftFooterBtn = UIButton()
     let middleFooterBtn = UIButton()
     let rightFooterButton = UIButton()
-    var soundType = "2"
+    var soundType = "human"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,7 +40,7 @@ class MiaTalksFooterView: UICollectionReusableView {
         //Left Button
         leftFooterBtn.translatesAutoresizingMaskIntoConstraints = false
         addSubview(leftFooterBtn)
-        leftFooterBtn.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
+        leftFooterBtn.addTarget(self, action: #selector(sendSoundType), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             leftFooterBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
@@ -52,7 +58,7 @@ class MiaTalksFooterView: UICollectionReusableView {
         //middle Button
         middleFooterBtn.translatesAutoresizingMaskIntoConstraints = false
         addSubview(middleFooterBtn)
-        middleFooterBtn.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
+        middleFooterBtn.addTarget(self, action: #selector(sendSoundType), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             middleFooterBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 150),
@@ -70,7 +76,7 @@ class MiaTalksFooterView: UICollectionReusableView {
         //Right button
         rightFooterButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(rightFooterButton)
-        rightFooterButton.addTarget(self, action: #selector(action(sender:)), for: .touchUpInside)
+        rightFooterButton.addTarget(self, action: #selector(sendSoundType), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             rightFooterButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 240),
@@ -93,8 +99,17 @@ class MiaTalksFooterView: UICollectionReusableView {
         
         sender.backgroundColor = .systemGray
         soundType = sender.title(for: .selected)!
-        print("ST Cell", soundType)
-        //print(sender.title(for: .selected)!)
+        print("FOOTER Cell", soundType)
+        //sendSoundType()
+        
+    }
+    
+    @objc func sendSoundType(sender: UIButton) {
+        clearUI()
+        sender.backgroundColor = .systemGray
+        soundType = sender.title(for: .selected)!
+        print("FOOTER Cell", soundType)
+        delegate?.didSelectSoundType(soundType)
     }
     
     func clearUI() {

@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "toy robot.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

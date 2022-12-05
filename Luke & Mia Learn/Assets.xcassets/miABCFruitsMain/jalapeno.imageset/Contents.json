@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "jalapeno.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -12,86 +12,11 @@
 import UIKit
 import AVFoundation
 
-//Main ABC lesson
-private var mainImages: [String: String] = [
-    "a": "alligator", "b": "bat", "c": "cat",
-    "d": "dinosaur", "e": "elephant", "f": "frog",
-    "g": "giraffe", "h": "horse", "i": "iguana",
-    "j": "jellyfish", "k": "kangaroo", "l": "lion",
-    "m": "monkey", "n": "narwal", "o": "octopus",
-    "p": "penguin", "q": "queen angelfish", "r": "raccoon",
-    "s": "snake", "t": "turtle", "u": "umbrella bird",
-    "v": "volture", "w": "walrus", "x": "xray tetra",
-    "y": "yak", "z": "zebra"]
 
-//ABC objects lesson (alt 1)
-private var objectsImages: [String: String] = [
-    "a2": "airplane", "b2": "ball", "c2": "car",
-    "d2": "drum", "e2": "earth", "f2": "flower",
-    "g2": "ghost", "h2": "home", "i2": "icecream",
-    "j2": "juice", "k2": "ketchup", "l2": "lightning",
-    "m2": "moon", "n2": "nuts", "o2": "oven",
-    "p2": "piano", "q2": "question", "r2": "rainbow",
-    "s2": "smile", "t2": "trees", "u2": "unicorn",
-    "v2": "violin", "w2": "wizard", "x2": "xylophone",
-    "y2": "yeti", "z2": "zombie"]
-
-//Colors alt lesson (alt 2)
-private let colorMainImages: [String: String] = [
-    "black": "black butterfly", "blue": "blue bunny", "brown": "brown bear",
-    "cyan": "cyan circle", "green": "green gecko", "grey": "ghost",
-    "magenta": "magenta makeup", "maroon": "maroon milk", "orange": "orange octopus",
-    "pink": "pink piggy", "purple": "purple pizza", "red": "red robot",
-    "teal": "teal tank", "yellow": "yellow yak", "white": "white web",
-    "violet": "violet flower"]
-
-//Shapes alt lesson (alt 3)
-private let shapeMainImages: [String: String] = [
-    "circle": "wheel", "square": "box", "triangle": "pyramid",
-    "rectangle": "mattress", "star": "tree star", "diamond": "street sign",
-    "oval": "mirror", "heart": "valentines candy", "hexagon": "bolts",
-    "pentagon": "bird house", "cross": "ambulance", "octogon": "stop sign",
-    "crescent": "crescent moon"]
-
-private let numbersMainVideo: [String: String] = [
-    "1": "greeting", "2": "greeting", "3": "greeting", "4": "greeting", "5": "greeting",
-    "6": "greeting", "7": "greeting", "8": "greeting", "9": "greeting", "10": "greeting",
-    "11": "greeting", "12": "greeting", "13": "greeting", "14": "greeting", "15": "greeting",
-    "16": "greeting", "17": "greeting", "18": "greeting", "19": "greeting", "20": "greeting",
-    "21": "greeting", "22": "greeting", "23": "greeting", "24": "greeting", "25": "greeting",
-    "26": "greeting", "27": "greeting", "28": "greeting", "29": "greeting", "30": "greeting"]
-
-private let instrumentsMainVideo: [String: String] = ["instruments": "avQuiz"]
+private let instrumentsMainVideo: [String: String] = ["instruments": "Quiz"]
 
 private let instrumentsTest = ["instruments"]
-
-//Main ABC
-private var lowercaseLetters = [
-    "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l" ,"m",
-    "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
-//First alt ABC Objects
-private var lowercaseLettersAlt = [
-    "a2", "b2", "c2", "d2", "e2", "f2", "g2", "h2", "i2", "j2", "k2", "l2" ,"m2",
-    "n2", "o2", "p2", "q2", "r2", "s2", "t2", "u2", "v2", "w2", "x2", "y2", "z2"]
-
-//Second alt lesson colors
-private let colors = [
-    "black", "blue", "brown", "cyan", "green",
-    "magenta", "maroon", "orange", "pink", "purple",
-    "red", "teal", "yellow", "grey", "white", "violet"]
-
-//Third alt lesson (
-private let shapes: [String] = [
-    "circle", "square", "triangle", "rectangle", "oval",
-    "diamond", "star", "heart", "hexagon", "pentagon",
-    "cross", "octogon", "crescent"]
-
-private let numbers: [String] = [
-    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-    "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
-    "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]
-
+ 
 //MARK: - Class
 
 class miABC: UIViewController, UICollectionViewDelegate {
@@ -101,16 +26,16 @@ class miABC: UIViewController, UICollectionViewDelegate {
     ///When adding CV to VC control drag CV to VC and make delegate, then add UICVDelegate to class
     @IBOutlet var collectionView: UICollectionView!
     
+    var miaABCBrain = MiaABCBrain()
     var currentAnimation = 0
     var audioPlayer: AVAudioPlayer?
     var playerLayer = AVPlayerLayer()
-    var currentABCSet = lowercaseLetters
-    var currentMainImage = mainImages
     var currentItemBackgroundColor: UIColor =  UIColor(named: "mainOrange" ) ?? .black
     var cellItemBorderColor = "mainOrange"
     private var mainWordButtonTitle = ""
     private let smallBorderSize: CGFloat = 2
     private let mediumBorderSize: CGFloat = 4
+    
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     
     enum Section {
@@ -123,7 +48,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
         
         navigationItem.title = "miABC"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
-        //mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
+        mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
+        miaABCBrain.lesson = .animal
+        miaABCBrain.getLesson()
         
         collectionView.collectionViewLayout = configureLayout()
         collectionView.layer.borderWidth = smallBorderSize //2
@@ -184,7 +111,8 @@ class miABC: UIViewController, UICollectionViewDelegate {
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
         
         initialSnapshot.appendSections([.main])
-        initialSnapshot.appendItems(currentABCSet)
+        //initialSnapshot.appendItems(currentABCSet)
+        initialSnapshot.appendItems(miaABCBrain.currentSet)
         
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
@@ -193,24 +121,20 @@ class miABC: UIViewController, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-            print(item)
         
-        if currentABCSet == ["instruments"] {
-            playVideo(video: "instrumentsV", newView: mainImagebutton)
-            mainImagebutton.imageView?.image = nil
-            
-        } else {
-            
-            //mainLabel.text = mainImages[item]
-            mainWordButtonTitle = currentMainImage[item] ?? "greeting"
-            mainWordButton.setTitle(currentMainImage[item.description], for: .normal)
-            mainImagebutton.setImage(UIImage(named: currentMainImage[item] ?? "greeting"), for: .normal)
-            
-            self.mainImagebutton.transform = .identity //read bellow (reset animation):
-            currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
-            
-            playSound(soundName: item)
-        }
+        //        if currentABCSet == ["instruments"] {
+        //            playVideo(video: "instrumentsV", newView: mainImagebutton)
+        //            mainImagebutton.imageView?.image = nil
+        
+        mainWordButtonTitle = miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "greeting"
+        mainWordButton.setTitle(miaABCBrain.currentLesson[item]?.mainImageAndSound, for: .normal)
+        mainImagebutton.setImage(UIImage(named: miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "greeting"), for: .normal)
+        self.mainImagebutton.transform = .identity //read bellow (reset animation):
+        currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
+        
+        playSound(soundName: String(miaABCBrain.currentLesson[item.description]?.cellImageSound ?? "bat"))
+        print("cell sound", miaABCBrain.currentLesson[item]?.cellImageSound ?? "bat")
+        print("Main Image", miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "bat")
         
     }
     
@@ -246,7 +170,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
     
     @IBAction func mainImageButtonPressed(_ sender: UIButton) {
         
-        if currentABCSet == ["instruments"] {
+        if miaABCBrain.currentSet == ["instruments"] {
             //not working. Maybe remove mainImageButton set from ViewDidLoad and put it in lesson assigned
             //mainImagebutton.setImage(UIImage(named: "placholder"), for: .normal)
             mainImagebutton.imageView?.image = nil
@@ -312,16 +236,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
         return rightImage
     }
     
-    func changeLesson(abcSet:[String], imageSet: [String:String], mainImage: String) {
-        self.currentABCSet = abcSet
-        self.currentMainImage = imageSet
-        self.mainImagebutton.setImage(UIImage(named: currentMainImage[mainImage] ?? "greeting"), for: .normal)
-        self.configureDataSource()
-    }
-    
     func changeLessonVideo(abcSet: [String], videoSet: [String: String]) {
-        self.currentABCSet = abcSet
-        self.currentMainImage = videoSet
         self.mainImagebutton.imageView?.image = nil
         self.configureDataSource()
     }
@@ -332,11 +247,14 @@ class miABC: UIViewController, UICollectionViewDelegate {
         let alert = UIAlertController(title: "More Lessons", message: "Chose A Lesson Bellow!", preferredStyle: .alert)
         
         ///First ABC lesson:
-        alert.addAction(UIAlertAction(title: "ABC Animals", style: .default, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "ABC Animals", style: .default, handler: { [self] (action) in
             print("Colors")
             //if let weakSelf = self { grab all the stuff below, self = weakSelf}
             //put changes in function and get colors right. Button orange
-            self.changeLesson(abcSet: lowercaseLetters, imageSet: mainImages, mainImage: "greeting")
+            
+            self.miaABCBrain.lesson = .animal
+            self.miaABCBrain.getLesson()
+            self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 82, imageName: "bat.png"))
         alert.view.addSubview(addLeftAlertImage(yAxis: 82, imageName: "alligator.png"))
@@ -344,7 +262,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
         ///Second ABC lesson:
         alert.addAction(UIAlertAction(title: "ABC Objects", style: .default, handler: { (action) in
             print("ABC Objects")
-            self.changeLesson(abcSet: lowercaseLettersAlt, imageSet: objectsImages, mainImage: "a2")
+            self.miaABCBrain.lesson = .object
+            self.miaABCBrain.getLesson()
+            self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 127, imageName: "airplane.svg"))
         alert.view.addSubview(addLeftAlertImage(yAxis: 127, imageName: "drum.svg"))
@@ -353,7 +273,6 @@ class miABC: UIViewController, UICollectionViewDelegate {
         alert.addAction(UIAlertAction(title: "ABC Instruments", style: .default, handler: { (action) in
             print("ABC Instruments")
             self.changeLessonVideo(abcSet: instrumentsTest, videoSet: instrumentsMainVideo)
-            //self.changeLesson(abcSet: instrumentsTest, imageSet: instrumentsMainVideo, mainImage: "cat")
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 172, imageName: "instruments.png"))
         alert.view.addSubview(addLeftAlertImage(yAxis: 172, imageName: "instruments.png"))
@@ -361,9 +280,12 @@ class miABC: UIViewController, UICollectionViewDelegate {
         ///Fourth ABC lesson:
         alert.addAction(UIAlertAction(title: "ABC Fruits and Veggies", style: .default, handler: { (action) in
             print("ABC Fruits and Veggies")
+            self.miaABCBrain.lesson = .fruit
+            self.miaABCBrain.getLesson()
+            self.configureDataSource()
         }))
-        alert.view.addSubview(addRightAlertImage(yAxis: 217, imageName: "zombie.png"))
-        alert.view.addSubview(addLeftAlertImage(yAxis: 217, imageName: "zombie.png"))
+        alert.view.addSubview(addRightAlertImage(yAxis: 217, imageName: "avocado.png"))
+        alert.view.addSubview(addLeftAlertImage(yAxis: 217, imageName: "avocado.png"))
         
         //Spacer
         alert.addAction(UIAlertAction(title: "", style: .default, handler: { (action) in
@@ -382,7 +304,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
         ///First Alt lesson:
         alert.addAction(UIAlertAction(title: "Colors", style: .default, handler: { (action) in
             print("Colors")
-            self.changeLesson(abcSet: colors, imageSet: colorMainImages, mainImage: "red")
+            self.miaABCBrain.lesson = .color
+            self.miaABCBrain.getLesson()
+            self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 350, imageName: "blue.png"))
         alert.view.addSubview(addLeftAlertImage(yAxis: 350, imageName: "red.png"))
@@ -390,7 +314,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
         ///Second Alt lesson:
         alert.addAction(UIAlertAction(title: "Shapes", style: .default, handler: { (action) in
             print("Shapes")
-            self.changeLesson(abcSet: shapes, imageSet: shapeMainImages, mainImage: "wheel")
+            self.miaABCBrain.lesson = .shape
+            self.miaABCBrain.getLesson()
+            self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 395, imageName: "heart.png"))
         alert.view.addSubview(addLeftAlertImage(yAxis: 395, imageName: "cross.png"))
@@ -398,7 +324,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
         ///Third Alt lesson:
         alert.addAction(UIAlertAction(title: "Toys", style: .default, handler: { (action) in
             print("Toys")
-            //self.changeLesson(abcSet: shapes, imageSet: shapeMainImages, mainImage: "wheel")
+            self.miaABCBrain.lesson = .toy
+            self.miaABCBrain.getLesson()
+            self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 438, imageName: "toys.png"))
         alert.view.addSubview(addLeftAlertImage(yAxis: 438, imageName: "toys.png"))
@@ -406,7 +334,9 @@ class miABC: UIViewController, UICollectionViewDelegate {
         ///Fourth Alt lesson:
         alert.addAction(UIAlertAction(title: "Numbers", style: .default, handler: { (action) in
             print("Numbers")
-            self.changeLesson(abcSet: numbers, imageSet: numbersMainVideo, mainImage: "1")
+            self.miaABCBrain.lesson = .number
+            self.miaABCBrain.getLesson()
+            self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 481, imageName: "1.png"))
         alert.view.addSubview(addLeftAlertImage(yAxis: 481, imageName: "3.png"))

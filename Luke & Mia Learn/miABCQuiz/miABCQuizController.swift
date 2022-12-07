@@ -38,8 +38,9 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     
     var quizBrain = QuizBrain()
     var audioPlayer: AVAudioPlayer!
-    var player: AVPlayer!
-    var playerLayer: AVPlayerLayer!
+    //var player: AVPlayer!
+    //var playerLayer: AVPlayerLayer!
+    var playerLayer = AVPlayerLayer()
     private var correctAnswer: String = "a"
     var currentLetterSet = ["a", "b", "c", "d", "e", "f"]
     var score = 0
@@ -68,8 +69,9 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         miaABCQuizCollectionView.collectionViewLayout = configureLayout()
         title = "miABC Quiz"
-        
-        navigationController?.navigationBar.backgroundColor = UIColor.green
+        playVideo()
+    
+        navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: "quizBrownLight")
         mainView.layer.borderColor = UIColor(named: "quizBrownLight")?.cgColor
         mainView.layer.borderWidth = largeBorderSize
         configureDataSource()
@@ -79,26 +81,23 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         restartGame()
     }
     
-    //MARK: - ViewDidApear Video Player
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
-            forResource: videoNames[videoCount], ofType: "mp4") ?? "apple.mp4"))
+    //MARK: - Video Player
+    
+    func playVideo() {
+        playerLayer.player?.pause() //if player exists pause playback and start new play
+       
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
+            forResource: videoNames[videoCount] , ofType: "mp4") ?? "apple.mp4"))
         playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = mainView.bounds
+        playerLayer.videoGravity = .resizeAspectFill
         mainView.layer.addSublayer(playerLayer)
         player.play()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        player = nil
-        playerLayer.removeFromSuperlayer()
-    }
-    
     //MARK: - MainButton and Image
     @IBAction func mainViewButtonTap(_ sender: UIButton) {
-        viewDidDisappear(true)
-        viewDidAppear(true)
+        playVideo()
     }
     
     //MARK: - Compositional CV LAYOUT
@@ -220,8 +219,8 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         scoreLabel.text = String(score)
         videoCount += 1
         getCorrectAnswer()
-        viewDidDisappear(true)
-        viewDidAppear(true)
+        playVideo()
+       
         //change background collor
         if videoCount == videoNames.count {
             videoCount = 0
@@ -263,8 +262,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
         self.currentLetterSet.removeAll()
         self.currentLetterSet = self.getLetterSet(answer: self.correctAnswer)
         self.dataSource.apply(self.filteredItemsSnapshot)
-        self.viewDidDisappear(true) //end video
-        self.viewDidAppear(true) //restart video
+        self.playVideo() //restart video
     }
     
     //This goes in quizBrain

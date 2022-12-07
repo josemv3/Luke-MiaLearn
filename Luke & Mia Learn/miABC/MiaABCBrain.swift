@@ -41,7 +41,8 @@ struct MiaABCBrain {
             currentSet =  letterSetFruit
             currentLesson = makeLessonDictionary(set: letterSetFruit, setSound: cellSetSound, lesson: fruitsMainImages)
         case .instrument:
-            print("Instruments")
+            currentSet = instrumentsSet
+            currentLesson = makeLessonDictionary(set: instrumentsSet, setSound: instrumentsSet, lesson: instrumentsMainVideo)
         case .color:
             currentSet = colorsSet
             currentLesson = makeLessonDictionary(set: colorsSet, setSound: colorsSet, lesson: colorMainImages)
@@ -101,55 +102,59 @@ struct MiaABCBrain {
         "toy train", "toy truck", "water shooter", "windup car",
         "windup dinosaur"]
     
+    private let instrumentsSet: [String] = [
+        "instrument"
+    ]
+    
     //MARK: - Main View Image Sets
     
     private var abcAnimalMainImages: [String: String] = [
-        "a": "alligator", "b": "bat", "c": "cat",
-        "d": "dinosaur", "e": "elephant", "f": "frog",
-        "g": "giraffe", "h": "horse", "i": "iguana",
-        "j": "jellyfish", "k": "kangaroo", "l": "lion",
-        "m": "monkey", "n": "narwal", "o": "octopus",
-        "p": "penguin", "q": "queen angelfish", "r": "raccoon",
-        "s": "snake", "t": "turtle", "u": "umbrella bird",
-        "v": "volture", "w": "walrus", "x": "xray tetra",
-        "y": "yak", "z": "zebra"]
+        "a": "alligator",   "b": "bat",             "c": "cat",
+        "d": "dinosaur",    "e": "elephant",        "f": "frog",
+        "g": "giraffe",     "h": "horse",           "i": "iguana",
+        "j": "jellyfish",   "k": "kangaroo",        "l": "lion",
+        "m": "monkey",      "n": "narwal",          "o": "octopus",
+        "p": "penguin",     "q": "queen angelfish", "r": "raccoon",
+        "s": "snake",       "t": "turtle",          "u": "umbrella bird",
+        "v": "volture",     "w": "walrus",          "x": "xray tetra",
+        "y": "yak",         "z": "zebra"]
 
     private var abcObjectMainImages: [String: String] = [
-        "a2": "airplane", "b2": "ball", "c2": "car",
-        "d2": "drum", "e2": "earphones", "f2": "flower",
-        "g2": "ghost", "h2": "home", "i2": "icecream",
-        "j2": "juice", "k2": "ketchup", "l2": "lightning",
-        "m2": "moon", "n2": "nuts", "o2": "oven",
-        "p2": "piano", "q2": "question", "r2": "rainbow",
-        "s2": "smile", "t2": "trees", "u2": "unicorn",
-        "v2": "violin", "w2": "wizard", "x2": "xylophone",
-        "y2": "yeti", "z2": "zombie"]
+        "a2": "airplane",   "b2": "ball",       "c2": "car",
+        "d2": "drum",       "e2": "earphones",  "f2": "flower",
+        "g2": "ghost",      "h2": "home",       "i2": "icecream",
+        "j2": "juice",      "k2": "ketchup",    "l2": "lightning",
+        "m2": "moon",       "n2": "nuts",       "o2": "oven",
+        "p2": "piano",      "q2": "question",   "r2": "rainbow",
+        "s2": "smile",      "t2": "trees",      "u2": "unicorn",
+        "v2": "violin",     "w2": "wizard",     "x2": "xylophone",
+        "y2": "yeti",       "z2": "zombie"]
     
     private let colorMainImages: [String: String] = [
-        "black": "black butterfly", "blue": "blue bunny", "brown": "brown bear",
-        "cyan": "cyan circle", "green": "green gecko", "grey": "ghost",
-        "magenta": "magenta makeup", "maroon": "maroon milk", "orange": "orange octopus",
-        "pink": "pink piggy", "purple": "purple pizza", "red": "red robot",
-        "teal": "teal tank", "yellow": "yellow yak", "white": "white web",
+        "black": "black butterfly",     "blue": "blue bunny",       "brown": "brown bear",
+        "cyan": "cyan circle",          "green": "green gecko",     "grey": "ghost",
+        "magenta": "magenta makeup",    "maroon": "maroon milk",    "orange": "orange octopus",
+        "pink": "pink piggy",           "purple": "purple pizza",   "red": "red robot",
+        "teal": "teal tank",            "yellow": "yellow yak",     "white": "white web",
         "violet": "violet flower"]
 
     private let shapeMainImages: [String: String] = [
-        "circle": "wheel", "square": "box", "triangle": "pyramid",
-        "rectangle": "mattress", "star": "tree star", "diamond": "street sign",
-        "oval": "mirror", "heart": "valentines candy", "hexagon": "bolts",
-        "pentagon": "bird house", "cross": "ambulance", "octogon": "stop sign",
+        "circle": "wheel",          "square": "box",                "triangle": "pyramid",
+        "rectangle": "mattress",    "star": "tree star",            "diamond": "street sign",
+        "oval": "mirror",           "heart": "valentines candy",    "hexagon": "bolts",
+        "pentagon": "bird house",   "cross": "ambulance",           "octogon": "stop sign",
         "crescent": "crescent moon"]
 
     private let fruitsMainImages: [String: String] = [
-        "aQuiz": "avocado", "bQuiz": "bananas", "cQuiz": "coconut",
-        "dQuiz": "dragon fruit", "eQuiz": "elderberry", "fQuiz": "fig",
-        "gQuiz": "grapes", "hQuiz": "honeydew", "iQuiz": "iceberg lettuce",
-        "jQuiz": "jalapeno", "kQuiz": "kiwi", "lQuiz": "lemon",
-        "mQuiz": "mushroom", "nQuiz": "nectarine", "oQuiz": "oranges",
-        "pQuiz": "peas", "qQuiz": "quince", "rQuiz": "radish",
-        "sQuiz": "strawberry", "tQuiz": "turnip", "uQuiz": "ugli fruit",
-        "vQuiz": "vanilla", "wQuiz": "watermellon", "xQuiz": "ximenia",
-        "yQuiz": "yam", "zQuiz": "zucchini"]
+        "aQuiz": "avocado",         "bQuiz": "bananas",     "cQuiz": "coconut",
+        "dQuiz": "dragon fruit",    "eQuiz": "elderberry",  "fQuiz": "fig",
+        "gQuiz": "grapes",          "hQuiz": "honeydew",    "iQuiz": "iceberg lettuce",
+        "jQuiz": "jalapeno",        "kQuiz": "kiwi",        "lQuiz": "lemon",
+        "mQuiz": "mushroom",        "nQuiz": "nectarine",   "oQuiz": "oranges",
+        "pQuiz": "peas",            "qQuiz": "quince",      "rQuiz": "radish",
+        "sQuiz": "strawberry",      "tQuiz": "turnip",      "uQuiz": "ugli fruit",
+        "vQuiz": "vanilla",         "wQuiz": "watermellon", "xQuiz": "ximenia",
+        "yQuiz": "yam",             "zQuiz": "zucchini"]
 
     private let toysMainImages: [String: String] = [
         "balloon": "balloon", "bath boat": "bath boat", "beach ball": "beach ball",
@@ -171,6 +176,10 @@ struct MiaABCBrain {
         "16": "16", "17": "17", "18": "18", "19": "19", "20": "20",
         "21": "21", "22": "22", "23": "23", "24": "24", "25": "25",
         "26": "26", "27": "27", "28": "28", "29": "29", "30": "30"]
+    
+    private let instrumentsMainVideo: [String: String] = [
+        "instrument": "instrumentsV"
+    ]
 }
 
 

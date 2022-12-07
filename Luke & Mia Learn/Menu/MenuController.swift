@@ -25,7 +25,11 @@ class MenuController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         createDataSource()
-        navigationItem.title = "Menu"
+        navigationItem.title = "Menu" 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: "mainBlue")
     }
     
     //MARK: - Layout

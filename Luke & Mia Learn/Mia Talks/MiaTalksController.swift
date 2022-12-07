@@ -36,9 +36,15 @@ class MiaTalksController: UICollectionViewController {
         collectionView.register(MiaTalksHeaderView.self, forSupplementaryViewOfKind: MiaTalksController.sectionHeaderElementKind, withReuseIdentifier: "Header")//headerSetup2
         collectionView.register(MiaTalksFooterView.self, forSupplementaryViewOfKind: MiaTalksController.sectionFooterElementKind, withReuseIdentifier: "Footer")//footerSetup2
         navigationItem.title = "Mia Talks"
-        
+        //navigationController?.navigationBar.barTintColor = .gray
+        //navigationController?.navigationBar.backgroundColor = .red
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
         createDataSource()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        recieverString = "human"
+        navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: "miaTalksOrange")
     }
     
     //MARK: - Layout
@@ -169,12 +175,7 @@ class MiaTalksController: UICollectionViewController {
                 collectionView.cellForItem(at: indexPath)?.alpha = 1.0
             }
         }
-        
-        print("item", item.description) // = letter
-        print("recieverString", recieverString) //= robot
-        //then item is a
-        //playsound is soundSelected + miaTalksViewText[item] should be robot apple
-        //Play sound here with combined names selected
+        playSound(soundName: recieverString + (miaTalksViewText[item] ?? "banana"))
     }
     
     //MARK: - Play Sound files

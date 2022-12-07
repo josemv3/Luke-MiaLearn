@@ -50,10 +50,10 @@ class MiaTalksFooterView: UICollectionReusableView {
             
         ])
         leftFooterBtn.backgroundColor = UIColor(named: "miaTalksAltBG")
-        leftFooterBtn.setTitle("alien", for: .normal) //wont go to view when this is not commented out?
+        leftFooterBtn.setTitle("monster", for: .normal) //wont go to view when this is not commented out?
         leftFooterBtn.contentHorizontalAlignment = .center
         leftFooterBtn.setTitleColor(UIColor(named: "miaTalksBlueGreen"), for: .normal)
-        leftFooterBtn.setImage(UIImage(named: "alien"), for: .normal)
+        leftFooterBtn.setImage(UIImage(named: "monster"), for: .normal)
         
         //middle Button
         middleFooterBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -72,6 +72,7 @@ class MiaTalksFooterView: UICollectionReusableView {
         middleFooterBtn.contentHorizontalAlignment = .center
         middleFooterBtn.setTitleColor(UIColor(named: "miaTalksBlueGreen"), for: .normal)
         middleFooterBtn.setImage(UIImage(named: "human"), for: .normal)
+        middleFooterBtn.backgroundColor = .systemGray
         
         //Right button
         rightFooterButton.translatesAutoresizingMaskIntoConstraints = false

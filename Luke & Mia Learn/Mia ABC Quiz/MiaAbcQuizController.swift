@@ -29,7 +29,7 @@ var quizAlphabetLetters = quizLowercaseLettersSet1
 private var videoCount = 0
 private let largeBorderSize: CGFloat = 10
 
-class miABCQuizController: UIViewController, UICollectionViewDelegate {
+class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var miaABCQuizCollectionView: UICollectionView!
     @IBOutlet var mainView: UIImageView!
@@ -68,7 +68,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         miaABCQuizCollectionView.collectionViewLayout = configureLayout()
-        title = "miABC Quiz"
+        title = "Mia ABC Quiz"
         playVideo()
     
         navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: "quizBrownLight")
@@ -128,7 +128,7 @@ class miABCQuizController: UIViewController, UICollectionViewDelegate {
     func configureDataSource() {//SOURCE2
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: miaABCQuizCollectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: miABCQuizCell.reusidentifier, for: indexPath) as? miABCQuizCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiaAbcQuizCell.reusidentifier, for: indexPath) as? MiaAbcQuizCell else {
                 fatalError("Cannot create new cell")
             }
             cell.miABCQuizCellImage.layer.borderWidth = 6

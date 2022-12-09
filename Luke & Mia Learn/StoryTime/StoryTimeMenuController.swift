@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StoryMenuController: UIViewController {
+class StoryTimeMenuController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

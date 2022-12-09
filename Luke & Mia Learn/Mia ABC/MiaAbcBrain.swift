@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct MiaABCBrain {
+struct MiaAbcBrain {
     var lesson = Lesson.animal
     var currentSet = [""]
-    var currentLesson: [String: MiaABCItem] = [:]
+    var currentLesson: [String: MiaAbcItem] = [:]
     
-    func makeLessonDictionary(set: [String], setSound: [String], lesson: [String: String]) -> [String: MiaABCItem] {
-        var lessonDictionary: [String: MiaABCItem] = [:]
+    func makeLessonDictionary(set: [String], setSound: [String], lesson: [String: String]) -> [String: MiaAbcItem] {
+        var lessonDictionary: [String: MiaAbcItem] = [:]
         var count = 0
         
         for item in set {
-            lessonDictionary[item] = MiaABCItem(cellImage: item, cellImageSound: setSound[count], mainImageAndSound: lesson[item] ?? "a")
+            lessonDictionary[item] = MiaAbcItem(cellImage: item, cellImageSound: setSound[count], mainImageAndSound: lesson[item] ?? "a")
             count += 1
         }
         return lessonDictionary
@@ -132,7 +132,7 @@ struct MiaABCBrain {
     
     private let colorMainImages: [String: String] = [
         "black": "black butterfly",     "blue": "blue bunny",       "brown": "brown bear",
-        "cyan": "cyan circle",          "green": "green gecko",     "grey": "ghost",
+        "cyan": "cyan circle",          "green": "green gecko",     "grey": "grey ghost",
         "magenta": "magenta makeup",    "maroon": "maroon milk",    "orange": "orange octopus",
         "pink": "pink piggy",           "purple": "purple pizza",   "red": "red robot",
         "teal": "teal tank",            "yellow": "yellow yak",     "white": "white web",

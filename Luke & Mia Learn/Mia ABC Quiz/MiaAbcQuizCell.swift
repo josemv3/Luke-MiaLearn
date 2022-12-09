@@ -7,9 +7,9 @@
 
 import UIKit
 
-class miABCQuizCell: UICollectionViewCell {
+class MiaAbcQuizCell: UICollectionViewCell {
     
     @IBOutlet weak var miABCQuizCellLabel: UILabel!
     @IBOutlet weak var miABCQuizCellImage: UIImageView!
-    static let reusidentifier = String(describing: miABCQuizCell.self)
+    static let reusidentifier = String(describing: MiaAbcQuizCell.self)
 }

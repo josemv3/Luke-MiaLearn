@@ -12,7 +12,7 @@ import Foundation
 //main image
 //main image sound
 
-struct MiaABCItem {
+struct MiaAbcItem {
     let cellImage: String
     let cellImageSound: String
     let mainImageAndSound: String

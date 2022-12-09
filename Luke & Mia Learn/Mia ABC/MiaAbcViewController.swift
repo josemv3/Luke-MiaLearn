@@ -19,14 +19,14 @@ private let instrumentsTest = ["instruments"]
  
 //MARK: - Class
 
-class miABC: UIViewController, UICollectionViewDelegate {
+class MiaAbcViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet var mainImageBack: UIImageView!
     @IBOutlet var mainImagebutton: UIButton!
     @IBOutlet var mainWordButton: UIButton!
     ///When adding CV to VC control drag CV to VC and make delegate, then add UICVDelegate to class
     @IBOutlet var collectionView: UICollectionView!
     
-    var miaABCBrain = MiaABCBrain()
+    var miaABCBrain = MiaAbcBrain()
     var currentAnimation = 0
     var audioPlayer: AVAudioPlayer?
     var playerLayer = AVPlayerLayer()
@@ -46,7 +46,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "miABC"
+        navigationItem.title = "Mia ABC"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
         navigationController?.navigationBar.backgroundColor = UIColor.systemBlue
 
@@ -98,7 +98,7 @@ class miABC: UIViewController, UICollectionViewDelegate {
     func configureDataSource() {//SOURCE2
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: miABCCell.reusidentifier, for: indexPath) as? miABCCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiaAbcCell.reusidentifier, for: indexPath) as? MiaAbcCell else {
                 fatalError("Cannot create new cell")
             }
             cell.miABCCellLabel.text = item.description

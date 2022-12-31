@@ -33,6 +33,7 @@ struct MiaAbcBrain {
             
         case .animal:
             currentSet = letterSetA
+            //set = letterArray, setSound = same (for abc), them Items are from main Dict
             currentLesson = makeLessonDictionary(set: letterSetA, setSound: cellSetSound, lesson: abcAnimalMainImages)
         case .object:
             currentSet = letterSetB
@@ -84,17 +85,17 @@ struct MiaAbcBrain {
         "magenta", "maroon", "orange", "pink", "purple",
         "red", "teal", "yellow", "grey", "white", "violet"]
     
-    private let shapesSet: [String] = [
+    private let shapesSet = [
         "circle", "square", "triangle", "rectangle", "oval",
         "diamond", "star", "heart", "hexagon", "pentagon",
         "cross", "octogon", "crescent"]
 
-    private let numbersSet: [String] = [
+    private let numbersSet = [
         "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
         "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
         "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]
 
-    private let toysSet: [String] = [
+    private let toysSet = [
         "balloon", "bath boat", "beach ball", "doll house", "jump rope", "legos",
         "letter blocks", "old phone", "puzzle cube", "puzzle pieces", "rocking horse",
         "rubber ducky", "sand toys", "skateboard", "spin wheel", "spinning top",
@@ -102,7 +103,7 @@ struct MiaAbcBrain {
         "toy train", "toy truck", "water shooter", "windup car",
         "windup dinosaur"]
     
-    private let instrumentsSet: [String] = [
+    private let instrumentsSet = [
         "instrument"
     ]
     

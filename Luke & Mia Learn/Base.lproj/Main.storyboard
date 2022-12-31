@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jxf-np-Ons">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jxf-np-Ons">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,7 +15,7 @@
             <objects>
                 <collectionViewController id="jUQ-ZT-ahB" customClass="MenuController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XRU-ej-ktI">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G9D-Sg-u7V">
@@ -28,7 +26,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Fnq-LZ-k0S" customClass="MenuCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
-                                <rect key="frame" x="-12" y="0.0" width="414" height="128"/>
+                                <rect key="frame" x="93" y="0.0" width="414" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rP5-ET-v1h">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
@@ -93,16 +91,16 @@
             </objects>
             <point key="canvasLocation" x="342" y="-677"/>
         </scene>
-        <!--Mia Abc View Controller-->
+        <!--Mia Learns View Controller-->
         <scene sceneID="I27-Ki-gGz">
             <objects>
-                <viewController id="GMY-Wi-i2S" customClass="MiaAbcViewController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GMY-Wi-i2S" customClass="MiaLearnsViewController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7fC-ne-NGN">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-sb-wRm">
-                                <rect key="frame" x="0.0" y="91" width="390" height="468"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="305"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vMc-dV-9hg">
                                     <size key="itemSize" width="128" height="128"/>
@@ -150,10 +148,10 @@
                                 </connections>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axY-SH-jnw">
-                                <rect key="frame" x="107" y="575" width="176" height="150"/>
+                                <rect key="frame" x="107" y="365" width="386" height="150"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33K-PI-mYL">
-                                <rect key="frame" x="107" y="741" width="176" height="65"/>
+                                <rect key="frame" x="107" y="531" width="386" height="65"/>
                                 <color key="backgroundColor" name="mainBlue"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -165,7 +163,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbg-Rd-TyF">
-                                <rect key="frame" x="107" y="575" width="176" height="150"/>
+                                <rect key="frame" x="107" y="365" width="386" height="150"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -211,14 +209,14 @@
             <objects>
                 <viewController id="x7J-02-dUQ" customClass="MiaAbcQuizController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAs-mp-O1e">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bWC-ht-p7u">
-                                <rect key="frame" x="78" y="110" width="230" height="271"/>
+                                <rect key="frame" x="78" y="63" width="440" height="108"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqs-7S-cQV">
-                                <rect key="frame" x="78" y="110" width="230" height="271"/>
+                                <rect key="frame" x="78" y="63" width="440" height="108"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -226,7 +224,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="77m-KC-t9a">
-                                <rect key="frame" x="0.0" y="405" width="390" height="405"/>
+                                <rect key="frame" x="0.0" y="195" width="600" height="405"/>
                                 <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewLayout key="collectionViewLayout" id="Ln9-IT-qdY"/>
                                 <cells>
@@ -268,13 +266,13 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJL-pQ-POR">
-                                <rect key="frame" x="325" y="363.33333333333331" width="49" height="24.333333333333314"/>
+                                <rect key="frame" x="535" y="316.33333333333331" width="47.333333333333371" height="24.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amu-BW-d1c">
-                                <rect key="frame" x="325" y="331" width="49" height="24.333333333333314"/>
+                                <rect key="frame" x="535" y="284" width="47.333333333333371" height="24.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -348,11 +346,11 @@
             <objects>
                 <viewController id="0zd-Hj-SyY" customClass="FindMeViewController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2lT-b1-XrL">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aq6-bu-keo">
-                                <rect key="frame" x="0.0" y="91" width="390" height="753"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="590"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Yu-4f-2HX">
                                     <size key="itemSize" width="128" height="129"/>
@@ -408,12 +406,42 @@
             </objects>
             <point key="canvasLocation" x="2320" y="2863.507109004739"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Vdg-bh-mI4">
+            <objects>
+                <viewController id="LAl-10-lsl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rLZ-yN-KzV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="k3d-3u-cgU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aBv-gf-QoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2312" y="3521"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QOc-J6-a38">
+            <objects>
+                <viewController id="67H-y8-ahf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhF-HL-hof">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="v7o-bi-JMu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGQ-mX-8pF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3077" y="3520"/>
+        </scene>
         <!--Mia Talks-->
         <scene sceneID="ZzS-eo-a7r">
             <objects>
                 <collectionViewController title="Mia Talks" id="Oeu-rd-wdS" customClass="MiaTalksController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qfR-lc-4qG">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewLayout key="collectionViewLayout" id="Pr6-we-GWZ"/>
@@ -474,7 +502,7 @@
             <objects>
                 <collectionViewController id="CgC-cQ-X70" customClass="LearnWithLukeController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Pnt-f6-hl7">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="xPP-NG-Rvt"/>
@@ -544,11 +572,11 @@
             <objects>
                 <viewController id="QSv-0H-iHW" customClass="StoryTimeMenuController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRh-kW-jsE">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwt-3n-T7H">
-                                <rect key="frame" x="158" y="192" width="74" height="35"/>
+                                <rect key="frame" x="158" y="145" width="284" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
@@ -575,14 +603,14 @@
             <objects>
                 <viewController id="OgO-Br-Que" customClass="StoryTimeController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oUh-q7-AUm">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon1" translatesAutoresizingMaskIntoConstraints="NO" id="GgB-Pk-PgJ">
-                                <rect key="frame" x="0.0" y="91" width="390" height="500"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="337"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzL-2P-KBs">
-                                <rect key="frame" x="16" y="750" width="175" height="60"/>
+                                <rect key="frame" x="20" y="540" width="381" height="60"/>
                                 <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Play"/>
@@ -591,7 +619,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-W2-IX3">
-                                <rect key="frame" x="214" y="750" width="75" height="60"/>
+                                <rect key="frame" x="424" y="540" width="75" height="60"/>
                                 <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="gsh-Sb-u4Z"/>
@@ -604,7 +632,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-Rx-hGy">
-                                <rect key="frame" x="297" y="750" width="75" height="60"/>
+                                <rect key="frame" x="507" y="540" width="75" height="60"/>
                                 <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="40y-i2-tV1"/>
@@ -617,13 +645,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-7c-yGO">
-                                <rect key="frame" x="16" y="599" width="356" height="143"/>
+                                <rect key="frame" x="20" y="389" width="562" height="143"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                 <color key="textColor" name="mainBlue"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-DW-fQ9">
-                                <rect key="frame" x="125" y="599" width="140" height="140"/>
+                                <rect key="frame" x="125" y="389" width="350" height="140"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U8s-1m-dl1"/>
@@ -674,7 +702,7 @@
             <objects>
                 <collectionViewController id="fUe-tz-8eU" customClass="LearnWithLukeDetailCVController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="I5C-ui-qWD">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="eh8-sG-xc1"/>

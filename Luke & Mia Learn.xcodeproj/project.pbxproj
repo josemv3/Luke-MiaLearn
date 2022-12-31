@@ -86,6 +86,7 @@
 		E01EFBCD29372AE0005B752B /* white web.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFBBF29372AE0005B752B /* white web.mp3 */; };
 		E01EFBCE29372AE0005B752B /* red robot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFBC029372AE0005B752B /* red robot.mp3 */; };
 		E01EFBCF29372AE0005B752B /* blue bunny.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFBC129372AE0005B752B /* blue bunny.mp3 */; };
+		E024CD53295E167000873863 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E024CD52295E167000873863 /* NetworkManager.swift */; };
 		E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */; };
 		E03A68AD28CE5B1300520C51 /* MiaAbcQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */; };
 		E03B51582941995D0057B81C /* FindMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B51572941995D0057B81C /* FindMeViewController.swift */; };
@@ -180,13 +181,7 @@
 		E058A59928EF79EE00A1B912 /* dragon6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E058A58E28EF79EE00A1B912 /* dragon6.mp3 */; };
 		E058A59A28EF79EE00A1B912 /* dragon11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E058A58F28EF79EE00A1B912 /* dragon11.mp3 */; };
 		E0594C6028CEFAE200EC2BE9 /* hedgehog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */; };
-		E0594C6128CEFAE200EC2BE9 /* dog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5928CEFAE200EC2BE9 /* dog.mp4 */; };
-		E0594C6228CEFAE200EC2BE9 /* cat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5A28CEFAE200EC2BE9 /* cat.mp4 */; };
-		E0594C6328CEFAE200EC2BE9 /* apple.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5B28CEFAE200EC2BE9 /* apple.mp4 */; };
 		E0594C6428CEFAE200EC2BE9 /* frog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5C28CEFAE200EC2BE9 /* frog.mp4 */; };
-		E0594C6528CEFAE200EC2BE9 /* egg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5D28CEFAE200EC2BE9 /* egg.mp4 */; };
-		E0594C6628CEFAE200EC2BE9 /* giraffe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5E28CEFAE200EC2BE9 /* giraffe.mp4 */; };
-		E0594C6728CEFAE200EC2BE9 /* bat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */; };
 		E06195F228DE712000ECF46A /* asteroid2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E06195F028DE712000ECF46A /* asteroid2.mp4 */; };
 		E06195F328DE712000ECF46A /* asteroid1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E06195F128DE712000ECF46A /* asteroid1.mp4 */; };
 		E06262DB293D6C5500DEB478 /* beach ball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E06262C0293D6C5100DEB478 /* beach ball.mp3 */; };
@@ -216,6 +211,14 @@
 		E06262F3293D6C5500DEB478 /* toy train.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E06262D8293D6C5400DEB478 /* toy train.mp3 */; };
 		E06262F4293D6C5500DEB478 /* jump rope.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E06262D9293D6C5400DEB478 /* jump rope.mp3 */; };
 		E06262F5293D6C5500DEB478 /* water shooter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E06262DA293D6C5500DEB478 /* water shooter.mp3 */; };
+		E0775E7D2943E025002C66B3 /* LukeTalksMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0775E7C2943E025002C66B3 /* LukeTalksMenu.swift */; };
+		E0775E7F2943E03C002C66B3 /* LukeTalksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0775E7E2943E03C002C66B3 /* LukeTalksCollectionView.swift */; };
+		E078DDCE2960E11000E07AF7 /* bat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDC82960E11000E07AF7 /* bat.mp4 */; };
+		E078DDCF2960E11000E07AF7 /* apple.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDC92960E11000E07AF7 /* apple.mp4 */; };
+		E078DDD02960E11000E07AF7 /* egg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDCA2960E11000E07AF7 /* egg.mp4 */; };
+		E078DDD12960E11000E07AF7 /* dog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDCB2960E11000E07AF7 /* dog.mp4 */; };
+		E078DDD22960E11000E07AF7 /* giraffe.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDCC2960E11000E07AF7 /* giraffe.mp4 */; };
+		E078DDD32960E11000E07AF7 /* cat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDCD2960E11000E07AF7 /* cat.mp4 */; };
 		E085B1BD2937FF010085F03A /* violet flower.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E085B1BC2937FF010085F03A /* violet flower.mp3 */; };
 		E085B1BF2937FF490085F03A /* red.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E085B1BE2937FF490085F03A /* red.mp3 */; };
 		E085B1C12937FF740085F03A /* ketchup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E085B1C02937FF740085F03A /* ketchup.mp3 */; };
@@ -254,6 +257,10 @@
 		E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */; };
 		E09B6ED528EA55EB004E5052 /* StoryTimeMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED428EA55EB004E5052 /* StoryTimeMenuController.swift */; };
 		E09B6ED828EB74FC004E5052 /* StoryTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */; };
+		E0A1A71D2949025E00E5D584 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0A1A71C2949025E00E5D584 /* GoogleService-Info.plist */; };
+		E0A1A720294903FD00E5D584 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E0A1A71F294903FD00E5D584 /* FirebaseAnalytics */; };
+		E0A1A722294903FD00E5D584 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E0A1A721294903FD00E5D584 /* FirebaseDatabase */; };
+		E0A1A724294903FD00E5D584 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E0A1A723294903FD00E5D584 /* FirebaseDatabaseSwift */; };
 		E0A2CFB02924275800CC8EC4 /* miaDragon10.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A2CFA52924275500CC8EC4 /* miaDragon10.mp4 */; };
 		E0A2CFB12924275800CC8EC4 /* miaDragon8.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A2CFA62924275600CC8EC4 /* miaDragon8.mp4 */; };
 		E0A2CFB22924275800CC8EC4 /* miaDragon2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0A2CFA72924275600CC8EC4 /* miaDragon2.mp4 */; };
@@ -323,7 +330,7 @@
 		E0CF3C6228CCD324000E59A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C6128CCD324000E59A0 /* Assets.xcassets */; };
 		E0CF3C6528CCD324000E59A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C6328CCD324000E59A0 /* LaunchScreen.storyboard */; };
 		E0CF3C6D28CCD3E3000E59A0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C6C28CCD3E3000E59A0 /* MenuCell.swift */; };
-		E0CF3C6F28CCE1CA000E59A0 /* MiaAbcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C6E28CCE1CA000E59A0 /* MiaAbcViewController.swift */; };
+		E0CF3C6F28CCE1CA000E59A0 /* MiaLearnsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsViewController.swift */; };
 		E0CF3C7128CCE86B000E59A0 /* MiaAbcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C7028CCE86B000E59A0 /* MiaAbcCell.swift */; };
 		E0CF3C7D28CCF87C000E59A0 /* e2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7328CCF87C000E59A0 /* e2.mp3 */; };
 		E0CF3C7E28CCF87C000E59A0 /* elephant.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7428CCF87C000E59A0 /* elephant.mp3 */; };
@@ -444,6 +451,7 @@
 		E01EFBBF29372AE0005B752B /* white web.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "white web.mp3"; sourceTree = "<group>"; };
 		E01EFBC029372AE0005B752B /* red robot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "red robot.mp3"; sourceTree = "<group>"; };
 		E01EFBC129372AE0005B752B /* blue bunny.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "blue bunny.mp3"; sourceTree = "<group>"; };
+		E024CD52295E167000873863 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksHeaderView.swift; sourceTree = "<group>"; };
 		E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcQuizController.swift; sourceTree = "<group>"; };
 		E03B51572941995D0057B81C /* FindMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMeViewController.swift; sourceTree = "<group>"; };
@@ -538,13 +546,7 @@
 		E058A58E28EF79EE00A1B912 /* dragon6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dragon6.mp3; sourceTree = "<group>"; };
 		E058A58F28EF79EE00A1B912 /* dragon11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dragon11.mp3; sourceTree = "<group>"; };
 		E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hedgehog.mp4; sourceTree = "<group>"; };
-		E0594C5928CEFAE200EC2BE9 /* dog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = dog.mp4; path = ../../../../../Downloads/dog.mp4; sourceTree = "<group>"; };
-		E0594C5A28CEFAE200EC2BE9 /* cat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = cat.mp4; path = ../../../../../Downloads/cat.mp4; sourceTree = "<group>"; };
-		E0594C5B28CEFAE200EC2BE9 /* apple.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = apple.mp4; path = ../../../../../Downloads/apple.mp4; sourceTree = "<group>"; };
 		E0594C5C28CEFAE200EC2BE9 /* frog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = frog.mp4; sourceTree = "<group>"; };
-		E0594C5D28CEFAE200EC2BE9 /* egg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = egg.mp4; path = ../../../../../Downloads/egg.mp4; sourceTree = "<group>"; };
-		E0594C5E28CEFAE200EC2BE9 /* giraffe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = giraffe.mp4; path = ../../../../../Downloads/giraffe.mp4; sourceTree = "<group>"; };
-		E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = bat.mp4; path = ../../../../../Downloads/bat.mp4; sourceTree = "<group>"; };
 		E06195F028DE712000ECF46A /* asteroid2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = asteroid2.mp4; sourceTree = "<group>"; };
 		E06195F128DE712000ECF46A /* asteroid1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = asteroid1.mp4; sourceTree = "<group>"; };
 		E06262C0293D6C5100DEB478 /* beach ball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beach ball.mp3"; sourceTree = "<group>"; };
@@ -574,6 +576,14 @@
 		E06262D8293D6C5400DEB478 /* toy train.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "toy train.mp3"; sourceTree = "<group>"; };
 		E06262D9293D6C5400DEB478 /* jump rope.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "jump rope.mp3"; sourceTree = "<group>"; };
 		E06262DA293D6C5500DEB478 /* water shooter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "water shooter.mp3"; sourceTree = "<group>"; };
+		E0775E7C2943E025002C66B3 /* LukeTalksMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksMenu.swift; sourceTree = "<group>"; };
+		E0775E7E2943E03C002C66B3 /* LukeTalksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksCollectionView.swift; sourceTree = "<group>"; };
+		E078DDC82960E11000E07AF7 /* bat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bat.mp4; sourceTree = "<group>"; };
+		E078DDC92960E11000E07AF7 /* apple.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = apple.mp4; sourceTree = "<group>"; };
+		E078DDCA2960E11000E07AF7 /* egg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = egg.mp4; sourceTree = "<group>"; };
+		E078DDCB2960E11000E07AF7 /* dog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dog.mp4; sourceTree = "<group>"; };
+		E078DDCC2960E11000E07AF7 /* giraffe.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = giraffe.mp4; sourceTree = "<group>"; };
+		E078DDCD2960E11000E07AF7 /* cat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cat.mp4; sourceTree = "<group>"; };
 		E085B1BC2937FF010085F03A /* violet flower.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "violet flower.mp3"; sourceTree = "<group>"; };
 		E085B1BE2937FF490085F03A /* red.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = red.mp3; sourceTree = "<group>"; };
 		E085B1C02937FF740085F03A /* ketchup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ketchup.mp3; sourceTree = "<group>"; };
@@ -612,6 +622,7 @@
 		E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeHeader.swift; sourceTree = "<group>"; };
 		E09B6ED428EA55EB004E5052 /* StoryTimeMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeMenuController.swift; sourceTree = "<group>"; };
 		E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeController.swift; sourceTree = "<group>"; };
+		E0A1A71C2949025E00E5D584 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0A2CFA52924275500CC8EC4 /* miaDragon10.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = miaDragon10.mp4; sourceTree = "<group>"; };
 		E0A2CFA62924275600CC8EC4 /* miaDragon8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = miaDragon8.mp4; sourceTree = "<group>"; };
 		E0A2CFA72924275600CC8EC4 /* miaDragon2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = miaDragon2.mp4; sourceTree = "<group>"; };
@@ -683,7 +694,7 @@
 		E0CF3C6428CCD324000E59A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0CF3C6628CCD324000E59A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0CF3C6C28CCD3E3000E59A0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		E0CF3C6E28CCE1CA000E59A0 /* MiaAbcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcViewController.swift; sourceTree = "<group>"; };
+		E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaLearnsViewController.swift; sourceTree = "<group>"; };
 		E0CF3C7028CCE86B000E59A0 /* MiaAbcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcCell.swift; sourceTree = "<group>"; };
 		E0CF3C7328CCF87C000E59A0 /* e2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = e2.mp3; sourceTree = "<group>"; };
 		E0CF3C7428CCF87C000E59A0 /* elephant.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elephant.mp3; sourceTree = "<group>"; };
@@ -729,6 +740,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0A1A724294903FD00E5D584 /* FirebaseDatabaseSwift in Frameworks */,
+				E0A1A722294903FD00E5D584 /* FirebaseDatabase in Frameworks */,
+				E0A1A720294903FD00E5D584 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -843,6 +857,12 @@
 		E03A68AE28CE719200520C51 /* Mia ABC Quiz Video */ = {
 			isa = PBXGroup;
 			children = (
+				E078DDC92960E11000E07AF7 /* apple.mp4 */,
+				E078DDC82960E11000E07AF7 /* bat.mp4 */,
+				E078DDCD2960E11000E07AF7 /* cat.mp4 */,
+				E078DDCB2960E11000E07AF7 /* dog.mp4 */,
+				E078DDCA2960E11000E07AF7 /* egg.mp4 */,
+				E078DDCC2960E11000E07AF7 /* giraffe.mp4 */,
 				E0C6C46029352DB4006D123A /* instrumentsV.mp4 */,
 				E0DF0F4F28D1542500252498 /* avQuiz.mp4 */,
 				E0DF0F4D28D1542500252498 /* bvQuiz.mp4 */,
@@ -850,13 +870,7 @@
 				E0DF0F4E28D1542500252498 /* dvQuiz.mp4 */,
 				E0DF0F5128D1542500252498 /* evQuiz.mp4 */,
 				E0DF0F5028D1542500252498 /* fvQuiz.mp4 */,
-				E0594C5B28CEFAE200EC2BE9 /* apple.mp4 */,
-				E0594C5F28CEFAE200EC2BE9 /* bat.mp4 */,
-				E0594C5A28CEFAE200EC2BE9 /* cat.mp4 */,
-				E0594C5928CEFAE200EC2BE9 /* dog.mp4 */,
-				E0594C5D28CEFAE200EC2BE9 /* egg.mp4 */,
 				E0594C5C28CEFAE200EC2BE9 /* frog.mp4 */,
-				E0594C5E28CEFAE200EC2BE9 /* giraffe.mp4 */,
 				E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */,
 				E0A6F93828D41BC900DC98FF /* iceCream.mp4 */,
 				E0A6F93428D41BC900DC98FF /* jump.mp4 */,
@@ -1002,6 +1016,15 @@
 			path = "Mia ABC Toys Audio";
 			sourceTree = "<group>";
 		};
+		E0775E7B2943DFE8002C66B3 /* Luke Talks */ = {
+			isa = PBXGroup;
+			children = (
+				E0775E7C2943E025002C66B3 /* LukeTalksMenu.swift */,
+				E0775E7E2943E03C002C66B3 /* LukeTalksCollectionView.swift */,
+			);
+			path = "Luke Talks";
+			sourceTree = "<group>";
+		};
 		E085B1C4293800AB0085F03A /* Mia ABC Shapes */ = {
 			isa = PBXGroup;
 			children = (
@@ -1143,9 +1166,11 @@
 				E0E20D7F28E0147700083DE6 /* Learn With Luke */,
 				E09B6ED628EA560B004E5052 /* StoryTime */,
 				E03B5156294197600057B81C /* Find Me */,
+				E0775E7B2943DFE8002C66B3 /* Luke Talks */,
 				E0CF3C5B28CCD322000E59A0 /* Main.storyboard */,
 				E0CF3C6328CCD324000E59A0 /* LaunchScreen.storyboard */,
 				E0CF3C6628CCD324000E59A0 /* Info.plist */,
+				E0A1A71C2949025E00E5D584 /* GoogleService-Info.plist */,
 				E0CF3C6128CCD324000E59A0 /* Assets.xcassets */,
 				E0CF3C5E28CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld */,
 				E0CF3C7228CCF856000E59A0 /* Mia ABC Audio */,
@@ -1247,7 +1272,8 @@
 		E0E20D7C28E0143900083DE6 /* Mia ABC */ = {
 			isa = PBXGroup;
 			children = (
-				E0CF3C6E28CCE1CA000E59A0 /* MiaAbcViewController.swift */,
+				E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsViewController.swift */,
+				E024CD52295E167000873863 /* NetworkManager.swift */,
 				E0CF3C7028CCE86B000E59A0 /* MiaAbcCell.swift */,
 				E04553A3293950D500B4EFA7 /* MiaAbcItem.swift */,
 				E04553A52939526900B4EFA7 /* MiaAbcBrain.swift */,
@@ -1322,6 +1348,11 @@
 			dependencies = (
 			);
 			name = "Luke & Mia Learn";
+			packageProductDependencies = (
+				E0A1A71F294903FD00E5D584 /* FirebaseAnalytics */,
+				E0A1A721294903FD00E5D584 /* FirebaseDatabase */,
+				E0A1A723294903FD00E5D584 /* FirebaseDatabaseSwift */,
+			);
 			productName = "Luke & Mia Learn";
 			productReference = E0CF3C5228CCD322000E59A0 /* Luke & Mia Learn.app */;
 			productType = "com.apple.product-type.application";
@@ -1350,6 +1381,9 @@
 				Base,
 			);
 			mainGroup = E0CF3C4928CCD322000E59A0;
+			packageReferences = (
+				E0A1A71E294903FD00E5D584 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E0CF3C5328CCD322000E59A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1383,12 +1417,13 @@
 				E06262F0293D6C5500DEB478 /* toy rocket.mp3 in Resources */,
 				E058A54028EF78A600A1B912 /* j2.mp3 in Resources */,
 				E058A59128EF79EE00A1B912 /* dragon3.mp3 in Resources */,
-				E0594C6128CEFAE200EC2BE9 /* dog.mp4 in Resources */,
 				E058A56428EF78C100A1B912 /* penguin.mp3 in Resources */,
 				E01EFBA729372AAE005B752B /* purple.mp3 in Resources */,
 				E06262EE293D6C5500DEB478 /* doll house.mp3 in Resources */,
 				E01EFB822937278B005B752B /* t.mp3 in Resources */,
 				E0CF3C8428CCF87C000E59A0 /* alligator.mp3 in Resources */,
+				E078DDD22960E11000E07AF7 /* giraffe.mp4 in Resources */,
+				E078DDCE2960E11000E07AF7 /* bat.mp4 in Resources */,
 				E0A2CFB12924275800CC8EC4 /* miaDragon8.mp4 in Resources */,
 				E01EFB5D2937235A005B752B /* zombie.mp3 in Resources */,
 				E01EFB3C293722BA005B752B /* icecream.mp3 in Resources */,
@@ -1448,7 +1483,6 @@
 				E01EFBAE29372AAE005B752B /* teal.mp3 in Resources */,
 				E0ADCE9829386EAB003199B8 /* 23.mp3 in Resources */,
 				E06262E2293D6C5500DEB478 /* puzzle pieces.mp3 in Resources */,
-				E0594C6528CEFAE200EC2BE9 /* egg.mp4 in Resources */,
 				E06195F228DE712000ECF46A /* asteroid2.mp4 in Resources */,
 				E085B1E0293801640085F03A /* pyramid.mp3 in Resources */,
 				E058A56E28EF78CE00A1B912 /* volture.mp3 in Resources */,
@@ -1484,7 +1518,9 @@
 				E06262F1293D6C5500DEB478 /* puzzle cube.mp3 in Resources */,
 				E0ADCEA129386EAB003199B8 /* 17.mp3 in Resources */,
 				E0DF0F5528D1542500252498 /* avQuiz.mp4 in Resources */,
+				E078DDD02960E11000E07AF7 /* egg.mp4 in Resources */,
 				E085B1E7293801640085F03A /* tree star.mp3 in Resources */,
+				E0A1A71D2949025E00E5D584 /* GoogleService-Info.plist in Resources */,
 				E0F7BA7528F133B400DD47BE /* monstercarrot.mp3 in Resources */,
 				E0594C6428CEFAE200EC2BE9 /* frog.mp4 in Resources */,
 				E0F7BA6A28F1339E00DD47BE /* humanapple.mp3 in Resources */,
@@ -1553,7 +1589,6 @@
 				E0ADCE8729386EAB003199B8 /* 22.mp3 in Resources */,
 				E058A59A28EF79EE00A1B912 /* dragon11.mp3 in Resources */,
 				E0A6F95228D4345600DC98FF /* yoga.mp4 in Resources */,
-				E0594C6628CEFAE200EC2BE9 /* giraffe.mp4 in Resources */,
 				E058A53428EF789600A1B912 /* g2.mp3 in Resources */,
 				E058A53128EF789600A1B912 /* giraffe.mp3 in Resources */,
 				E0A6F94F28D4345600DC98FF /* xray.mp4 in Resources */,
@@ -1619,6 +1654,7 @@
 				E01EFB49293722E0005B752B /* oven.mp3 in Resources */,
 				E045538E2939334600B4EFA7 /* radish.mp3 in Resources */,
 				E01EFB892937278B005B752B /* y.mp3 in Resources */,
+				E078DDCF2960E11000E07AF7 /* apple.mp4 in Resources */,
 				E0CF3C8328CCF87C000E59A0 /* a2.mp3 in Resources */,
 				E058A59628EF79EE00A1B912 /* dragon2.mp3 in Resources */,
 				E04553A0293942B900B4EFA7 /* oranges.mp3 in Resources */,
@@ -1636,7 +1672,6 @@
 				E01EFBCA29372AE0005B752B /* purple pizza.mp3 in Resources */,
 				E045539C2939428000B4EFA7 /* earphones.mp3 in Resources */,
 				E0F7BA7328F133B400DD47BE /* monstercereal.mp3 in Resources */,
-				E0594C6228CEFAE200EC2BE9 /* cat.mp4 in Resources */,
 				E058A56528EF78C100A1B912 /* p2.mp3 in Resources */,
 				E085B1F6293801640085F03A /* crescent moon.mp3 in Resources */,
 				E0F7BA6B28F1339E00DD47BE /* humanbanana.mp3 in Resources */,
@@ -1657,8 +1692,8 @@
 				E0A6F94328D41BC900DC98FF /* phone.mp4 in Resources */,
 				E04553902939334600B4EFA7 /* strawberry.mp3 in Resources */,
 				E045538C2939334600B4EFA7 /* jalapeno.mp3 in Resources */,
+				E078DDD32960E11000E07AF7 /* cat.mp4 in Resources */,
 				E0ADCE9529386EAB003199B8 /* 21.mp3 in Resources */,
-				E0594C6728CEFAE200EC2BE9 /* bat.mp4 in Resources */,
 				E085B1E1293801640085F03A /* octogon.mp3 in Resources */,
 				E058A57228EF78CE00A1B912 /* turtle.mp3 in Resources */,
 				E0DF0F5728D1542500252498 /* evQuiz.mp4 in Resources */,
@@ -1677,12 +1712,12 @@
 				E0A2CFB52924275800CC8EC4 /* miaDragon5.mp4 in Resources */,
 				E045538F2939334600B4EFA7 /* turnip.mp3 in Resources */,
 				E01EFBC229372AE0005B752B /* green gecko.mp3 in Resources */,
+				E078DDD12960E11000E07AF7 /* dog.mp4 in Resources */,
 				E085B1EA293801640085F03A /* wheel.mp3 in Resources */,
 				E058A57F28EF78DA00A1B912 /* x2.mp3 in Resources */,
 				E01EFBAC29372AAE005B752B /* black.mp3 in Resources */,
 				E04553972939334600B4EFA7 /* mushroom.mp3 in Resources */,
 				E0A6F95728D4345600DC98FF /* tree.mp4 in Resources */,
-				E0594C6328CEFAE200EC2BE9 /* apple.mp4 in Resources */,
 				E01EFB8C2937278B005B752B /* x.mp3 in Resources */,
 				E06262E3293D6C5500DEB478 /* toy phone.mp3 in Resources */,
 				E0A2CFB92924275800CC8EC4 /* miaDragon4.mp4 in Resources */,
@@ -1700,12 +1735,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0DF0F5C28D23E1300252498 /* Question.swift in Sources */,
+				E0775E7D2943E025002C66B3 /* LukeTalksMenu.swift in Sources */,
 				E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */,
 				E03B51582941995D0057B81C /* FindMeViewController.swift in Sources */,
 				E047DE4A28E51A9F00C38B1B /* LearnWithLukeDetailCVController.swift in Sources */,
 				E0CF3C6D28CCD3E3000E59A0 /* MenuCell.swift in Sources */,
 				E047DE4F28E5236C00C38B1B /* LWLDetailHeader.swift in Sources */,
-				E0CF3C6F28CCE1CA000E59A0 /* MiaAbcViewController.swift in Sources */,
+				E0CF3C6F28CCE1CA000E59A0 /* MiaLearnsViewController.swift in Sources */,
 				E0CF3C7128CCE86B000E59A0 /* MiaAbcCell.swift in Sources */,
 				E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */,
 				E03B515D2941C49E0057B81C /* SoundPlayer.swift in Sources */,
@@ -1713,6 +1749,8 @@
 				E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */,
 				E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */,
 				E0DF0F4C28D0FFAF00252498 /* MiaAbcQuizCell.swift in Sources */,
+				E024CD53295E167000873863 /* NetworkManager.swift in Sources */,
+				E0775E7F2943E03C002C66B3 /* LukeTalksCollectionView.swift in Sources */,
 				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,
 				E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */,
@@ -1948,6 +1986,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E0A1A71E294903FD00E5D584 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E0A1A71F294903FD00E5D584 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0A1A71E294903FD00E5D584 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E0A1A721294903FD00E5D584 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0A1A71E294903FD00E5D584 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E0A1A723294903FD00E5D584 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E0A1A71E294903FD00E5D584 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E0CF3C5E28CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld */ = {

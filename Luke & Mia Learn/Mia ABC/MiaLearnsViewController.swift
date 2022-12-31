@@ -19,7 +19,7 @@ private let instrumentsTest = ["instruments"]
  
 //MARK: - Class
 
-class MiaAbcViewController: UIViewController, UICollectionViewDelegate {
+class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet var mainImageBack: UIImageView!
     @IBOutlet var mainImagebutton: UIButton!
     @IBOutlet var mainWordButton: UIButton!

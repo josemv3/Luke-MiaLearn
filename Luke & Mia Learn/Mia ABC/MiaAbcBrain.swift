@@ -10,14 +10,14 @@ import Foundation
 struct MiaAbcBrain {
     var lesson = Lesson.animal
     var currentSet = [""]
-    var currentLesson: [String: MiaAbcItem] = [:]
+    var currentLesson: [String: MiaLearnsLessonTwo] = [:]
     
-    func makeLessonDictionary(set: [String], setSound: [String], lesson: [String: String]) -> [String: MiaAbcItem] {
-        var lessonDictionary: [String: MiaAbcItem] = [:]
+    func makeLessonDictionary(set: [String], setSound: [String], lesson: [String: String]) -> [String: MiaLearnsLessonTwo] {
+        var lessonDictionary: [String: MiaLearnsLessonTwo] = [:]
         var count = 0
         
         for item in set {
-            lessonDictionary[item] = MiaAbcItem(cellImage: item, cellImageSound: setSound[count], mainImageAndSound: lesson[item] ?? "a")
+            lessonDictionary[item] = MiaLearnsLessonTwo(cellImage: item, cellImageSound: setSound[count], mainImageAndSound: lesson[item] ?? "a")
             count += 1
         }
         return lessonDictionary

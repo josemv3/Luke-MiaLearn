@@ -12,11 +12,9 @@
 import UIKit
 import AVFoundation
 
-
 private let instrumentsMainVideo: [String: String] = ["instruments": "Quiz"]
-
 private let instrumentsTest = ["instruments"]
- 
+
 //MARK: - Class
 
 class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
@@ -26,7 +24,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     ///When adding CV to VC control drag CV to VC and make delegate, then add UICVDelegate to class
     @IBOutlet var collectionView: UICollectionView!
     
-    var miaABCBrain = MiaAbcBrain()
+    //var miaABCBrain = MiaAbcBrain()
+    var miaLearnsData = MiaLearnsData()
     var currentAnimation = 0
     var audioPlayer: AVAudioPlayer?
     var playerLayer = AVPlayerLayer()
@@ -46,14 +45,14 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Mia ABC"
+        navigationItem.title = "Mia Learns"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
         navigationController?.navigationBar.backgroundColor = UIColor.systemBlue
-
-        mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
-        miaABCBrain.lesson = .animal
-        miaABCBrain.getLesson()
         
+        mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
+        
+        miaLearnsData.lesson = .animal
+        miaLearnsData.getLesson()
         collectionView.collectionViewLayout = configureLayout()
         collectionView.layer.borderWidth = smallBorderSize //2
         collectionView.layer.borderColor = UIColor(named: "mainBlue")?.cgColor
@@ -98,7 +97,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     func configureDataSource() {//SOURCE2
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
             
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiaAbcCell.reusidentifier, for: indexPath) as? MiaAbcCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiaLearnsCell.reusidentifier, for: indexPath) as? MiaLearnsCell else {
                 fatalError("Cannot create new cell")
             }
             cell.miABCCellLabel.text = item.description
@@ -113,9 +112,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
         
         initialSnapshot.appendSections([.main])
-        //initialSnapshot.appendItems(currentABCSet)
-        initialSnapshot.appendItems(miaABCBrain.currentSet)
-        
+        initialSnapshot.appendItems(miaLearnsData.lessonPromptSet)
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     
@@ -124,28 +121,20 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         
-        if miaABCBrain.lesson == .instrument {
-            //mainImagebutton.setImage(nil, for: .normal)
-            //mainImagebutton.setImage(UIImage(named: "cat"), for: .normal)
-            playVideo(video: "instrumentsV", newView: mainImagebutton)
-            mainWordButtonTitle = miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "bat"
-            mainWordButton.setTitle(miaABCBrain.currentLesson[item]?.mainImageAndSound, for: .normal)
-            
-            
-        } else {
-            
-            //        if currentABCSet == ["instruments"] {
-            //            playVideo(video: "instrumentsV", newView: mainImagebutton)
-            //mainImagebutton.setImage(nil, for: .normal)
-            
-            mainWordButtonTitle = miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "greeting"
-            mainWordButton.setTitle(miaABCBrain.currentLesson[item]?.mainImageAndSound, for: .normal)
-            mainImagebutton.setImage(UIImage(named: miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "cat"), for: .normal)
-            self.mainImagebutton.transform = .identity //read bellow (reset animation):
-            currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
-            
-            playSound(soundName: String(miaABCBrain.currentLesson[item.description]?.cellImageSound ?? "bat"))
-        }
+        //        if miaABCBrain.lesson == .instrument { // Replace 4
+        //            playVideo(video: "instrumentsV", newView: mainImagebutton)
+        //            mainWordButtonTitle = miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "bat"
+        //            mainWordButton.setTitle(miaABCBrain.currentLesson[item]?.mainImageAndSound, for: .normal
+        //        } else {
+        
+        //else ends after playSound
+        mainWordButtonTitle = miaLearnsData.currentLesson[item]?.item.imageName ?? "greeting"
+        let wordNo_ = miaLearnsData.currentLesson[item]?.item.imageName.replacingOccurrences(of: "_", with: " ")
+        mainWordButton.setTitle(wordNo_, for: .normal)
+        mainImagebutton.setImage(UIImage(named: miaLearnsData.currentLesson[item]?.item.imageName ?? "cat"), for: .normal)
+        self.mainImagebutton.transform = .identity //read bellow (reset animation):
+        currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
+        playSound(soundName: String(miaLearnsData.currentLesson[item.description]?.promt.soundName ?? "bat"))
     }
     
     //MARK: - Sound Player
@@ -180,35 +169,35 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     
     @IBAction func mainImageButtonPressed(_ sender: UIButton) {
         
-        if miaABCBrain.currentSet == ["instruments"] {
-            //not working. Maybe remove mainImageButton set from ViewDidLoad and put it in lesson assigned
-            //mainImagebutton.setImage(UIImage(named: "placholder"), for: .normal)
-            mainImagebutton.imageView?.image = nil
+        //        if miaABCBrain.currentSet == ["instruments"] { // Replace 5
+        //            //not working. Maybe remove mainImageButton set from ViewDidLoad and put it in lesson assigned
+        //            //mainImagebutton.setImage(UIImage(named: "placholder"), for: .normal)
+        //            mainImagebutton.imageView?.image = nil
+        //
+        //        } else {
+        
+        UIView.animate(withDuration: 0.20, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 25, options: [], animations: {
             
-        } else {
+            switch self.currentAnimation {
+            case 0:
+                self.mainImagebutton.transform = CGAffineTransform(scaleX: 2, y: 2)
+                break
+            case 1:
+                self.mainImagebutton.transform = .identity
+            case 2:
+                self.mainImagebutton.transform = CGAffineTransform(rotationAngle: .pi)
+            case 3:
+                self.mainImagebutton.transform = .identity
+            default:
+                break
+            }
+            self.currentAnimation += 1
             
-            UIView.animate(withDuration: 0.20, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 25, options: [], animations: {
-                
-                switch self.currentAnimation {
-                case 0:
-                    self.mainImagebutton.transform = CGAffineTransform(scaleX: 2, y: 2)
-                    break
-                case 1:
-                    self.mainImagebutton.transform = .identity
-                case 2:
-                    self.mainImagebutton.transform = CGAffineTransform(rotationAngle: .pi)
-                case 3:
-                    self.mainImagebutton.transform = .identity
-                default:
-                    break
-                }
-                self.currentAnimation += 1
-                
-                if self.currentAnimation > 3 {
-                    self.currentAnimation = 0
-                }
-            })
-        }
+            if self.currentAnimation > 3 {
+                self.currentAnimation = 0
+            }
+        })
+        //}
     }
     
     @IBAction func mainWordButton(_ sender: UIButton) {
@@ -220,7 +209,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     
     func playVideo(video: String, newView: UIView) {
         playerLayer.player?.pause() //if player exists pause playback and start new play
-       
+        
         let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
             forResource: video , ofType: "mp4") ?? "bvQuiz.mp4"))
         playerLayer = AVPlayerLayer(player: player)
@@ -260,8 +249,9 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             //if let weakSelf = self { grab all the stuff below, self = weakSelf}
             //put changes in function and get colors right. Button orange
             
-            self.miaABCBrain.lesson = .animal
-            self.miaABCBrain.getLesson()
+            //replce 6
+            self.miaLearnsData.lesson = .animal
+            self.miaLearnsData.getLesson()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 82, imageName: "bat.png"))
@@ -270,8 +260,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         ///Second ABC lesson:
         alert.addAction(UIAlertAction(title: "ABC Objects", style: .default, handler: { (action) in
             print("ABC Objects")
-            self.miaABCBrain.lesson = .object
-            self.miaABCBrain.getLesson()
+            self.miaLearnsData.lesson = .object
+            self.miaLearnsData.getLesson()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 127, imageName: "airplane.svg"))
@@ -282,9 +272,11 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             print("ABC Instruments")
             
             //self.mainImagebutton.setImage(UIImage(named: ""), for: .normal)
-            self.miaABCBrain.lesson = .instrument
-            self.miaABCBrain.getLesson()
+            
+            //self.miaABCBrain.lesson = .instrument
+            //self.miaABCBrain.getLesson()
             self.configureDataSource()
+            
             //self.changeLessonVideo(abcSet: instrumentsTest, videoSet: instrumentsMainVideo)
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 172, imageName: "instruments.png"))
@@ -293,8 +285,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         ///Fourth ABC lesson:
         alert.addAction(UIAlertAction(title: "ABC Fruits and Veggies", style: .default, handler: { (action) in
             print("ABC Fruits and Veggies")
-            self.miaABCBrain.lesson = .fruit
-            self.miaABCBrain.getLesson()
+            self.miaLearnsData.lesson = .fruit
+            self.miaLearnsData.getLesson()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 217, imageName: "avocado.png"))
@@ -317,8 +309,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         ///First Alt lesson:
         alert.addAction(UIAlertAction(title: "Colors", style: .default, handler: { (action) in
             print("Colors")
-            self.miaABCBrain.lesson = .color
-            self.miaABCBrain.getLesson()
+            self.miaLearnsData.lesson = .color
+            self.miaLearnsData.getLesson()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 350, imageName: "blue.png"))
@@ -327,8 +319,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         ///Second Alt lesson:
         alert.addAction(UIAlertAction(title: "Shapes", style: .default, handler: { (action) in
             print("Shapes")
-            self.miaABCBrain.lesson = .shape
-            self.miaABCBrain.getLesson()
+            self.miaLearnsData.lesson = .shape
+            self.miaLearnsData.getLesson()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 395, imageName: "heart.png"))
@@ -337,8 +329,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         ///Third Alt lesson:
         alert.addAction(UIAlertAction(title: "Toys", style: .default, handler: { (action) in
             print("Toys")
-            self.miaABCBrain.lesson = .toy
-            self.miaABCBrain.getLesson()
+            self.miaLearnsData.lesson = .toy
+            self.miaLearnsData.getLesson()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 438, imageName: "toys.png"))
@@ -347,8 +339,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         ///Fourth Alt lesson:
         alert.addAction(UIAlertAction(title: "Numbers", style: .default, handler: { (action) in
             print("Numbers")
-            self.miaABCBrain.lesson = .number
-            self.miaABCBrain.getLesson()
+            self.miaLearnsData.lesson = .number
+            self.miaLearnsData.getLesson()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 481, imageName: "1.png"))

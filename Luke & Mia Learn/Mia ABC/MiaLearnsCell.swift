@@ -7,11 +7,11 @@
 
 import UIKit
 
-class MiaAbcCell: UICollectionViewCell {
+class MiaLearnsCell: UICollectionViewCell {
 
     @IBOutlet var miABCCellLabel: UILabel!
     @IBOutlet var miABCCellImage: UIImageView!
     
-    static let reusidentifier = String(describing: MiaAbcCell.self)
+    static let reusidentifier = String(describing: MiaLearnsCell.self)
     
 }

@@ -101,7 +101,7 @@ struct MiaLearnsData {
              windup_dinosaur
     }
     
-    //ToyItems are the same sames as ToyPrompt
+    //ToyItems are the same names as ToyPrompt
     
     //add to original number for other letter sets
     mutating func getLesson() {
@@ -174,7 +174,7 @@ struct MiaLearnsData {
 
 extension CaseIterable where Self: RawRepresentable {
     static var allRawValues: [RawValue] {
-        //if .objeect return rawValue + "2"
+        //if .object return rawValue + "2"
         //if .fruit return rawValue + "Quiz"
         //else
         return allCases.map({ $0.rawValue })

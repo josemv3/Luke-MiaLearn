@@ -7,6 +7,6 @@
 
 import UIKit
 
-class LukeTalksCollectionView: UICollectionViewCell {
+class LukeTalksCollectionView: UIViewController {
     
 }

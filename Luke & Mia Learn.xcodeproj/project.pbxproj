@@ -751,7 +751,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E01EFB2F29372239005B752B /* Mia ABC Objects Audio */ = {
+		E01EFB2F29372239005B752B /* Mia Learns Objects Audio */ = {
 			isa = PBXGroup;
 			children = (
 				E01EFB5B2937235A005B752B /* wizard.mp3 */,
@@ -781,10 +781,10 @@
 				E01EFB31293722B9005B752B /* juice.mp3 */,
 				E085B1C02937FF740085F03A /* ketchup.mp3 */,
 			);
-			path = "Mia ABC Objects Audio";
+			path = "Mia Learns Objects Audio";
 			sourceTree = "<group>";
 		};
-		E01EFB602937274F005B752B /* Mia ABC Alt ABC */ = {
+		E01EFB602937274F005B752B /* Mia Learns ABC */ = {
 			isa = PBXGroup;
 			children = (
 				E01EFB792937278B005B752B /* a.mp3 */,
@@ -814,10 +814,10 @@
 				E01EFB6F2937278A005B752B /* y.mp3 */,
 				E01EFB7A2937278B005B752B /* z.mp3 */,
 			);
-			path = "Mia ABC Alt ABC";
+			path = "Mia Learns ABC";
 			sourceTree = "<group>";
 		};
-		E01EFB95293729FC005B752B /* Mia ABC Colors Audio */ = {
+		E01EFB95293729FC005B752B /* Mia Learns Colors Audio */ = {
 			isa = PBXGroup;
 			children = (
 				E01EFB9D29372AAD005B752B /* black.mp3 */,
@@ -853,7 +853,7 @@
 				E01EFBBF29372AE0005B752B /* white_web.mp3 */,
 				E01EFBBE29372AE0005B752B /* yellow_yak.mp3 */,
 			);
-			path = "Mia ABC Colors Audio";
+			path = "Mia Learns Colors Audio";
 			sourceTree = "<group>";
 		};
 		E03A68AE28CE719200520C51 /* Mia ABC Quiz Video */ = {
@@ -913,7 +913,7 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		E04553662939331300B4EFA7 /* Mia ABC Fruit Audio */ = {
+		E04553662939331300B4EFA7 /* Mia Learns Fruit Audio */ = {
 			isa = PBXGroup;
 			children = (
 				E045537C2939334600B4EFA7 /* avocado.mp3 */,
@@ -943,7 +943,7 @@
 				E045536E2939334400B4EFA7 /* yam.mp3 */,
 				E045536B2939334400B4EFA7 /* zucchini.mp3 */,
 			);
-			path = "Mia ABC Fruit Audio";
+			path = "Mia Learns Fruit Audio";
 			sourceTree = "<group>";
 		};
 		E047DE4D28E51C6900C38B1B /* LWLDetail */ = {
@@ -984,7 +984,7 @@
 			path = "LearnWLuke Videos";
 			sourceTree = "<group>";
 		};
-		E06262BF293D6C0200DEB478 /* Mia ABC Toys Audio */ = {
+		E06262BF293D6C0200DEB478 /* Mia Learns Toys Audio */ = {
 			isa = PBXGroup;
 			children = (
 				E06262CE293D6C5300DEB478 /* balloon.mp3 */,
@@ -1013,7 +1013,7 @@
 				E06262C1293D6C5100DEB478 /* windup_car.mp3 */,
 				E06262C2293D6C5100DEB478 /* windup_dinosaur.mp3 */,
 			);
-			path = "Mia ABC Toys Audio";
+			path = "Mia Learns Toys Audio";
 			sourceTree = "<group>";
 		};
 		E0775E7B2943DFE8002C66B3 /* Luke Talks */ = {
@@ -1025,7 +1025,7 @@
 			path = "Luke Talks";
 			sourceTree = "<group>";
 		};
-		E085B1C4293800AB0085F03A /* Mia ABC Shapes */ = {
+		E085B1C4293800AB0085F03A /* Mia Learns Shapes Audio */ = {
 			isa = PBXGroup;
 			children = (
 				E085B1DD293801640085F03A /* ambulance.mp3 */,
@@ -1055,7 +1055,7 @@
 				E085B1DE293801640085F03A /* valentines_candy.mp3 */,
 				E085B1D0293801620085F03A /* wheel.mp3 */,
 			);
-			path = "Mia ABC Shapes";
+			path = "Mia Learns Shapes Audio";
 			sourceTree = "<group>";
 		};
 		E09B6ED628EA560B004E5052 /* StoryTime */ = {
@@ -1067,7 +1067,7 @@
 			path = StoryTime;
 			sourceTree = "<group>";
 		};
-		E0ADCE6729386E85003199B8 /* Mia ABC Numbers Audio */ = {
+		E0ADCE6729386E85003199B8 /* Mia Learns Numbers Audio */ = {
 			isa = PBXGroup;
 			children = (
 				E0ADCE6C29386EA8003199B8 /* 1.mp3 */,
@@ -1101,7 +1101,7 @@
 				E0ADCE7129386EA9003199B8 /* 29.mp3 */,
 				E0ADCE8029386EAA003199B8 /* 30.mp3 */,
 			);
-			path = "Mia ABC Numbers Audio";
+			path = "Mia Learns Numbers Audio";
 			sourceTree = "<group>";
 		};
 		E0B546FE28D8C57100D13189 /* Mia Talks Audio */ = {
@@ -1173,14 +1173,14 @@
 				E0A1A71C2949025E00E5D584 /* GoogleService-Info.plist */,
 				E0CF3C6128CCD324000E59A0 /* Assets.xcassets */,
 				E0CF3C5E28CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld */,
-				E0CF3C7228CCF856000E59A0 /* Mia ABC Audio */,
-				E01EFB602937274F005B752B /* Mia ABC Alt ABC */,
-				E01EFB2F29372239005B752B /* Mia ABC Objects Audio */,
-				E01EFB95293729FC005B752B /* Mia ABC Colors Audio */,
-				E085B1C4293800AB0085F03A /* Mia ABC Shapes */,
-				E04553662939331300B4EFA7 /* Mia ABC Fruit Audio */,
-				E06262BF293D6C0200DEB478 /* Mia ABC Toys Audio */,
-				E0ADCE6729386E85003199B8 /* Mia ABC Numbers Audio */,
+				E0CF3C7228CCF856000E59A0 /* Mia Learns Animal Audio */,
+				E01EFB602937274F005B752B /* Mia Learns ABC */,
+				E01EFB2F29372239005B752B /* Mia Learns Objects Audio */,
+				E01EFB95293729FC005B752B /* Mia Learns Colors Audio */,
+				E085B1C4293800AB0085F03A /* Mia Learns Shapes Audio */,
+				E04553662939331300B4EFA7 /* Mia Learns Fruit Audio */,
+				E06262BF293D6C0200DEB478 /* Mia Learns Toys Audio */,
+				E0ADCE6729386E85003199B8 /* Mia Learns Numbers Audio */,
 				E0B546FE28D8C57100D13189 /* Mia Talks Audio */,
 				E06195EF28DE6F8D00ECF46A /* LearnWLuke Videos */,
 				E03A68AE28CE719200520C51 /* Mia ABC Quiz Video */,
@@ -1190,7 +1190,7 @@
 			path = "Luke & Mia Learn";
 			sourceTree = "<group>";
 		};
-		E0CF3C7228CCF856000E59A0 /* Mia ABC Audio */ = {
+		E0CF3C7228CCF856000E59A0 /* Mia Learns Animal Audio */ = {
 			isa = PBXGroup;
 			children = (
 				E058A57B28EF78DA00A1B912 /* w2.mp3 */,
@@ -1248,7 +1248,7 @@
 				E0CF3C7328CCF87C000E59A0 /* e2.mp3 */,
 				E0CF3C7428CCF87C000E59A0 /* elephant.mp3 */,
 			);
-			path = "Mia ABC Audio";
+			path = "Mia Learns Animal Audio";
 			sourceTree = "<group>";
 		};
 		E0E20D7A28E0140600083DE6 /* App */ = {

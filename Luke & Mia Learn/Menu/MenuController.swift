@@ -8,13 +8,14 @@
 
 import UIKit
 
+
 class MenuController: UICollectionViewController {
     private let reuseIdentifier = "cell"
     private let mediumBorderSize: CGFloat = 4
     
-    let lessonIconImage = ["miABCLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo", "storyTimeLogo"]
-    let lessonLabelName: [String: String] = ["miABCLogo": "Mia abc", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me", "storyTimeLogo": "Story Time"]
-    let lessonLabelAge : [String: String] = ["miABCLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+", "storyTimeLogo": "Age 3+"]
+    let lessonIconImage = ["miaLearnsLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo", "storyTimeLogo", "lukeTalksLogo"]
+    let lessonLabelName: [String: String] = ["miaLearnsLogo": "Mia learns", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me", "storyTimeLogo": "Story Time", "lukeTalksLogo": "Luke Talks"]
+    let lessonLabelAge : [String: String] = ["miaLearnsLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+", "storyTimeLogo": "Age 3+", "lukeTalksLogo": "Age 3+"]
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
 
     enum Section {
@@ -25,7 +26,7 @@ class MenuController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         createDataSource()
-        navigationItem.title = "Menu" 
+        navigationItem.title = "Menu"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,18 +105,20 @@ class MenuController: UICollectionViewController {
         print("menu", item.description)
        
         switch item {
-        case "miABCLogo":
-            self.performSegue(withIdentifier: "goToMiABC", sender: self)
+        case "miaLearnsLogo":
+            self.performSegue(withIdentifier: "goToMiaLearns", sender: self)
         case "miABCQuizLogo":
-            self.performSegue(withIdentifier: "goTomiabcQuiz", sender: self)
+            self.performSegue(withIdentifier: "goToMiabcQuiz", sender: self)
         case "learnWLukeLogo":
             self.performSegue(withIdentifier: "goToLWLuke", sender: self)
         case "miaTalksLogo":
             self.performSegue(withIdentifier: "goToMiaTalks", sender: self)
         case "storyTimeLogo":
-            self.self.performSegue(withIdentifier: "goToStoryTime", sender: self)
+            self.performSegue(withIdentifier: "goToStoryTime", sender: self)
+        case "lukeTalksLogo":
+            self.performSegue(withIdentifier: "goToLukeTalks", sender: self)
         default:
-            self.self.performSegue(withIdentifier: "goToFindMe", sender: self)
+            self.performSegue(withIdentifier: "goToFindMe", sender: self)
             //print("error") //replace with miABC
         }
     }

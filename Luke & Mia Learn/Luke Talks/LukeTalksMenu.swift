@@ -7,6 +7,6 @@
 
 import UIKit
 
-class LukeTalksMenu: UICollectionViewCell {
+class LukeTalksMenu: UIViewController {
     
 }

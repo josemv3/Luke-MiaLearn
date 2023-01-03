@@ -81,17 +81,18 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="Wc8-3t-dcu"/>
                     <connections>
-                        <segue destination="GMY-Wi-i2S" kind="show" identifier="goToMiABC" id="wa9-o0-Hog"/>
+                        <segue destination="GMY-Wi-i2S" kind="show" identifier="goToMiaLearns" id="wa9-o0-Hog"/>
                         <segue destination="CgC-cQ-X70" kind="show" identifier="goToLWLuke" id="TSi-sC-Nfa"/>
-                        <segue destination="x7J-02-dUQ" kind="show" identifier="goTomiabcQuiz" id="kxq-uV-8Xg"/>
+                        <segue destination="x7J-02-dUQ" kind="show" identifier="goToMiabcQuiz" id="kxq-uV-8Xg"/>
                         <segue destination="Oeu-rd-wdS" kind="show" identifier="goToMiaTalks" id="vDh-Pv-D9j"/>
                         <segue destination="QSv-0H-iHW" kind="show" identifier="goToStoryTime" id="3BP-3H-mq9"/>
                         <segue destination="0zd-Hj-SyY" kind="show" identifier="goToFindMe" id="EtR-Iw-Anv"/>
+                        <segue destination="LAl-10-lsl" kind="show" identifier="goToLukeTalks" id="2Py-xP-0eg"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sc-ks-AdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="-677"/>
+            <point key="canvasLocation" x="382" y="-677"/>
         </scene>
         <!--Mia Learns View Controller-->
         <scene sceneID="I27-Ki-gGz">
@@ -408,31 +409,47 @@
             </objects>
             <point key="canvasLocation" x="2320" y="2863.507109004739"/>
         </scene>
-        <!--View Controller-->
+        <!--Luke Talks Menu-->
         <scene sceneID="Vdg-bh-mI4">
             <objects>
-                <viewController id="LAl-10-lsl" sceneMemberID="viewController">
+                <viewController id="LAl-10-lsl" customClass="LukeTalksMenu" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rLZ-yN-KzV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a6-hA-fk9">
+                                <rect key="frame" x="159" y="271" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <segue destination="67H-y8-ahf" kind="show" identifier="goToLukeTalks" id="uKv-FG-SXj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="k3d-3u-cgU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0a6-hA-fk9" firstAttribute="top" secondItem="k3d-3u-cgU" secondAttribute="top" constant="168" id="bff-1Q-qr2"/>
+                            <constraint firstItem="0a6-hA-fk9" firstAttribute="centerX" secondItem="k3d-3u-cgU" secondAttribute="centerX" id="t9W-dt-if2"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Aak-mu-nSu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBv-gf-QoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2312" y="3521"/>
+            <point key="canvasLocation" x="2320" y="3520"/>
         </scene>
-        <!--View Controller-->
+        <!--Luke Talks Collection View-->
         <scene sceneID="QOc-J6-a38">
             <objects>
-                <viewController id="67H-y8-ahf" sceneMemberID="viewController">
+                <viewController id="67H-y8-ahf" customClass="LukeTalksCollectionView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhF-HL-hof">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="v7o-bi-JMu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HlW-sX-5zY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGQ-mX-8pF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -131,7 +131,9 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         mainWordButtonTitle = miaLearnsData.currentLesson[item]?.item.imageName ?? "greeting"
         let wordNo_ = miaLearnsData.currentLesson[item]?.item.imageName.replacingOccurrences(of: "_", with: " ")
         mainWordButton.setTitle(wordNo_, for: .normal)
+        
         mainImagebutton.setImage(UIImage(named: miaLearnsData.currentLesson[item]?.item.imageName ?? "cat"), for: .normal)
+        mainImagebutton.contentMode = .scaleAspectFit// Not working on number value
         self.mainImagebutton.transform = .identity //read bellow (reset animation):
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
         playSound(soundName: String(miaLearnsData.currentLesson[item.description]?.promt.soundName ?? "bat"))

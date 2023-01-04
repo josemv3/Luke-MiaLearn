@@ -12,7 +12,7 @@ private var setA = [
     "drum", "earphones", "flower",
     "ghost", "home", "icecream",
     "juice", "ketchup", "lightning",
-    "moon", "nuts","oven",]
+    "moon", "nuts","oven"]
 
 class FindMeViewController: UIViewController, UICollectionViewDelegate {
     
@@ -22,7 +22,7 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     var itemToFind: String = ""
     let soundplayer = SoundPlayer.shared
-    //let timer = Timer()
+    var timer = Timer()
     
     enum Section {
         case main
@@ -42,12 +42,7 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
         configureDataSource()
         itemToFind = currentSet.randomElement() ?? "empty"
         print(itemToFind)
-        
-//        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-//            // Call the animateRandomCell function
-//            //print("timer on")
-//            self.animateRandomCell()
-//        }
+        startShakingRandomCell()
     }
 
     //MARK: - Compositional CV LAYOUT
@@ -83,6 +78,7 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FindMeCell.reuseidentifier, for: indexPath) as? FindMeCell else {
                 fatalError("Cannot create new cell")
             }
+               
             cell.findmeCellImageView.image = UIImage(named: item.description)
             cell.backgroundColor = .systemGray
             return cell
@@ -103,9 +99,10 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
         
         print("didSelect item", indexPath.description)
         if item == itemToFind {
+            stopShakingRandomCell()
             let alert = UIAlertController(title: "You found me!", message: "\n\n\n\n\n\n", preferredStyle: .alert)
 
-            let image = UIImageView(image: UIImage(named: "orange octopus"))
+            let image = UIImageView(image: UIImage(named: "orange_octopus"))
             alert.view.addSubview(image)
             image.translatesAutoresizingMaskIntoConstraints = false
             alert.view.addConstraint(NSLayoutConstraint(item: image, attribute: .centerX, relatedBy: .equal, toItem: alert.view, attribute: .centerX, multiplier: 1, constant: 0))
@@ -118,7 +115,7 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
             }))
             self.present(alert, animated: true, completion: nil)
             
-            soundplayer.playSound(soundName: "orange octopus")
+            soundplayer.playSound(soundName: "orange_octopus")
             //I was hiding behind the ...
             
         } else {
@@ -133,9 +130,50 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     
+    func restartGame() {
+        currentSet = setA
+        itemToFind = currentSet.randomElement() ?? "empty"
+        self.dataSource.apply(self.filteredItemsSnapshot)
+        startShakingRandomCell()
+        //print(itemToFind)
+    }
+    
+    func shakeCell(at indexPath: IndexPath) {
+      guard let cell = findMeCollectionView.cellForItem(at: indexPath) else { return }
+
+      let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+      shakeAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+      shakeAnimation.duration = 0.6
+      shakeAnimation.values = [-20, 20, -20, 20, -10, 10, -5, 5, 0]
+
+      cell.layer.add(shakeAnimation, forKey: "shake")
+    }
+    
+    func startShakingRandomCell() {
+      timer = Timer.scheduledTimer(withTimeInterval: 6.0, repeats: true) { [weak self] _ in
+        guard let self = self else { return }
+
+        let randomIndexPath = IndexPath(item: Int.random(in: 0..<self.findMeCollectionView.numberOfItems(inSection: 0)), section: 0)
+        self.shakeCell(at: randomIndexPath)
+          print(randomIndexPath)
+      }
+    }
+    
+    func stopShakingRandomCell() {
+      timer.invalidate()
+      //timer = nil
+    }
+}
+
+
+
+
+
+//Version 1
 //    func animateRandomCell() {
 //        // Generate a random number between 0 and 19
 //        let randomNumber = arc4random_uniform(15)
+//          array of cell items.count (the one with removed items) then random number
 //
 //        // Get the index path for the cell with the matching number
 //        let indexPath = IndexPath(item: Int(randomNumber), section: 0)
@@ -154,10 +192,39 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
 //        //print("shake")
 //    }
 
-    func restartGame() {
-        currentSet = setA
-        itemToFind = currentSet.randomElement() ?? "empty"
-        self.dataSource.apply(self.filteredItemsSnapshot)
-        //print(itemToFind)
-    }
-}
+
+//Version 2
+//            UIView.animate(withDuration: 0.5, animations: {
+//              cell.transform = CGAffineTransform(translationX: 0, y: -50)
+//            }, completion: { _ in
+//              UIView.animate(withDuration: 0.5) {
+//                cell.transform = CGAffineTransform.identity
+//              }
+//            })
+            
+//            let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+//            shakeAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+//            shakeAnimation.duration = 0.6
+//            shakeAnimation.values = [-20, 20, -20, 20, -10, 10, -5, 5, 0]
+//
+//            cell.layer.add(shakeAnimation, forKey: "shake")
+            
+//            collectionView.visibleCells.forEach { cell in
+//              let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+//              shakeAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+//              shakeAnimation.duration = 0.6
+//              shakeAnimation.values = [-20, 20, -20, 20, -10, 10, -5, 5, 0]
+//
+//              cell.layer.add(shakeAnimation, forKey: "shake")
+//            }
+
+
+//             Move cell 1 put inder cell in ConfigureDataSource
+//            if indexPath.row == 0 {
+//              let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+//              shakeAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+//              shakeAnimation.duration = 0.6
+//              shakeAnimation.values = [-20, 20, -20, 20, -10, 10, -5, 5, 0]
+//
+//              cell.layer.add(shakeAnimation, forKey: "shake")
+//            }

@@ -439,21 +439,78 @@
             </objects>
             <point key="canvasLocation" x="2320" y="3520"/>
         </scene>
-        <!--Luke Talks Collection View-->
+        <!--Luke Talks View Controller-->
         <scene sceneID="QOc-J6-a38">
             <objects>
-                <viewController id="67H-y8-ahf" customClass="LukeTalksCollectionView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="67H-y8-ahf" customClass="LukeTalksViewController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hhF-HL-hof">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="h51-PG-Zel">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="agg-7c-CUU">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LukeTalksCell" id="Rzr-2B-nyZ" customClass="LukeTalksCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ccq-2N-kvD">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6V2-NY-XM4">
+                                                    <rect key="frame" x="43.333333333333329" y="54.000000000000007" width="41.333333333333329" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rsg-2Z-Itm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rsg-2Z-Itm" firstAttribute="leading" secondItem="ccq-2N-kvD" secondAttribute="leading" id="4Ia-F9-6D8"/>
+                                                <constraint firstItem="rsg-2Z-Itm" firstAttribute="centerY" secondItem="ccq-2N-kvD" secondAttribute="centerY" id="FHU-TU-Bm3"/>
+                                                <constraint firstItem="rsg-2Z-Itm" firstAttribute="top" secondItem="ccq-2N-kvD" secondAttribute="top" id="SFl-qd-NMS"/>
+                                                <constraint firstItem="rsg-2Z-Itm" firstAttribute="centerX" secondItem="ccq-2N-kvD" secondAttribute="centerX" id="W8Y-rn-f64"/>
+                                                <constraint firstItem="6V2-NY-XM4" firstAttribute="centerX" secondItem="ccq-2N-kvD" secondAttribute="centerX" id="pfx-n7-RiH"/>
+                                                <constraint firstItem="6V2-NY-XM4" firstAttribute="centerY" secondItem="ccq-2N-kvD" secondAttribute="centerY" id="yFS-lF-J3g"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="lukeTalksCellImage" destination="rsg-2Z-Itm" id="jjl-Lb-QyI"/>
+                                            <outlet property="lukeTalksCellLabel" destination="6V2-NY-XM4" id="bAY-9q-mKs"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="67H-y8-ahf" id="VKi-91-bbP"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="v7o-bi-JMu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h51-PG-Zel" firstAttribute="top" secondItem="v7o-bi-JMu" secondAttribute="top" id="1v0-Y4-AaK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="h51-PG-Zel" secondAttribute="bottom" constant="-34" id="Fvu-li-Y0Q"/>
+                            <constraint firstItem="h51-PG-Zel" firstAttribute="centerX" secondItem="hhF-HL-hof" secondAttribute="centerX" id="cGu-eR-Qeb"/>
+                            <constraint firstItem="h51-PG-Zel" firstAttribute="leading" secondItem="v7o-bi-JMu" secondAttribute="leading" id="tn4-90-nRc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HlW-sX-5zY"/>
+                    <connections>
+                        <outlet property="lukeTalksCollectionView" destination="h51-PG-Zel" id="jID-6e-B78"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGQ-mX-8pF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3077" y="3520"/>
+            <point key="canvasLocation" x="3075.5725190839694" y="3519.7183098591549"/>
         </scene>
         <!--Mia Talks-->
         <scene sceneID="ZzS-eo-a7r">

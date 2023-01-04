@@ -210,7 +210,7 @@
 		E06262F4293D6C5500DEB478 /* jump_rope.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E06262D9293D6C5400DEB478 /* jump_rope.mp3 */; };
 		E06262F5293D6C5500DEB478 /* water_shooter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E06262DA293D6C5500DEB478 /* water_shooter.mp3 */; };
 		E0775E7D2943E025002C66B3 /* LukeTalksMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0775E7C2943E025002C66B3 /* LukeTalksMenu.swift */; };
-		E0775E7F2943E03C002C66B3 /* LukeTalksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0775E7E2943E03C002C66B3 /* LukeTalksCollectionView.swift */; };
+		E0775E7F2943E03C002C66B3 /* LukeTalksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0775E7E2943E03C002C66B3 /* LukeTalksViewController.swift */; };
 		E078DDCE2960E11000E07AF7 /* bat.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDC82960E11000E07AF7 /* bat.mp4 */; };
 		E078DDCF2960E11000E07AF7 /* apple.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDC92960E11000E07AF7 /* apple.mp4 */; };
 		E078DDD02960E11000E07AF7 /* egg.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E078DDCA2960E11000E07AF7 /* egg.mp4 */; };
@@ -258,6 +258,9 @@
 		E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */; };
 		E09B6ED528EA55EB004E5052 /* StoryTimeMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED428EA55EB004E5052 /* StoryTimeMenuController.swift */; };
 		E09B6ED828EB74FC004E5052 /* StoryTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */; };
+		E09DC9FB2964095100499BA6 /* LukeTalksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC9FA2964095000499BA6 /* LukeTalksCell.swift */; };
+		E09DC9FD2964A22E00499BA6 /* LukeTalksHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC9FC2964A22E00499BA6 /* LukeTalksHeader.swift */; };
+		E09DC9FF2964A25300499BA6 /* LukeTalksFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC9FE2964A25300499BA6 /* LukeTalksFooter.swift */; };
 		E0A1A71D2949025E00E5D584 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0A1A71C2949025E00E5D584 /* GoogleService-Info.plist */; };
 		E0A1A720294903FD00E5D584 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E0A1A71F294903FD00E5D584 /* FirebaseAnalytics */; };
 		E0A1A722294903FD00E5D584 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E0A1A721294903FD00E5D584 /* FirebaseDatabase */; };
@@ -576,7 +579,7 @@
 		E06262D9293D6C5400DEB478 /* jump_rope.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump_rope.mp3; sourceTree = "<group>"; };
 		E06262DA293D6C5500DEB478 /* water_shooter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = water_shooter.mp3; sourceTree = "<group>"; };
 		E0775E7C2943E025002C66B3 /* LukeTalksMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksMenu.swift; sourceTree = "<group>"; };
-		E0775E7E2943E03C002C66B3 /* LukeTalksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksCollectionView.swift; sourceTree = "<group>"; };
+		E0775E7E2943E03C002C66B3 /* LukeTalksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksViewController.swift; sourceTree = "<group>"; };
 		E078DDC82960E11000E07AF7 /* bat.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bat.mp4; sourceTree = "<group>"; };
 		E078DDC92960E11000E07AF7 /* apple.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = apple.mp4; sourceTree = "<group>"; };
 		E078DDCA2960E11000E07AF7 /* egg.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = egg.mp4; sourceTree = "<group>"; };
@@ -624,6 +627,9 @@
 		E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeHeader.swift; sourceTree = "<group>"; };
 		E09B6ED428EA55EB004E5052 /* StoryTimeMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeMenuController.swift; sourceTree = "<group>"; };
 		E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeController.swift; sourceTree = "<group>"; };
+		E09DC9FA2964095000499BA6 /* LukeTalksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksCell.swift; sourceTree = "<group>"; };
+		E09DC9FC2964A22E00499BA6 /* LukeTalksHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksHeader.swift; sourceTree = "<group>"; };
+		E09DC9FE2964A25300499BA6 /* LukeTalksFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksFooter.swift; sourceTree = "<group>"; };
 		E0A1A71C2949025E00E5D584 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E0A2CFA52924275500CC8EC4 /* miaDragon10.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = miaDragon10.mp4; sourceTree = "<group>"; };
 		E0A2CFA62924275600CC8EC4 /* miaDragon8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = miaDragon8.mp4; sourceTree = "<group>"; };
@@ -1020,7 +1026,10 @@
 			isa = PBXGroup;
 			children = (
 				E0775E7C2943E025002C66B3 /* LukeTalksMenu.swift */,
-				E0775E7E2943E03C002C66B3 /* LukeTalksCollectionView.swift */,
+				E0775E7E2943E03C002C66B3 /* LukeTalksViewController.swift */,
+				E09DC9FA2964095000499BA6 /* LukeTalksCell.swift */,
+				E09DC9FC2964A22E00499BA6 /* LukeTalksHeader.swift */,
+				E09DC9FE2964A25300499BA6 /* LukeTalksFooter.swift */,
 			);
 			path = "Luke Talks";
 			sourceTree = "<group>";
@@ -1752,10 +1761,12 @@
 				E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */,
 				E0DF0F4C28D0FFAF00252498 /* MiaAbcQuizCell.swift in Sources */,
 				E024CD53295E167000873863 /* NetworkManager.swift in Sources */,
-				E0775E7F2943E03C002C66B3 /* LukeTalksCollectionView.swift in Sources */,
+				E09DC9FB2964095100499BA6 /* LukeTalksCell.swift in Sources */,
+				E0775E7F2943E03C002C66B3 /* LukeTalksViewController.swift in Sources */,
 				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,
 				E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */,
+				E09DC9FF2964A25300499BA6 /* LukeTalksFooter.swift in Sources */,
 				E0BCD3B52942567A003DDD0A /* Alert+Image.swift in Sources */,
 				E09B6ED528EA55EB004E5052 /* StoryTimeMenuController.swift in Sources */,
 				E09B6ED828EB74FC004E5052 /* StoryTimeController.swift in Sources */,
@@ -1763,6 +1774,7 @@
 				E078DDD52960E52300E07AF7 /* MediaPair.swift in Sources */,
 				E047DE5328E531EE00C38B1B /* LWLDetailCell.swift in Sources */,
 				E04553A4293950D500B4EFA7 /* MiaLearnsLessonTwo.swift in Sources */,
+				E09DC9FD2964A22E00499BA6 /* LukeTalksHeader.swift in Sources */,
 				E078DDD92960E8BC00E07AF7 /* MiaLearnsData.swift in Sources */,
 				E03A68AD28CE5B1300520C51 /* MiaAbcQuizController.swift in Sources */,
 				E047DE5128E5238A00C38B1B /* LWLDetailFooter.swift in Sources */,

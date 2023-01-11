@@ -145,6 +145,7 @@ class MiaTalksController: UICollectionViewController {
                 
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! MiaTalksHeaderView
                 
+                
                 header.miaTalksHeaderLabel.backgroundColor = UIColor(named: "miaTalksOrange")
                 header.miaTalksHeaderLabel.text = "I Like..."
                 header.miaTalksHeaderLabel.font = UIFont(name: "ChalkboardSE-Regular", size: 20)

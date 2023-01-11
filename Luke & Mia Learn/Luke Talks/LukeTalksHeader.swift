@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import AVFoundation
+import AVKit
 
 class LukeTalksHeader: UICollectionReusableView {
     let LukeTalksHeaderImage = UIImageView()
     let LukeTalksHeaderLabel = UILabel()
+    
+    var headerCurrentVideo = "human_aquarium"
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -80,7 +80,12 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
             }
                
             cell.findmeCellImageView.image = UIImage(named: item.description)
-            cell.backgroundColor = .systemGray
+            //cell.backgroundColor = .systemGray
+            cell.findmeCellImageView.layer.cornerRadius = 25
+            cell.findmeCellImageView.clipsToBounds = true
+            cell.findmeCellImageView.layer.borderWidth = BorderSize.small.size
+            cell.findmeCellImageView.layer.borderColor = UIColor(named: "mainBlue")?.cgColor
+            cell.findmeCellImageView.backgroundColor = UIColor(named: "quizLightBlue")
             return cell
         }
         

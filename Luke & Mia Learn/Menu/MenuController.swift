@@ -112,13 +112,13 @@ class MenuController: UICollectionViewController {
         case "learnWLukeLogo":
             self.performSegue(withIdentifier: "goToLWLuke", sender: self)
         case "miaTalksLogo":
-            self.performSegue(withIdentifier: "goToMiaTalks", sender: self)
+            self.performSegue(withIdentifier: "gotoMiaTalksMenu", sender: self)
         case "storyTimeLogo":
             self.performSegue(withIdentifier: "goToStoryTime", sender: self)
         case "lukeTalksLogo":
             self.performSegue(withIdentifier: "goToLukeTalks", sender: self)
         default:
-            self.performSegue(withIdentifier: "goToFindMe", sender: self)
+            self.performSegue(withIdentifier: "gotoFIndMeMenu", sender: self)
             //print("error") //replace with miABC
         }
     }

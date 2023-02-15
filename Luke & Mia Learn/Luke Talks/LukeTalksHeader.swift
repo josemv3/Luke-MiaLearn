@@ -10,11 +10,12 @@ import AVFoundation
 import AVKit
 
 class LukeTalksHeader: UICollectionReusableView {
-    let LukeTalksHeaderImage = UIImageView()
-    let LukeTalksHeaderLabel = UILabel()
-    
+    let lukeTalksHeaderImage = UIImageView()
+    let lukeTalksHeaderLabel = UILabel()
     var headerCurrentVideo = "human_aquarium"
     
+    var playerLayer = AVPlayerLayer()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -31,25 +32,46 @@ class LukeTalksHeader: UICollectionReusableView {
     
     func setupViews() {
         
-        LukeTalksHeaderImage.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(LukeTalksHeaderImage)
+        lukeTalksHeaderImage.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(lukeTalksHeaderImage)
         
         NSLayoutConstraint.activate([
-            LukeTalksHeaderImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-            LukeTalksHeaderImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-            LukeTalksHeaderImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-            LukeTalksHeaderImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100)
+            lukeTalksHeaderImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            lukeTalksHeaderImage.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+            lukeTalksHeaderImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
+            lukeTalksHeaderImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100)
         ])
         
-        LukeTalksHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(LukeTalksHeaderLabel)
+        lukeTalksHeaderLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(lukeTalksHeaderLabel)
 
         NSLayoutConstraint.activate([
-            LukeTalksHeaderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            LukeTalksHeaderLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            LukeTalksHeaderLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 250),
-            LukeTalksHeaderLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+            lukeTalksHeaderLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            lukeTalksHeaderLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            lukeTalksHeaderLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 200),
+            lukeTalksHeaderLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
         ])
-        
       }
+    
+    func playVideo() {
+        playerLayer.player?.pause() //if player exists pause playback and start new play
+
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
+            forResource: headerCurrentVideo , ofType: "mp4") ?? "human_draw.mp4"))
+        playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = lukeTalksHeaderImage.bounds
+        playerLayer.videoGravity = .resizeAspect
+        lukeTalksHeaderImage.layer.addSublayer(playerLayer)
+        player.play()
+    }
 }
+
+
+//Extra:
+
+//        func configureVideo(videoURL: URL) {
+//            createPlayer(withURL: videoURL)
+//            let playerLayer = AVPlayerLayer(player: player)
+//            playerLayer.frame = lukeTalksHeaderImage.bounds
+//            lukeTalksHeaderImage.layer.addSublayer(playerLayer)
+//        }

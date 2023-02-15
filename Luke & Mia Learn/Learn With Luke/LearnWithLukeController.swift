@@ -32,6 +32,8 @@ class LearnWithLukeController: UICollectionViewController {
     private var dataSource: UICollectionViewDiffableDataSource<Character, String>!
     static let sectionHeaderElementKind = "section-header-element-kind"
     var itemChosen = ""
+    
+    //Section in the Snampshot is a Character coming from initial letter in the for loop below:
     var filteredItemsSnapshot: NSDiffableDataSourceSnapshot<Character, String> {
         var snapshot = NSDiffableDataSourceSnapshot<Character, String>()
         

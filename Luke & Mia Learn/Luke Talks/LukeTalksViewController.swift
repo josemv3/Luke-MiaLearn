@@ -13,17 +13,17 @@ class LukeTalksViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var lukeTalksCollectionView: UICollectionView!
     
-    private var lwlLowercaseLetters = [
-        "a", "b", "c", "d"]
-    private var lwlButtonText: [String: String] = ["a": "apple", "b": "bananas", "c": "draw", "d": "aquarium"]
+    private var lwlLowercaseLetters = ["a", "b", "c", "d"]
+    private var lwlButtonText: [String: String] = ["a": "apple", "b": "banana", "c": "draw", "d": "aquarium"]
+    private var cellImages = ["apple", "banana", "draw", "aquarium"]
+    private var lessonText = ["I like the aquarium. Can we visit the aquarium and see the fishies please?"]
     
-    private var cellImages = ["apple", "bananas", "draw", "aquarium"]
     
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     static let sectionFooterElementKind = "section-footer-element-kind" //footerSetup1
     static let sectionHeaderElementKind = "section-header-element-kind"//headerSetup1
     //let videoplayer = VideoPlayer.shared
-    var playerLayer = AVPlayerLayer()
+    //var playerLayer = AVPlayerLayer()
     
     enum Section {
         case main
@@ -37,6 +37,7 @@ class LukeTalksViewController: UIViewController, UICollectionViewDelegate {
         lukeTalksCollectionView.register(LukeTalksHeader.self, forSupplementaryViewOfKind: LukeTalksViewController.sectionHeaderElementKind, withReuseIdentifier: "LukeTalksHeader")
         lukeTalksCollectionView.register(LukeTalksFooter.self, forSupplementaryViewOfKind: LukeTalksViewController.sectionFooterElementKind, withReuseIdentifier: "LukeTalksFooter")
         configureDataSource()
+        
     }
     
     func configureLayout() -> UICollectionViewCompositionalLayout {
@@ -77,7 +78,7 @@ class LukeTalksViewController: UIViewController, UICollectionViewDelegate {
         // HeaderSetup3
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(350)//.estimated(400)//364
+            heightDimension: .absolute(310)//.estimated(400)//364 Was 350
         )
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -88,7 +89,7 @@ class LukeTalksViewController: UIViewController, UICollectionViewDelegate {
         //FooterSetup3
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(64)
+            heightDimension: .absolute(94) //64
         )
         
         let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(
@@ -131,33 +132,35 @@ class LukeTalksViewController: UIViewController, UICollectionViewDelegate {
                 let footer = collectionView.dequeueReusableSupplementaryView(
                     ofKind: kind, withReuseIdentifier: "LukeTalksFooter",
                     for: indexPath) as! LukeTalksFooter
+                
                 footer.backgroundColor = UIColor(named: "mainBlue")
                 
                 return footer
         
             } else if kind == "section-header-element-kind" {
                 
-                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LukeTalksHeader", for: indexPath) as! LukeTalksHeader
-                
-                //header.backgroundColor = .white
-                header.LukeTalksHeaderImage.backgroundColor = .cyan
-                //header.LukeTalksHeaderImage.image = UIImage(named: "asteroidBetween")
-                //header.LukeTalksHeaderImage.contentMode = .scaleAspectFill
-                
-                //self.videoplayer.playVideo(songName: header.headerCurrentVideo, viewPlayer: header.LukeTalksHeaderImage)
-                
-                header.LukeTalksHeaderLabel.contentMode = .scaleToFill
-                //header.lwlHeaderLabel.font = UIFont(name: "Chalkduster", size: 14)
-                header.LukeTalksHeaderLabel.textColor = UIColor(named: "learnWLukePurple")
-                header.LukeTalksHeaderLabel.numberOfLines = 4
-                header.LukeTalksHeaderLabel.text = "The asteroid belt is located between Mars and Jupiter, the 4th and 5th planets in our solar system."
-                self.playVideo(videoName: header.headerCurrentVideo, imageView: header.LukeTalksHeaderImage)
-                
+                let header = collectionView.dequeueReusableSupplementaryView(
+                    ofKind: kind, withReuseIdentifier: "LukeTalksHeader",
+                    for: indexPath) as! LukeTalksHeader
+
+                header.backgroundColor = .white
+                header.lukeTalksHeaderImage.backgroundColor = .black
+                header.lukeTalksHeaderImage.contentMode = .scaleToFill
+                header.lukeTalksHeaderImage.layer.borderWidth = 5
+                header.lukeTalksHeaderImage.layer.cornerRadius = 5
+                header.lukeTalksHeaderImage.layer.borderColor = UIColor(named: "learnWLukePurple")?.cgColor
+            
+                header.lukeTalksHeaderLabel.contentMode = .scaleToFill
+                header.lukeTalksHeaderLabel.font = UIFont(name: "Chalkduster", size: 17)
+                header.lukeTalksHeaderLabel.textColor = UIColor(named: "learnWLukePurple")
+                header.lukeTalksHeaderLabel.numberOfLines = 4
+                header.lukeTalksHeaderLabel.text = self.lessonText[0]
                 
                 return header
             }
             return nil
         }
+        
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
         
         initialSnapshot.appendSections([.main])
@@ -172,18 +175,11 @@ class LukeTalksViewController: UIViewController, UICollectionViewDelegate {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         print("yes", item.description)
         
-    }
-    
-    func playVideo(videoName: String, imageView: UIImageView) {
-        playerLayer.player?.pause() //if player exists pause playback and start new play
-
-        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
-            forResource: videoName , ofType: "mp4") ?? "human_draw.mp4"))
-        playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = imageView.bounds
-        playerLayer.videoGravity = .resizeAspect
-        imageView.layer.addSublayer(playerLayer)
-        player.play()
+        
+        guard let header = (collectionView.supplementaryView(
+            forElementKind: "section-header-element-kind",
+            at: IndexPath(item: 0, section: 0)) as? LukeTalksHeader) else { return }
+        header.playVideo()
     }
 }
 

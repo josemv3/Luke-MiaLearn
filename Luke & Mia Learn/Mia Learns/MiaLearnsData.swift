@@ -58,7 +58,7 @@ struct MiaLearnsData {
     }
     
     enum FruitItems: String, CaseIterable {
-        case avocado, bananas, coconut, dragon_fruit, elderberry, fig,
+        case avocado, bell_pepper, coconut, dragon_fruit, elderberry, fig,
              grapes, honeydew, iceberg_lettuce, jalapeno, kiwi, lemon,
              mushroom, nectarine, oranges, peas, quince, radish,
              strawberry, turnip, ugli_fruit, vanilla, watermellon, ximenia,
@@ -69,6 +69,12 @@ struct MiaLearnsData {
     
     //NumberSet uses map in switch statement to build promptSet.
     //lessonPromptSet = (0...30).map { String($0) }
+    
+    enum NumberItems: String, CaseIterable {
+        case ladybug, frogs, birds, dogs, cats, racoons, butterflys, bears, whales,
+             bees, penguins, ducks, turtles, pigs, sheep, bunnys, caterpillars, ants,
+             spiders, fire_flys
+    }
     
     enum ColorPrompt: String, CaseIterable {
         case black, blue, brown, cyan, green,
@@ -101,7 +107,14 @@ struct MiaLearnsData {
              windup_dinosaur
     }
     
-    //ToyItems are the same names as ToyPrompt
+    enum ToyItems: String, CaseIterable {
+        case balloon_svg, bath_boat_svg, beach_ball_svg, doll_house_svg, jump_rope_svg, legos_svg,
+             letter_blocks_svg, old_phone_svg, puzzle_cube_svg, puzzle_pieces_svg, rocking_horse_svg,
+             rubber_ducky_svg, sand_toys_svg, skateboard_svg, spin_wheel_svg, spinning_top_svg,
+             stuffed_animal_svg, tea_set_svg, toy_phone_svg, toy_robot_svg, toy_rocket_svg,
+             toy_train_svg, toy_truck_svg, water_shooter_svg, windup_car_svg,
+             windup_dinosaur_svg
+    }
     
     //add to original number for other letter sets
     mutating func getLesson() {
@@ -138,11 +151,11 @@ struct MiaLearnsData {
             makeMiaLearnsLesson(promptSet: lessonPromptSet, promptSound: lessonPromptSound, lessonItem: lessonItemSet)
             
         case .number:
-            lessonPromptSet = (1...30).map { String($0) }
+            lessonPromptSet = (1...20).map { String($0) }
             lessonPromptSound = lessonPromptSet
             
-            lessonItems = lessonPromptSet
-            lessonItemSet = zip(lessonPromptSet, lessonPromptSound).reduce(into: [:]) { $0[$1.0] = $1.1 }
+            lessonItems = NumberItems.allRawValues
+            lessonItemSet = zip(lessonPromptSet, NumberItems.allRawValues).reduce(into: [:]) { $0[$1.0] = $1.1 }
             makeMiaLearnsLesson(promptSet: lessonPromptSet, promptSound: lessonPromptSet, lessonItem: lessonItemSet)
             
         case .color:
@@ -165,9 +178,9 @@ struct MiaLearnsData {
             lessonPromptSet = ToyPrompt.allRawValues
             lessonPromptSound = lessonPromptSet
             
-            lessonItems = lessonPromptSet
-            lessonItemSet = zip(lessonPromptSet, lessonPromptSound).reduce(into: [:]) { $0[$1.0] = $1.1 }
-            makeMiaLearnsLesson(promptSet: lessonPromptSet, promptSound: lessonPromptSound, lessonItem: lessonItemSet)//lessonItemSet
+            lessonItems = ToyItems.allRawValues
+            lessonItemSet = zip(lessonPromptSet, ToyItems.allRawValues).reduce(into: [:]) { $0[$1.0] = $1.1 }
+            makeMiaLearnsLesson(promptSet: lessonPromptSet, promptSound: lessonPromptSound, lessonItem: lessonItemSet)
         }
     }
 }
@@ -180,3 +193,11 @@ extension CaseIterable where Self: RawRepresentable {
         return allCases.map({ $0.rawValue })
     }
 }
+
+
+//In ShapePRomt enum
+//      Tying each enum to another so order doesnt matter:
+//        var item: String {
+//            switch self {
+//            case .circle:
+//                return ShapeItems.wheel.rawValue

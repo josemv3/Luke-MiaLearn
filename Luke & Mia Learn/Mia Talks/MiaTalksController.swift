@@ -13,10 +13,9 @@ var recieverString = "human"
 
 private var miatalksLowercaseLetters = [
     "a", "b", "c", "d", "e", "f"]
-private var miaTalksViewText: [String: String] = ["a": "apple", "b": "hamburger", "c": "carrot", "d": "broccoli", "e": "cereal", "f": "banana"]
+private var miaTalksViewText: [String: String] = ["a": "apples", "b": "hamburger", "c": "carrot", "d": "broccoli", "e": "cereal", "f": "bananas"]
 
 class MiaTalksController: UICollectionViewController {
-    
     
     var audioPlayer: AVAudioPlayer?
     var soundTypeSelected = "human"
@@ -35,7 +34,8 @@ class MiaTalksController: UICollectionViewController {
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         collectionView.register(MiaTalksHeaderView.self, forSupplementaryViewOfKind: MiaTalksController.sectionHeaderElementKind, withReuseIdentifier: "Header")//headerSetup2
         collectionView.register(MiaTalksFooterView.self, forSupplementaryViewOfKind: MiaTalksController.sectionFooterElementKind, withReuseIdentifier: "Footer")//footerSetup2
-        navigationItem.title = "Mia Talks"
+        //navigationItem.title = "Mia Talks"
+        
         //navigationController?.navigationBar.barTintColor = .gray
         //navigationController?.navigationBar.backgroundColor = .red
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
@@ -44,7 +44,7 @@ class MiaTalksController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         recieverString = "human"
-        navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: "miaTalksOrange")
+        //navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: "miaTalksOrange")
     }
     
     //MARK: - Layout
@@ -176,7 +176,7 @@ class MiaTalksController: UICollectionViewController {
                 collectionView.cellForItem(at: indexPath)?.alpha = 1.0
             }
         }
-        playSound(soundName: recieverString + (miaTalksViewText[item] ?? "banana"))
+        playSound(soundName: recieverString + (miaTalksViewText[item] ?? "bananas"))
     }
     
     //MARK: - Play Sound files

@@ -11,6 +11,5 @@ class LukeTalksCell: UICollectionViewCell {
     static let reuseidentifier = String(describing: LukeTalksCell.self)
     
     @IBOutlet weak var lukeTalksCellLabel: UILabel!
-    
     @IBOutlet weak var lukeTalksCellImage: UIImageView!
 }

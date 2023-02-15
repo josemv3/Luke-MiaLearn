@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "stuffed_animal_svg.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

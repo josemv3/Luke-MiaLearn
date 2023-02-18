@@ -185,15 +185,6 @@ struct MiaLearnsData {
     }
 }
 
-extension CaseIterable where Self: RawRepresentable {
-    static var allRawValues: [RawValue] {
-        //if .object return rawValue + "2"
-        //if .fruit return rawValue + "Quiz"
-        //else
-        return allCases.map({ $0.rawValue })
-    }
-}
-
 
 //In ShapePRomt enum
 //      Tying each enum to another so order doesnt matter:

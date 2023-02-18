@@ -1117,7 +1117,8 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzL-2P-KBs">
                                 <rect key="frame" x="16" y="758" width="178" height="60"/>
-                                <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="mainBlue"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Play"/>
                                 <connections>
@@ -1126,11 +1127,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-W2-IX3">
                                 <rect key="frame" x="217" y="758" width="75" height="60"/>
-                                <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="mainBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="gsh-Sb-u4Z"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="vpj-6u-BTd"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Back"/>
                                 <connections>
@@ -1139,11 +1141,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-Rx-hGy">
                                 <rect key="frame" x="300" y="758" width="75" height="60"/>
-                                <color key="backgroundColor" red="0.63137257099999999" green="0.79215687509999999" blue="0.88627451660000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="mainBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="40y-i2-tV1"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="5bw-YK-sA4"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Next"/>
                                 <connections>

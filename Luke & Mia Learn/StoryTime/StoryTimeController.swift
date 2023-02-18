@@ -42,7 +42,9 @@ class StoryTimeController: UIViewController {
         storyLabel.text = dragonDialog[imageCount]
         storyLabel.textColor = .white
         storyNaratorView.layer.borderWidth = 4
-        storyNaratorView.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
+        storyNaratorView.layer.borderColor = UIColor(named: Colors.mainBlue.rawValue)?.cgColor
+        storyMainView.layer.borderWidth = BorderSize.large.size
+        storyMainView.layer.borderColor = UIColor(named: Colors.mainOrange.rawValue)?.cgColor
     }
     
 

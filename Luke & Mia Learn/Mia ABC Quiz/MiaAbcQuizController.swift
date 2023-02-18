@@ -18,11 +18,7 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     let soundplayer = SoundPlayer.shared
     let videoPlayer = VideoPlayer.shared
     var miaAbcQuizData = MiaAbcQuizData()
-    
-    private var correctAnswer: String = "a"
-    var score = 0
-    var incorrectChoices = 0
-    private var videoCount = 0
+
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     
     //TO CHANGE ITEMS 1
@@ -47,8 +43,8 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
         title = Title.MiaAbcQuiz.rawValue
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.videoCount] + "Q")
-            self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.videoCount], viewPlayer: self.mainView)
+            self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+            self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
         }
         
         navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: Colors.quizBrownLight.rawValue)
@@ -65,8 +61,8 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     //MARK: - MainButton and Image
     
     @IBAction func mainViewButtonTap(_ sender: UIButton) {
-        self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.videoCount] + "Q")
-        self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.videoCount], viewPlayer: self.mainView)
+        self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+        self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
     }
     
     //MARK: - Compositional CV LAYOUT
@@ -128,8 +124,8 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
         guard let cell = collectionView.cellForItem(at: indexPath) as? MiaAbcQuizCell else {
                return
            }
-        correctAnswer = String(miaAbcQuizData.videoNamesArray[videoCount].first ?? "a")//Set correct answer
-        miaAbcQuizData.changeLetterSet(correctAnswer: correctAnswer) //using correctAnswer this sets the letters displayed to a selected group
+        miaAbcQuizData.correctAnswer = String(miaAbcQuizData.videoNamesArray[miaAbcQuizData.videoCount].first ?? "a")//Set correct answer
+        miaAbcQuizData.changeLetterSet(correctAnswer: miaAbcQuizData.correctAnswer) //using correctAnswer this sets the letters displayed to a selected group
         
         if checkAnswer(itemPressed: item) == true {
             cell.miABCQuizCellImage.backgroundColor = .systemGreen
@@ -158,7 +154,7 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     
     //checks item pressed with correct answer
     func checkAnswer(itemPressed: String) -> Bool {
-        if itemPressed == correctAnswer {
+        if itemPressed == miaAbcQuizData.correctAnswer {
             return true
         }
         updateScore(answer: false)
@@ -167,39 +163,39 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     
     //if correct, updates score, advnaces vid count and plays vid and sound
     func userGotItRight() {
-        if correctAnswer == "z" {
+        if miaAbcQuizData.correctAnswer == "z" {
             gameOver()
         } else { //fixed the out of index issue after zoo
             updateScore(answer: true)
-            videoCount += 1
+            miaAbcQuizData.videoCount += 1
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
-                self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.videoCount] + "Q")
-                self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.videoCount], viewPlayer: self.mainView)
+                self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+                self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
             }
         }
     }
     
     func updateScore(answer: Bool) {
         if answer {
-            score += 5
-            scoreLabel.text = String(score)
+            miaAbcQuizData.score += 5
+            scoreLabel.text = String(miaAbcQuizData.score)
         } else {
-            incorrectChoices += 1
-            score -= 1
-            scoreLabel.text = String(score)
+            miaAbcQuizData.incorrectChoices += 1
+            miaAbcQuizData.score -= 1
+            scoreLabel.text = String(miaAbcQuizData.score)
         }
     }
     
     //MARK: - GameOver
     
     func gameOver() {
-        let alert = UIAlertController(title: "Game Over", message: "Correct: \(score)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Game Over", message: "Correct: \(miaAbcQuizData.score)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Record Score", style: .default, handler: { (action) in
             print("Record Score")
             //nested alert2
             //save high score and initials to core data
-            let alert2 = UIAlertController(title: "Save Score", message: "Correct: \(self.score)", preferredStyle: .alert)
+            let alert2 = UIAlertController(title: "Save Score", message: "Correct: \(self.miaAbcQuizData.score)", preferredStyle: .alert)
             alert2.addTextField { (textField) in
                 textField.placeholder = "Enter name"
             }
@@ -219,16 +215,16 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     }
     
     func restartGame() {
-        videoCount = 0
-        self.score = 0
-        self.scoreLabel.text = String(score) //need one source of truth
+        miaAbcQuizData.videoCount = 0
+        self.miaAbcQuizData.score = 0
+        self.scoreLabel.text = String(miaAbcQuizData.score) //need one source of truth
         miaAbcQuizData.quizAlphabetLetters = MiaAbcQuizData.Letters.a.letterSet
         self.miaAbcQuizData.currentLetterSet.removeAll()
         self.miaAbcQuizData.currentLetterSet = self.miaAbcQuizData.getShuffledLetterSet()
         self.dataSource.apply(self.filteredItemsSnapshot)
         
-        self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.videoCount] + "Q")
-        self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.videoCount], viewPlayer: self.mainView)
+        self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+        self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
     }
 }
 

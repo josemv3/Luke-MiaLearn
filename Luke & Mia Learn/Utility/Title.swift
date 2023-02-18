@@ -10,4 +10,9 @@ import Foundation
 enum Title: String {
     case MiaLearns = "Mia Learns"
     case MiaAbcQuiz = "Mia ABC Quiz"
+    case LearnWithLuke = "Learn With Luke"
+    case MiaTalks = "Mia Talks"
+    case StoryTime = "Story Time"
+    case FindMe = "Find Me"
+    case LukeTalks = "Luke Talks"
 }

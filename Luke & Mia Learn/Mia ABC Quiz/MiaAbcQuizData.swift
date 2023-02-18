@@ -12,6 +12,10 @@ struct MiaAbcQuizData {
     var videoNamesArray = [String]()
     var currentLetterSet = [String]()
     var quizAlphabetLetters = [String]()
+    var score = 0
+    var incorrectChoices = 0
+    var videoCount = 0
+    var correctAnswer: String = "a"
     
     mutating func getVideoNames() {
         videoNamesArray = VideoNames.allCases.map { $0.rawValue }

@@ -27,8 +27,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     var currentAnimation = 0
     var audioPlayer: AVAudioPlayer?
     var playerLayer = AVPlayerLayer()
-    var currentItemBackgroundColor: UIColor =  UIColor(named: "mainOrange") ?? .black
-    var cellItemBorderColor = "mainOrange"
+    var currentItemBackgroundColor: UIColor =  UIColor(named: Colors.mainOrange.rawValue) ?? .black
     private var mainWordButtonTitle = "hello"
     private let smallBorderSize: CGFloat = 2
     private let mediumBorderSize: CGFloat = 4
@@ -44,7 +43,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Mia Learns"
+        navigationItem.title = Title.MiaLearns.rawValue
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
         navigationController?.navigationBar.backgroundColor = UIColor.systemBlue
         
@@ -56,15 +55,15 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         collectionView.collectionViewLayout = configureLayout()
         
         collectionView.layer.borderWidth = smallBorderSize //2
-        collectionView.layer.borderColor = UIColor(named: "mainBlue")?.cgColor
+        collectionView.layer.borderColor = UIColor(named: Colors.mainBlue.rawValue)?.cgColor
         view.backgroundColor = .systemGroupedBackground
         
         mainImageBack.layer.borderWidth = mediumBorderSize //4
-        mainImageBack.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
-        mainImageBack.backgroundColor = UIColor(named: "mainBlue")
+        mainImageBack.layer.borderColor = UIColor(named: Colors.mainOrange.rawValue)?.cgColor
+        mainImageBack.backgroundColor = UIColor(named: Colors.mainBlue.rawValue)
         mainWordButton.titleLabel?.font = UIFont(name: "Chalkduster", size: 21)//doesnt work
         mainWordButton.layer.borderWidth = mediumBorderSize
-        mainWordButton.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
+        mainWordButton.layer.borderColor = UIColor(named: Colors.mainOrange.rawValue)?.cgColor
         configureDataSource()
     }
     
@@ -104,7 +103,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             cell.miABCCellLabel.text = item.description
             cell.miABCCellImage.image = UIImage(named: item.description)
             cell.miABCCellImage.backgroundColor = self.currentItemBackgroundColor
-            cell.miABCCellImage.layer.borderColor = UIColor(named: self.cellItemBorderColor)?.cgColor
+            cell.miABCCellImage.layer.borderColor = UIColor(named: Colors.mainOrange.rawValue)?.cgColor
             cell.miABCCellImage.layer.borderWidth = 4
             
             return cell

@@ -8,7 +8,7 @@
 import UIKit
 
 enum BorderSize: CGFloat {
-    case small, normal, large
+    case small, normal, large, xLarge
     
     var size: CGFloat {
         switch(self) {
@@ -18,6 +18,8 @@ enum BorderSize: CGFloat {
             return 4
         case .large:
             return 6
+        case .xLarge:
+            return 10
         }
     }
 }

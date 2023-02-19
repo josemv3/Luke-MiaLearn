@@ -149,6 +149,8 @@
 		E047DE5128E5238A00C38B1B /* LWLDetailFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E047DE5028E5238A00C38B1B /* LWLDetailFooter.swift */; };
 		E047DE5328E531EE00C38B1B /* LWLDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E047DE5228E531EE00C38B1B /* LWLDetailCell.swift */; };
 		E04BC04729844FE0004C7CD1 /* FindMeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04BC04629844FE0004C7CD1 /* FindMeMenu.swift */; };
+		E05044BC29A00DFE00577154 /* CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05044BB29A00DFE00577154 /* CaseIterable.swift */; };
+		E05044BE29A0917500577154 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05044BD29A0917500577154 /* Title.swift */; };
 		E058A53128EF789600A1B912 /* giraffe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E058A52C28EF789600A1B912 /* giraffe.mp3 */; };
 		E058A53228EF789600A1B912 /* frog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E058A52D28EF789600A1B912 /* frog.mp3 */; };
 		E058A53328EF789600A1B912 /* f2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E058A52E28EF789600A1B912 /* f2.mp3 */; };
@@ -384,6 +386,7 @@
 		E0AE5259299B0C620012C068 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE5258299B0C620012C068 /* Colors.swift */; };
 		E0AE525B299B0FF10012C068 /* CornerRadiusMod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE525A299B0FF10012C068 /* CornerRadiusMod.swift */; };
 		E0AE525D299B10EA0012C068 /* BorderSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE525C299B10EA0012C068 /* BorderSize.swift */; };
+		E0AE5261299D46CF0012C068 /* MiaAbcQuizData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE5260299D46CF0012C068 /* MiaAbcQuizData.swift */; };
 		E0BCD3B52942567A003DDD0A /* Alert+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BCD3B42942567A003DDD0A /* Alert+Image.swift */; };
 		E0C6C46129352DB4006D123A /* instrumentsV.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0C6C46029352DB4006D123A /* instrumentsV.mp4 */; };
 		E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */; };
@@ -572,6 +575,8 @@
 		E047DE5028E5238A00C38B1B /* LWLDetailFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWLDetailFooter.swift; sourceTree = "<group>"; };
 		E047DE5228E531EE00C38B1B /* LWLDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWLDetailCell.swift; sourceTree = "<group>"; };
 		E04BC04629844FE0004C7CD1 /* FindMeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMeMenu.swift; sourceTree = "<group>"; };
+		E05044BB29A00DFE00577154 /* CaseIterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseIterable.swift; sourceTree = "<group>"; };
+		E05044BD29A0917500577154 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		E058A52C28EF789600A1B912 /* giraffe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = giraffe.mp3; sourceTree = "<group>"; };
 		E058A52D28EF789600A1B912 /* frog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = frog.mp3; sourceTree = "<group>"; };
 		E058A52E28EF789600A1B912 /* f2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = f2.mp3; sourceTree = "<group>"; };
@@ -804,6 +809,7 @@
 		E0AE5258299B0C620012C068 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E0AE525A299B0FF10012C068 /* CornerRadiusMod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusMod.swift; sourceTree = "<group>"; };
 		E0AE525C299B10EA0012C068 /* BorderSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderSize.swift; sourceTree = "<group>"; };
+		E0AE5260299D46CF0012C068 /* MiaAbcQuizData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcQuizData.swift; sourceTree = "<group>"; };
 		E0BCD3B42942567A003DDD0A /* Alert+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Image.swift"; sourceTree = "<group>"; };
 		E0C6C46029352DB4006D123A /* instrumentsV.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = instrumentsV.mp4; sourceTree = "<group>"; };
 		E0CF3C5228CCD322000E59A0 /* Luke & Mia Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Luke & Mia Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1062,6 +1068,7 @@
 				E0AE5258299B0C620012C068 /* Colors.swift */,
 				E0AE525A299B0FF10012C068 /* CornerRadiusMod.swift */,
 				E0AE525C299B10EA0012C068 /* BorderSize.swift */,
+				E05044BD29A0917500577154 /* Title.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1333,6 +1340,7 @@
 			isa = PBXGroup;
 			children = (
 				E0BCD3B42942567A003DDD0A /* Alert+Image.swift */,
+				E05044BB29A00DFE00577154 /* CaseIterable.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1490,9 +1498,10 @@
 			isa = PBXGroup;
 			children = (
 				E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */,
+				E0AE5260299D46CF0012C068 /* MiaAbcQuizData.swift */,
+				E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */,
 				E0DF0F5B28D23E1300252498 /* Question.swift */,
 				E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */,
-				E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */,
 			);
 			path = "Mia ABC Quiz";
 			sourceTree = "<group>";
@@ -1999,9 +2008,11 @@
 				E047DE4F28E5236C00C38B1B /* LWLDetailHeader.swift in Sources */,
 				E0CF3C6F28CCE1CA000E59A0 /* MiaLearnsViewController.swift in Sources */,
 				E0CF3C7128CCE86B000E59A0 /* MiaLearnsCell.swift in Sources */,
+				E05044BE29A0917500577154 /* Title.swift in Sources */,
 				E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */,
 				E03B515D2941C49E0057B81C /* SoundPlayer.swift in Sources */,
 				E08D165328DBA63D00447D69 /* MiaTalksFooterView.swift in Sources */,
+				E05044BC29A00DFE00577154 /* CaseIterable.swift in Sources */,
 				E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */,
 				E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */,
 				E0DF0F4C28D0FFAF00252498 /* MiaAbcQuizCell.swift in Sources */,
@@ -2028,6 +2039,7 @@
 				E03A68AD28CE5B1300520C51 /* MiaAbcQuizController.swift in Sources */,
 				E047DE5128E5238A00C38B1B /* LWLDetailFooter.swift in Sources */,
 				E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */,
+				E0AE5261299D46CF0012C068 /* MiaAbcQuizData.swift in Sources */,
 				E091A4D928CFAFE800E7284C /* LearnWithLukeController.swift in Sources */,
 				E0CF3C6028CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld in Sources */,
 				E0AE525D299B10EA0012C068 /* BorderSize.swift in Sources */,
@@ -2185,9 +2197,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2216,9 +2226,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

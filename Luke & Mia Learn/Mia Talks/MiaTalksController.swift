@@ -136,7 +136,7 @@ class MiaTalksController: UICollectionViewController {
             if kind == "section-footer-element-kind" {
                 
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath) as! MiaTalksFooterView
-                footer.backgroundColor = UIColor(named: "miaTalksOrange")
+                footer.backgroundColor = UIColor(named: Colors.mainOrange.rawValue)
                 //self.soundTypeSelected = footer.soundType ?? "2"
                 footer.delegate = self
                 
@@ -146,7 +146,7 @@ class MiaTalksController: UICollectionViewController {
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! MiaTalksHeaderView
                 
                 
-                header.miaTalksHeaderLabel.backgroundColor = UIColor(named: "miaTalksOrange")
+                header.miaTalksHeaderLabel.backgroundColor = UIColor(named: Colors.mainOrange.rawValue)
                 header.miaTalksHeaderLabel.text = "I Like..."
                 header.miaTalksHeaderLabel.font = UIFont(name: "ChalkboardSE-Regular", size: 20)
                 

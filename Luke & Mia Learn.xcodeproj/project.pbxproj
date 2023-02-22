@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E009FC0529A54DDD006A812E /* StoryTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009FC0429A54DDD006A812E /* StoryTimeData.swift */; };
 		E01EFB39293722BA005B752B /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFB30293722B9005B752B /* car.mp3 */; };
 		E01EFB3A293722BA005B752B /* juice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFB31293722B9005B752B /* juice.mp3 */; };
 		E01EFB3B293722BA005B752B /* home.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFB32293722B9005B752B /* home.mp3 */; };
@@ -410,8 +411,6 @@
 		E0CF3C8528CCF87C000E59A0 /* c2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7B28CCF87C000E59A0 /* c2.mp3 */; };
 		E0CF3C8628CCF87C000E59A0 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7C28CCF87C000E59A0 /* cat.mp3 */; };
 		E0DF0F4C28D0FFAF00252498 /* MiaAbcQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */; };
-		E0DF0F5C28D23E1300252498 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F5B28D23E1300252498 /* Question.swift */; };
-		E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */; };
 		E0F7BA6728F1339E00DD47BE /* humanbroccoli.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA6128F1339D00DD47BE /* humanbroccoli.mp3 */; };
 		E0F7BA6828F1339E00DD47BE /* humancarrot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA6228F1339D00DD47BE /* humancarrot.mp3 */; };
 		E0F7BA6928F1339E00DD47BE /* humancereal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA6328F1339D00DD47BE /* humancereal.mp3 */; };
@@ -433,6 +432,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E009FC0429A54DDD006A812E /* StoryTimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeData.swift; sourceTree = "<group>"; };
 		E01EFB30293722B9005B752B /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
 		E01EFB31293722B9005B752B /* juice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = juice.mp3; sourceTree = "<group>"; };
 		E01EFB32293722B9005B752B /* home.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = home.mp3; sourceTree = "<group>"; };
@@ -835,8 +835,6 @@
 		E0CF3C7B28CCF87C000E59A0 /* c2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c2.mp3; sourceTree = "<group>"; };
 		E0CF3C7C28CCF87C000E59A0 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
 		E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcQuizCell.swift; sourceTree = "<group>"; };
-		E0DF0F5B28D23E1300252498 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		E0F7BA6128F1339D00DD47BE /* humanbroccoli.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humanbroccoli.mp3; sourceTree = "<group>"; };
 		E0F7BA6228F1339D00DD47BE /* humancarrot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humancarrot.mp3; sourceTree = "<group>"; };
 		E0F7BA6328F1339D00DD47BE /* humancereal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humancereal.mp3; sourceTree = "<group>"; };
@@ -1229,6 +1227,7 @@
 			children = (
 				E09B6ED428EA55EB004E5052 /* StoryTimeMenuController.swift */,
 				E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */,
+				E009FC0429A54DDD006A812E /* StoryTimeData.swift */,
 			);
 			path = StoryTime;
 			sourceTree = "<group>";
@@ -1500,8 +1499,6 @@
 				E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */,
 				E0AE5260299D46CF0012C068 /* MiaAbcQuizData.swift */,
 				E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */,
-				E0DF0F5B28D23E1300252498 /* Question.swift */,
-				E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */,
 			);
 			path = "Mia ABC Quiz";
 			sourceTree = "<group>";
@@ -1996,9 +1993,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E009FC0529A54DDD006A812E /* StoryTimeData.swift in Sources */,
 				E0A5D67429877878002E0E57 /* MiaTalksMenu.swift in Sources */,
 				E078DDD72960E81F00E07AF7 /* MiaLearnLesson.swift in Sources */,
-				E0DF0F5C28D23E1300252498 /* Question.swift in Sources */,
 				E0775E7D2943E025002C66B3 /* LukeTalksMenu.swift in Sources */,
 				E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */,
 				E09704B22998307D0024A0F2 /* LukeTalksCell2.swift in Sources */,
@@ -2013,7 +2010,6 @@
 				E03B515D2941C49E0057B81C /* SoundPlayer.swift in Sources */,
 				E08D165328DBA63D00447D69 /* MiaTalksFooterView.swift in Sources */,
 				E05044BC29A00DFE00577154 /* CaseIterable.swift in Sources */,
-				E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */,
 				E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */,
 				E0DF0F4C28D0FFAF00252498 /* MiaAbcQuizCell.swift in Sources */,
 				E037C94F296C94B7000DAFC7 /* VideoPlayer.swift in Sources */,

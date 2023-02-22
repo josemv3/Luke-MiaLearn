@@ -1112,88 +1112,109 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon1" translatesAutoresizingMaskIntoConstraints="NO" id="GgB-Pk-PgJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon1" translatesAutoresizingMaskIntoConstraints="NO" id="GgB-Pk-PgJ">
                                 <rect key="frame" x="0.0" y="103" width="393" height="496"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzL-2P-KBs">
-                                <rect key="frame" x="16" y="758" width="178" height="60"/>
-                                <color key="backgroundColor" name="mainBlue"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Play"/>
-                                <connections>
-                                    <action selector="storyPlayBtnTap:" destination="OgO-Br-Que" eventType="touchUpInside" id="nAU-Cd-FRk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-W2-IX3">
-                                <rect key="frame" x="217" y="758" width="75" height="60"/>
-                                <color key="backgroundColor" name="mainBlue"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owE-p2-MNj">
+                                <rect key="frame" x="0.0" y="607" width="395" height="245"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="lWZ-cq-boX">
+                                        <rect key="frame" x="30.333333333333343" y="162" width="334.33333333333326" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzL-2P-KBs">
+                                                <rect key="frame" x="0.0" y="0.0" width="75.333333333333329" height="60"/>
+                                                <color key="backgroundColor" name="mainBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Play">
+                                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="storyPlayBtnTap:" destination="OgO-Br-Que" eventType="touchUpInside" id="nAU-Cd-FRk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVB-gz-aBG">
+                                                <rect key="frame" x="86.333333333333343" y="0.0" width="75.333333333333343" height="60"/>
+                                                <color key="backgroundColor" name="mainBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Pause">
+                                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-W2-IX3">
+                                                <rect key="frame" x="172.66666666666666" y="0.0" width="75.333333333333343" height="60"/>
+                                                <color key="backgroundColor" name="mainBlue"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="gsh-Sb-u4Z"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="vNq-yV-z8U"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="vpj-6u-BTd"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Back">
+                                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="storyBackBtnTap:" destination="OgO-Br-Que" eventType="touchUpInside" id="DgO-f7-EPC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-Rx-hGy">
+                                                <rect key="frame" x="259" y="0.0" width="75.333333333333314" height="60"/>
+                                                <color key="backgroundColor" name="mainBlue"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Next">
+                                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="storyNextBtnTap:" destination="OgO-Br-Que" eventType="touchUpInside" id="W82-gO-JO1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-7c-yGO">
+                                        <rect key="frame" x="64" y="5.6666666666666305" width="43.666666666666657" height="25.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                        <color key="textColor" name="mainBlue"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="miaAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-DW-fQ9">
+                                        <rect key="frame" x="128" y="14.666666666666629" width="143" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="143" id="ie0-bP-Ng7"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="gsh-Sb-u4Z"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="vpj-6u-BTd"/>
+                                    <constraint firstItem="aIG-DW-fQ9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d1a-7c-yGO" secondAttribute="trailing" constant="8" symbolic="YES" id="0vo-NL-cpe"/>
+                                    <constraint firstAttribute="bottom" secondItem="lWZ-cq-boX" secondAttribute="bottom" constant="23" id="Cd0-tR-4nY"/>
+                                    <constraint firstItem="aIG-DW-fQ9" firstAttribute="top" secondItem="owE-p2-MNj" secondAttribute="top" constant="14.666666666666515" id="DXR-IZ-wog"/>
+                                    <constraint firstItem="lWZ-cq-boX" firstAttribute="centerX" secondItem="owE-p2-MNj" secondAttribute="centerX" id="NnE-gm-HId"/>
+                                    <constraint firstItem="aIG-DW-fQ9" firstAttribute="leading" secondItem="owE-p2-MNj" secondAttribute="leading" constant="128" id="U68-zl-hhl"/>
+                                    <constraint firstItem="d1a-7c-yGO" firstAttribute="leading" secondItem="owE-p2-MNj" secondAttribute="leading" constant="64" id="d8p-Pq-6zh"/>
+                                    <constraint firstAttribute="bottom" secondItem="aIG-DW-fQ9" secondAttribute="bottom" constant="90.333333333333485" id="iN8-kK-ut3"/>
+                                    <constraint firstItem="d1a-7c-yGO" firstAttribute="top" secondItem="owE-p2-MNj" secondAttribute="top" constant="5.6666666666666288" id="vao-X4-9o5"/>
                                 </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
-                                <connections>
-                                    <action selector="storyBackBtnTap:" destination="OgO-Br-Que" eventType="touchUpInside" id="DgO-f7-EPC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-Rx-hGy">
-                                <rect key="frame" x="300" y="758" width="75" height="60"/>
-                                <color key="backgroundColor" name="mainBlue"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="40y-i2-tV1"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="5bw-YK-sA4"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
-                                <connections>
-                                    <action selector="storyNextBtnTap:" destination="OgO-Br-Que" eventType="touchUpInside" id="W82-gO-JO1"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1a-7c-yGO">
-                                <rect key="frame" x="16" y="607" width="359" height="143"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
-                                <color key="textColor" name="mainBlue"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="miaAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-DW-fQ9">
-                                <rect key="frame" x="125" y="607" width="143" height="140"/>
-                            </imageView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U8s-1m-dl1"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="quizBrownLight"/>
                         <constraints>
-                            <constraint firstItem="fzL-2P-KBs" firstAttribute="top" secondItem="d1a-7c-yGO" secondAttribute="bottom" constant="8" symbolic="YES" id="0TT-q3-7pj"/>
-                            <constraint firstItem="U8s-1m-dl1" firstAttribute="trailing" secondItem="qcx-W2-IX3" secondAttribute="trailing" constant="101" id="1rc-D9-pos"/>
-                            <constraint firstItem="qcx-W2-IX3" firstAttribute="leading" secondItem="fzL-2P-KBs" secondAttribute="trailing" constant="23" id="2m5-F4-z9n"/>
-                            <constraint firstItem="fzL-2P-KBs" firstAttribute="top" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="159" id="3uz-iA-ncp"/>
-                            <constraint firstItem="d1a-7c-yGO" firstAttribute="trailing" secondItem="fCw-Rx-hGy" secondAttribute="trailing" id="BX9-Fh-2HJ"/>
-                            <constraint firstItem="qcx-W2-IX3" firstAttribute="top" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="159" id="Bql-oM-XY7"/>
-                            <constraint firstItem="U8s-1m-dl1" firstAttribute="trailing" secondItem="fzL-2P-KBs" secondAttribute="trailing" constant="199" id="FTC-so-5qo"/>
-                            <constraint firstItem="U8s-1m-dl1" firstAttribute="bottom" secondItem="fCw-Rx-hGy" secondAttribute="bottom" id="GPQ-iy-Dtk"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="owE-p2-MNj" secondAttribute="bottom" constant="-34" id="5hy-gc-KRy"/>
+                            <constraint firstItem="owE-p2-MNj" firstAttribute="top" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="8" id="8gz-Em-Dge"/>
                             <constraint firstItem="GgB-Pk-PgJ" firstAttribute="leading" secondItem="U8s-1m-dl1" secondAttribute="leading" id="H6g-u2-1wv"/>
                             <constraint firstItem="GgB-Pk-PgJ" firstAttribute="centerX" secondItem="oUh-q7-AUm" secondAttribute="centerX" id="Key-gj-wci"/>
-                            <constraint firstItem="fCw-Rx-hGy" firstAttribute="top" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="159" id="MnF-lu-4Jf"/>
-                            <constraint firstItem="fzL-2P-KBs" firstAttribute="leading" secondItem="oUh-q7-AUm" secondAttribute="leadingMargin" id="QxC-bM-TVU"/>
-                            <constraint firstItem="aIG-DW-fQ9" firstAttribute="top" secondItem="d1a-7c-yGO" secondAttribute="top" id="Rct-yy-D12"/>
-                            <constraint firstItem="fzL-2P-KBs" firstAttribute="top" secondItem="aIG-DW-fQ9" secondAttribute="bottom" constant="11" id="Tv4-EZ-KRj"/>
-                            <constraint firstItem="d1a-7c-yGO" firstAttribute="leading" secondItem="fzL-2P-KBs" secondAttribute="leading" id="ZPh-Ct-XgV"/>
-                            <constraint firstItem="aIG-DW-fQ9" firstAttribute="centerX" secondItem="GgB-Pk-PgJ" secondAttribute="centerX" id="ZtS-pW-dGo"/>
                             <constraint firstItem="GgB-Pk-PgJ" firstAttribute="top" secondItem="U8s-1m-dl1" secondAttribute="top" id="bc8-jU-ENL"/>
-                            <constraint firstItem="U8s-1m-dl1" firstAttribute="trailing" secondItem="fCw-Rx-hGy" secondAttribute="trailing" constant="18" id="c2u-aG-LVt"/>
-                            <constraint firstItem="U8s-1m-dl1" firstAttribute="bottom" secondItem="fzL-2P-KBs" secondAttribute="bottom" id="fdt-Fe-F3s"/>
                             <constraint firstItem="U8s-1m-dl1" firstAttribute="bottom" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="219" id="k8L-Vz-VWY"/>
-                            <constraint firstItem="aIG-DW-fQ9" firstAttribute="leading" secondItem="U8s-1m-dl1" secondAttribute="leading" constant="125" id="msr-n3-h7v"/>
-                            <constraint firstItem="d1a-7c-yGO" firstAttribute="top" secondItem="GgB-Pk-PgJ" secondAttribute="bottom" constant="8" symbolic="YES" id="oVO-lU-yHE"/>
-                            <constraint firstItem="U8s-1m-dl1" firstAttribute="bottom" secondItem="qcx-W2-IX3" secondAttribute="bottom" id="rHy-ER-IEo"/>
-                            <constraint firstItem="fCw-Rx-hGy" firstAttribute="leading" secondItem="qcx-W2-IX3" secondAttribute="trailing" constant="8" id="yma-MX-gVG"/>
+                            <constraint firstItem="owE-p2-MNj" firstAttribute="leading" secondItem="GgB-Pk-PgJ" secondAttribute="leading" id="oyU-gf-NvM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="owE-p2-MNj" secondAttribute="trailing" constant="-18" id="rTe-H3-Hmz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VmE-4k-k8T"/>
                     <connections>
+                        <outlet property="bottomView" destination="owE-p2-MNj" id="s9f-OJ-WCc"/>
                         <outlet property="storyBackBtn" destination="qcx-W2-IX3" id="GKq-RX-W01"/>
                         <outlet property="storyLabel" destination="d1a-7c-yGO" id="bHC-c1-Ncm"/>
                         <outlet property="storyMainView" destination="GgB-Pk-PgJ" id="qWc-lf-xFF"/>
@@ -1204,7 +1225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnn-9s-ewx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2320" y="2151"/>
+            <point key="canvasLocation" x="2319.8473282442746" y="2150.7042253521126"/>
         </scene>
         <!--Learn With Luke DetailCV Controller-->
         <scene sceneID="RhH-B0-Sz5">
@@ -1294,6 +1315,9 @@
         </namedColor>
         <namedColor name="miaTalksOrange">
             <color red="1" green="0.79600000381469727" blue="0.5690000057220459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="quizBrownLight">
+            <color red="0.9179999828338623" green="0.88999998569488525" blue="0.7839999794960022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="quizLightBlue">
             <color red="0.63099998235702515" green="0.79199999570846558" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

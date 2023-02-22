@@ -16,38 +16,29 @@ class StoryTimeController: UIViewController {
     @IBOutlet weak var storyNextBtn: UIButton!
     @IBOutlet weak var storyLabel: UILabel!
     @IBOutlet weak var storyNaratorView: UIImageView!
+    @IBOutlet weak var bottomView: UIView!
     
     var imageCount = 0
     var audioPlayer: AVAudioPlayer?
     var playerLayer = AVPlayerLayer()
     let dragonImages = ["dragon1","dragon2","dragon3","dragon4","dragon5","dragon6","dragon7","dragon8","dragon9","dragon10", "dragon11"]
     let dragonVideos = ["miaDragon1","miaDragon2","miaDragon3","miaDragon4","miaDragon5","miaDragon6","miaDragon7","miaDragon8","miaDragon9","miaDragon10", "miaDragon11"]
-    let dragonDialog = [
-    "I want a Dragon and I can fly in the clouds and have fun with the birds",
-    "Then the Dragon can make a loud noise at my brother. My brother doesn't like it. RAAaaaaAHHR!",
-    "I want my Dragon can do fire. He can cook my smarshmallows",
-    "I was laying at night and wishing and wishing for a Dragon. I'm wishing in my dream when I'm sleeping in the night time.",
-    "Becasue I lost my stuffed Dragon at the Disney park",
-    "I want my Dragon to block the sun on my way to school. It gets in my eyes.",
-    "I can take my Dragon to school with me and we can have lots of fun.",
-    "When I bring my Dragon to school the teachers gonna be really angry",
-    "There is going to be baloons all around class. They have water and lots of flowers in them. The baloons can turn someone, when they are a stuffed animal, into a monkey or crab!",
-    "So the teacher throws the wet balloon at the Dragon and he turns into a monkey and falls.",
-    "My Dragon is a Monkey. The End."
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Mia's Dragon Story"
         storyMainView.image = UIImage(named: dragonImages[imageCount])
-        storyLabel.text = dragonDialog[imageCount]
-        storyLabel.textColor = .white
-        storyNaratorView.layer.borderWidth = 4
+        //storyLabel.text = dragonDialog[imageCount]
+        storyLabel.textColor = .clear
+        storyNaratorView.layer.borderWidth = BorderSize.normal.size
         storyNaratorView.layer.borderColor = UIColor(named: Colors.mainBlue.rawValue)?.cgColor
         storyMainView.layer.borderWidth = BorderSize.large.size
-        storyMainView.layer.borderColor = UIColor(named: Colors.mainOrange.rawValue)?.cgColor
+        storyMainView.layer.borderColor = UIColor(named: Colors.mainBlue.rawValue)?.cgColor
+        bottomView.layer.borderWidth = BorderSize.large.size
+        bottomView.layer.borderColor = UIColor(named: Colors.mainBlue.rawValue)?.cgColor
+        bottomView.backgroundColor = UIColor(named: Colors.quizDarkBrown.rawValue)
     }
     
-
     @IBAction func storyPlayBtnTap(_ sender: UIButton) {
         //play sound
         //playSound(soundName: dragonImages[imageCount])
@@ -65,7 +56,7 @@ class StoryTimeController: UIViewController {
         } else {
             imageCount -= 1
             storyMainView.image = UIImage(named: dragonImages[imageCount])
-            storyLabel.text = dragonDialog[imageCount]
+            //storyLabel.text = dragonDialog[imageCount]
         }
     }
     
@@ -77,12 +68,12 @@ class StoryTimeController: UIViewController {
         if imageCount == dragonCount {
             imageCount = 0
             storyMainView.image = UIImage(named: dragonImages[imageCount])
-            storyLabel.text = dragonDialog[imageCount]
+            //storyLabel.text = dragonDialog[imageCount]
             //audioPlayer?.play()
         } else {
             imageCount += 1
             storyMainView.image = UIImage(named: dragonImages[imageCount])
-            storyLabel.text = dragonDialog[imageCount]
+            //storyLabel.text = dragonDialog[imageCount]
             //audioPlayer?.play()
         }
     }

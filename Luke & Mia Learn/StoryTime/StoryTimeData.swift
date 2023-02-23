@@ -8,17 +8,23 @@
 import Foundation
 
 struct StoryTimeData {
+    let imageNames = dragonImageNames.allCases.map { $0.rawValue }
+    let videoNames = dragonVideoNames.allCases.map { $0.rawValue }
+    var mediaCount = 0
     
-    
-    enum dragonImages: String {
-        case dragon
+    enum dragonImageNames: String, CaseIterable {
+        case dragon1, dragon2, dragon3, dragon4,
+             dragon5, dragon6, dragon7, dragon8,
+             dragon9, dragon10, dragon11
     }
-
     
-    let dragonImages = ["dragon1","dragon2","dragon3","dragon4","dragon5","dragon6","dragon7","dragon8","dragon9","dragon10", "dragon11"]
-    let dragonVideos = ["miaDragon1","miaDragon2","miaDragon3","miaDragon4","miaDragon5","miaDragon6","miaDragon7","miaDragon8","miaDragon9","miaDragon10", "miaDragon11"]
-    
+    enum dragonVideoNames: String, CaseIterable {
+        case miaDragon1, miaDragon2, miaDragon3, miaDragon4,
+             miaDragon5, miaDragon6, miaDragon7, miaDragon8,
+             miaDragon9, miaDragon10, miaDragon11
+    }
 }
+
 
     //Make text button for pop up display sentence
 

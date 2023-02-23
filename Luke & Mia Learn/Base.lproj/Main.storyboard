@@ -12,6 +12,33 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Ax6-Kq-kfT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jxf-np-Ons" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0ye-2C-aId">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="mainBlue"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jUQ-ZT-ahB" kind="relationship" relationship="rootViewController" id="2hZ-4E-llz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ntz-yX-inT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-380" y="-677"/>
+        </scene>
         <!--Menu Controller-->
         <scene sceneID="If0-5o-suk">
             <objects>
@@ -316,33 +343,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gc6-Nq-FQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2236.9230769230767" y="24.881516587677723"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Ax6-Kq-kfT">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jxf-np-Ons" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0ye-2C-aId">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="mainBlue"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBarAppearance key="standardAppearance"/>
-                        <navigationBarAppearance key="scrollEdgeAppearance">
-                            <textAttributes key="titleTextAttributes">
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </textAttributes>
-                        </navigationBarAppearance>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jUQ-ZT-ahB" kind="relationship" relationship="rootViewController" id="2hZ-4E-llz"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ntz-yX-inT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-380" y="-677"/>
         </scene>
         <!--Find Me Menu-->
         <scene sceneID="9Bl-Ks-lxd">
@@ -1081,10 +1081,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwt-3n-T7H">
-                                <rect key="frame" x="86" y="204" width="221" height="35"/>
+                                <rect key="frame" x="86" y="204" width="221" height="44"/>
                                 <color key="tintColor" name="mainBlue"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Mia's Dragon Story"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Mia's Dragon Story">
+                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="OgO-Br-Que" kind="show" id="0FV-0s-xpm"/>
                                 </connections>
@@ -1141,6 +1143,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Pause">
                                                     <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="storyPauseBtnTap:" destination="OgO-Br-Que" eventType="touchUpInside" id="E7x-7D-tHY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcx-W2-IX3">
                                                 <rect key="frame" x="172.66666666666666" y="0.0" width="75.333333333333343" height="60"/>
@@ -1220,6 +1225,7 @@
                         <outlet property="storyMainView" destination="GgB-Pk-PgJ" id="qWc-lf-xFF"/>
                         <outlet property="storyNaratorView" destination="aIG-DW-fQ9" id="fUf-jJ-a4T"/>
                         <outlet property="storyNextBtn" destination="fCw-Rx-hGy" id="9yp-uL-qEM"/>
+                        <outlet property="storyPauseBtn" destination="gVB-gz-aBG" id="hBL-oQ-TEf"/>
                         <outlet property="storyPlayBtn" destination="fzL-2P-KBs" id="hvt-2W-sUn"/>
                     </connections>
                 </viewController>

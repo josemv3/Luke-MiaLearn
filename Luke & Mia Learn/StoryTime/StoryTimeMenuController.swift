@@ -12,7 +12,7 @@ class StoryTimeMenuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        navigationItem.title = Title.StoryTime.rawValue
     }
     
     override func viewWillAppear(_ animated: Bool) {

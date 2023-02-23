@@ -15,4 +15,8 @@ enum Title: String {
     case StoryTime = "Story Time"
     case FindMe = "Find Me"
     case LukeTalks = "Luke Talks"
+    
+    enum Story: String {
+        case miasDragonStory = "Mia's Dragon Story"
+    }
 }

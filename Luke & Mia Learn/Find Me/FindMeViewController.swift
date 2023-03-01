@@ -21,7 +21,7 @@ class FindMeViewController: UIViewController, UICollectionViewDelegate {
     private var currentSet = setA
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     var itemToFind: String = ""
-    let soundplayer = SoundPlayer.shared
+    let soundplayer = AudioPlayer.shared
     var timer = Timer()
     
     enum Section {

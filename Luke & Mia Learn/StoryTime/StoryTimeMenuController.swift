@@ -8,6 +8,9 @@
 import UIKit
 
 class StoryTimeMenuController: UIViewController {
+    @IBOutlet weak var dragonStoryBtn: UIButton!
+
+    let systemSoundPlayer = SystemSoundPlayer.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +22,8 @@ class StoryTimeMenuController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: Colors.quizDarkBrown.rawValue)
     }
 
-
+    @IBAction func dragonStoryBtnPress(_ sender: UIButton) {
+        systemSoundPlayer.clickSound()
+        performSegue(withIdentifier: SegueId.gotoStoryTime.rawValue, sender: self)
+    }
 }

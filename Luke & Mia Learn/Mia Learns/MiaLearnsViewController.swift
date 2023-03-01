@@ -23,10 +23,9 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     ///When adding CV to VC control drag CV to VC and make delegate, then add UICVDelegate to class
     @IBOutlet var collectionView: UICollectionView!
     
+    let audioPlayer = AudioPlayer.shared
     var miaLearnsData = MiaLearnsData()
     var currentAnimation = 0
-    var audioPlayer: AVAudioPlayer?
-    var playerLayer = AVPlayerLayer()
     var currentItemBackgroundColor: UIColor =  UIColor(named: Colors.mainOrange.rawValue) ?? .black
     private var mainWordButtonTitle = "hello"
     private let smallBorderSize: CGFloat = 2
@@ -48,8 +47,6 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         navigationController?.navigationBar.backgroundColor = UIColor.systemBlue
         
         mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
-        //mainImagebutton.imageView?.contentMode = .scaleAspectFit //didnt work
-        
         miaLearnsData.lesson = .animal
         miaLearnsData.getLesson()
         collectionView.collectionViewLayout = configureLayout()
@@ -129,35 +126,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         mainImagebutton.contentMode = .scaleAspectFit// Not working on number value
         self.mainImagebutton.transform = .identity //read bellow (reset animation):
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
-        playSound(soundName: String(miaLearnsData.currentLesson[item.description]?.promt.soundName ?? "bat"))
-    }
-    
-    //MARK: - Sound Player
-    
-    func playSound(soundName: String) {
-        
-        let urlString = Bundle.main.path(forResource: soundName, ofType: "mp3")
-        let pathToSound = Bundle.main.path(forResource: soundName, ofType: ".mp3") ?? "a.mp3"
-        let url = URL(fileURLWithPath: pathToSound)
-        do {
-            try AVAudioSession.sharedInstance().setMode(.default)
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-            
-            guard let urlString = urlString else {
-                return
-            }
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.volume = 0.50
-            audioPlayer?.play()
-            guard let audioPlayer = audioPlayer else {
-                return
-            }
-            audioPlayer.play()
-            
-        } catch {
-            print("error")
-        }
+        audioPlayer.playSound(soundName: String(miaLearnsData.currentLesson[item.description]?.promt.soundName ?? "bat"))
+
     }
     
     //MARK: - Main Image Button (top)
@@ -188,8 +158,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     }
     
     @IBAction func mainWordButton(_ sender: UIButton) {
-        playSound(soundName: mainWordButtonTitle)
-        print(mainWordButtonTitle)
+        audioPlayer.playSound(soundName: mainWordButtonTitle)
     }
     
     //MARK: - Alert lesson change methods
@@ -331,38 +300,3 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         self.present(alert, animated: true)
     }
 }
-
-
-//extra code used for video play, removed when we cut out instruments.
-
-//func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-    
-    //        if miaABCBrain.lesson == .instrument { // Replace 4
-    //            playVideo(video: "instrumentsV", newView: mainImagebutton)
-    //            mainWordButtonTitle = miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "bat"
-    //            mainWordButton.setTitle(miaABCBrain.currentLesson[item]?.mainImageAndSound, for: .normal
-    //        } else {
-    
-    //else ends after playSound
-
-//@IBAction func mainImageButtonPressed(_ sender: UIButton) {
-    
-    //        if miaABCBrain.currentSet == ["instruments"] { // Replace 5
-    //            //not working. Maybe remove mainImageButton set from ViewDidLoad and put it in lesson assigned
-    //            //mainImagebutton.setImage(UIImage(named: "placholder"), for: .normal)
-    //            mainImagebutton.imageView?.image = nil
-    //
-    //        } else {
-
-//func playVideo(video: String, newView: UIView) {
-//    playerLayer.player?.pause() //if player exists pause playback and start new play
-//
-//    let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
-//        forResource: video , ofType: "mp4") ?? "bvQuiz.mp4"))
-//    playerLayer = AVPlayerLayer(player: player)
-//    playerLayer.frame = newView.bounds
-//    playerLayer.videoGravity = .resizeAspectFill
-//    newView.layer.addSublayer(playerLayer)
-//    player.play()
-//}

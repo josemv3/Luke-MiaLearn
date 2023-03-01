@@ -117,10 +117,12 @@
 		E03A68AD28CE5B1300520C51 /* MiaAbcQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */; };
 		E03B51582941995D0057B81C /* FindMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B51572941995D0057B81C /* FindMeViewController.swift */; };
 		E03B515A29419F380057B81C /* FindMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B515929419F380057B81C /* FindMeCell.swift */; };
-		E03B515D2941C49E0057B81C /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B515C2941C49E0057B81C /* SoundPlayer.swift */; };
+		E03B515D2941C49E0057B81C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B515C2941C49E0057B81C /* AudioPlayer.swift */; };
 		E0408A6A29A6C64600228E8A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A6929A6C64600228E8A /* Button.swift */; };
 		E0408A6C29A7005A00228E8A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A6B29A7005A00228E8A /* ImageView.swift */; };
 		E0408A6E29A702DD00228E8A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A6D29A702DD00228E8A /* View.swift */; };
+		E0408A7429A93CB200228E8A /* SystemSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A7329A93CB200228E8A /* SystemSoundPlayer.swift */; };
+		E0408A7629A940EE00228E8A /* SegueId.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A7529A940EE00228E8A /* SegueId.swift */; };
 		E04553812939334600B4EFA7 /* ugli_fruit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E04553672939334300B4EFA7 /* ugli_fruit.mp3 */; };
 		E04553822939334600B4EFA7 /* vanilla.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E04553682939334300B4EFA7 /* vanilla.mp3 */; };
 		E04553832939334600B4EFA7 /* ximenia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E04553692939334400B4EFA7 /* ximenia.mp3 */; };
@@ -545,10 +547,12 @@
 		E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcQuizController.swift; sourceTree = "<group>"; };
 		E03B51572941995D0057B81C /* FindMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMeViewController.swift; sourceTree = "<group>"; };
 		E03B515929419F380057B81C /* FindMeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMeCell.swift; sourceTree = "<group>"; };
-		E03B515C2941C49E0057B81C /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		E03B515C2941C49E0057B81C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		E0408A6929A6C64600228E8A /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		E0408A6B29A7005A00228E8A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		E0408A6D29A702DD00228E8A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		E0408A7329A93CB200228E8A /* SystemSoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSoundPlayer.swift; sourceTree = "<group>"; };
+		E0408A7529A940EE00228E8A /* SegueId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueId.swift; sourceTree = "<group>"; };
 		E04553672939334300B4EFA7 /* ugli_fruit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ugli_fruit.mp3; sourceTree = "<group>"; };
 		E04553682939334300B4EFA7 /* vanilla.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vanilla.mp3; sourceTree = "<group>"; };
 		E04553692939334400B4EFA7 /* ximenia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ximenia.mp3; sourceTree = "<group>"; };
@@ -1067,12 +1071,13 @@
 		E03B515B2941C4870057B81C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				E03B515C2941C49E0057B81C /* SoundPlayer.swift */,
+				E0408A7329A93CB200228E8A /* SystemSoundPlayer.swift */,
+				E03B515C2941C49E0057B81C /* AudioPlayer.swift */,
 				E037C94E296C94B7000DAFC7 /* VideoPlayer.swift */,
-				E0AE5258299B0C620012C068 /* Colors.swift */,
 				E0AE525A299B0FF10012C068 /* CornerRadiusMod.swift */,
 				E0AE525C299B10EA0012C068 /* BorderSize.swift */,
 				E05044BD29A0917500577154 /* Title.swift */,
+				E0408A7529A940EE00228E8A /* SegueId.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1492,6 +1497,7 @@
 		E0E20D7C28E0143900083DE6 /* Mia Learns */ = {
 			isa = PBXGroup;
 			children = (
+				E0AE5258299B0C620012C068 /* Colors.swift */,
 				E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsViewController.swift */,
 				E024CD52295E167000873863 /* NetworkManager.swift */,
 				E0CF3C7028CCE86B000E59A0 /* MiaLearnsCell.swift */,
@@ -2017,7 +2023,7 @@
 				E0408A6C29A7005A00228E8A /* ImageView.swift in Sources */,
 				E05044BE29A0917500577154 /* Title.swift in Sources */,
 				E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */,
-				E03B515D2941C49E0057B81C /* SoundPlayer.swift in Sources */,
+				E03B515D2941C49E0057B81C /* AudioPlayer.swift in Sources */,
 				E08D165328DBA63D00447D69 /* MiaTalksFooterView.swift in Sources */,
 				E05044BC29A00DFE00577154 /* CaseIterable.swift in Sources */,
 				E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */,
@@ -2028,6 +2034,7 @@
 				E024CD53295E167000873863 /* NetworkManager.swift in Sources */,
 				E09DC9FB2964095100499BA6 /* LukeTalksCell.swift in Sources */,
 				E0A4137C2995E5BE00077302 /* LukeTalksViewController2.swift in Sources */,
+				E0408A7629A940EE00228E8A /* SegueId.swift in Sources */,
 				E0775E7F2943E03C002C66B3 /* LukeTalksViewController.swift in Sources */,
 				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,
@@ -2040,6 +2047,7 @@
 				E0AE5259299B0C620012C068 /* Colors.swift in Sources */,
 				E03B515A29419F380057B81C /* FindMeCell.swift in Sources */,
 				E0AE525B299B0FF10012C068 /* CornerRadiusMod.swift in Sources */,
+				E0408A7429A93CB200228E8A /* SystemSoundPlayer.swift in Sources */,
 				E078DDD52960E52300E07AF7 /* MediaPair.swift in Sources */,
 				E047DE5328E531EE00C38B1B /* LWLDetailCell.swift in Sources */,
 				E09DC9FD2964A22E00499BA6 /* LukeTalksHeader.swift in Sources */,

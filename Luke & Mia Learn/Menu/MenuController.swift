@@ -106,19 +106,19 @@ class MenuController: UICollectionViewController {
        
         switch item {
         case "miaLearnsLogo":
-            self.performSegue(withIdentifier: "goToMiaLearns", sender: self)
+            self.performSegue(withIdentifier: SegueId.goToMiaLearns.rawValue, sender: self)
         case "miABCQuizLogo":
-            self.performSegue(withIdentifier: "goToMiabcQuiz", sender: self)
+            self.performSegue(withIdentifier: SegueId.goToMiabcQuiz.rawValue, sender: self)
         case "learnWLukeLogo":
-            self.performSegue(withIdentifier: "goToLWLuke", sender: self)
+            self.performSegue(withIdentifier: SegueId.goToLWLuke.rawValue, sender: self)
         case "miaTalksLogo":
-            self.performSegue(withIdentifier: "gotoMiaTalksMenu", sender: self)
+            self.performSegue(withIdentifier: SegueId.gotoMiaTalksMenu.rawValue, sender: self)
         case "storyTimeLogo":
-            self.performSegue(withIdentifier: "goToStoryTime", sender: self)
+            self.performSegue(withIdentifier: SegueId.gotoStoryTimeMenu.rawValue, sender: self)
         case "lukeTalksLogo":
-            self.performSegue(withIdentifier: "goToLukeTalks", sender: self)
+            self.performSegue(withIdentifier: SegueId.goToLukeTalks.rawValue, sender: self)
         default:
-            self.performSegue(withIdentifier: "gotoFIndMeMenu", sender: self)
+            self.performSegue(withIdentifier: SegueId.goToLukeTalks.rawValue, sender: self)
             //print("error") //replace with miABC
         }
     }

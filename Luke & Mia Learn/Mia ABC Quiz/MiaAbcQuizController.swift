@@ -15,7 +15,7 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     @IBOutlet var mainViewButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    let soundplayer = SoundPlayer.shared
+    let soundplayer = AudioPlayer.shared
     let videoPlayer = VideoPlayer.shared
     var miaAbcQuizData = MiaAbcQuizData()
 
@@ -210,7 +210,11 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
         miaAbcQuizData.restartGame()
         self.scoreLabel.text = "0"
         self.dataSource.apply(self.currentSnapshot)
-        self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
-        self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
+        self.soundplayer.playSound(
+            soundName: self.miaAbcQuizData.videoNamesArray[
+                self.miaAbcQuizData.videoCount] + "Q")
+        self.videoPlayer.playVideo(
+            videoName: self.miaAbcQuizData.videoNamesArray[
+                self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
     }
 }

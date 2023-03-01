@@ -8,8 +8,8 @@
 
 import AVFoundation
 
-class SoundPlayer {
-    static let shared = SoundPlayer()
+class AudioPlayer {
+    static let shared = AudioPlayer()
     var audioPlayer: AVAudioPlayer?
     
     func playSound(soundName: String) {

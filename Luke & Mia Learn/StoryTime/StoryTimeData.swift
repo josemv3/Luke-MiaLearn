@@ -5,7 +5,8 @@
 //  Created by Joey Rubin on 2/21/23.
 //
 
-import Foundation
+import UIKit
+import AVFoundation
 
 struct StoryTimeData {
     let imageNames = dragonImageNames.allCases.map { $0.rawValue }
@@ -24,6 +25,8 @@ struct StoryTimeData {
              miaDragon9, miaDragon10, miaDragon11
     }
 }
+
+
 
 
     //Make text button for pop up display sentence

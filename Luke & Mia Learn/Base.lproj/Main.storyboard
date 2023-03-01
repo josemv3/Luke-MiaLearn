@@ -111,7 +111,7 @@
                         <segue destination="GMY-Wi-i2S" kind="show" identifier="goToMiaLearns" id="wa9-o0-Hog"/>
                         <segue destination="CgC-cQ-X70" kind="show" identifier="goToLWLuke" id="TSi-sC-Nfa"/>
                         <segue destination="x7J-02-dUQ" kind="show" identifier="goToMiabcQuiz" id="kxq-uV-8Xg"/>
-                        <segue destination="QSv-0H-iHW" kind="show" identifier="goToStoryTime" id="3BP-3H-mq9"/>
+                        <segue destination="QSv-0H-iHW" kind="show" identifier="goToStoryTimeMenu" id="3BP-3H-mq9"/>
                         <segue destination="LAl-10-lsl" kind="show" identifier="goToLukeTalks" id="2Py-xP-0eg"/>
                         <segue destination="rfl-Sx-PoV" kind="show" identifier="gotoFIndMeMenu" id="Ry1-xP-PSW"/>
                         <segue destination="V3X-Vt-lEk" kind="show" identifier="gotoMiaTalksMenu" id="x0T-T3-a1r"/>
@@ -1088,7 +1088,7 @@
                                     <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="OgO-Br-Que" kind="show" id="0FV-0s-xpm"/>
+                                    <action selector="dragonStoryBtnPress:" destination="QSv-0H-iHW" eventType="touchUpInside" id="dXb-1G-wYo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1101,6 +1101,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j9I-Jp-C0G"/>
+                    <connections>
+                        <outlet property="dragonStoryBtn" destination="fwt-3n-T7H" id="FjU-N7-bae"/>
+                        <segue destination="OgO-Br-Que" kind="show" identifier="gotoStoryTime" id="cVH-lk-tSV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fzy-cQ-udd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

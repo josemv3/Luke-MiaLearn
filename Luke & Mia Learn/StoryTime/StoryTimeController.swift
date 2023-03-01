@@ -20,6 +20,7 @@ class StoryTimeController: UIViewController {
     @IBOutlet weak var bottomView: UIView!
     
     var storyTimeData = StoryTimeData()
+    var systemSoundPlayer = SystemSoundPlayer.shared
     var videoPlayer = VideoPlayer.shared
     
     override func viewDidLoad() {
@@ -45,20 +46,21 @@ class StoryTimeController: UIViewController {
     }
     
     @IBAction func storyPlayBtnTap(_ sender: UIButton) {
+        systemSoundPlayer.clickSound()
         videoPlayer.playVideo(videoName: storyTimeData.videoNames[storyTimeData.mediaCount], viewPlayer: storyNaratorView)
     }
     
     @IBAction func storyPauseBtnTap(_ sender: UIButton) {
+        systemSoundPlayer.clickSound()
         videoPlayer.playerLayer.player?.pause()
     }
     
     @IBAction func storyBackBtnTap(_ sender: UIButton) {
+        systemSoundPlayer.clickSound()
         videoPlayer.playerLayer.player?.pause()
         
         if storyTimeData.mediaCount == 0 {
-            //alert that you hear at beginning, CHANGE noise
-            let systemSoundID: SystemSoundID = 1006
-            AudioServicesPlaySystemSound (systemSoundID)
+           
         } else {
             storyTimeData.mediaCount -= 1
             storyMainView.image = UIImage(named: storyTimeData.imageNames[storyTimeData.mediaCount])
@@ -66,6 +68,7 @@ class StoryTimeController: UIViewController {
     }
     
     @IBAction func storyNextBtnTap(_ sender: UIButton) {
+        systemSoundPlayer.clickSound()
         videoPlayer.playerLayer.player?.pause()
         let dragonCount = storyTimeData.imageNames.count - 1
         if storyTimeData.mediaCount == dragonCount {

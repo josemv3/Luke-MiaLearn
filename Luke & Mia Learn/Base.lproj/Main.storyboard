@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="-380" y="-677"/>
         </scene>
-        <!--Menu Controller-->
+        <!--Menu View-->
         <scene sceneID="If0-5o-suk">
             <objects>
-                <collectionViewController id="jUQ-ZT-ahB" customClass="MenuController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="jUQ-ZT-ahB" customClass="MenuView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="XRU-ej-ktI">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,18 +113,18 @@
                         <segue destination="x7J-02-dUQ" kind="show" identifier="goToMiabcQuiz" id="kxq-uV-8Xg"/>
                         <segue destination="QSv-0H-iHW" kind="show" identifier="goToStoryTimeMenu" id="3BP-3H-mq9"/>
                         <segue destination="LAl-10-lsl" kind="show" identifier="goToLukeTalks" id="2Py-xP-0eg"/>
-                        <segue destination="rfl-Sx-PoV" kind="show" identifier="gotoFIndMeMenu" id="Ry1-xP-PSW"/>
-                        <segue destination="V3X-Vt-lEk" kind="show" identifier="gotoMiaTalksMenu" id="x0T-T3-a1r"/>
+                        <segue destination="rfl-Sx-PoV" kind="show" identifier="goToFIndMeMenu" id="Ry1-xP-PSW"/>
+                        <segue destination="V3X-Vt-lEk" kind="show" identifier="goToMiaTalksMenu" id="x0T-T3-a1r"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Sc-ks-AdW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="382" y="-677"/>
         </scene>
-        <!--Mia Learns View Controller-->
+        <!--Mia Learns View-->
         <scene sceneID="I27-Ki-gGz">
             <objects>
-                <viewController id="GMY-Wi-i2S" customClass="MiaLearnsViewController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GMY-Wi-i2S" customClass="MiaLearnsView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7fC-ne-NGN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,7 +237,7 @@
         <!--Item-->
         <scene sceneID="sWD-mg-8sE">
             <objects>
-                <viewController id="x7J-02-dUQ" customClass="MiaAbcQuizController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="x7J-02-dUQ" customClass="MiaAbcQuizView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAs-mp-O1e">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -944,7 +944,7 @@
         <!--Mia Talks-->
         <scene sceneID="ZzS-eo-a7r">
             <objects>
-                <collectionViewController title="Mia Talks" id="Oeu-rd-wdS" customClass="MiaTalksController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Mia Talks" id="Oeu-rd-wdS" customClass="MiaTalksView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qfR-lc-4qG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1002,10 +1002,10 @@
             </objects>
             <point key="canvasLocation" x="2236" y="730"/>
         </scene>
-        <!--Learn With Luke Controller-->
+        <!--Learn With Luke View-->
         <scene sceneID="yBp-CE-bqo">
             <objects>
-                <collectionViewController id="CgC-cQ-X70" customClass="LearnWithLukeController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="CgC-cQ-X70" customClass="LearnWithLukeView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Pnt-f6-hl7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1072,10 +1072,10 @@
             </objects>
             <point key="canvasLocation" x="2320" y="1430"/>
         </scene>
-        <!--Story Time Menu Controller-->
+        <!--Story Time Menu-->
         <scene sceneID="u9G-hl-uBd">
             <objects>
-                <viewController id="QSv-0H-iHW" customClass="StoryTimeMenuController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QSv-0H-iHW" customClass="StoryTimeMenu" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LRh-kW-jsE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1103,17 +1103,17 @@
                     <navigationItem key="navigationItem" id="j9I-Jp-C0G"/>
                     <connections>
                         <outlet property="dragonStoryBtn" destination="fwt-3n-T7H" id="FjU-N7-bae"/>
-                        <segue destination="OgO-Br-Que" kind="show" identifier="gotoStoryTime" id="cVH-lk-tSV"/>
+                        <segue destination="OgO-Br-Que" kind="show" identifier="goToStoryTime" id="cVH-lk-tSV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fzy-cQ-udd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1591.6030534351144" y="2150.7042253521126"/>
         </scene>
-        <!--Story Time Controller-->
+        <!--Story Time View-->
         <scene sceneID="kiU-ky-9xO">
             <objects>
-                <viewController id="OgO-Br-Que" customClass="StoryTimeController" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OgO-Br-Que" customClass="StoryTimeView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oUh-q7-AUm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

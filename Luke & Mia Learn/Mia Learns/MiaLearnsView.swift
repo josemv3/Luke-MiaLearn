@@ -16,7 +16,7 @@ private let instrumentsTest = ["instruments"]
 
 //MARK: - Class
 
-class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
+class MiaLearnsView: UIViewController, UICollectionViewDelegate {
     @IBOutlet var mainImageBack: UIImageView!
     @IBOutlet var mainImagebutton: UIButton!
     @IBOutlet var mainWordButton: UIButton!
@@ -24,6 +24,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet var collectionView: UICollectionView!
     
     let audioPlayer = AudioPlayer.shared
+    let soundPlayer = SystemSoundPlayer.shared
     var miaLearnsData = MiaLearnsData()
     var currentAnimation = 0
     var currentItemBackgroundColor: UIColor =  UIColor(named: Colors.mainOrange.rawValue) ?? .black
@@ -127,7 +128,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         self.mainImagebutton.transform = .identity //read bellow (reset animation):
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
         audioPlayer.playSound(soundName: String(miaLearnsData.currentLesson[item.description]?.promt.soundName ?? "bat"))
-
+        soundPlayer.clickSound()
     }
     
     //MARK: - Main Image Button (top)
@@ -155,9 +156,11 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
                 self.currentAnimation = 0
             }
         })
+        soundPlayer.clickSound()
     }
     
     @IBAction func mainWordButton(_ sender: UIButton) {
+        soundPlayer.clickSound()
         audioPlayer.playSound(soundName: mainWordButtonTitle)
     }
     
@@ -201,6 +204,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .animal
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 82, imageName: "bat.png"))
@@ -212,6 +216,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .object
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 127, imageName: "airplane.svg"))
@@ -224,6 +229,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .fruit
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
             //self.changeLessonVideo(abcSet: instrumentsTest, videoSet: instrumentsMainVideo)
         }))
@@ -254,6 +260,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .color
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 350, imageName: "blue.png"))
@@ -265,6 +272,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .shape
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 395, imageName: "heart.png"))
@@ -276,6 +284,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .toy
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 438, imageName: "toys.png"))
@@ -287,6 +296,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .number
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 481, imageName: "1.png"))
@@ -296,7 +306,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) in
             print("Cancel")
         }))
-        
+        soundPlayer.clickSound()
         self.present(alert, animated: true)
     }
 }

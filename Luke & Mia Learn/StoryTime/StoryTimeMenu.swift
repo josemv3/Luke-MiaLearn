@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StoryTimeMenuController: UIViewController {
+class StoryTimeMenu: UIViewController {
     @IBOutlet weak var dragonStoryBtn: UIButton!
 
     let systemSoundPlayer = SystemSoundPlayer.shared
@@ -24,6 +24,7 @@ class StoryTimeMenuController: UIViewController {
 
     @IBAction func dragonStoryBtnPress(_ sender: UIButton) {
         systemSoundPlayer.clickSound()
-        performSegue(withIdentifier: SegueId.gotoStoryTime.rawValue, sender: self)
+        performSegue(withIdentifier: SegueId.goToStoryTime.rawValue, sender: self)
     }
 }
+

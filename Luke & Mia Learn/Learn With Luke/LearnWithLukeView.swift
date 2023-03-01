@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "lwLukeCell"
 
-class LearnWithLukeController: UICollectionViewController {
+class LearnWithLukeView: UICollectionViewController {
     
     private let searchController = UISearchController()
     private var itemsByInitialLetter = [Character: [String]]()
@@ -55,7 +55,7 @@ class LearnWithLukeController: UICollectionViewController {
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         collectionView.register(
             LearnWithLukeHeader.self,
-            forSupplementaryViewOfKind: LearnWithLukeController.sectionHeaderElementKind,
+            forSupplementaryViewOfKind: LearnWithLukeView.sectionHeaderElementKind,
             withReuseIdentifier: "Header"
         )
         navigationItem.title = "Learn with Luke"
@@ -119,7 +119,7 @@ class LearnWithLukeController: UICollectionViewController {
         )
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: LearnWithLukeController.sectionHeaderElementKind,
+            elementKind: LearnWithLukeView.sectionHeaderElementKind,
             alignment: .top)
         section.boundarySupplementaryItems = [sectionHeader]
         
@@ -187,7 +187,7 @@ class LearnWithLukeController: UICollectionViewController {
 }
 
     //MARK: - Extension
-extension LearnWithLukeController: UISearchResultsUpdating {
+extension LearnWithLukeView: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchString = searchController.searchBar.text,
            searchString.isEmpty == false {

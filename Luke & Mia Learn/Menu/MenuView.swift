@@ -9,9 +9,10 @@
 import UIKit
 
 
-class MenuController: UICollectionViewController {
+class MenuView: UICollectionViewController {
     private let reuseIdentifier = "cell"
     private let mediumBorderSize: CGFloat = 4
+    let soundPlayer = SystemSoundPlayer()
     
     let lessonIconImage = ["miaLearnsLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo", "storyTimeLogo", "lukeTalksLogo"]
     let lessonLabelName: [String: String] = ["miaLearnsLogo": "Mia learns", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me", "storyTimeLogo": "Story Time", "lukeTalksLogo": "Luke Talks"]
@@ -112,15 +113,16 @@ class MenuController: UICollectionViewController {
         case "learnWLukeLogo":
             self.performSegue(withIdentifier: SegueId.goToLWLuke.rawValue, sender: self)
         case "miaTalksLogo":
-            self.performSegue(withIdentifier: SegueId.gotoMiaTalksMenu.rawValue, sender: self)
+            self.performSegue(withIdentifier: SegueId.goToMiaTalksMenu.rawValue, sender: self)
         case "storyTimeLogo":
-            self.performSegue(withIdentifier: SegueId.gotoStoryTimeMenu.rawValue, sender: self)
+            self.performSegue(withIdentifier: SegueId.goToStoryTimeMenu.rawValue, sender: self)
         case "lukeTalksLogo":
             self.performSegue(withIdentifier: SegueId.goToLukeTalks.rawValue, sender: self)
         default:
             self.performSegue(withIdentifier: SegueId.goToLukeTalks.rawValue, sender: self)
             //print("error") //replace with miABC
         }
+        soundPlayer.clickSound()
     }
 }
 

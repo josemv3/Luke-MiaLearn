@@ -15,7 +15,7 @@ private var miatalksLowercaseLetters = [
     "a", "b", "c", "d", "e", "f"]
 private var miaTalksViewText: [String: String] = ["a": "apples", "b": "hamburger", "c": "carrot", "d": "broccoli", "e": "cereal", "f": "bananas"]
 
-class MiaTalksController: UICollectionViewController {
+class MiaTalksView: UICollectionViewController {
     
     var audioPlayer: AVAudioPlayer?
     var soundTypeSelected = "human"
@@ -32,8 +32,8 @@ class MiaTalksController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
-        collectionView.register(MiaTalksHeaderView.self, forSupplementaryViewOfKind: MiaTalksController.sectionHeaderElementKind, withReuseIdentifier: "Header")//headerSetup2
-        collectionView.register(MiaTalksFooterView.self, forSupplementaryViewOfKind: MiaTalksController.sectionFooterElementKind, withReuseIdentifier: "Footer")//footerSetup2
+        collectionView.register(MiaTalksHeaderView.self, forSupplementaryViewOfKind: MiaTalksView.sectionHeaderElementKind, withReuseIdentifier: "Header")//headerSetup2
+        collectionView.register(MiaTalksFooterView.self, forSupplementaryViewOfKind: MiaTalksView.sectionFooterElementKind, withReuseIdentifier: "Footer")//footerSetup2
         //navigationItem.title = "Mia Talks"
         
         //navigationController?.navigationBar.barTintColor = .gray
@@ -92,7 +92,7 @@ class MiaTalksController: UICollectionViewController {
         )
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: MiaTalksController.sectionHeaderElementKind,
+            elementKind: MiaTalksView.sectionHeaderElementKind,
             alignment: .top)
         
         //FooterSetup3
@@ -103,7 +103,7 @@ class MiaTalksController: UICollectionViewController {
         
         let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: footerSize,
-            elementKind: MiaTalksController.sectionFooterElementKind,
+            elementKind: MiaTalksView.sectionFooterElementKind,
             alignment: .bottom)
         
         //section.boundarySupplementaryItems = [sectionFooter] //before header
@@ -250,7 +250,7 @@ class MiaTalksController: UICollectionViewController {
     }
 }
 
-extension MiaTalksController: MiaTalksFooterViewDelegate {
+extension MiaTalksView: MiaTalksFooterViewDelegate {
     func didSelectSoundType(_ soundType: String) {
         recieverString = soundType
         print(recieverString)

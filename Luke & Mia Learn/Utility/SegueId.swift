@@ -8,7 +8,8 @@
 import UIKit
 
 enum SegueId: String, CaseIterable {
-    case goToMiaLearns, goToMiabcQuiz, gotoStoryTimeMenu,
-    gotoStoryTime, goToLWLuke, gotoMiaTalksMenu, goToLukeTalks,
-    gotoFIndMeMenu
+    case goToMiaLearns, goToMiabcQuiz, goToStoryTimeMenu,
+    goToStoryTime, goToLWLuke, goToMiaTalksMenu, goToLukeTalks,
+    goToFIndMeMenu
 }
+

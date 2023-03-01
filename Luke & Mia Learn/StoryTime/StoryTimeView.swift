@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class StoryTimeController: UIViewController {
+class StoryTimeView: UIViewController {
     
     @IBOutlet weak var storyMainView: UIImageView!
     @IBOutlet weak var storyPlayBtn: UIButton!

@@ -8,14 +8,15 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
+class MiaAbcQuizView: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var miaABCQuizCollectionView: UICollectionView!
     @IBOutlet var mainView: UIImageView!
     @IBOutlet var mainViewButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    let soundplayer = AudioPlayer.shared
+    let soundPLayer = SystemSoundPlayer.shared
+    let audioPlayer = AudioPlayer.shared
     let videoPlayer = VideoPlayer.shared
     var miaAbcQuizData = MiaAbcQuizData()
 
@@ -41,7 +42,7 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
         title = Title.MiaAbcQuiz.rawValue
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+            self.audioPlayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
             self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
         }
         
@@ -53,14 +54,15 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         resetGame()
-        soundplayer.audioPlayer?.pause()
+        audioPlayer.audioPlayer?.pause()
     }
     
     //MARK: - MainButton and Image
     
     @IBAction func mainViewButtonTap(_ sender: UIButton) {
-        self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+        self.audioPlayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
         self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
+        soundPLayer.clickSound()
     }
     
     //MARK: - Compositional CV LAYOUT
@@ -162,7 +164,7 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
             miaAbcQuizData.updateCurrentLetterSet()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
-                self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+                self.audioPlayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
                 self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
             }
         }
@@ -210,7 +212,7 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
         miaAbcQuizData.restartGame()
         self.scoreLabel.text = "0"
         self.dataSource.apply(self.currentSnapshot)
-        self.soundplayer.playSound(
+        self.audioPlayer.playSound(
             soundName: self.miaAbcQuizData.videoNamesArray[
                 self.miaAbcQuizData.videoCount] + "Q")
         self.videoPlayer.playVideo(

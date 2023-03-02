@@ -1078,6 +1078,7 @@
 				E0AE525C299B10EA0012C068 /* BorderSize.swift */,
 				E05044BD29A0917500577154 /* Title.swift */,
 				E0408A7529A940EE00228E8A /* SegueId.swift */,
+				E0AE5258299B0C620012C068 /* Colors.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1497,7 +1498,6 @@
 		E0E20D7C28E0143900083DE6 /* Mia Learns */ = {
 			isa = PBXGroup;
 			children = (
-				E0AE5258299B0C620012C068 /* Colors.swift */,
 				E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsView.swift */,
 				E024CD52295E167000873863 /* NetworkManager.swift */,
 				E0CF3C7028CCE86B000E59A0 /* MiaLearnsCell.swift */,

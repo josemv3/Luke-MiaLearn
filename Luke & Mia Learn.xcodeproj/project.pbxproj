@@ -1259,6 +1259,69 @@
 			path = "Mia Learns Shapes Audio";
 			sourceTree = "<group>";
 		};
+		E08D4C0329B59C8E00958971 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E08D4C0729B59D7A00958971 /* MiaLearns */,
+				E021E87629B50DB700E0CD47 /* MenuData.swift */,
+				E0AE5260299D46CF0012C068 /* MiaAbcQuizData.swift */,
+				E08D4C0129B5859400958971 /* MiaTalksData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E08D4C0529B59CBD00958971 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E08D4C0829B59DED00958971 /* MiaTalksView */,
+				E0CF3C5928CCD322000E59A0 /* MenuView.swift */,
+				E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsView.swift */,
+				E03A68AC28CE5B1300520C51 /* MiaAbcQuizView.swift */,
+				E08D4C0629B59CC900958971 /* ReusableViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E08D4C0629B59CC900958971 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				E0CF3C6C28CCD3E3000E59A0 /* MenuCell.swift */,
+				E0CF3C7028CCE86B000E59A0 /* MiaLearnsCell.swift */,
+				E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */,
+				E08D4C0929B59E1D00958971 /* MiaTalks */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		E08D4C0729B59D7A00958971 /* MiaLearns */ = {
+			isa = PBXGroup;
+			children = (
+				E078DDD42960E52300E07AF7 /* MediaPair.swift */,
+				E078DDD62960E81F00E07AF7 /* MiaLearnLesson.swift */,
+				E078DDD82960E8BC00E07AF7 /* MiaLearnsData.swift */,
+			);
+			path = MiaLearns;
+			sourceTree = "<group>";
+		};
+		E08D4C0829B59DED00958971 /* MiaTalksView */ = {
+			isa = PBXGroup;
+			children = (
+				E0A5D67329877878002E0E57 /* MiaTalksMenu.swift */,
+				E091A4D628CFA45700E7284C /* MiaTalksView.swift */,
+			);
+			path = MiaTalksView;
+			sourceTree = "<group>";
+		};
+		E08D4C0929B59E1D00958971 /* MiaTalks */ = {
+			isa = PBXGroup;
+			children = (
+				E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */,
+				E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */,
+				E08D165228DBA63D00447D69 /* MiaTalksFooterView.swift */,
+			);
+			path = MiaTalks;
+			sourceTree = "<group>";
+		};
 		E09B6ED628EA560B004E5052 /* StoryTime */ = {
 			isa = PBXGroup;
 			children = (
@@ -1403,9 +1466,11 @@
 		E0CF3C5428CCD322000E59A0 /* Luke & Mia Learn */ = {
 			isa = PBXGroup;
 			children = (
+				E0E20D7A28E0140600083DE6 /* App */,
 				E0BCD3B329425618003DDD0A /* Extentions */,
 				E03B515B2941C4870057B81C /* Utility */,
-				E0E20D7A28E0140600083DE6 /* App */,
+				E08D4C0529B59CBD00958971 /* View */,
+				E08D4C0329B59C8E00958971 /* Model */,
 				E0E20D7B28E0142200083DE6 /* Menu */,
 				E0E20D7C28E0143900083DE6 /* Mia Learns */,
 				E0E20D7D28E0144F00083DE6 /* Mia ABC Quiz */,
@@ -1514,10 +1579,7 @@
 		E0E20D7B28E0142200083DE6 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				E0CF3C5928CCD322000E59A0 /* MenuView.swift */,
-				E021E87629B50DB700E0CD47 /* MenuData.swift */,
 				E021E87829B511C100E0CD47 /* MenuItem.swift */,
-				E0CF3C6C28CCD3E3000E59A0 /* MenuCell.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1525,12 +1587,7 @@
 		E0E20D7C28E0143900083DE6 /* Mia Learns */ = {
 			isa = PBXGroup;
 			children = (
-				E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsView.swift */,
 				E024CD52295E167000873863 /* NetworkManager.swift */,
-				E0CF3C7028CCE86B000E59A0 /* MiaLearnsCell.swift */,
-				E078DDD42960E52300E07AF7 /* MediaPair.swift */,
-				E078DDD62960E81F00E07AF7 /* MiaLearnLesson.swift */,
-				E078DDD82960E8BC00E07AF7 /* MiaLearnsData.swift */,
 			);
 			path = "Mia Learns";
 			sourceTree = "<group>";
@@ -1538,9 +1595,6 @@
 		E0E20D7D28E0144F00083DE6 /* Mia ABC Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				E03A68AC28CE5B1300520C51 /* MiaAbcQuizView.swift */,
-				E0AE5260299D46CF0012C068 /* MiaAbcQuizData.swift */,
-				E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */,
 			);
 			path = "Mia ABC Quiz";
 			sourceTree = "<group>";
@@ -1548,12 +1602,6 @@
 		E0E20D7E28E0146800083DE6 /* Mia Talks */ = {
 			isa = PBXGroup;
 			children = (
-				E0A5D67329877878002E0E57 /* MiaTalksMenu.swift */,
-				E091A4D628CFA45700E7284C /* MiaTalksView.swift */,
-				E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */,
-				E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */,
-				E08D165228DBA63D00447D69 /* MiaTalksFooterView.swift */,
-				E08D4C0129B5859400958971 /* MiaTalksData.swift */,
 			);
 			path = "Mia Talks";
 			sourceTree = "<group>";

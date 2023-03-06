@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class MenuView: UICollectionViewController {
     private let mediumBorderSize: CGFloat = 4
     let soundPlayer = SystemSoundPlayer()

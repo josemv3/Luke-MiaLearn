@@ -54,7 +54,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Fnq-LZ-k0S" customClass="MenuCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MenuCell" id="Fnq-LZ-k0S" customClass="MenuCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
                                 <rect key="frame" x="-10.666666666666666" y="0.0" width="414" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rP5-ET-v1h">
@@ -113,7 +113,7 @@
                         <segue destination="x7J-02-dUQ" kind="show" identifier="goToMiabcQuiz" id="kxq-uV-8Xg"/>
                         <segue destination="QSv-0H-iHW" kind="show" identifier="goToStoryTimeMenu" id="3BP-3H-mq9"/>
                         <segue destination="LAl-10-lsl" kind="show" identifier="goToLukeTalks" id="2Py-xP-0eg"/>
-                        <segue destination="rfl-Sx-PoV" kind="show" identifier="goToFIndMeMenu" id="Ry1-xP-PSW"/>
+                        <segue destination="rfl-Sx-PoV" kind="show" identifier="goToFindMeMenu" id="Ry1-xP-PSW"/>
                         <segue destination="V3X-Vt-lEk" kind="show" identifier="goToMiaTalksMenu" id="x0T-T3-a1r"/>
                     </connections>
                 </collectionViewController>
@@ -951,7 +951,7 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewLayout key="collectionViewLayout" id="Pr6-we-GWZ"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="miaTalksCell" id="wrG-Bv-9ua" customClass="MiaTalksCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MiaTalksCell" id="wrG-Bv-9ua" customClass="MiaTalksCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MPd-XI-WXO">
@@ -1066,11 +1066,12 @@
                     <navigationItem key="navigationItem" id="red-bh-pWS"/>
                     <connections>
                         <segue destination="fUe-tz-8eU" kind="show" identifier="goToLWLDetail" id="ZF3-YD-5PK"/>
+                        <segue destination="L6c-qc-ctL" kind="show" identifier="lwLukeDetailView" id="iAb-gl-VOo"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTL-fL-F9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2320" y="1430"/>
+            <point key="canvasLocation" x="2215" y="1430"/>
         </scene>
         <!--Story Time Menu-->
         <scene sceneID="u9G-hl-uBd">
@@ -1298,7 +1299,122 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Us6-QB-X3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3078" y="1430"/>
+            <point key="canvasLocation" x="2938" y="1430"/>
+        </scene>
+        <!--Luke Detail View-->
+        <scene sceneID="wkI-e8-Kmy">
+            <objects>
+                <viewController id="L6c-qc-ctL" customClass="LWLukeDetailView" customModule="Luke___Mia_Learn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EJy-t2-Bwh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5RT-Lh-OYB">
+                                <rect key="frame" x="15" y="111" width="363" height="320"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="I5t-OY-djY"/>
+                                </constraints>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sxe-y5-Kxb">
+                                <rect key="frame" x="15" y="620" width="363" height="217"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217" id="Rru-Bb-KlF"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8H3-Pr-rMf">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lwLukeDetailCell" id="6Zy-PG-PWH" customClass="lwLukeDetailCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Irb-6e-iG2">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3K-cj-EZ4">
+                                                    <rect key="frame" x="43" y="53.666666666666657" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r8h-VL-d4h">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="r8h-VL-d4h" firstAttribute="leading" secondItem="Irb-6e-iG2" secondAttribute="leading" id="Ild-vU-3nq"/>
+                                                <constraint firstAttribute="trailing" secondItem="r8h-VL-d4h" secondAttribute="trailing" id="Jb2-j7-UT9"/>
+                                                <constraint firstItem="r8h-VL-d4h" firstAttribute="top" secondItem="Irb-6e-iG2" secondAttribute="top" id="Li1-I5-S0c"/>
+                                                <constraint firstItem="r8h-VL-d4h" firstAttribute="leading" secondItem="Irb-6e-iG2" secondAttribute="leading" id="MzM-Cn-bs7"/>
+                                                <constraint firstAttribute="bottom" secondItem="r8h-VL-d4h" secondAttribute="bottom" id="grB-dy-rsB"/>
+                                                <constraint firstItem="G3K-cj-EZ4" firstAttribute="centerY" secondItem="Irb-6e-iG2" secondAttribute="centerY" id="iMU-WY-W0l"/>
+                                                <constraint firstItem="G3K-cj-EZ4" firstAttribute="centerX" secondItem="Irb-6e-iG2" secondAttribute="centerX" id="jnh-SZ-atx"/>
+                                                <constraint firstAttribute="bottom" secondItem="r8h-VL-d4h" secondAttribute="bottom" id="mhu-da-m7E"/>
+                                                <constraint firstItem="r8h-VL-d4h" firstAttribute="top" secondItem="Irb-6e-iG2" secondAttribute="top" id="ro4-n4-Q6L"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellImageView" destination="r8h-VL-d4h" id="xem-KF-D30"/>
+                                            <outlet property="cellLabel" destination="G3K-cj-EZ4" id="ABm-MW-DJd"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="delegate" destination="L6c-qc-ctL" id="0vD-Pw-nAq"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mp2-GR-rYh">
+                                <rect key="frame" x="15" y="439" width="363" height="173"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-jJ-NAb">
+                                        <rect key="frame" x="10" y="10" width="343" height="153"/>
+                                        <color key="backgroundColor" name="mainBlue"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                        <color key="textColor" name="learnWLukeGreen"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="mainBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aF0-jJ-NAb" secondAttribute="trailing" constant="10" id="4IA-X4-T9Z"/>
+                                    <constraint firstItem="aF0-jJ-NAb" firstAttribute="top" secondItem="Mp2-GR-rYh" secondAttribute="top" constant="10" id="L5W-LX-Pjb"/>
+                                    <constraint firstAttribute="bottom" secondItem="aF0-jJ-NAb" secondAttribute="bottom" constant="10" id="Uu2-YH-6CO"/>
+                                    <constraint firstItem="aF0-jJ-NAb" firstAttribute="leading" secondItem="Mp2-GR-rYh" secondAttribute="leading" constant="10" id="fJV-xi-DAf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9be-mB-VFW"/>
+                        <color key="backgroundColor" name="learnWLukeBlue"/>
+                        <constraints>
+                            <constraint firstItem="sxe-y5-Kxb" firstAttribute="top" secondItem="Mp2-GR-rYh" secondAttribute="bottom" constant="8" id="0gE-1T-cr1"/>
+                            <constraint firstItem="5RT-Lh-OYB" firstAttribute="top" secondItem="9be-mB-VFW" secondAttribute="top" constant="8" id="F4D-fe-EJa"/>
+                            <constraint firstItem="Mp2-GR-rYh" firstAttribute="top" secondItem="5RT-Lh-OYB" secondAttribute="bottom" constant="8" id="H22-QP-vUt"/>
+                            <constraint firstItem="sxe-y5-Kxb" firstAttribute="trailing" secondItem="9be-mB-VFW" secondAttribute="trailing" constant="-15" id="WmU-yJ-GtD"/>
+                            <constraint firstAttribute="trailing" secondItem="Mp2-GR-rYh" secondAttribute="trailing" constant="15" id="ago-bZ-xlx"/>
+                            <constraint firstItem="5RT-Lh-OYB" firstAttribute="trailing" secondItem="9be-mB-VFW" secondAttribute="trailing" constant="-15" id="dIR-6q-Hlp"/>
+                            <constraint firstItem="5RT-Lh-OYB" firstAttribute="leading" secondItem="9be-mB-VFW" secondAttribute="leading" constant="15" id="iBB-fS-Hka"/>
+                            <constraint firstItem="Mp2-GR-rYh" firstAttribute="leading" secondItem="9be-mB-VFW" secondAttribute="leading" constant="15" id="uuF-Fr-iU8"/>
+                            <constraint firstItem="Mp2-GR-rYh" firstAttribute="top" secondItem="5RT-Lh-OYB" secondAttribute="bottom" constant="8" id="wa4-8M-X0h"/>
+                            <constraint firstAttribute="bottom" secondItem="sxe-y5-Kxb" secondAttribute="bottom" constant="15" id="xBD-ux-GdV"/>
+                            <constraint firstItem="sxe-y5-Kxb" firstAttribute="leading" secondItem="9be-mB-VFW" secondAttribute="leading" constant="15" id="yOH-FT-xaa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ACH-jw-VlR"/>
+                    <connections>
+                        <outlet property="lwLukeCV" destination="sxe-y5-Kxb" id="QD1-Ek-fUy"/>
+                        <outlet property="lwlLabelView" destination="Mp2-GR-rYh" id="2SJ-wW-e55"/>
+                        <outlet property="lwlMainLabel" destination="aF0-jJ-NAb" id="bjg-rL-DQ5"/>
+                        <outlet property="lwlMainView" destination="5RT-Lh-OYB" id="bY1-2F-fUd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Enb-Br-88A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3652.6717557251909" y="1238.7323943661972"/>
         </scene>
     </scenes>
     <resources>
@@ -1317,6 +1433,12 @@
         <namedColor name="findmeOrange">
             <color red="1" green="0.59999999999999998" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="learnWLukeBlue">
+            <color red="0.082352941176470587" green="0.015686274509803921" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="learnWLukeGreen">
+            <color red="0.011764705882352941" green="0.7686274509803922" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="mainBlue">
             <color red="0.28200000524520874" green="0.42399999499320984" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -1332,6 +1454,9 @@
         <namedColor name="quizLightBlue">
             <color red="0.63099998235702515" green="0.79199999570846558" blue="0.88599997758865356" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,8 +8,9 @@
 import UIKit
 
 class MenuCell: UICollectionViewCell {
-    
     @IBOutlet var menuImageview: UIImageView!
     @IBOutlet var menuLessonLabel: UILabel!
     @IBOutlet var menuAgeLabel: UILabel!
+    
+    static let reuseidentifier = String(describing: MenuCell.self)
 }

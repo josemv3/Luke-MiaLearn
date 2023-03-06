@@ -172,15 +172,15 @@ class LearnWithLukeView: UICollectionViewController {
         itemChosen = item
         
         if item == "Asteroid belt" {
-            self.performSegue(withIdentifier: "goToLWLDetail", sender: self)
+            self.performSegue(withIdentifier: "lwLukeDetailView", sender: self)
         } else {
             print("no Segue")
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToLWLDetail" {
-            let destinationVC = segue.destination as! LearnWithLukeDetailCVController
+        if segue.identifier == "lwLukeDetailView" {
+            let destinationVC = segue.destination as! LWLukeDetailView
             destinationVC.learnWLukeLessonChoice = itemChosen
         }
     }

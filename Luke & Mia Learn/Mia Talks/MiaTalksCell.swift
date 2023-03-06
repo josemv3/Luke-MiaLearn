@@ -10,21 +10,7 @@ import UIKit
 class MiaTalksCell: UICollectionViewCell {
     
     @IBOutlet var miaTalkCellLabel: UILabel!
-    //@IBOutlet weak var miaTalksButton: UIButton!
-    
     @IBOutlet weak var miaTalksView: UIImageView!
-    var buttonaNameTapped = ""
-    
-    
-//    @IBAction func miaTalksButtonTap(_ sender: UIButton) {
-//        sender.alpha = 0.5
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//        sender.alpha = 1.0
-//        print(self.miaTalkCellLabel.text ?? "error") //letter
-//        }
-//        print("button title", miaTalksButton.image(for: .normal)!)
-        //buttonaNameTapped = sender.titleLabel?.text ?? "banana"
-        //print(buttonaNameTapped)
-    //}
+
+    static let reuseidentifier = String(describing: MiaTalksCell.self)
 }
-//remove the button pushButton from the cell. Go back to didSelectItemAt.

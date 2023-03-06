@@ -10,7 +10,6 @@ import UIKit
 class LearnWithLukeCell: UICollectionViewCell {
     @IBOutlet weak var learnWithLukeImage: UIImageView!
     @IBOutlet weak var learnWithLukeCellLabel: UILabel!
-    
     @IBOutlet weak var learnWLukeBG: UIImageView!
     
     

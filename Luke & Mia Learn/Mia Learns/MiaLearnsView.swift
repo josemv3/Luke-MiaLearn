@@ -11,9 +11,6 @@
 import UIKit
 import AVFoundation
 
-private let instrumentsMainVideo: [String: String] = ["instruments": "Quiz"]
-private let instrumentsTest = ["instruments"]
-
 //MARK: - Class
 
 class MiaLearnsView: UIViewController, UICollectionViewDelegate {
@@ -28,7 +25,7 @@ class MiaLearnsView: UIViewController, UICollectionViewDelegate {
     var miaLearnsData = MiaLearnsData()
     var currentAnimation = 0
     var currentItemBackgroundColor: UIColor =  UIColor(named: Colors.mainOrange.rawValue) ?? .black
-    private var mainWordButtonTitle = "hello"
+    private var mainWordButtonTitle = PlaceHolder.hello.rawValue
     private let smallBorderSize: CGFloat = 2
     private let mediumBorderSize: CGFloat = 4
     
@@ -47,7 +44,7 @@ class MiaLearnsView: UIViewController, UICollectionViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
         navigationController?.navigationBar.backgroundColor = UIColor.systemBlue
         
-        mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
+        mainImagebutton.setImage(UIImage(named: PlaceHolder.greeting.rawValue), for: .normal)
         miaLearnsData.lesson = .animal
         miaLearnsData.getLesson()
         collectionView.collectionViewLayout = configureLayout()
@@ -119,7 +116,7 @@ class MiaLearnsView: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         
-        mainWordButtonTitle = miaLearnsData.currentLesson[item]?.item.imageName ?? "greeting"
+        mainWordButtonTitle = miaLearnsData.currentLesson[item]?.item.imageName ?? PlaceHolder.greeting.rawValue
         let wordWithNo_ = miaLearnsData.currentLesson[item]?.item.imageName.replacingOccurrences(of: "_", with: " ")
         mainWordButton.setTitle(wordWithNo_, for: .normal)
         
@@ -184,9 +181,9 @@ class MiaLearnsView: UIViewController, UICollectionViewDelegate {
     }
     
     func resetMainImageButton() {
-        self.mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
-        self.mainWordButton.setTitle("hello", for: .normal)
-        self.mainWordButtonTitle = "hello"
+        self.mainImagebutton.setImage(UIImage(named: PlaceHolder.greeting.rawValue), for: .normal)
+        self.mainWordButton.setTitle(PlaceHolder.hello.rawValue, for: .normal)
+        self.mainWordButtonTitle = PlaceHolder.hello.rawValue
     }
     
     //MARK: - Alert Choices
@@ -310,3 +307,7 @@ class MiaLearnsView: UIViewController, UICollectionViewDelegate {
         self.present(alert, animated: true)
     }
 }
+
+
+//private let instrumentsMainVideo: [String: String] = ["instruments": "Quiz"]
+//private let instrumentsTest = ["instruments"]

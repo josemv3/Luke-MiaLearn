@@ -11,10 +11,10 @@ class MiaTalksMenu: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Mia Talks"
+        navigationItem.title = Title.MiaTalksMenu.rawValue
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: "miaTalksOrange")
+        navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: Colors.miaTalksOrange.rawValue)
     }
 }

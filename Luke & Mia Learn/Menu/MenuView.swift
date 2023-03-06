@@ -9,15 +9,11 @@
 import UIKit
 
 
-class MenuController: UICollectionViewController {
-    private let reuseIdentifier = "cell"
+class MenuView: UICollectionViewController {
     private let mediumBorderSize: CGFloat = 4
-    
-    let lessonIconImage = ["miaLearnsLogo", "miABCQuizLogo", "miaTalksLogo", "learnWLukeLogo", "findMeLogo", "storyTimeLogo", "lukeTalksLogo"]
-    let lessonLabelName: [String: String] = ["miaLearnsLogo": "Mia learns", "miABCQuizLogo": "Mia abc quiz", "miaTalksLogo": "Mia talks", "learnWLukeLogo": "Learn with Luke", "findMeLogo": "Find me", "storyTimeLogo": "Story Time", "lukeTalksLogo": "Luke Talks"]
-    let lessonLabelAge : [String: String] = ["miaLearnsLogo": "Age: 2+", "miABCQuizLogo": "Age: 2+", "miaTalksLogo": "Age: 3+", "learnWLukeLogo": "Age: 4+", "findMeLogo": "Age: 5+", "storyTimeLogo": "Age 3+", "lukeTalksLogo": "Age 3+"]
+    let soundPlayer = SystemSoundPlayer()
+    var menuData = MenuData()
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
-
     enum Section {
         case main
     }
@@ -26,14 +22,17 @@ class MenuController: UICollectionViewController {
         super.viewDidLoad()
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         createDataSource()
-        navigationItem.title = "Menu"
+        navigationItem.title = Title.Menu.rawValue
+        menuData.menuDataFinal = menuData.buildMenuDictionary()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: "mainBlue")
+        navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = UIColor(named: Colors.mainBlue.rawValue)
     }
     
     //MARK: - Layout
+    
     private func generateLayout() -> UICollectionViewLayout {
         let spacing: CGFloat = 10
         let groupItemCount = 1
@@ -76,17 +75,17 @@ class MenuController: UICollectionViewController {
     }
     
     //MARK: - DataSOurce
+    
     private func createDataSource() {
         ///CELL
         dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as! MenuCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCell.reuseidentifier, for: indexPath) as! MenuCell
             
             cell.menuImageview.image = UIImage(named: item.description)
-            cell.menuLessonLabel.text = self.lessonLabelName[item.description]
-            cell.menuAgeLabel.text = self.lessonLabelAge[item.description]
-
+            cell.menuLessonLabel.text = self.menuData.menuDataFinal[item.description]?.displayName
+            cell.menuAgeLabel.text = self.menuData.menuDataFinal[item.description]?.age
             cell.menuImageview.layer.borderWidth = self.mediumBorderSize
-            cell.menuImageview.layer.borderColor = UIColor(named: "mainOrange")?.cgColor
+            cell.menuImageview.layer.borderColor = UIColor(named: Colors.mainOrange.rawValue)?.cgColor
             
             return cell
         })
@@ -94,33 +93,34 @@ class MenuController: UICollectionViewController {
         var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
         
         initialSnapshot.appendSections([.main])
-        initialSnapshot.appendItems(lessonIconImage)
+        initialSnapshot.appendItems(menuData.snapShotItems)
         
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     
     //MARK: - DidSelectItemAt
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        print("menu", item.description)
+        //print("menu", item.description)
        
         switch item {
-        case "miaLearnsLogo":
-            self.performSegue(withIdentifier: "goToMiaLearns", sender: self)
-        case "miABCQuizLogo":
-            self.performSegue(withIdentifier: "goToMiabcQuiz", sender: self)
-        case "learnWLukeLogo":
-            self.performSegue(withIdentifier: "goToLWLuke", sender: self)
-        case "miaTalksLogo":
-            self.performSegue(withIdentifier: "gotoMiaTalksMenu", sender: self)
-        case "storyTimeLogo":
-            self.performSegue(withIdentifier: "goToStoryTime", sender: self)
-        case "lukeTalksLogo":
-            self.performSegue(withIdentifier: "goToLukeTalks", sender: self)
+        case String(describing: MenuData.MenuIcons.miaLearnsLogo):
+            self.performSegue(withIdentifier: SegueId.goToMiaLearns.rawValue, sender: self)
+        case String(describing: MenuData.MenuIcons.miABCQuizLogo):
+            self.performSegue(withIdentifier: SegueId.goToMiabcQuiz.rawValue, sender: self)
+        case String(describing: MenuData.MenuIcons.learnWLukeLogo):
+            self.performSegue(withIdentifier: SegueId.goToLWLuke.rawValue, sender: self)
+        case String(describing: MenuData.MenuIcons.miaTalksLogo):
+            self.performSegue(withIdentifier: SegueId.goToMiaTalksMenu.rawValue, sender: self)
+        case String(describing: MenuData.MenuIcons.storyTimeLogo):
+            self.performSegue(withIdentifier: SegueId.goToStoryTimeMenu.rawValue, sender: self)
+        case String(describing: MenuData.MenuIcons.findMeLogo):
+            self.performSegue(withIdentifier: SegueId.goToFindMeMenu.rawValue, sender: self)
         default:
-            self.performSegue(withIdentifier: "gotoFIndMeMenu", sender: self)
-            //print("error") //replace with miABC
+            self.performSegue(withIdentifier: SegueId.goToLukeTalks.rawValue, sender: self)
         }
+        soundPlayer.clickSound()
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E009FC0529A54DDD006A812E /* StoryTimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E009FC0429A54DDD006A812E /* StoryTimeData.swift */; };
 		E01EFB39293722BA005B752B /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFB30293722B9005B752B /* car.mp3 */; };
 		E01EFB3A293722BA005B752B /* juice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFB31293722B9005B752B /* juice.mp3 */; };
 		E01EFB3B293722BA005B752B /* home.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFB32293722B9005B752B /* home.mp3 */; };
@@ -86,6 +87,8 @@
 		E01EFBCD29372AE0005B752B /* white_web.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFBBF29372AE0005B752B /* white_web.mp3 */; };
 		E01EFBCE29372AE0005B752B /* red_robot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFBC029372AE0005B752B /* red_robot.mp3 */; };
 		E01EFBCF29372AE0005B752B /* blue_bunny.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E01EFBC129372AE0005B752B /* blue_bunny.mp3 */; };
+		E021E87729B50DB700E0CD47 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E021E87629B50DB700E0CD47 /* MenuData.swift */; };
+		E021E87929B511C100E0CD47 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E021E87829B511C100E0CD47 /* MenuItem.swift */; };
 		E024CD53295E167000873863 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E024CD52295E167000873863 /* NetworkManager.swift */; };
 		E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */; };
 		E037C91E296BD81E000DAFC7 /* human_apple.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E037C91D296BD81E000DAFC7 /* human_apple.mp3 */; };
@@ -113,10 +116,15 @@
 		E037C94C296BD988000DAFC7 /* robot_draw.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E037C944296BD987000DAFC7 /* robot_draw.mp4 */; };
 		E037C94D296BD988000DAFC7 /* monster_apple.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E037C945296BD988000DAFC7 /* monster_apple.mp4 */; };
 		E037C94F296C94B7000DAFC7 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E037C94E296C94B7000DAFC7 /* VideoPlayer.swift */; };
-		E03A68AD28CE5B1300520C51 /* MiaAbcQuizController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */; };
+		E03A68AD28CE5B1300520C51 /* MiaAbcQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03A68AC28CE5B1300520C51 /* MiaAbcQuizView.swift */; };
 		E03B51582941995D0057B81C /* FindMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B51572941995D0057B81C /* FindMeViewController.swift */; };
 		E03B515A29419F380057B81C /* FindMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B515929419F380057B81C /* FindMeCell.swift */; };
-		E03B515D2941C49E0057B81C /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B515C2941C49E0057B81C /* SoundPlayer.swift */; };
+		E03B515D2941C49E0057B81C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03B515C2941C49E0057B81C /* AudioPlayer.swift */; };
+		E0408A6A29A6C64600228E8A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A6929A6C64600228E8A /* Button.swift */; };
+		E0408A6C29A7005A00228E8A /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A6B29A7005A00228E8A /* ImageView.swift */; };
+		E0408A6E29A702DD00228E8A /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A6D29A702DD00228E8A /* View.swift */; };
+		E0408A7429A93CB200228E8A /* SystemSoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A7329A93CB200228E8A /* SystemSoundPlayer.swift */; };
+		E0408A7629A940EE00228E8A /* SegueId.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0408A7529A940EE00228E8A /* SegueId.swift */; };
 		E04553812939334600B4EFA7 /* ugli_fruit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E04553672939334300B4EFA7 /* ugli_fruit.mp3 */; };
 		E04553822939334600B4EFA7 /* vanilla.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E04553682939334300B4EFA7 /* vanilla.mp3 */; };
 		E04553832939334600B4EFA7 /* ximenia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E04553692939334400B4EFA7 /* ximenia.mp3 */; };
@@ -208,6 +216,7 @@
 		E058A59A28EF79EE00A1B912 /* dragon11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E058A58F28EF79EE00A1B912 /* dragon11.mp3 */; };
 		E0594C6028CEFAE200EC2BE9 /* hedgehog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */; };
 		E0594C6428CEFAE200EC2BE9 /* frog.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0594C5C28CEFAE200EC2BE9 /* frog.mp4 */; };
+		E06182D929B2C648009B1344 /* lwLukeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06182D829B2C648009B1344 /* lwLukeDetailCell.swift */; };
 		E06195F228DE712000ECF46A /* asteroid2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E06195F028DE712000ECF46A /* asteroid2.mp4 */; };
 		E06195F328DE712000ECF46A /* asteroid1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E06195F128DE712000ECF46A /* asteroid1.mp4 */; };
 		E06262DB293D6C5500DEB478 /* beach_ball.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E06262C0293D6C5100DEB478 /* beach_ball.mp3 */; };
@@ -272,14 +281,17 @@
 		E085B1F7293801640085F03A /* ambulance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E085B1DD293801640085F03A /* ambulance.mp3 */; };
 		E085B1F8293801640085F03A /* valentines_candy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E085B1DE293801640085F03A /* valentines_candy.mp3 */; };
 		E08D165328DBA63D00447D69 /* MiaTalksFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D165228DBA63D00447D69 /* MiaTalksFooterView.swift */; };
-		E091A4D728CFA45700E7284C /* MiaTalksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4D628CFA45700E7284C /* MiaTalksController.swift */; };
-		E091A4D928CFAFE800E7284C /* LearnWithLukeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4D828CFAFE800E7284C /* LearnWithLukeController.swift */; };
+		E08D4C0029B582DA00958971 /* PlaceHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D4BFF29B582DA00958971 /* PlaceHolder.swift */; };
+		E08D4C0229B5859400958971 /* MiaTalksData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08D4C0129B5859400958971 /* MiaTalksData.swift */; };
+		E091A4D728CFA45700E7284C /* MiaTalksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4D628CFA45700E7284C /* MiaTalksView.swift */; };
+		E091A4D928CFAFE800E7284C /* LearnWithLukeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4D828CFAFE800E7284C /* LearnWithLukeView.swift */; };
 		E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */; };
 		E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */; };
 		E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */; };
+		E096FDD229B29DD300D98BC2 /* LWLukeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E096FDD129B29DD300D98BC2 /* LWLukeDetailView.swift */; };
 		E09704B22998307D0024A0F2 /* LukeTalksCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09704B12998307D0024A0F2 /* LukeTalksCell2.swift */; };
-		E09B6ED528EA55EB004E5052 /* StoryTimeMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED428EA55EB004E5052 /* StoryTimeMenuController.swift */; };
-		E09B6ED828EB74FC004E5052 /* StoryTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */; };
+		E09B6ED528EA55EB004E5052 /* StoryTimeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED428EA55EB004E5052 /* StoryTimeMenu.swift */; };
+		E09B6ED828EB74FC004E5052 /* StoryTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED728EB74FC004E5052 /* StoryTimeView.swift */; };
 		E09DC9FB2964095100499BA6 /* LukeTalksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC9FA2964095000499BA6 /* LukeTalksCell.swift */; };
 		E09DC9FD2964A22E00499BA6 /* LukeTalksHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC9FC2964A22E00499BA6 /* LukeTalksHeader.swift */; };
 		E09DC9FF2964A25300499BA6 /* LukeTalksFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09DC9FE2964A25300499BA6 /* LukeTalksFooter.swift */; };
@@ -391,13 +403,13 @@
 		E0C6C46129352DB4006D123A /* instrumentsV.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E0C6C46029352DB4006D123A /* instrumentsV.mp4 */; };
 		E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */; };
 		E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */; };
-		E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5928CCD322000E59A0 /* MenuController.swift */; };
+		E0CF3C5A28CCD322000E59A0 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5928CCD322000E59A0 /* MenuView.swift */; };
 		E0CF3C5D28CCD322000E59A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C5B28CCD322000E59A0 /* Main.storyboard */; };
 		E0CF3C6028CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C5E28CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld */; };
 		E0CF3C6228CCD324000E59A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C6128CCD324000E59A0 /* Assets.xcassets */; };
 		E0CF3C6528CCD324000E59A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C6328CCD324000E59A0 /* LaunchScreen.storyboard */; };
 		E0CF3C6D28CCD3E3000E59A0 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C6C28CCD3E3000E59A0 /* MenuCell.swift */; };
-		E0CF3C6F28CCE1CA000E59A0 /* MiaLearnsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsViewController.swift */; };
+		E0CF3C6F28CCE1CA000E59A0 /* MiaLearnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsView.swift */; };
 		E0CF3C7128CCE86B000E59A0 /* MiaLearnsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CF3C7028CCE86B000E59A0 /* MiaLearnsCell.swift */; };
 		E0CF3C7D28CCF87C000E59A0 /* e2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7328CCF87C000E59A0 /* e2.mp3 */; };
 		E0CF3C7E28CCF87C000E59A0 /* elephant.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7428CCF87C000E59A0 /* elephant.mp3 */; };
@@ -410,8 +422,6 @@
 		E0CF3C8528CCF87C000E59A0 /* c2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7B28CCF87C000E59A0 /* c2.mp3 */; };
 		E0CF3C8628CCF87C000E59A0 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0CF3C7C28CCF87C000E59A0 /* cat.mp3 */; };
 		E0DF0F4C28D0FFAF00252498 /* MiaAbcQuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */; };
-		E0DF0F5C28D23E1300252498 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F5B28D23E1300252498 /* Question.swift */; };
-		E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */; };
 		E0F7BA6728F1339E00DD47BE /* humanbroccoli.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA6128F1339D00DD47BE /* humanbroccoli.mp3 */; };
 		E0F7BA6828F1339E00DD47BE /* humancarrot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA6228F1339D00DD47BE /* humancarrot.mp3 */; };
 		E0F7BA6928F1339E00DD47BE /* humancereal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA6328F1339D00DD47BE /* humancereal.mp3 */; };
@@ -430,9 +440,11 @@
 		E0F7BA8228F133BF00DD47BE /* droidcereal.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA7C28F133BF00DD47BE /* droidcereal.mp3 */; };
 		E0F7BA8328F133BF00DD47BE /* droidhamburger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA7D28F133BF00DD47BE /* droidhamburger.mp3 */; };
 		E0F7BA8428F133BF00DD47BE /* droidcarrot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F7BA7E28F133BF00DD47BE /* droidcarrot.mp3 */; };
+		E0FBA37C29B3F6A00090E615 /* VideoPLayer2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FBA37B29B3F6A00090E615 /* VideoPLayer2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E009FC0429A54DDD006A812E /* StoryTimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeData.swift; sourceTree = "<group>"; };
 		E01EFB30293722B9005B752B /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
 		E01EFB31293722B9005B752B /* juice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = juice.mp3; sourceTree = "<group>"; };
 		E01EFB32293722B9005B752B /* home.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = home.mp3; sourceTree = "<group>"; };
@@ -512,6 +524,8 @@
 		E01EFBBF29372AE0005B752B /* white_web.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = white_web.mp3; sourceTree = "<group>"; };
 		E01EFBC029372AE0005B752B /* red_robot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = red_robot.mp3; sourceTree = "<group>"; };
 		E01EFBC129372AE0005B752B /* blue_bunny.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blue_bunny.mp3; sourceTree = "<group>"; };
+		E021E87629B50DB700E0CD47 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
+		E021E87829B511C100E0CD47 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		E024CD52295E167000873863 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksHeaderView.swift; sourceTree = "<group>"; };
 		E037C91D296BD81E000DAFC7 /* human_apple.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = human_apple.mp3; sourceTree = "<group>"; };
@@ -539,10 +553,15 @@
 		E037C944296BD987000DAFC7 /* robot_draw.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_draw.mp4; sourceTree = "<group>"; };
 		E037C945296BD988000DAFC7 /* monster_apple.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = monster_apple.mp4; sourceTree = "<group>"; };
 		E037C94E296C94B7000DAFC7 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
-		E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcQuizController.swift; sourceTree = "<group>"; };
+		E03A68AC28CE5B1300520C51 /* MiaAbcQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcQuizView.swift; sourceTree = "<group>"; };
 		E03B51572941995D0057B81C /* FindMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMeViewController.swift; sourceTree = "<group>"; };
 		E03B515929419F380057B81C /* FindMeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMeCell.swift; sourceTree = "<group>"; };
-		E03B515C2941C49E0057B81C /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		E03B515C2941C49E0057B81C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		E0408A6929A6C64600228E8A /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		E0408A6B29A7005A00228E8A /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		E0408A6D29A702DD00228E8A /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		E0408A7329A93CB200228E8A /* SystemSoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSoundPlayer.swift; sourceTree = "<group>"; };
+		E0408A7529A940EE00228E8A /* SegueId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueId.swift; sourceTree = "<group>"; };
 		E04553672939334300B4EFA7 /* ugli_fruit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ugli_fruit.mp3; sourceTree = "<group>"; };
 		E04553682939334300B4EFA7 /* vanilla.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = vanilla.mp3; sourceTree = "<group>"; };
 		E04553692939334400B4EFA7 /* ximenia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ximenia.mp3; sourceTree = "<group>"; };
@@ -634,6 +653,7 @@
 		E058A58F28EF79EE00A1B912 /* dragon11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dragon11.mp3; sourceTree = "<group>"; };
 		E0594C5828CEFAE200EC2BE9 /* hedgehog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = hedgehog.mp4; sourceTree = "<group>"; };
 		E0594C5C28CEFAE200EC2BE9 /* frog.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = frog.mp4; sourceTree = "<group>"; };
+		E06182D829B2C648009B1344 /* lwLukeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lwLukeDetailCell.swift; sourceTree = "<group>"; };
 		E06195F028DE712000ECF46A /* asteroid2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = asteroid2.mp4; sourceTree = "<group>"; };
 		E06195F128DE712000ECF46A /* asteroid1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = asteroid1.mp4; sourceTree = "<group>"; };
 		E06262C0293D6C5100DEB478 /* beach_ball.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beach_ball.mp3; sourceTree = "<group>"; };
@@ -698,14 +718,17 @@
 		E085B1DD293801640085F03A /* ambulance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ambulance.mp3; sourceTree = "<group>"; };
 		E085B1DE293801640085F03A /* valentines_candy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = valentines_candy.mp3; sourceTree = "<group>"; };
 		E08D165228DBA63D00447D69 /* MiaTalksFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksFooterView.swift; sourceTree = "<group>"; };
-		E091A4D628CFA45700E7284C /* MiaTalksController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksController.swift; sourceTree = "<group>"; };
-		E091A4D828CFAFE800E7284C /* LearnWithLukeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeController.swift; sourceTree = "<group>"; };
+		E08D4BFF29B582DA00958971 /* PlaceHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolder.swift; sourceTree = "<group>"; };
+		E08D4C0129B5859400958971 /* MiaTalksData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksData.swift; sourceTree = "<group>"; };
+		E091A4D628CFA45700E7284C /* MiaTalksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksView.swift; sourceTree = "<group>"; };
+		E091A4D828CFAFE800E7284C /* LearnWithLukeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeView.swift; sourceTree = "<group>"; };
 		E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksCell.swift; sourceTree = "<group>"; };
 		E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeCell.swift; sourceTree = "<group>"; };
 		E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeHeader.swift; sourceTree = "<group>"; };
+		E096FDD129B29DD300D98BC2 /* LWLukeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWLukeDetailView.swift; sourceTree = "<group>"; };
 		E09704B12998307D0024A0F2 /* LukeTalksCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksCell2.swift; sourceTree = "<group>"; };
-		E09B6ED428EA55EB004E5052 /* StoryTimeMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeMenuController.swift; sourceTree = "<group>"; };
-		E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeController.swift; sourceTree = "<group>"; };
+		E09B6ED428EA55EB004E5052 /* StoryTimeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeMenu.swift; sourceTree = "<group>"; };
+		E09B6ED728EB74FC004E5052 /* StoryTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeView.swift; sourceTree = "<group>"; };
 		E09DC9FA2964095000499BA6 /* LukeTalksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksCell.swift; sourceTree = "<group>"; };
 		E09DC9FC2964A22E00499BA6 /* LukeTalksHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksHeader.swift; sourceTree = "<group>"; };
 		E09DC9FE2964A25300499BA6 /* LukeTalksFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksFooter.swift; sourceTree = "<group>"; };
@@ -815,14 +838,14 @@
 		E0CF3C5228CCD322000E59A0 /* Luke & Mia Learn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Luke & Mia Learn.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CF3C5528CCD322000E59A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0CF3C5728CCD322000E59A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E0CF3C5928CCD322000E59A0 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		E0CF3C5928CCD322000E59A0 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		E0CF3C5C28CCD322000E59A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0CF3C5F28CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Luke___Mia_Learn.xcdatamodel"; sourceTree = "<group>"; };
 		E0CF3C6128CCD324000E59A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0CF3C6428CCD324000E59A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0CF3C6628CCD324000E59A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0CF3C6C28CCD3E3000E59A0 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaLearnsViewController.swift; sourceTree = "<group>"; };
+		E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaLearnsView.swift; sourceTree = "<group>"; };
 		E0CF3C7028CCE86B000E59A0 /* MiaLearnsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaLearnsCell.swift; sourceTree = "<group>"; };
 		E0CF3C7328CCF87C000E59A0 /* e2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = e2.mp3; sourceTree = "<group>"; };
 		E0CF3C7428CCF87C000E59A0 /* elephant.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = elephant.mp3; sourceTree = "<group>"; };
@@ -835,8 +858,6 @@
 		E0CF3C7B28CCF87C000E59A0 /* c2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = c2.mp3; sourceTree = "<group>"; };
 		E0CF3C7C28CCF87C000E59A0 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
 		E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcQuizCell.swift; sourceTree = "<group>"; };
-		E0DF0F5B28D23E1300252498 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
-		E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		E0F7BA6128F1339D00DD47BE /* humanbroccoli.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humanbroccoli.mp3; sourceTree = "<group>"; };
 		E0F7BA6228F1339D00DD47BE /* humancarrot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humancarrot.mp3; sourceTree = "<group>"; };
 		E0F7BA6328F1339D00DD47BE /* humancereal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humancereal.mp3; sourceTree = "<group>"; };
@@ -855,6 +876,7 @@
 		E0F7BA7C28F133BF00DD47BE /* droidcereal.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = droidcereal.mp3; sourceTree = "<group>"; };
 		E0F7BA7D28F133BF00DD47BE /* droidhamburger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = droidhamburger.mp3; sourceTree = "<group>"; };
 		E0F7BA7E28F133BF00DD47BE /* droidcarrot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = droidcarrot.mp3; sourceTree = "<group>"; };
+		E0FBA37B29B3F6A00090E615 /* VideoPLayer2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPLayer2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1063,12 +1085,16 @@
 		E03B515B2941C4870057B81C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				E03B515C2941C49E0057B81C /* SoundPlayer.swift */,
+				E0408A7329A93CB200228E8A /* SystemSoundPlayer.swift */,
+				E03B515C2941C49E0057B81C /* AudioPlayer.swift */,
 				E037C94E296C94B7000DAFC7 /* VideoPlayer.swift */,
-				E0AE5258299B0C620012C068 /* Colors.swift */,
+				E0FBA37B29B3F6A00090E615 /* VideoPLayer2.swift */,
 				E0AE525A299B0FF10012C068 /* CornerRadiusMod.swift */,
 				E0AE525C299B10EA0012C068 /* BorderSize.swift */,
 				E05044BD29A0917500577154 /* Title.swift */,
+				E0408A7529A940EE00228E8A /* SegueId.swift */,
+				E0AE5258299B0C620012C068 /* Colors.swift */,
+				E08D4BFF29B582DA00958971 /* PlaceHolder.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1107,7 +1133,7 @@
 			path = "Mia Learns Fruit Audio";
 			sourceTree = "<group>";
 		};
-		E047DE4D28E51C6900C38B1B /* LWLDetail */ = {
+		E047DE4D28E51C6900C38B1B /* LWLDetailCV */ = {
 			isa = PBXGroup;
 			children = (
 				E047DE4928E51A9F00C38B1B /* LearnWithLukeDetailCVController.swift */,
@@ -1115,7 +1141,7 @@
 				E047DE4E28E5236C00C38B1B /* LWLDetailHeader.swift */,
 				E047DE5028E5238A00C38B1B /* LWLDetailFooter.swift */,
 			);
-			path = LWLDetail;
+			path = LWLDetailCV;
 			sourceTree = "<group>";
 		};
 		E058A58428EF79AF00A1B912 /* story Time Audio */ = {
@@ -1134,6 +1160,15 @@
 				E058A58F28EF79EE00A1B912 /* dragon11.mp3 */,
 			);
 			path = "story Time Audio";
+			sourceTree = "<group>";
+		};
+		E06182DA29B2D88D009B1344 /* Learn With Luke Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E096FDD129B29DD300D98BC2 /* LWLukeDetailView.swift */,
+				E06182D829B2C648009B1344 /* lwLukeDetailCell.swift */,
+			);
+			path = "Learn With Luke Detail";
 			sourceTree = "<group>";
 		};
 		E06195EF28DE6F8D00ECF46A /* LearnWLuke Videos */ = {
@@ -1227,8 +1262,9 @@
 		E09B6ED628EA560B004E5052 /* StoryTime */ = {
 			isa = PBXGroup;
 			children = (
-				E09B6ED428EA55EB004E5052 /* StoryTimeMenuController.swift */,
-				E09B6ED728EB74FC004E5052 /* StoryTimeController.swift */,
+				E09B6ED428EA55EB004E5052 /* StoryTimeMenu.swift */,
+				E09B6ED728EB74FC004E5052 /* StoryTimeView.swift */,
+				E009FC0429A54DDD006A812E /* StoryTimeData.swift */,
 			);
 			path = StoryTime;
 			sourceTree = "<group>";
@@ -1341,6 +1377,9 @@
 			children = (
 				E0BCD3B42942567A003DDD0A /* Alert+Image.swift */,
 				E05044BB29A00DFE00577154 /* CaseIterable.swift */,
+				E0408A6929A6C64600228E8A /* Button.swift */,
+				E0408A6B29A7005A00228E8A /* ImageView.swift */,
+				E0408A6D29A702DD00228E8A /* View.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -1475,7 +1514,9 @@
 		E0E20D7B28E0142200083DE6 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				E0CF3C5928CCD322000E59A0 /* MenuController.swift */,
+				E0CF3C5928CCD322000E59A0 /* MenuView.swift */,
+				E021E87629B50DB700E0CD47 /* MenuData.swift */,
+				E021E87829B511C100E0CD47 /* MenuItem.swift */,
 				E0CF3C6C28CCD3E3000E59A0 /* MenuCell.swift */,
 			);
 			path = Menu;
@@ -1484,7 +1525,7 @@
 		E0E20D7C28E0143900083DE6 /* Mia Learns */ = {
 			isa = PBXGroup;
 			children = (
-				E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsViewController.swift */,
+				E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsView.swift */,
 				E024CD52295E167000873863 /* NetworkManager.swift */,
 				E0CF3C7028CCE86B000E59A0 /* MiaLearnsCell.swift */,
 				E078DDD42960E52300E07AF7 /* MediaPair.swift */,
@@ -1497,11 +1538,9 @@
 		E0E20D7D28E0144F00083DE6 /* Mia ABC Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				E03A68AC28CE5B1300520C51 /* MiaAbcQuizController.swift */,
+				E03A68AC28CE5B1300520C51 /* MiaAbcQuizView.swift */,
 				E0AE5260299D46CF0012C068 /* MiaAbcQuizData.swift */,
 				E0DF0F4B28D0FFAF00252498 /* MiaAbcQuizCell.swift */,
-				E0DF0F5B28D23E1300252498 /* Question.swift */,
-				E0DF0F5F28D2DC6100252498 /* QuizBrain.swift */,
 			);
 			path = "Mia ABC Quiz";
 			sourceTree = "<group>";
@@ -1510,10 +1549,11 @@
 			isa = PBXGroup;
 			children = (
 				E0A5D67329877878002E0E57 /* MiaTalksMenu.swift */,
-				E091A4D628CFA45700E7284C /* MiaTalksController.swift */,
+				E091A4D628CFA45700E7284C /* MiaTalksView.swift */,
 				E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */,
 				E028800828E2BFE6004D70DC /* MiaTalksHeaderView.swift */,
 				E08D165228DBA63D00447D69 /* MiaTalksFooterView.swift */,
+				E08D4C0129B5859400958971 /* MiaTalksData.swift */,
 			);
 			path = "Mia Talks";
 			sourceTree = "<group>";
@@ -1521,10 +1561,11 @@
 		E0E20D7F28E0147700083DE6 /* Learn With Luke */ = {
 			isa = PBXGroup;
 			children = (
-				E091A4D828CFAFE800E7284C /* LearnWithLukeController.swift */,
+				E091A4D828CFAFE800E7284C /* LearnWithLukeView.swift */,
 				E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */,
 				E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */,
-				E047DE4D28E51C6900C38B1B /* LWLDetail */,
+				E06182DA29B2D88D009B1344 /* Learn With Luke Detail */,
+				E047DE4D28E51C6900C38B1B /* LWLDetailCV */,
 			);
 			path = "Learn With Luke";
 			sourceTree = "<group>";
@@ -1996,30 +2037,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E009FC0529A54DDD006A812E /* StoryTimeData.swift in Sources */,
 				E0A5D67429877878002E0E57 /* MiaTalksMenu.swift in Sources */,
+				E06182D929B2C648009B1344 /* lwLukeDetailCell.swift in Sources */,
 				E078DDD72960E81F00E07AF7 /* MiaLearnLesson.swift in Sources */,
-				E0DF0F5C28D23E1300252498 /* Question.swift in Sources */,
 				E0775E7D2943E025002C66B3 /* LukeTalksMenu.swift in Sources */,
-				E0CF3C5A28CCD322000E59A0 /* MenuController.swift in Sources */,
+				E0CF3C5A28CCD322000E59A0 /* MenuView.swift in Sources */,
 				E09704B22998307D0024A0F2 /* LukeTalksCell2.swift in Sources */,
 				E03B51582941995D0057B81C /* FindMeViewController.swift in Sources */,
 				E047DE4A28E51A9F00C38B1B /* LearnWithLukeDetailCVController.swift in Sources */,
 				E0CF3C6D28CCD3E3000E59A0 /* MenuCell.swift in Sources */,
 				E047DE4F28E5236C00C38B1B /* LWLDetailHeader.swift in Sources */,
-				E0CF3C6F28CCE1CA000E59A0 /* MiaLearnsViewController.swift in Sources */,
+				E0CF3C6F28CCE1CA000E59A0 /* MiaLearnsView.swift in Sources */,
 				E0CF3C7128CCE86B000E59A0 /* MiaLearnsCell.swift in Sources */,
+				E0408A6C29A7005A00228E8A /* ImageView.swift in Sources */,
 				E05044BE29A0917500577154 /* Title.swift in Sources */,
 				E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */,
-				E03B515D2941C49E0057B81C /* SoundPlayer.swift in Sources */,
+				E03B515D2941C49E0057B81C /* AudioPlayer.swift in Sources */,
 				E08D165328DBA63D00447D69 /* MiaTalksFooterView.swift in Sources */,
+				E021E87929B511C100E0CD47 /* MenuItem.swift in Sources */,
+				E0FBA37C29B3F6A00090E615 /* VideoPLayer2.swift in Sources */,
 				E05044BC29A00DFE00577154 /* CaseIterable.swift in Sources */,
-				E0DF0F6028D2DC6100252498 /* QuizBrain.swift in Sources */,
 				E028800928E2BFE6004D70DC /* MiaTalksHeaderView.swift in Sources */,
 				E0DF0F4C28D0FFAF00252498 /* MiaAbcQuizCell.swift in Sources */,
+				E0408A6A29A6C64600228E8A /* Button.swift in Sources */,
 				E037C94F296C94B7000DAFC7 /* VideoPlayer.swift in Sources */,
+				E0408A6E29A702DD00228E8A /* View.swift in Sources */,
 				E024CD53295E167000873863 /* NetworkManager.swift in Sources */,
 				E09DC9FB2964095100499BA6 /* LukeTalksCell.swift in Sources */,
 				E0A4137C2995E5BE00077302 /* LukeTalksViewController2.swift in Sources */,
+				E0408A7629A940EE00228E8A /* SegueId.swift in Sources */,
 				E0775E7F2943E03C002C66B3 /* LukeTalksViewController.swift in Sources */,
 				E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */,
 				E0CF3C5628CCD322000E59A0 /* AppDelegate.swift in Sources */,
@@ -2027,23 +2074,28 @@
 				E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */,
 				E09DC9FF2964A25300499BA6 /* LukeTalksFooter.swift in Sources */,
 				E0BCD3B52942567A003DDD0A /* Alert+Image.swift in Sources */,
-				E09B6ED528EA55EB004E5052 /* StoryTimeMenuController.swift in Sources */,
-				E09B6ED828EB74FC004E5052 /* StoryTimeController.swift in Sources */,
+				E09B6ED528EA55EB004E5052 /* StoryTimeMenu.swift in Sources */,
+				E09B6ED828EB74FC004E5052 /* StoryTimeView.swift in Sources */,
 				E0AE5259299B0C620012C068 /* Colors.swift in Sources */,
 				E03B515A29419F380057B81C /* FindMeCell.swift in Sources */,
+				E021E87729B50DB700E0CD47 /* MenuData.swift in Sources */,
 				E0AE525B299B0FF10012C068 /* CornerRadiusMod.swift in Sources */,
+				E0408A7429A93CB200228E8A /* SystemSoundPlayer.swift in Sources */,
 				E078DDD52960E52300E07AF7 /* MediaPair.swift in Sources */,
 				E047DE5328E531EE00C38B1B /* LWLDetailCell.swift in Sources */,
+				E096FDD229B29DD300D98BC2 /* LWLukeDetailView.swift in Sources */,
 				E09DC9FD2964A22E00499BA6 /* LukeTalksHeader.swift in Sources */,
 				E078DDD92960E8BC00E07AF7 /* MiaLearnsData.swift in Sources */,
-				E03A68AD28CE5B1300520C51 /* MiaAbcQuizController.swift in Sources */,
+				E03A68AD28CE5B1300520C51 /* MiaAbcQuizView.swift in Sources */,
 				E047DE5128E5238A00C38B1B /* LWLDetailFooter.swift in Sources */,
 				E0CF3C5828CCD322000E59A0 /* SceneDelegate.swift in Sources */,
 				E0AE5261299D46CF0012C068 /* MiaAbcQuizData.swift in Sources */,
-				E091A4D928CFAFE800E7284C /* LearnWithLukeController.swift in Sources */,
+				E08D4C0029B582DA00958971 /* PlaceHolder.swift in Sources */,
+				E091A4D928CFAFE800E7284C /* LearnWithLukeView.swift in Sources */,
 				E0CF3C6028CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld in Sources */,
 				E0AE525D299B10EA0012C068 /* BorderSize.swift in Sources */,
-				E091A4D728CFA45700E7284C /* MiaTalksController.swift in Sources */,
+				E091A4D728CFA45700E7284C /* MiaTalksView.swift in Sources */,
+				E08D4C0229B5859400958971 /* MiaTalksData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

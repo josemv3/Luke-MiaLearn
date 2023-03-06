@@ -8,24 +8,25 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
+class MiaAbcQuizView: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var miaABCQuizCollectionView: UICollectionView!
     @IBOutlet var mainView: UIImageView!
     @IBOutlet var mainViewButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    let soundplayer = SoundPlayer.shared
+    let soundPLayer = SystemSoundPlayer.shared
+    let audioPlayer = AudioPlayer.shared
     let videoPlayer = VideoPlayer.shared
     var miaAbcQuizData = MiaAbcQuizData()
 
     var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
     
     //TO CHANGE ITEMS 1
-    var filteredItemsSnapshot: NSDiffableDataSourceSnapshot<Section, String> {
+    var currentSnapshot: NSDiffableDataSourceSnapshot<Section, String> {
         var snapshot = NSDiffableDataSourceSnapshot<Section, String>()
         snapshot.appendSections([.main])
-        snapshot.appendItems(miaAbcQuizData.currentLetterSet) // starting data
+        snapshot.appendItems(miaAbcQuizData.currentLetterSet)
         return snapshot
     }
     
@@ -37,13 +38,11 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        miaAbcQuizData.getVideoNames()
-        miaAbcQuizData.getLetterSet()
         miaABCQuizCollectionView.collectionViewLayout = configureLayout()
         title = Title.MiaAbcQuiz.rawValue
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+            self.audioPlayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
             self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
         }
         
@@ -54,15 +53,16 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        restartGame()
-        soundplayer.audioPlayer?.pause()
+        resetGame()
+        audioPlayer.audioPlayer?.pause()
     }
     
     //MARK: - MainButton and Image
     
     @IBAction func mainViewButtonTap(_ sender: UIButton) {
-        self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+        self.audioPlayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
         self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
+        soundPLayer.clickSound()
     }
     
     //MARK: - Compositional CV LAYOUT
@@ -124,20 +124,15 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
         guard let cell = collectionView.cellForItem(at: indexPath) as? MiaAbcQuizCell else {
                return
            }
-        miaAbcQuizData.correctAnswer = String(miaAbcQuizData.videoNamesArray[miaAbcQuizData.videoCount].first ?? "a")//Set correct answer
-        miaAbcQuizData.changeLetterSet(correctAnswer: miaAbcQuizData.correctAnswer) //using correctAnswer this sets the letters displayed to a selected group
-        
+
         if checkAnswer(itemPressed: item) == true {
             cell.miABCQuizCellImage.backgroundColor = .systemGreen
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.20) {
                 cell.miABCQuizCellImage.backgroundColor = .clear
             }
             userGotItRight()
-            
-            //getLetterSet is main function that switches array letters,
-            miaAbcQuizData.currentLetterSet.removeAll()
-            miaAbcQuizData.currentLetterSet = miaAbcQuizData.getShuffledLetterSet()
-            dataSource.apply(filteredItemsSnapshot)
+
+            dataSource.apply(currentSnapshot)
             let systemSoundID: SystemSoundID = 1002
             AudioServicesPlaySystemSound (systemSoundID)
             
@@ -152,7 +147,6 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
         }
     }
     
-    //checks item pressed with correct answer
     func checkAnswer(itemPressed: String) -> Bool {
         if itemPressed == miaAbcQuizData.correctAnswer {
             return true
@@ -167,10 +161,10 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
             gameOver()
         } else { //fixed the out of index issue after zoo
             updateScore(answer: true)
-            miaAbcQuizData.videoCount += 1
+            miaAbcQuizData.updateCurrentLetterSet()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
-                self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
+                self.audioPlayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
                 self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
             }
         }
@@ -202,78 +196,27 @@ class MiaAbcQuizController: UIViewController, UICollectionViewDelegate {
             alert2.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action) in
                 let textField = alert2.textFields?[0]
                 print("Text field: \(textField?.text ?? "Blank" )" )
-                self.restartGame()
+                self.resetGame()
             }))
             self.present(alert2, animated: true)
         }))
         alert.addAction(UIAlertAction(title: "Restart Game", style: .default, handler: { (action) in
             print("Restart Game")
-            self.restartGame()
+            self.resetGame()
         }))
         
         self.present(alert, animated: true)
     }
     
-    func restartGame() {
-        miaAbcQuizData.videoCount = 0
-        self.miaAbcQuizData.score = 0
-        self.scoreLabel.text = String(miaAbcQuizData.score) //need one source of truth
-        miaAbcQuizData.quizAlphabetLetters = MiaAbcQuizData.Letters.a.letterSet
-        self.miaAbcQuizData.currentLetterSet.removeAll()
-        self.miaAbcQuizData.currentLetterSet = self.miaAbcQuizData.getShuffledLetterSet()
-        self.dataSource.apply(self.filteredItemsSnapshot)
-        
-        self.soundplayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
-        self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
+    func resetGame() {
+        miaAbcQuizData.restartGame()
+        self.scoreLabel.text = "0"
+        self.dataSource.apply(self.currentSnapshot)
+        self.audioPlayer.playSound(
+            soundName: self.miaAbcQuizData.videoNamesArray[
+                self.miaAbcQuizData.videoCount] + "Q")
+        self.videoPlayer.playVideo(
+            videoName: self.miaAbcQuizData.videoNamesArray[
+                self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
     }
 }
-
-
-
-//func getLetterSet(answer: String) -> [String] {
-    
-//        var selectedLetters: [String] = []
-//        selectedLetters.append(answer)
-//        //var count = 1
-//        for letter in quizAlphabetLetters {
-//            //move .shuffled() to return array for all of them to be shuffled
-//            //or append it at for specific loacation each time (or leave at #1 as is)
-//            if letter == answer {
-//                continue
-//            }
-//            if count >= 6 {
-//                break
-//            }
-//            selectedLetters.append(letter)
-//            //count += 1
-//        }
-//        return selectedLetters.shuffled()
-//
-//}
-
-//got rid of dict
-//cell.miABCQuizCellImage.image = UIImage(named: quizLetterImages[item.description] ?? "aQuiz")
-
-
-//private let quizLetterImages =
-//["a": "aQuiz", "b": "bQuiz", "c": "cQuiz", "d": "dQuiz", "e": "eQuiz", "f": "fQuiz", "g": "gQuiz", "h": "hQuiz", "i": "iQuiz", "j": "jQuiz", "k": "kQuiz", "l": "lQuiz", "m": "mQuiz", "n": "nQuiz", "o": "oQuiz", "p": "pQuiz", "q": "qQuiz", "r": "rQuiz", "s": "sQuiz", "t": "tQuiz", "u": "uQuiz", "v": "vQuiz", "w": "wQuiz", "x": "xQuiz", "y": "yQuiz", "z": "zQuiz"]
-
-
-
-//private let videoNames: [String] =
-//["apple", "bat", "cat", "dog", "egg", "frog", "giraffe", "hedgehog", "icecream", "jump", "kite", "love", "moon", "numbers", "owl", "pancake", "question", "rocket", "snake", "tree", "umbrella", "volcano", "wolf", "xray", "yoga", "zoo",]
-//consolidate into 1 array or find another way of getting data.
-//private let quizLowercaseLettersSet1 =
-//["a", "b", "c", "d", "e", "f"]
-//private let quizLowercaseLettersSet2 =
-//["f", "g", "h", "i", "j", "k",]
-//private let quizLowercaseLettersSet3 =
-//["k", "l", "m", "n", "o", "p",]
-//private let quizLowercaseLettersSet4 =
-//["p", "q", "r", "s", "t", "u",]
-//private let quizLowercaseLettersSet5 =
-//["u", "v", "w", "x", "y", "z",]
-
-
-//            self.soundplayer.playSound(soundName: videoNames[self.videoCount] + "Q")
-//            self.videoPlayer.playVideo(videoName: videoNames[self.videoCount], viewPlayer: self.mainView)

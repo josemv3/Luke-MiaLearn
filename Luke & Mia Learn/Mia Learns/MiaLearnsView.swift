@@ -11,24 +11,21 @@
 import UIKit
 import AVFoundation
 
-private let instrumentsMainVideo: [String: String] = ["instruments": "Quiz"]
-private let instrumentsTest = ["instruments"]
-
 //MARK: - Class
 
-class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
+class MiaLearnsView: UIViewController, UICollectionViewDelegate {
     @IBOutlet var mainImageBack: UIImageView!
     @IBOutlet var mainImagebutton: UIButton!
     @IBOutlet var mainWordButton: UIButton!
     ///When adding CV to VC control drag CV to VC and make delegate, then add UICVDelegate to class
     @IBOutlet var collectionView: UICollectionView!
     
+    let audioPlayer = AudioPlayer.shared
+    let soundPlayer = SystemSoundPlayer.shared
     var miaLearnsData = MiaLearnsData()
     var currentAnimation = 0
-    var audioPlayer: AVAudioPlayer?
-    var playerLayer = AVPlayerLayer()
     var currentItemBackgroundColor: UIColor =  UIColor(named: Colors.mainOrange.rawValue) ?? .black
-    private var mainWordButtonTitle = "hello"
+    private var mainWordButtonTitle = PlaceHolder.hello.rawValue
     private let smallBorderSize: CGFloat = 2
     private let mediumBorderSize: CGFloat = 4
     
@@ -47,9 +44,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(choseLesson))
         navigationController?.navigationBar.backgroundColor = UIColor.systemBlue
         
-        mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
-        //mainImagebutton.imageView?.contentMode = .scaleAspectFit //didnt work
-        
+        mainImagebutton.setImage(UIImage(named: PlaceHolder.greeting.rawValue), for: .normal)
         miaLearnsData.lesson = .animal
         miaLearnsData.getLesson()
         collectionView.collectionViewLayout = configureLayout()
@@ -121,7 +116,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         
-        mainWordButtonTitle = miaLearnsData.currentLesson[item]?.item.imageName ?? "greeting"
+        mainWordButtonTitle = miaLearnsData.currentLesson[item]?.item.imageName ?? PlaceHolder.greeting.rawValue
         let wordWithNo_ = miaLearnsData.currentLesson[item]?.item.imageName.replacingOccurrences(of: "_", with: " ")
         mainWordButton.setTitle(wordWithNo_, for: .normal)
         
@@ -129,35 +124,8 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         mainImagebutton.contentMode = .scaleAspectFit// Not working on number value
         self.mainImagebutton.transform = .identity //read bellow (reset animation):
         currentAnimation = 0 //this resets animation on mainImage if another letter is pressed.
-        playSound(soundName: String(miaLearnsData.currentLesson[item.description]?.promt.soundName ?? "bat"))
-    }
-    
-    //MARK: - Sound Player
-    
-    func playSound(soundName: String) {
-        
-        let urlString = Bundle.main.path(forResource: soundName, ofType: "mp3")
-        let pathToSound = Bundle.main.path(forResource: soundName, ofType: ".mp3") ?? "a.mp3"
-        let url = URL(fileURLWithPath: pathToSound)
-        do {
-            try AVAudioSession.sharedInstance().setMode(.default)
-            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-            
-            guard let urlString = urlString else {
-                return
-            }
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.volume = 0.50
-            audioPlayer?.play()
-            guard let audioPlayer = audioPlayer else {
-                return
-            }
-            audioPlayer.play()
-            
-        } catch {
-            print("error")
-        }
+        audioPlayer.playSound(soundName: String(miaLearnsData.currentLesson[item.description]?.promt.soundName ?? "bat"))
+        soundPlayer.clickSound()
     }
     
     //MARK: - Main Image Button (top)
@@ -185,11 +153,12 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
                 self.currentAnimation = 0
             }
         })
+        soundPlayer.clickSound()
     }
     
     @IBAction func mainWordButton(_ sender: UIButton) {
-        playSound(soundName: mainWordButtonTitle)
-        print(mainWordButtonTitle)
+        soundPlayer.clickSound()
+        audioPlayer.playSound(soundName: mainWordButtonTitle)
     }
     
     //MARK: - Alert lesson change methods
@@ -212,9 +181,9 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
     }
     
     func resetMainImageButton() {
-        self.mainImagebutton.setImage(UIImage(named: "greeting"), for: .normal)
-        self.mainWordButton.setTitle("hello", for: .normal)
-        self.mainWordButtonTitle = "hello"
+        self.mainImagebutton.setImage(UIImage(named: PlaceHolder.greeting.rawValue), for: .normal)
+        self.mainWordButton.setTitle(PlaceHolder.hello.rawValue, for: .normal)
+        self.mainWordButtonTitle = PlaceHolder.hello.rawValue
     }
     
     //MARK: - Alert Choices
@@ -232,6 +201,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .animal
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 82, imageName: "bat.png"))
@@ -243,6 +213,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .object
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 127, imageName: "airplane.svg"))
@@ -255,6 +226,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .fruit
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
             //self.changeLessonVideo(abcSet: instrumentsTest, videoSet: instrumentsMainVideo)
         }))
@@ -285,6 +257,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .color
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 350, imageName: "blue.png"))
@@ -296,6 +269,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .shape
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 395, imageName: "heart.png"))
@@ -307,6 +281,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .toy
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 438, imageName: "toys.png"))
@@ -318,6 +293,7 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
             self.miaLearnsData.lesson = .number
             self.miaLearnsData.getLesson()
             self.resetMainImageButton()
+            self.soundPlayer.clickSound()
             self.configureDataSource()
         }))
         alert.view.addSubview(addRightAlertImage(yAxis: 481, imageName: "1.png"))
@@ -327,42 +303,11 @@ class MiaLearnsViewController: UIViewController, UICollectionViewDelegate {
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) in
             print("Cancel")
         }))
-        
+        soundPlayer.clickSound()
         self.present(alert, animated: true)
     }
 }
 
 
-//extra code used for video play, removed when we cut out instruments.
-
-//func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//    guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-    
-    //        if miaABCBrain.lesson == .instrument { // Replace 4
-    //            playVideo(video: "instrumentsV", newView: mainImagebutton)
-    //            mainWordButtonTitle = miaABCBrain.currentLesson[item]?.mainImageAndSound ?? "bat"
-    //            mainWordButton.setTitle(miaABCBrain.currentLesson[item]?.mainImageAndSound, for: .normal
-    //        } else {
-    
-    //else ends after playSound
-
-//@IBAction func mainImageButtonPressed(_ sender: UIButton) {
-    
-    //        if miaABCBrain.currentSet == ["instruments"] { // Replace 5
-    //            //not working. Maybe remove mainImageButton set from ViewDidLoad and put it in lesson assigned
-    //            //mainImagebutton.setImage(UIImage(named: "placholder"), for: .normal)
-    //            mainImagebutton.imageView?.image = nil
-    //
-    //        } else {
-
-//func playVideo(video: String, newView: UIView) {
-//    playerLayer.player?.pause() //if player exists pause playback and start new play
-//
-//    let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(
-//        forResource: video , ofType: "mp4") ?? "bvQuiz.mp4"))
-//    playerLayer = AVPlayerLayer(player: player)
-//    playerLayer.frame = newView.bounds
-//    playerLayer.videoGravity = .resizeAspectFill
-//    newView.layer.addSublayer(playerLayer)
-//    player.play()
-//}
+//private let instrumentsMainVideo: [String: String] = ["instruments": "Quiz"]
+//private let instrumentsTest = ["instruments"]

@@ -9,21 +9,13 @@ import Foundation
 
 struct MiaAbcQuizData {
     
-    var videoNamesArray = [String]()
-    var currentLetterSet = [String]()
-    var quizAlphabetLetters = [String]()
+    let videoNamesArray = VideoNames.allCases.map { $0.rawValue }
+    var currentLetterSet = Letters.a.letterSet
     var score = 0
     var incorrectChoices = 0
     var videoCount = 0
-    var correctAnswer: String = "a"
-    
-    mutating func getVideoNames() {
-        videoNamesArray = VideoNames.allCases.map { $0.rawValue }
-    }
-    
-    mutating func getLetterSet() {
-        currentLetterSet = Letters.a.letterSet
-        quizAlphabetLetters = Letters.a.letterSet
+    var correctAnswer: String {
+        String(videoNamesArray[videoCount].first ?? "a")
     }
     
     enum VideoNames: String, CaseIterable {
@@ -57,23 +49,27 @@ struct MiaAbcQuizData {
         }
     }
     
-    mutating func changeLetterSet(correctAnswer: String) {
+    mutating func updateCurrentLetterSet() {
         switch correctAnswer {
         case "f"..."j":
-            quizAlphabetLetters = Letters.g.letterSet
+            currentLetterSet = Letters.g.letterSet
         case "k"..."o":
-            quizAlphabetLetters = Letters.l.letterSet
+            currentLetterSet = Letters.l.letterSet
         case "p"..."t":
-            quizAlphabetLetters = Letters.q.letterSet
+            currentLetterSet = Letters.q.letterSet
         case "u"..."z":
-            quizAlphabetLetters = Letters.v.letterSet
+            currentLetterSet = Letters.v.letterSet
         default:
-            quizAlphabetLetters = Letters.a.letterSet
+            currentLetterSet = Letters.a.letterSet
         }
+        currentLetterSet = currentLetterSet.shuffled()
+        videoCount += 1 
     }
     
-    func getShuffledLetterSet() -> [String] {
-        return quizAlphabetLetters.shuffled()
+    mutating func restartGame() {
+        videoCount = 0
+        score = 0
+        currentLetterSet = Letters.a.letterSet
     }
     
     //could actually use same enum Letters and add a Quiz.raw to each letter
@@ -81,8 +77,6 @@ struct MiaAbcQuizData {
         case Quiz
     }
 }
-
-
 
 //    mutating func makeVideoNameArray() -> [String] {
 //        return VideoNames.allRawValues

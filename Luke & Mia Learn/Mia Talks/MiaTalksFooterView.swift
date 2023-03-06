@@ -23,7 +23,6 @@ class MiaTalksFooterView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
-       
     }
     
     required init?(coder: NSCoder) {
@@ -94,22 +93,14 @@ class MiaTalksFooterView: UICollectionReusableView {
     
     @objc private func action(sender: UIButton) {
         clearUI()
-        
-        //let vc = MiaTalksController()
-        //vc.soundTypeSelected = sender.title(for: .selected)!
-        
         sender.backgroundColor = .systemGray
         soundType = sender.title(for: .selected)!
-        print("FOOTER Cell", soundType)
-        //sendSoundType()
-        
     }
     
     @objc func sendSoundType(sender: UIButton) {
         clearUI()
         sender.backgroundColor = .systemGray
         soundType = sender.title(for: .selected)!
-        print("FOOTER Cell", soundType)
         delegate?.didSelectSoundType(soundType)
     }
     

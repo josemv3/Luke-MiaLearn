@@ -8,7 +8,6 @@
 import UIKit
 
 class MiaTalksCell: UICollectionViewCell {
-    
     @IBOutlet var miaTalkCellLabel: UILabel!
     @IBOutlet weak var miaTalksView: UIImageView!
 

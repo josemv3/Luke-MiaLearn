@@ -21,4 +21,12 @@ enum Title: String {
     enum Story: String {
         case miasDragonStory = "Mia's Dragon Story"
     }
+    
+    enum ViewNames: String, CaseIterable {
+        case Header, Footer
+    }
+    
+    enum Font: String, CaseIterable {
+        case Chalkduster
+    }
 }

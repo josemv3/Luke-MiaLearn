@@ -1012,7 +1012,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="xPP-NG-Rvt"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lwLukeCell" id="fqO-AE-GbG" customClass="LearnWithLukeCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LearnWithLukeCell" id="fqO-AE-GbG" customClass="LearnWithLukeCell" customModule="Luke___Mia_Learn" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="134" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="R8T-1g-0VO">

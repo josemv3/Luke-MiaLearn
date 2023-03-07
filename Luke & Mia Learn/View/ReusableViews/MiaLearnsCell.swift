@@ -8,7 +8,6 @@
 import UIKit
 
 class MiaLearnsCell: UICollectionViewCell {
-
     @IBOutlet var miABCCellLabel: UILabel!
     @IBOutlet var miABCCellImage: UIImageView!
     

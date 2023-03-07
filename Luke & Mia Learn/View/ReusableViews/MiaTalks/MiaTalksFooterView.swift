@@ -12,7 +12,6 @@ protocol MiaTalksFooterViewDelegate {
 }
 
 class MiaTalksFooterView: UICollectionReusableView {
-    
     var delegate: MiaTalksFooterViewDelegate?
     
     let leftFooterBtn = UIButton()

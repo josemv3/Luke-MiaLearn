@@ -10,5 +10,6 @@ import UIKit
 class lwLukeDetailCell: UICollectionViewCell {
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var cellImageView: UIImageView!
+    
     static let reusidentifier = String(describing: lwLukeDetailCell.self)
 }

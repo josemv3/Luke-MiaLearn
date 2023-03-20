@@ -12,8 +12,7 @@ class LearnWithLukeCell: UICollectionViewCell {
     @IBOutlet weak var learnWithLukeCellLabel: UILabel!
     @IBOutlet weak var learnWLukeBG: UIImageView!
     
-    
-    
+    static let reuseIdentifier = String(describing: LearnWithLukeCell.self)
 }
 
 

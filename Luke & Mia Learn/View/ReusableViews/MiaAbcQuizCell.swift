@@ -8,8 +8,8 @@
 import UIKit
 
 class MiaAbcQuizCell: UICollectionViewCell {
-    
     @IBOutlet weak var miABCQuizCellLabel: UILabel!
     @IBOutlet weak var miABCQuizCellImage: UIImageView!
+    
     static let reusidentifier = String(describing: MiaAbcQuizCell.self)
 }

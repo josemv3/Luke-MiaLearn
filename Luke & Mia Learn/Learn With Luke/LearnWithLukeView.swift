@@ -7,39 +7,22 @@
 
 import UIKit
 
-private let reuseIdentifier = "lwLukeCell"
-
 class LearnWithLukeView: UICollectionViewController {
     
     private let searchController = UISearchController()
-    private var itemsByInitialLetter = [Character: [String]]()
-    private var initialLetters = [Character]()
-    private let states: [String] = [
-//        "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
-//        "Florida","Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
-//        "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
-//        "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
-//        "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
-//        "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
-//        "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
-//    ]
-    
-    "Sun", "Venus", "Mercury", "Earth", "Earths moon", "Mars", "NASA", "Jupiter", "Saturn", "Uranus", "Neptune", "Asteroid belt", "Comets", "Astronaut", "Shuttle", "Satelite", "Rocket", "Solar System", "Pluto", "Black Hole"]
-    
-    //private let space: [String] =
-    
-    private lazy var filteredItems: [String] = states
+    private lazy var filteredItems: [String] = lukeData.lessonItems
     private var dataSource: UICollectionViewDiffableDataSource<Character, String>!
     static let sectionHeaderElementKind = "section-header-element-kind"
     var itemChosen = ""
+    var lukeData = LearnWLukeData()
     
     //Section in the Snampshot is a Character coming from initial letter in the for loop below:
     var filteredItemsSnapshot: NSDiffableDataSourceSnapshot<Character, String> {
         var snapshot = NSDiffableDataSourceSnapshot<Character, String>()
         
-        for section in initialLetters {
+        for section in lukeData.initialLetters {
             snapshot.appendSections([section])
-            snapshot.appendItems(itemsByInitialLetter[section]!)
+            snapshot.appendItems(lukeData.itemsByInitialLetter[section]!)
         }
         
         return snapshot
@@ -49,29 +32,22 @@ class LearnWithLukeView: UICollectionViewController {
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        collectionView.backgroundColor = UIColor(named: "learnWLukeBlue")
+        lukeData.getLesson(lesson: LearnWLukeData.Space.self)
+        collectionView.backgroundColor = UIColor(named: Colors.learnWLukeBlue.rawValue)
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
-        collectionView.register(
-            LearnWithLukeHeader.self,
-            forSupplementaryViewOfKind: LearnWithLukeView.sectionHeaderElementKind,
-            withReuseIdentifier: "Header"
-        )
-        navigationItem.title = "Learn with Luke"
+        collectionView.register(LearnWithLukeHeader.self,forSupplementaryViewOfKind: LearnWithLukeView.sectionHeaderElementKind,withReuseIdentifier: Title.ViewNames.Header.rawValue)
+        navigationItem.title = Title.LearnWithLuke.rawValue
         
-        
-        itemsByInitialLetter = states.reduce([:]) { existing, element in
+        //states = lessonItems
+        lukeData.itemsByInitialLetter = lukeData.lessonItems.reduce([:]) { existing, element in
             return existing.merging([element.first!:[element]]) { old, new in
                 return old + new
             }
         }
-        initialLetters = itemsByInitialLetter.keys.sorted()
-        
+        lukeData.initialLetters = lukeData.itemsByInitialLetter.keys.sorted()
         navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
-        
         createDataSource()
     }
     
@@ -131,33 +107,27 @@ class LearnWithLukeView: UICollectionViewController {
     //MARK: - CreateDataSource
     private func createDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Character, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LearnWithLukeCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LearnWithLukeCell.reuseIdentifier, for: indexPath) as! LearnWithLukeCell
             
-            cell.layer.borderWidth = 4
-            cell.layer.borderColor = UIColor(named: "learnWLukePink")?.cgColor
-            cell.layer.cornerRadius = 5
+            cell.layer.borderWidth = BorderSize.normal.size
+            cell.layer.cornerRadius = CornerRadiusMod.small.size
+            cell.layer.borderColor = UIColor(named: Colors.learnWLukePink.rawValue)?.cgColor
             cell.learnWithLukeCellLabel.text = item
-            cell.learnWithLukeCellLabel.font = UIFont(name: "Chalkduster", size: 14)
-            cell.learnWithLukeCellLabel.textColor = UIColor(named: "learnWLukeGreen")
-            cell.learnWithLukeCellLabel.backgroundColor = UIColor(named: "learnWLukePink")
-            //cell.learnWithLukeCellLabel.layer.cornerRadius = 10
+            cell.learnWithLukeCellLabel.font = UIFont(name: Title.Font.Chalkduster.rawValue, size: 14)
+            cell.learnWithLukeCellLabel.textColor = UIColor(named: Colors.learnWLukeGreen.rawValue)
+            cell.learnWithLukeCellLabel.backgroundColor = UIColor(named: Colors.learnWLukePink.rawValue)
             cell.learnWithLukeCellLabel.layer.masksToBounds = true
-            
             cell.learnWithLukeImage.image = UIImage(named: item)
-            //cell.learnWithLukeImage.layer.cornerRadius = 10
-            
-            //cell.learnWLukeBG.layer.cornerRadius = 10
-            
             return cell
         })
         
         dataSource.supplementaryViewProvider = { collectionView, kind, indexPath -> UICollectionReusableView? in
             let header = collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as! LearnWithLukeHeader
+                ofKind: kind, withReuseIdentifier: Title.ViewNames.Header.rawValue, for: indexPath) as! LearnWithLukeHeader
             
-            header.label.text = String(self.initialLetters[indexPath.section])
-            header.label.font = UIFont(name: "Chalkduster", size: 18)
-            header.label.textColor = UIColor(named: "learnWLukeGreen")
+            header.label.text = String(self.lukeData.initialLetters[indexPath.section])
+            header.label.font = UIFont(name: Title.Font.Chalkduster.rawValue, size: 18)
+            header.label.textColor = UIColor(named: Colors.learnWLukeGreen.rawValue)
             
             return header
         }
@@ -168,8 +138,9 @@ class LearnWithLukeView: UICollectionViewController {
     //MARK: - DidSelectItem
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        print("hello", item.description)
         itemChosen = item
+        
+        //perform segue, use item to grab data
         
         if item == "Asteroid belt" {
             self.performSegue(withIdentifier: "lwLukeDetailView", sender: self)
@@ -177,7 +148,7 @@ class LearnWithLukeView: UICollectionViewController {
             print("no Segue")
         }
     }
-    
+    //change to new VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "lwLukeDetailView" {
             let destinationVC = segue.destination as! LWLukeDetailView
@@ -191,21 +162,37 @@ extension LearnWithLukeView: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchString = searchController.searchBar.text,
            searchString.isEmpty == false {
-            filteredItems = states.filter { item -> Bool in
+            filteredItems = lukeData.lessonItems.filter { item -> Bool in
                 item.localizedCaseInsensitiveContains(searchString)
             }
         } else {
-            filteredItems = states
+            filteredItems = lukeData.lessonItems
         }
         
-        itemsByInitialLetter = filteredItems.reduce([:]) { existing, element in
+        lukeData.itemsByInitialLetter = filteredItems.reduce([:]) { existing, element in
             return existing.merging([element.first!:[element]]) { old, new in
                 return old + new
             }
         }
-        initialLetters = itemsByInitialLetter.keys.sorted()
+        lukeData.initialLetters = lukeData.itemsByInitialLetter.keys.sorted()
         dataSource.apply(filteredItemsSnapshot, animatingDifferences: true)
     }
     
     
 }
+
+
+
+
+
+
+
+
+//        "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+//        "Florida","Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
+//        "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+//        "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico",
+//        "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+//        "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
+//        "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+//    ]

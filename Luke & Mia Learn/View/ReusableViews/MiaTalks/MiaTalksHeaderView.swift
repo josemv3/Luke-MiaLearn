@@ -8,7 +8,6 @@
 import UIKit
 
 class MiaTalksHeaderView: UICollectionReusableView {
-    
     let miaTalksHeaderLabel = UILabel()
     
     override init(frame: CGRect) {

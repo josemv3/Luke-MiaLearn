@@ -10,9 +10,9 @@ import UIKit
 
 class MenuView: UICollectionViewController {
     private let mediumBorderSize: CGFloat = 4
-    let soundPlayer = SystemSoundPlayer()
-    var menuData = MenuData()
-    var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
+    private let soundPlayer = SystemSoundPlayer()
+    private let menuData = MenuData()
+    private var dataSource: UICollectionViewDiffableDataSource<Section, MenuData.MenuIcons>!//SOURCE1
     enum Section {
         case main
     }
@@ -22,7 +22,7 @@ class MenuView: UICollectionViewController {
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         createDataSource()
         navigationItem.title = Title.Menu.rawValue
-        menuData.menuDataFinal = menuData.buildMenuDictionary()
+        //menuData.menuDataFinal = menuData.buildMenuDictionary()
         
     }
     
@@ -77,22 +77,22 @@ class MenuView: UICollectionViewController {
     
     private func createDataSource() {
         ///CELL
-        dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+        dataSource = UICollectionViewDiffableDataSource<Section, MenuData.MenuIcons>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCell.reuseidentifier, for: indexPath) as! MenuCell
             
-            cell.menuImageview.image = UIImage(named: item.description)
-            cell.menuLessonLabel.text = self.menuData.menuDataFinal[item.description]?.displayName
-            cell.menuAgeLabel.text = self.menuData.menuDataFinal[item.description]?.age
+            cell.menuImageview.image = UIImage(named: item.imageName)
+            cell.menuLessonLabel.text = item.displayName
+            cell.menuAgeLabel.text = item.age
             cell.menuImageview.layer.borderWidth = self.mediumBorderSize
             cell.menuImageview.layer.borderColor = UIColor(named: Colors.mainOrange.rawValue)?.cgColor
             
             return cell
         })
         
-        var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
+        var initialSnapshot = NSDiffableDataSourceSnapshot<Section, MenuData.MenuIcons>()//SOURCE3
         
         initialSnapshot.appendSections([.main])
-        initialSnapshot.appendItems(menuData.snapShotItems)
+        initialSnapshot.appendItems(MenuData.MenuIcons.allCases)
         
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
@@ -104,17 +104,17 @@ class MenuView: UICollectionViewController {
         //print("menu", item.description)
        
         switch item {
-        case String(describing: MenuData.MenuIcons.miaLearnsLogo):
+        case .miaLearnsLogo:
             self.performSegue(withIdentifier: SegueId.goToMiaLearns.rawValue, sender: self)
-        case String(describing: MenuData.MenuIcons.miABCQuizLogo):
+        case .miABCQuizLogo:
             self.performSegue(withIdentifier: SegueId.goToMiabcQuiz.rawValue, sender: self)
-        case String(describing: MenuData.MenuIcons.learnWLukeLogo):
+        case .learnWLukeLogo:
             self.performSegue(withIdentifier: SegueId.goToLWLuke.rawValue, sender: self)
-        case String(describing: MenuData.MenuIcons.miaTalksLogo):
+        case .miaTalksLogo:
             self.performSegue(withIdentifier: SegueId.goToMiaTalksMenu.rawValue, sender: self)
-        case String(describing: MenuData.MenuIcons.storyTimeLogo):
+        case .storyTimeLogo:
             self.performSegue(withIdentifier: SegueId.goToStoryTimeMenu.rawValue, sender: self)
-        case String(describing: MenuData.MenuIcons.findMeLogo):
+        case .findMeLogo:
             self.performSegue(withIdentifier: SegueId.goToFindMeMenu.rawValue, sender: self)
         default:
             self.performSegue(withIdentifier: SegueId.goToLukeTalks.rawValue, sender: self)

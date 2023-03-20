@@ -12,7 +12,7 @@ class MiaTalksView: UICollectionViewController {
     var recieverString = PlaceHolder.human.rawValue
     var audioPlayer2 = AudioPlayer.shared
     var miaTalksData = MiaTalksData()
-    var dataSource: UICollectionViewDiffableDataSource<Section, String>!//SOURCE1
+    var dataSource: UICollectionViewDiffableDataSource<Section, MiaTalksData.ILike>!//SOURCE1
     static let sectionFooterElementKind = "section-footer-element-kind" //footerSetup1
     static let sectionHeaderElementKind = "section-header-element-kind"//headerSetup1
     enum Section {
@@ -21,7 +21,7 @@ class MiaTalksView: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        miaTalksData.lessonSet = miaTalksData.makeLessonSet(valueSet: MiaTalksData.ILike.self)
+        //miaTalksData.lessonSet = miaTalksData.makeLessonSet(valueSet: MiaTalksData.ILike.self)
         collectionView.setCollectionViewLayout(generateLayout(), animated: false)
         collectionView.register(MiaTalksHeaderView.self, forSupplementaryViewOfKind: MiaTalksView.sectionHeaderElementKind, withReuseIdentifier: "Header")//headerSetup2
         collectionView.register(MiaTalksFooterView.self, forSupplementaryViewOfKind: MiaTalksView.sectionFooterElementKind, withReuseIdentifier: "Footer")//footerSetup2
@@ -106,11 +106,11 @@ class MiaTalksView: UICollectionViewController {
     
     private func createDataSource() {
         ///CELL
-        dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+        dataSource = UICollectionViewDiffableDataSource<Section, MiaTalksData.ILike>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiaTalksCell.reuseidentifier, for: indexPath) as! MiaTalksCell
             
-            cell.miaTalkCellLabel.text = item
-            cell.miaTalksView.image = UIImage(named: self.miaTalksData.lessonSet[item] ?? "banana")
+            cell.miaTalkCellLabel.text = item.rawValue
+            cell.miaTalksView.image = UIImage(named: item.rawValue)
             
             return cell
         })
@@ -137,9 +137,9 @@ class MiaTalksView: UICollectionViewController {
             return nil
         }
         
-        var initialSnapshot = NSDiffableDataSourceSnapshot<Section, String>()//SOURCE3
+        var initialSnapshot = NSDiffableDataSourceSnapshot<Section, MiaTalksData.ILike>()//SOURCE3
         initialSnapshot.appendSections([.main])
-        initialSnapshot.appendItems(miaTalksData.lessonItems)
+        initialSnapshot.appendItems(MiaTalksData.ILike.allCases)
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     
@@ -156,7 +156,7 @@ class MiaTalksView: UICollectionViewController {
                 collectionView.cellForItem(at: indexPath)?.alpha = 1.0
             }
         }
-        audioPlayer2.playSound(soundName: recieverString + (miaTalksData.lessonSet[item] ?? "banana"))
+        audioPlayer2.playSound(soundName: recieverString + (item.rawValue))
     }
     
     //MARK: - Alert Action

@@ -19,12 +19,11 @@ struct MiaAbcQuizData {
     }
     
     enum VideoNames: String, CaseIterable {
-        case
-        apple, bat, cat, dog, egg,
-        frog, giraffe, hedgehog, icecream, jump,
-        kite, love, moon, numbers, owl,
-        pancake,question, rocket, snake, tree,
-        umbrella, volcano, wolf, xray, yoga, zoo
+        case apple, bat, cat, dog, egg,
+             frog, giraffe, hedgehog, icecream, jump,
+             kite, love, moon, numbers, owl,
+             pancake,question, rocket, snake, tree,
+             umbrella, volcano, wolf, xray, yoga, zoo
     }
     
     enum Letters: String, CaseIterable {
@@ -63,7 +62,7 @@ struct MiaAbcQuizData {
             currentLetterSet = Letters.a.letterSet
         }
         currentLetterSet = currentLetterSet.shuffled()
-        videoCount += 1 
+        videoCount += 1
     }
     
     mutating func restartGame() {

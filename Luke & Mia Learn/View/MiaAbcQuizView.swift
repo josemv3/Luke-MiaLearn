@@ -164,8 +164,17 @@ class MiaAbcQuizView: UIViewController, UICollectionViewDelegate {
             miaAbcQuizData.updateCurrentLetterSet()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.50) {
-                self.audioPlayer.playSound(soundName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount] + "Q")
-                self.videoPlayer.playVideo(videoName: self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount], viewPlayer: self.mainView)
+                //who ownes this closure, and when will it be deallocated.
+                //since its gone after view is gone, no retain cycle. becasue self doesnt own the closure.
+                //main view does
+                //But can user leave before update happens, thats an issue
+                //Would be good to make this weak, becasue we dont care if the view is around when we are gone.
+                //Closuer should not keep this work alive if we arent here. Weak makes sure it goes away according to its lifecycle.
+                //When this thing happens in the future, do I need self to be around. If no = weak.
+                //Unowned can be used, then if you crash we know you needed weak.
+                let videoName = self.miaAbcQuizData.videoNamesArray[self.miaAbcQuizData.videoCount]
+                self.audioPlayer.playSound(soundName: videoName + "Q")
+                self.videoPlayer.playVideo(videoName: videoName, viewPlayer: self.mainView)
             }
         }
     }
@@ -173,7 +182,7 @@ class MiaAbcQuizView: UIViewController, UICollectionViewDelegate {
     func updateScore(answer: Bool) {
         if answer {
             miaAbcQuizData.score += 5
-            scoreLabel.text = String(miaAbcQuizData.score)
+            scoreLabel.text = String(miaAbcQuizData.score)//duplicated code, can move out at if
         } else {
             miaAbcQuizData.incorrectChoices += 1
             miaAbcQuizData.score -= 1

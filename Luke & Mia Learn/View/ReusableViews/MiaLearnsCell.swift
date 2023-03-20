@@ -12,5 +12,4 @@ class MiaLearnsCell: UICollectionViewCell {
     @IBOutlet var miABCCellImage: UIImageView!
     
     static let reusidentifier = String(describing: MiaLearnsCell.self)
-    
 }

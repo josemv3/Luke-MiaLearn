@@ -9,22 +9,33 @@ import Foundation
 
 struct MiaTalksData {
     
-    var lessonItems: [String] = []
-    var lessonSet: [String: String] = [:]
-    
-    enum Letters: String, CaseIterable {
-        case a,b,c,d,e,f
-    }
-    
-    enum ILike: String, CaseIterable {
+    enum ILike: String, CaseIterable, Hashable {
         case apples, hamburger, carrot, broccoli, cereal, bananas
     }
     
-    mutating func makeLessonSet<T: CaseIterable>(valueSet: T.Type) -> [String: String] where T.AllCases.Element: RawRepresentable, T.AllCases.Element.RawValue == String {
-    
-        lessonItems = Letters.allCases.map { $0.rawValue }
-        let valueSet = valueSet.allCases.map { $0.rawValue }
-        return Dictionary(uniqueKeysWithValues: zip(lessonItems, valueSet))
+    enum IWant: String, CaseIterable, Hashable {
+        case bandaid, toy, food, shake, orange, sandwich
     }
     
+    enum CurrentLesson: CaseIterable {
+        case iLike, iWant
+        
+        var lessons: [any CaseIterable] {
+            switch self {
+            case .iLike:
+                return ILike.allCases
+            case .iWant:
+                return IWant.allCases
+            }
+        }
+    }
 }
+
+
+
+//    mutating func makeLessonSet<T: CaseIterable>(valueSet: T.Type) -> [String: String] where T.AllCases.Element: RawRepresentable, T.AllCases.Element.RawValue == String {
+//
+//        lessonItems = Letters.allCases.map { $0.rawValue }
+//        let valueSet = valueSet.allCases.map { $0.rawValue }
+//        return Dictionary(uniqueKeysWithValues: zip(lessonItems, valueSet))
+//    }

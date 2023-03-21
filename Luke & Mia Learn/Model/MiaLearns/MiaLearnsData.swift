@@ -178,8 +178,8 @@ struct MiaLearnsData {
             lessonPromptSet = ToyPrompt.allRawValues
             lessonPromptSound = lessonPromptSet
             
-            lessonItems = ToyItems.allRawValues
-            lessonItemSet = zip(lessonPromptSet, ToyItems.allRawValues).reduce(into: [:]) { $0[$1.0] = $1.1 }
+            lessonItems = lessonPromptSet
+            lessonItemSet = zip(lessonPromptSet, lessonPromptSet).reduce(into: [:]) { $0[$1.0] = $1.1 }
             makeMiaLearnsLesson(promptSet: lessonPromptSet, promptSound: lessonPromptSound, lessonItem: lessonItemSet)
         }
     }
@@ -192,3 +192,10 @@ struct MiaLearnsData {
 //            switch self {
 //            case .circle:
 //                return ShapeItems.wheel.rawValue
+
+//balloon_svg, bath_boat_svg, beach_ball_svg, doll_house_svg, jump_rope_svg, legos_svg,
+//     letter_blocks_svg, old_phone_svg, puzzle_cube_svg, puzzle_pieces_svg, rocking_horse_svg,
+//     rubber_ducky_svg, sand_toys_svg, skateboard_svg, spin_wheel_svg, spinning_top_svg,
+//     stuffed_animal_svg, tea_set_svg, toy_phone_svg, toy_robot_svg, toy_rocket_svg,
+//     toy_train_svg, toy_truck_svg, water_shooter_svg, windup_car_svg,
+//     windup_dinosaur_svg

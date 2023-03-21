@@ -158,7 +158,9 @@ class MiaLearnsView: UIViewController, UICollectionViewDelegate {
     
     @IBAction func mainWordButton(_ sender: UIButton) {
         soundPlayer.clickSound()
-        audioPlayer.playSound(soundName: mainWordButtonTitle)
+        let convertedWord = mainWordButtonTitle.replacingOccurrences(of: " ", with: "_")
+        audioPlayer.playSound(soundName: convertedWord)
+        print(convertedWord)
     }
     
     //MARK: - Alert lesson change methods

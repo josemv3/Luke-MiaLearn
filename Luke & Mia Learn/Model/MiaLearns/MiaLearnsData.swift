@@ -20,20 +20,34 @@ struct MiaLearnsData {
         case animal, object, fruit, number, color, shape, toy
     }
     
+//    mutating func makeMiaLearnsLesson(promptSet: [String], promptSound: [String], lessonItem: [String: String]) {
+//        var count = 0
+//
+//        //let lessonItemSet2 = zip(promptSet, lessonItem).reduce(into: [:]) { $0[$1.0] = $1.1 }
+//
+//        for item in promptSet {
+//            if promptSet.count != promptSound.count {
+//                print("Set and Sound are not the same length")
+//                break
+//            }
+//            currentLesson[item] = MiaLearnsLesson(promt: LessonPrompt(imageName: item, soundName: promptSound[count]), item: LessonItem(imageName: lessonItemSet[item] ?? "a", soundName: lessonItemSet[item] ?? "a"))
+//            count += 1
+//        }
+//    }
+    
     mutating func makeMiaLearnsLesson(promptSet: [String], promptSound: [String], lessonItem: [String: String]) {
-        var count = 0
-        
-        //let lessonItemSet2 = zip(promptSet, lessonItem).reduce(into: [:]) { $0[$1.0] = $1.1 }
-
-        for item in promptSet {
-            if promptSet.count != promptSound.count {
-                print("Set and Sound are not the same length")
-                break
-            }
-            currentLesson[item] = MiaLearnsLesson(promt: LessonPrompt(imageName: item, soundName: promptSound[count]), item: LessonItem(imageName: lessonItemSet[item] ?? "a", soundName: lessonItemSet[item] ?? "a"))
-            count += 1
+        guard promptSet.count == promptSound.count else {
+            fatalError("Prompt set and sound set must be of the same length")
         }
+
+        currentLesson = Dictionary(uniqueKeysWithValues: zip(promptSet, promptSound).map { prompt, sound in
+            (prompt, MiaLearnsLesson(
+                promt: LessonPrompt(imageName: prompt, soundName: sound),
+                item: LessonItem(imageName: lessonItem[prompt] ?? "a", soundName: lessonItem[prompt] ?? "a")
+            ))
+        })
     }
+
     
     //MARK: - ABC Lesson Letter Prompt (Image and sound for cells) / LessontItems (Image and sound for the word learned)
     
@@ -107,7 +121,7 @@ struct MiaLearnsData {
              windup_dinosaur
     }
     
-    enum ToyItems: String, CaseIterable {
+    enum ToyItems: String, CaseIterable {//DELETE?
         case balloon_svg, bath_boat_svg, beach_ball_svg, doll_house_svg, jump_rope_svg, legos_svg,
              letter_blocks_svg, old_phone_svg, puzzle_cube_svg, puzzle_pieces_svg, rocking_horse_svg,
              rubber_ducky_svg, sand_toys_svg, skateboard_svg, spin_wheel_svg, spinning_top_svg,
@@ -199,3 +213,11 @@ struct MiaLearnsData {
 //     stuffed_animal_svg, tea_set_svg, toy_phone_svg, toy_robot_svg, toy_rocket_svg,
 //     toy_train_svg, toy_truck_svg, water_shooter_svg, windup_car_svg,
 //     windup_dinosaur_svg
+
+//To optimize the makeMiaLearnsLesson function, you can remove the check if promptSet.count != promptSound.count, which is currently inside the for loop. Instead, you can perform this check before entering the loop to ensure that both arrays are of the same length. If they are not, then you can return early from the function or throw an error.
+//
+//You can also use a for-in loop with the zip function to iterate over both the promptSet and promptSound arrays simultaneously. This avoids the need for a separate counter variable (count).
+//
+//Additionally, you can simplify the assignment to the currentLesson dictionary using a single subscript operation with a tuple of the prompt and lesson item. This eliminates the need to look up the lesson item using lessonItemSet[item] ?? "a".
+//
+//Here's an updated version of the makeMiaLearnsLesson function that incorporates these changes:

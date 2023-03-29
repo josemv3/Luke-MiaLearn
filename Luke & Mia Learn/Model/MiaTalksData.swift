@@ -6,29 +6,33 @@
 //
 
 import Foundation
-
+    
 struct MiaTalksData {
     
     enum ILike: String, CaseIterable, Hashable {
         case apples, hamburger, carrot, broccoli, cereal, bananas
     }
-    
+
     enum IWant: String, CaseIterable, Hashable {
         case bandaid, toy, food, shake, orange, sandwich
     }
-    
+
     enum CurrentLesson: CaseIterable {
         case iLike, iWant
         
-        var lessons: [any CaseIterable] {
+        var lessons: [MiaTalksItem] {
             switch self {
             case .iLike:
-                return ILike.allCases
+                return ILike.allCases.map { MiaTalksItem(rawValue: $0.rawValue) }
             case .iWant:
-                return IWant.allCases
+                return IWant.allCases.map { MiaTalksItem(rawValue: $0.rawValue) }
             }
         }
     }
+}
+
+struct MiaTalksItem: Hashable {
+    let rawValue: String
 }
 
 

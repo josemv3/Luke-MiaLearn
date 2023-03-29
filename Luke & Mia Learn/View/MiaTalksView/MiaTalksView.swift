@@ -12,9 +12,14 @@ class MiaTalksView: UICollectionViewController {
     var recieverString = PlaceHolder.human.rawValue
     var audioPlayer2 = AudioPlayer.shared
     var miaTalksData = MiaTalksData()
-    var dataSource: UICollectionViewDiffableDataSource<Section, MiaTalksData.ILike>!//SOURCE1
+    var dataSource: UICollectionViewDiffableDataSource<Section, MiaTalksItem>!//SOURCE1
     static let sectionFooterElementKind = "section-footer-element-kind" //footerSetup1
     static let sectionHeaderElementKind = "section-header-element-kind"//headerSetup1
+    var currentLesson: MiaTalksData.CurrentLesson = .iLike {
+        didSet {
+            updateDataSource()
+        }
+    }
     enum Section {
         case main
     }
@@ -106,7 +111,7 @@ class MiaTalksView: UICollectionViewController {
     
     private func createDataSource() {
         ///CELL
-        dataSource = UICollectionViewDiffableDataSource<Section, MiaTalksData.ILike>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+        dataSource = UICollectionViewDiffableDataSource<Section, MiaTalksItem>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MiaTalksCell.reuseidentifier, for: indexPath) as! MiaTalksCell
             
             cell.miaTalkCellLabel.text = item.rawValue
@@ -137,9 +142,13 @@ class MiaTalksView: UICollectionViewController {
             return nil
         }
         
-        var initialSnapshot = NSDiffableDataSourceSnapshot<Section, MiaTalksData.ILike>()//SOURCE3
+        updateDataSource()
+    }
+    
+    func updateDataSource() {
+        var initialSnapshot = NSDiffableDataSourceSnapshot<Section, MiaTalksItem>()//SOURCE3
         initialSnapshot.appendSections([.main])
-        initialSnapshot.appendItems(MiaTalksData.ILike.allCases)
+        initialSnapshot.appendItems(currentLesson.lessons)
         dataSource.apply(initialSnapshot, animatingDifferences: false)
     }
     

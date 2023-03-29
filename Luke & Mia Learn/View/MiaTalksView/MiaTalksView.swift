@@ -141,7 +141,6 @@ class MiaTalksView: UICollectionViewController {
             }
             return nil
         }
-        
         updateDataSource()
     }
     

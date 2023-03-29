@@ -291,6 +291,7 @@
 		E091A4DB28CFE73400E7284C /* MiaTalksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */; };
 		E091A4DD28CFFB8E00E7284C /* LearnWithLukeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */; };
 		E091A4DF28CFFC4F00E7284C /* LearnWithLukeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */; };
+		E093C6BD29D4D87000722196 /* MiaAbcQuizScoresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E093C6BC29D4D87000722196 /* MiaAbcQuizScoresView.swift */; };
 		E096FDD229B29DD300D98BC2 /* LWLukeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E096FDD129B29DD300D98BC2 /* LWLukeDetailView.swift */; };
 		E09704B22998307D0024A0F2 /* LukeTalksCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09704B12998307D0024A0F2 /* LukeTalksCell2.swift */; };
 		E09B6ED528EA55EB004E5052 /* StoryTimeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09B6ED428EA55EB004E5052 /* StoryTimeMenu.swift */; };
@@ -731,6 +732,7 @@
 		E091A4DA28CFE73400E7284C /* MiaTalksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaTalksCell.swift; sourceTree = "<group>"; };
 		E091A4DC28CFFB8E00E7284C /* LearnWithLukeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeCell.swift; sourceTree = "<group>"; };
 		E091A4DE28CFFC4F00E7284C /* LearnWithLukeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnWithLukeHeader.swift; sourceTree = "<group>"; };
+		E093C6BC29D4D87000722196 /* MiaAbcQuizScoresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiaAbcQuizScoresView.swift; sourceTree = "<group>"; };
 		E096FDD129B29DD300D98BC2 /* LWLukeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWLukeDetailView.swift; sourceTree = "<group>"; };
 		E09704B12998307D0024A0F2 /* LukeTalksCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LukeTalksCell2.swift; sourceTree = "<group>"; };
 		E09B6ED428EA55EB004E5052 /* StoryTimeMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTimeMenu.swift; sourceTree = "<group>"; };
@@ -1283,6 +1285,7 @@
 				E0CF3C5928CCD322000E59A0 /* MenuView.swift */,
 				E0CF3C6E28CCE1CA000E59A0 /* MiaLearnsView.swift */,
 				E03A68AC28CE5B1300520C51 /* MiaAbcQuizView.swift */,
+				E093C6BC29D4D87000722196 /* MiaAbcQuizScoresView.swift */,
 				E08D4C0829B59DED00958971 /* MiaTalksView */,
 				E08D4C0629B59CC900958971 /* ReusableViews */,
 			);
@@ -2154,6 +2157,7 @@
 				E091A4D928CFAFE800E7284C /* LearnWithLukeView.swift in Sources */,
 				E0CF3C6028CCD322000E59A0 /* Luke___Mia_Learn.xcdatamodeld in Sources */,
 				E0AE525D299B10EA0012C068 /* BorderSize.swift in Sources */,
+				E093C6BD29D4D87000722196 /* MiaAbcQuizScoresView.swift in Sources */,
 				E091A4D728CFA45700E7284C /* MiaTalksView.swift in Sources */,
 				E08D4C0229B5859400958971 /* MiaTalksData.swift in Sources */,
 			);

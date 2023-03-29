@@ -10,6 +10,6 @@ import UIKit
 enum SegueId: String, CaseIterable {
     case goToMiaLearns, goToMiabcQuiz, goToStoryTimeMenu,
     goToStoryTime, goToLWLuke, goToMiaTalksMenu, goToLukeTalks,
-    goToFindMeMenu
+    goToFindMeMenu, goToQuizScores
 }
 

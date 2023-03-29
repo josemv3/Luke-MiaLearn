@@ -6,6 +6,10 @@
 //
 
 import Foundation
+
+struct MiaTalksItem: Hashable {
+    let rawValue: String
+}
     
 struct MiaTalksData {
     
@@ -31,9 +35,7 @@ struct MiaTalksData {
     }
 }
 
-struct MiaTalksItem: Hashable {
-    let rawValue: String
-}
+
 
 
 
